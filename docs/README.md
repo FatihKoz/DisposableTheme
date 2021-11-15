@@ -4,8 +4,8 @@ phpVMS v7 theme/skin (Bootstrap v5.x + Fontawesome v5.x)
 
 ## Important Changes
 
-* Bootstrap version changed from v4.x to v5.x
 * License changed
+* Bootstrap version changed from v4.x to v5.x
 * Theme helpers logic changed and now can be customized by duplication as per your needs. Theme no longer uses other Disposable addon helpers.
 * Theme is NOT compatible with older seperate Disposable addons, it is designed to be fully compatible with Disposable v3 series addons (Basic and Special as of date)
 * Theme is NOT compatible with beta4 or earlier development builds of phpVMS v7 prior to 09.NOV.21
@@ -56,6 +56,32 @@ Second one is for dark mode conversion and technically should hold only the item
 
 Unless really necessary for technical reasons, no hard coded style tags used in theme blades. So you can configure perrty much everything via css files.
 
+### Defining a custom default Gravatar
+
+You can simply define your own custom default gravatar for pilots. Just edit your `env.php` file and add below lines to the end of it  
+
+```php
+# GRAVATAR DEFAULT
+GRAVATAR_DEFAULT_AVATAR='http://your.phpvms.url.comes.here/disposable/nophoto.jpg'
+```
+
+### Defining a custom FavIcon
+
+Edit your duplicated `app.blade.php` and add below line to the `head` section
+
+```html
+<link rel="shortcut icon" type="image/png" href="{{ public_asset('/disposable/your_airline_icon_file.png') }}"/>
+```
+
+### Customizing VA Logo images and Menu items
+
+This can be achieved in two ways, either you need to change the image files provided in the package `theme_logo.png` and `theme_logo_big.png`  
+or you need to edit blade files to use your own paths for your logos (preferred way)
+
+Files holding logo definitions `nav_side.blade.php` , `nav_top.blade.php` and `nav_menu.blade.php`
+
+Both SideBar and NavBar uses the same file for menu items `nav_menu.blade.php`
+
 ## Settings (via theme.json)
 
 There are some options defined in this file for quick settings or for pre-defined features to be enabled/disabled easily without editing blade files.
@@ -98,6 +124,8 @@ There are some options defined in this file for quick settings or for pre-define
     "flights_table": 1,               // Classic table or card view switch for flights searc page
 
     "pireps_manual": 1,               // Hide or show manual pirep filing buttons
+
+    "login_logo": 0,                  // Show bigger VA logo at login page
 
     "roster_userimage": 1,            // Use profile images (or gravatar) at roster
     "roster_ident": 0,                // Use ident at roster (like DSP001 Name P)
