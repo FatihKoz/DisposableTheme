@@ -1,0 +1,132 @@
+{
+    "lido": {
+        "id": "lido",
+        "name_short": "LIDO",
+        "name_long": "LIDO - SimBrief Default"
+    },
+    "aal": {
+        "id": "aal",
+        "name_short": "AAL",
+        "name_long": "AAL - American Airlines"
+    },
+    "aca": {
+        "id": "aca",
+        "name_short": "ACA",
+        "name_long": "ACA - Air Canada"
+    },
+    "afr": {
+        "id": "afr",
+        "name_short": "AFR '12",
+        "name_long": "AFR - Air France (2012)"
+    },
+    "afr2017": {
+        "id": "afr2017",
+        "name_short": "AFR '17",
+        "name_long": "AFR - Air France (2017)"
+    },
+    "awe": {
+        "id": "awe",
+        "name_short": "AWE",
+        "name_long": "AWE - US Airways"
+    },
+    "baw": {
+        "id": "baw",
+        "name_short": "BAW",
+        "name_long": "BAW - British Airways"
+    },
+    "ber": {
+        "id": "ber",
+        "name_short": "BER",
+        "name_long": "BER - Air Berlin"
+    },
+    "dal": {
+        "id": "dal",
+        "name_short": "DAL",
+        "name_long": "DAL - Delta Air Lines"
+    },
+    "dlh": {
+        "id": "dlh",
+        "name_short": "DLH",
+        "name_long": "DLH - Lufthansa"
+    },
+    "ein": {
+        "id": "ein",
+        "name_short": "EIN",
+        "name_long": "EIN - Aer Lingus"
+    },
+    "etd": {
+        "id": "etd",
+        "name_short": "ETD",
+        "name_long": "ETD - Etihad Airways"
+    },
+    "ezy": {
+        "id": "ezy",
+        "name_short": "EZY",
+        "name_long": "EZY - easyJet"
+    },
+    "gwi": {
+        "id": "gwi",
+        "name_short": "GWI",
+        "name_long": "GWI - Germanwings"
+    },
+    "jbu": {
+        "id": "jbu",
+        "name_short": "JBU",
+        "name_long": "JBU - JetBlue Airways"
+    },
+    "jza": {
+        "id": "jza",
+        "name_short": "JZA",
+        "name_long": "JZA - Jazz Aviation"
+    },
+    "klm": {
+        "id": "klm",
+        "name_short": "KLM",
+        "name_long": "KLM - KLM Royal Dutch Airlines"
+    },
+    "qfa": {
+        "id": "qfa",
+        "name_short": "QFA",
+        "name_long": "QFA - Qantas"
+    },
+    "ryr": {
+        "id": "ryr",
+        "name_short": "RYR",
+        "name_long": "RYR - Ryanair"
+    },
+    "swa": {
+        "id": "swa",
+        "name_short": "SWA",
+        "name_long": "SWA - Southwest Airlines"
+    },
+    "thy": {
+        "id": "thy",
+        "name_short": "THY",
+        "name_long": "THY - Turkish Airlines"
+    },
+    "uae": {
+        "id": "uae",
+        "name_short": "UAE",
+        "name_long": "UAE - Emirates Airline"
+    },
+    "ual": {
+        "id": "ual",
+        "name_short": "UAL '12",
+        "name_long": "UAL - United Airlines (2012)"
+    },
+    "ual f:wz": {
+        "id": "ual f:wz",
+        "name_short": "UAL '18",
+        "name_long": "UAL - United Airlines (2018)"
+    },
+    "sxs": {
+        "id": "thy",
+        "name_short": "SXS",
+        "name_long": "SXS - SunExpress"
+    },
+    "ohy": {
+        "id": "lido",
+        "name_short": "OHY",
+        "name_long": "OHY - OnurAir (Lido)"
+    }
+}

@@ -1,0 +1,51 @@
+<?php
+return [
+    // Common
+    'actions'     => 'Actions',
+    'airport'     => 'Airport',
+    'all'         => 'View All',
+    'altn'        => 'Altn',
+    'alternate'   => 'Alternate',
+    'close'       => 'Close',
+    'darkmode'    => 'Dark Mode',
+    'dest'        => 'Dest',
+    'destination' => 'Destination',
+    'fuel_ob'     => 'Fuel On Board',
+    'latest'      => 'Latest',
+    'map'         => 'Map',
+    'orig'        => 'Orig',
+    'origin'      => 'Origin',
+    'registered'  => 'Registered',
+    'show_hide'   => 'Show / Hide',
+    'total'       => 'Total',
+    'weather'     => 'Weather',
+    'pagination'  => 'Showing :first to :last of total :total records',
+    // Flights
+    'bid_add'     => 'Add Bid',
+    'bid_rem'     => 'Remove Bid',
+    'load_acars'  => 'Load in vmsAcars',
+    'new_pirep'   => 'New Manual PIREP',
+    'sb_generate' => 'Generate SimBrief OFP',
+    'sb_view'     => 'View SimBrief OFP',
+    // Airport Details
+    '100ll_cost'     => '100LL Cost',
+    'avg_taxi_times' => 'Average Taxi Times',
+    'gh_cost'        => 'Ground Handling Cost',
+    'icao_iata_code' => 'ICAO / IATA Code',
+    'jeta1_cost'     => 'JET-A1 Cost',
+    'mogas_cost'     => 'Mogas Cost',
+    // Roster
+    'awards'      => 'Awards',
+    'only_active' => 'Only active members are listed. Inactivity limit is :days days',
+    'rank'        => 'Rank',
+    // Pireps
+    'lpirep' => 'Last Pirep Details',
+    'lrate'  => 'Landing Rate',
+    'score'  => 'Score',
+    // Dashboard
+    'avg_ftime'     => 'Avg.Flight Time',
+    'avg_fused'     => 'Avg.Fuel Used',
+    'avg_lrate'     => 'Avg.Landing Rate',
+    'avg_score'     => 'Avg.Score',
+    'user_on_leave' => 'You are on leave! File a PIREP to set your status to active!',
+];
