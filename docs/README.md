@@ -50,7 +50,8 @@ Technically you can copy any number of files to your new/duplicated theme. Just 
 
 ### Theme Styling / Customization
 
-CSS, Stylesheet files are located under `/public/disposable/stylesheet/` folder.  
+* CSS, Stylesheet files are located under `/public/disposable/stylesheet/` folder.
+
 There are two stylesheet files provided with the main package, one for general usage and holds all required styles in it `theme_v3.css`,  
 Second one is for dark mode conversion and technically should hold only the items you want to change in a dark-theme `theme_v3_darkmode.css`
 
@@ -75,8 +76,7 @@ Edit your duplicated `app.blade.php` and add below line to the `head` section
 
 ### Customizing VA Logo images and Menu items
 
-This can be achieved in two ways, either you need to change the image files provided in the package `theme_logo.png` and `theme_logo_big.png`  
-or you need to edit blade files to use your own paths for your logos (preferred way)
+This can be achieved in two ways, either you need to change the image files provided in the package `theme_logo.png` and `theme_logo_big.png` or you need to edit blade files to use your own paths for your logos (preferred way)
 
 Files holding logo definitions `nav_side.blade.php` , `nav_top.blade.php` and `nav_menu.blade.php`
 
@@ -153,7 +153,8 @@ There are some options defined in this file for quick settings or for pre-define
 
 ## Footer Positioning and Content
 
-As per the license, theme name should be always visible in all pages. Editing the footer is still possible but `Disposable` link SHOULD BE always visible.  
+As per the license, **theme name should be always visible in all pages**. Editing the footer is still possible but `Disposable` link SHOULD BE always visible.
+
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
