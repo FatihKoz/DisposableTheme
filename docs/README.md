@@ -1,7 +1,15 @@
 # Disposable Theme v3
 
 phpVMS v7 theme/skin (Bootstrap v5.x + Fontawesome v5.x)  
-Minimum required phpVMS v7 version is `7.0.0-dev+211109.4e7149`
+
+## Important Changes
+
+* Bootstrap version changed from v4.x to v5.x
+* License changed
+* Theme helpers logic changed and now can be customized by duplication as per your needs. Theme no longer uses other Disposable addon helpers.
+* Theme is NOT compatible with older seperate Disposable addons, it is designed to be fully compatible with Disposable v3 series addons (Basic and Special as of date)
+* Theme is NOT compatible with beta4 or earlier development builds of phpVMS v7 prior to 09.NOV.21
+* Minimum required phpVMS v7 version is `7.0.0-dev+211109.4e7149`
 
 ## Installation
 
@@ -119,15 +127,6 @@ There are some options defined in this file for quick settings or for pre-define
 
 As per the license, theme name should be always visible in all pages. Editing the footer is still possible but `Disposable` link SHOULD BE always visible.  
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
-
-## Important Changes
-
-* Bootstrap version changed from v4.x to v5.x
-* License changed
-* Theme helpers logic changed and now can be customized by duplication as per your needs. Theme no longer uses other Disposable addon helpers.
-* Theme is NOT compatible with older seperate Disposable addons, it is designed to be fully compatible with Disposable v3 series addons (Basic and Special as of date)
-* Theme is NOT compatible with beta4 or earlier development builds of phpVMS v7 prior to 09.NOV.21
-* Minimum required phpVMS v7 version is `7.0.0-dev+211109.4e7149`
 
 ## Release / Update Notes
 
