@@ -1,0 +1,21 @@
+name: 'Create Release'
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Archive Contents
+      uses: thedoctor0/zip-release@master
+      with:
+        filename: 'DisposableTheme.zip'
+        exclusions: 'LICENCE *.git* /*node_modules/* .editorconfig'
+    - name: Upload Release
+      uses: ncipollo/release-action@v1
+      with:
+        name: 'Disposable Theme v3 Series'
+        artifacts: "DisposableTheme.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}
