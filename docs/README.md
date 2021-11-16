@@ -1,6 +1,6 @@
 # Disposable Theme v3
 
-phpVMS v7 theme/skin (Bootstrap v5.x + Fontawesome v5.x)  
+phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
 ## Important Changes
 
