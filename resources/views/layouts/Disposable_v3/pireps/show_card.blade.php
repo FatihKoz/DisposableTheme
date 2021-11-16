@@ -29,7 +29,7 @@
     </div>
     <div class="row">
       <div class="col text-start">
-        @if($pirep->block_off_time)
+        @if(filled($pirep->block_off_time))
           <i class="fas fa-clock float-start m-1" title="Off Block"></i>
           {{ $pirep->block_off_time->format('H:i | l d.M.Y') }}
         @endif
@@ -41,7 +41,7 @@
         @endif
       </div>
       <div class="col text-end">
-        @if($pirep->block_on_time)
+        @if($pirep->block_on_time > $pirep->block_off_time)
           <i class="fas fa-clock float-end m-1" title="On Block"></i>
           {{ $pirep->block_on_time->format('H:i | l d.M.Y') }}
         @endif

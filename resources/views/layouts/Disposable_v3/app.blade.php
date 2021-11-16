@@ -22,7 +22,7 @@
     {{-- End of the required stuff in the head block --}}
   </head>
   @if(isset($plain))
-    <body id="page-container" style="background-color: none; background-image: none;">
+    <body id="page-container" style="background-color: transparent; background-image: none;">
   @else
     <body id="page-container" @if(!Theme::getSetting('gen_background_img')) style="background-image: none;" @endif>
   @endif
@@ -98,19 +98,21 @@
         <script>$("body").niceScroll();</script>
       @endif
       @yield('scripts')
-      {{-- EU Privacy Laws Requirements --}}
-      {{-- https://privacypolicies.com/blog/eu-cookie-law --}}
-      <script>
-        window.addEventListener("load", function () {
-          window.cookieconsent.initialise({
-            palette: {
-              popup: {background: "#edeff5",text: "#838391"},
-              button: {"background": "#067ec1"}
-            },
-            position: "top",
-          })
-        });
-      </script>
+      @if(empty($plain))
+        {{-- EU Privacy Laws Requirements --}}
+        {{-- https://privacypolicies.com/blog/eu-cookie-law --}}
+        <script>
+          window.addEventListener("load", function () {
+            window.cookieconsent.initialise({
+              palette: {
+                popup: {background: "#edeff5",text: "#838391"},
+                button: {"background": "#067ec1"}
+              },
+              position: "top",
+            })
+          });
+        </script>
+      @endif
       <script>$(document).ready(function () { $(".select2").select2({width: 'resolve'}); });</script>
     {{-- End the required tags block --}}
     {{--

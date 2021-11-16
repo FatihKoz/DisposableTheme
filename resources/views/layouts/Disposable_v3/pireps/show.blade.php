@@ -99,8 +99,8 @@
           </div>
         </div>
         <div class="card-footer p-1">
-          <i class="fas fa-route float-start m-1"></i>
-          @if($pirep->route)
+          @if(filled($pirep->route))
+            <i class="fas fa-route float-start m-1" title="Planned Route"></i>
             {{ $pirep->dpt_airport_id.' '.$pirep->route }}
           @endif
         </div>
