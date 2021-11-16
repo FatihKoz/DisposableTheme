@@ -16,6 +16,6 @@ jobs:
     - name: Upload Release
       uses: ncipollo/release-action@v1
       with:
-        name: 'Disposable Theme v3 Series'
+        name: 'Disposable Theme'
         artifacts: "DisposableTheme.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
