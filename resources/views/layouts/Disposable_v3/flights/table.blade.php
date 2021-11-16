@@ -39,7 +39,7 @@
         </td>
         <td class="text-end">
           {{-- vmsAcars Load --}}
-          @if(!$acars_plugin)
+          @if($acars_plugin)
             @if(isset($saved[$flight->id]))
               <a href="vmsacars:bid/{{ $saved[$flight->id] }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-warning" title="Load in vmsAcars">
                 <i class="fas fa-file-download"></i>

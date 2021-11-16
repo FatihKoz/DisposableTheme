@@ -91,6 +91,7 @@
         @widget('DSpecial::TourProgress')
       @endif
       @if($DBasic)
+        @widget('DBasic::ActiveBookings', ['source' => 'simbrief'])
         @if(Theme::getSetting('dash_whazzup_ivao'))
           @asyncWidget('DBasic::WhazzUp', ['network' => 'IVAO'])
         @endif

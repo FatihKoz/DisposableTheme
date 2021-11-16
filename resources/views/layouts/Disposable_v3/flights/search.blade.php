@@ -49,7 +49,7 @@
   </div>
   <div class="card-footer bg-transparent p-1 text-end">
     {{ Form::submit(__('common.find'), ['class' => 'btn btn-sm btn-primary m-0 mx-1 p-0 px-1']) }}
-    <button href="{{ route('frontend.flights.index') }}" class="btn btn-sm btn-secondary m-0 mx-1 p-0 px-1">@lang('common.reset')</button>
+    <a href="{{ route('frontend.flights.index') }}" class="btn btn-sm btn-secondary m-0 mx-1 p-0 px-1">@lang('common.reset')</a>
   </div>
   {{ Form::close() }}
 </div>
