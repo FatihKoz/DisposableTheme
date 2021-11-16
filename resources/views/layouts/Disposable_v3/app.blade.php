@@ -48,23 +48,26 @@
         @yield('content')
 
         {{-- Fixed position logos for IVAO and VATSIM, links are not possible --}}
-        @if(Theme::getSetting('gen_ivao_logo'))
-          <div class="card col-1 shadow-none bg-transparent border-0" style="position: absolute; bottom: 2rem; left: 2rem; z-index: -1;">
-            @if(filled(Theme::getSetting('gen_ivao_vaid')))
-              <img class="card-img" src="{{ public_asset('disposable/logo_ivao_partner.svg') }}">
-            @else
-              <img class="card-img" src="{{ public_asset('disposable/logo_ivao_main.png') }}">
-            @endif
-          </div>
-        @endif
-        @if(Theme::getSetting('gen_vatsim_logo'))
-          <div class="card col-1 shadow-none bg-transparent border-0" style="position: absolute; bottom: 2rem; right: 2rem; z-index: -1;">
-            <img class="card-img" src="{{ public_asset('disposable/logo_vatsim.png') }}">
-          </div>
+        @if(empty($plain))
+          @if(Theme::getSetting('gen_ivao_logo'))
+            <div class="card col-1 shadow-none bg-transparent border-0" style="position: absolute; bottom: 2rem; left: 2rem; z-index: -1;">
+              @if(filled(Theme::getSetting('gen_ivao_vaid')))
+                <img class="card-img" src="{{ public_asset('disposable/logo_ivao_partner.svg') }}">
+              @else
+                <img class="card-img" src="{{ public_asset('disposable/logo_ivao_main.png') }}">
+              @endif
+            </div>
+          @endif
+          @if(Theme::getSetting('gen_vatsim_logo'))
+            <div class="card col-1 shadow-none bg-transparent border-0" style="position: absolute; bottom: 2rem; right: 2rem; z-index: -1;">
+              <img class="card-img" src="{{ public_asset('disposable/logo_vatsim.png') }}">
+            </div>
+          @endif
         @endif
       </div>
 
     {{-- Footer --}}
+    @if(empty($plain))
       <div id="footer" class="container-fluid">
         <div class="card my-1 px-1">
           <div class="row row-cols-3">
@@ -85,6 +88,7 @@
           </div>
         </div>
       </div>
+    @endif
 
     {{-- Start of the required tags block. Don't remove these or things will break!! --}}
       <script src="{{ public_asset('/assets/global/js/vendor.js') }}"></script>
