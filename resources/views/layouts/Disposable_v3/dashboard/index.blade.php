@@ -88,6 +88,7 @@
       </div>
       @if($DSpecial)
         @widget('DSpecial::Assignments')
+        @widget('DSpecial::TourProgress')
       @endif
       @if($DBasic)
         @if(Theme::getSetting('dash_whazzup_ivao'))
