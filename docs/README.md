@@ -160,6 +160,6 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
-* 15.NOV.21
+* 16.NOV.21
 
-Initial release
+Initial Release
