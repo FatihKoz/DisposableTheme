@@ -18,14 +18,19 @@
         <div class="card-body p-0 table-responsive">
           @include('users.table')
         </div>
-        <div class="card-footer p-0 px-1 small text-end fw-bold">
+        <div class="card-footer p-0 px-1 small text-center fw-bold">
           @if(setting('pilots.hide_inactive'))
-            <span class="float-start">
+            @if($DBasic)
+              <a class="mx-1 float-start" href="{{ route('DBasic.roster') }}">Full Roster</a>
+            @endif
+            <span class="mx-1 float-start">
               @lang('disposable.only_active', ['days' => setting('pilots.auto_leave_days')])
             </span>
           @endif
-          @if($users->firstItem() != $users->total())
+          @if($users->hasPages())
+          <span class="float-end">
             @lang('disposable.pagination', ['first' => $users->firstItem(), 'last' => $users->lastItem(), 'total' => $users->total()])
+          </span>
           @endif
         </div>
       </div>

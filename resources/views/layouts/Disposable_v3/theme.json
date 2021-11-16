@@ -26,6 +26,7 @@
     "download_counts": 0,
     "flight_bid": 1,
     "flight_simbrief": 1,
+    "flight_notams": 0,
     "flights_flags": 1,
     "flights_table": 1,
     "pireps_manual": 1,

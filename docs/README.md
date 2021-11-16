@@ -119,6 +119,7 @@ There are some options defined in this file for quick settings or for pre-define
 
     "flight_bid": 1,                  // Bid Add/Remove button on flight details page
     "flight_simbrief": 1,             // SimBrief OFP generation button on flight details page
+    "flight_notams": 0,               // Display NOTAMs at flight details page (Disposable Special)
 
     "flights_flags": 1,               // Enable - Disable country flags on flight related pages
     "flights_table": 1,               // Classic table or card view switch for flights searc page

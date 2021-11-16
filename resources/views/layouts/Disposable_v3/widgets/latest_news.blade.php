@@ -7,7 +7,7 @@
       <h5 class="m-1">
         @lang('widgets.latestnews.news')
         @if($news->count() > 1)
-          <i class="fas fa-angle-double-down float-end" title="Show More" data-toggle="collapse" data-target="#news" aria-expanded="false" aria-controls="news"></i>
+          <i class="fas fa-scroll float-end" title="Show More" data-toggle="collapse" data-target="#news" aria-expanded="false" aria-controls="news"></i>
         @else
           <i class="fas fa-book-reader float-end"></i>
         @endif

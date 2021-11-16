@@ -4,6 +4,7 @@
 @php
   $units = isset($units) ? $units : DT_GetUnits();
   $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
+  $DSpecial = isset($DSpecial) ? $DSpecial : DT_CheckModule('DisposableSpecial');
 @endphp
 @section('content')
   <div class="row">
@@ -179,11 +180,17 @@
           @if($DBasic)
             @widget('DBasic::SunriseSunset', ['location' => $flight->dpt_airport_id])
           @endif
+          @if($DSpecial && Theme::getSetting('flight_notams'))
+            @widget('DSpecial::Notams', ['airport' => $flight->dpt_airport_id])
+          @endif
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
           @widget('Weather', ['icao' => $flight->arr_airport_id])
           @if($DBasic)
             @widget('DBasic::SunriseSunset', ['location' => $flight->arr_airport_id])
+          @endif
+          @if($DSpecial && Theme::getSetting('flight_notams'))
+            @widget('DSpecial::Notams', ['airport' => $flight->arr_airport_id])
           @endif
         </div>
         @if(filled($flight->alt_airport_id))
@@ -191,6 +198,9 @@
             @widget('Weather', ['icao' => $flight->alt_airport_id])
             @if($DBasic)
               @widget('DBasic::SunriseSunset', ['location' => $flight->alt_airport_id])
+            @endif
+            @if($DSpecial && Theme::getSetting('flight_notams'))
+              @widget('DSpecial::Notams', ['airport' => $flight->alt_airport_id])
             @endif
           </div>
         @endif
