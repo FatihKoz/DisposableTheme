@@ -124,9 +124,9 @@ There are some options defined in this file for quick settings or for pre-define
     "flights_flags": 1,               // Enable - Disable country flags on flight related pages
     "flights_table": 1,               // Classic table or card view switch for flights searc page
 
-    "pireps_manual": 1,               // Hide or show manual pirep filing buttons
-
     "login_logo": 0,                  // Show bigger VA logo at login page
+
+    "pireps_manual": 1,               // Hide or show manual pirep filing buttons
 
     "roster_userimage": 1,            // Use profile images (or gravatar) at roster
     "roster_ident": 0,                // Use ident at roster (like DSP001 Name P)

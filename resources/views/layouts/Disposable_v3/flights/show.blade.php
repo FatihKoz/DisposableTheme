@@ -131,24 +131,28 @@
         <div class="card-body p-0">
           @include('flights.map')
         </div>
-        <div class="card-footer p-0 table-responsive">
-          <table class="table table-sm table-borderless align-middle mb-0">
-            <tr>
-              <td class="text-start">
-                <i class="fas fa-route m-1"></i>
-                {{ $flight->route }}
-              </td>
-              <td class="text-end">
-                <a
-                  class="btn btn-sm btn-info m-0 mx-1 p-0 px-1"
-                  href="http://skyvector.com/?chart=304&fpl={{ $flight->dpt_airport_id }} {{ $flight->route }} {{ $flight->arr_airport_id }}"
-                  target="_blank">
-                  View at SkyVector
-                </a>
-              </td>
-            </tr>
-          </table>
-        </div>
+        @if(filled($flight->route))
+          <div class="card-footer p-0 table-responsive">
+            <table class="table table-sm table-borderless align-middle mb-0">
+              <tr>
+                <td class="text-start" style="width: 2%;">
+                  <i class="fas fa-route m-1"></i>
+                </td>
+                <td class="text-start">
+                  {{ $flight->route }}
+                </td>
+                <td class="text-end">
+                  <a
+                    class="btn btn-sm btn-info m-0 mx-1 p-0 px-1"
+                    href="http://skyvector.com/?chart=304&fpl={{ $flight->dpt_airport_id }} {{ $flight->route }} {{ $flight->arr_airport_id }}"
+                    target="_blank">
+                    View at SkyVector
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        @endif
       </div>
     </div>
 
