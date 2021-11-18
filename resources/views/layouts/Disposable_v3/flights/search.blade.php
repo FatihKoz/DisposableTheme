@@ -29,6 +29,11 @@
         {{ Form::text('route_code', null, ['class' => 'form-control']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
+        <span class="input-group-text col-4">@lang('flights.flighttime')</span>
+        {{ Form::number('tgt', null, ['class' => 'form-control', 'title' => 'Minimum (mins)']) }}
+        {{ Form::number('tlt', null, ['class' => 'form-control', 'title' => 'Maximum (mins)']) }}
+      </div>
+      <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-4">@lang('common.distance')</span>
         {{ Form::number('dgt', null, ['class' => 'form-control', 'title' => 'Minimum (nm)']) }}
         {{ Form::number('dlt', null, ['class' => 'form-control', 'title' => 'Maximum (nm)']) }}
