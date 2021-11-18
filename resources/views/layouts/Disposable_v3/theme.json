@@ -25,6 +25,7 @@
     "dash_whazzup_vatsim": 0,
     "download_counts": 0,
     "flight_bid": 1,
+    "flight_jumpseat": 1,
     "flight_simbrief": 1,
     "flight_notams": 0,
     "flights_flags": 1,

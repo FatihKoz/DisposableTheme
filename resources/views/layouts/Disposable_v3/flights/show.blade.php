@@ -210,7 +210,10 @@
         @endif
       </div>
       {{-- Generic Buttons --}}
-      <div class="text-center">
+      <div class="text-end">
+        @if($DBasic && Theme::getSetting('flight_jumpseat'))
+          <div class="float-start">@widget('DBasic::JumpSeat', ['dest' => $flight->dpt_airport_id])</div>
+        @endif
         @if(Theme::getSetting('flight_bid'))
           @if(!setting('pilots.only_flights_from_current') || $flight->dpt_airport_id === Auth::user()->curr_airport_id)
             {{-- !!! IMPORTANT NOTE !!! Don't remove the "save_flight" class, It will break the AJAX to save/delete --}}
