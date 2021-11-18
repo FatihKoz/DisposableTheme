@@ -41,53 +41,53 @@
     <table class="table table-sm table-borderless table-striped align-middle mb-0">
       @if($AuthCheck)
         <tr>
-          <td class="text-start" title="Source">
+          <td class="text-start col-4" title="Source">
             <i class="fas fa-laptop mx-1"></i>
             {{ PirepSource::label($pirep->source) }}
           </td>
-          <td class="text-center" title="Score">
+          <td class="text-center col-4" title="Score">
             @if(filled($pirep->score))
               <i class="fas fa-pen-alt mx-1"></i>
               {{ $pirep->score }}
             @endif
           </td>
-          <td class="text-end" title="Landing Rate">
-            @if(filled($pirep->landing_rate))
+          <td class="text-end col-4" title="Landing Rate">
+            @if($pirep->landing_rate != 0)
               {{ number_format($pirep->landing_rate).' ft/min' }}
-              <i class="fas fa-plane-arrival mx-1"></i>
             @endif
+            <i class="fas fa-plane-arrival mx-1"></i>
           </td>
         </tr>
       @endif
       @if($pirep->block_fuel || $pirep->fuel_used)
         <tr>
-          <td class="text-start" title="Block Fuel">
+          <td class="text-start col-4" title="Block Fuel">
             <i class="fas fa-plane-departure mx-1"></i>
             {{ DT_ConvertWeight($pirep->block_fuel, $units['fuel']) }}
           </td>
-          <td class="text-center" title="Fuel Used">
+          <td class="text-center col-4" title="Fuel Used">
             <i class="fas fa-gas-pump mx-1"></i>
             {{ DT_ConvertWeight($pirep->fuel_used, $units['fuel']) }}
           </td>
-          <td class="text-end" title="Remaining Fuel">
+          <td class="text-end col-4" title="Remaining Fuel">
             @if($pirep->block_fuel && $pirep->fuel_used)
               {{ DT_ConvertWeight($pirep->block_fuel - $pirep->fuel_used, $units['fuel']) }}
-              <i class="fas fa-plane-arrival mx-1"></i>
             @endif
+            <i class="fas fa-plane-arrival mx-1"></i>
           </td>
         </tr>
       @endif
       @if($pirep->source != 0 && filled($pirep->created_at) && filled($pirep->submitted_at))
         <tr>
-          <td class="text-start" title="Flight Start">
+          <td class="text-start col-4" title="Flight Start">
             <i class="fas fa-file mx-1"></i>
             {{ $pirep->created_at->format('H:i') }}
           </td>
-          <td class="text-center" title="Duty Time">
+          <td class="text-center col-4" title="Duty Time">
             <i class="fas fa-stopwatch mx-1"></i>
             {{ DT_ConvertMinutes($pirep->created_at->diffInMinutes($pirep->submitted_at), '%2dh %2dm') }}
           </td>
-          <td class="text-end" title="Flight End">
+          <td class="text-end col-4" title="Flight End">
             {{ $pirep->submitted_at->format('H:i') }}
             <i class="fas fa-file-upload mx-1"></i>
           </td>
