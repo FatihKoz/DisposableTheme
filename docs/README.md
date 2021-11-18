@@ -119,6 +119,7 @@ There are some options defined in this file for quick settings or for pre-define
 
     "flight_bid": 1,                  // Bid Add/Remove button on flight details page
     "flight_simbrief": 1,             // SimBrief OFP generation button on flight details page
+    "flight_jumpseat": 0,             // Quick Travel button on flight details page (Disposable Basic)
     "flight_notams": 0,               // Display NOTAMs at flight details page (Disposable Special)
 
     "flights_flags": 1,               // Enable - Disable country flags on flight related pages
@@ -160,6 +161,13 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
-* 16.NOV.21
+18.NOV.21
 
-Initial Release
+* Added Quick Travel button to flight details page (requires Disposable Basic to work)
+* Fixed some minor placing issues at flight and pirep details pages
+* Added missing "login_logo" setting to Theme.json
+* Added min/max time to flight search (requires phpvms 7.0.0-dev+211118.66d83c or later)
+
+16.NOV.21
+
+* Initial Release
