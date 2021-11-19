@@ -57,13 +57,13 @@
             <a class="btn btn-sm btn-success my-1" href="@if(isset($bid)) {{'vmsacars:bid/'.$bid->id}} @else {{'vmsacars:flight/'.$simbrief->flight_id}} @endif">vmsAcars</a>
           @endif
           <a class="btn btn-sm btn-primary my-1" data-bs-toggle="modal" data-bs-target="#ofp-view" href="#">View</a>
-          @if(filled($simbrief->xml->params->static_id) && $user->id == $simbrief->user_id)
+          @if(filled($simbrief->xml->params->static_id) && $user->id == $simbrief->user_id && $simbrief->flight_id)
             <a class="btn btn-sm btn-warning my-1" data-bs-toggle="modal" data-bs-target="#ofp-edit" href="#">Edit</a>
           @endif
           @if($user->id == $simbrief->user_id && $simbrief->flight_id)
             <a class="btn btn-sm btn-danger my-1" href="{{ url(route('frontend.simbrief.generate_new', [$simbrief->id])) }}">Generate New</a>
           @endif
-          @if(!$simbrief->pirep_id && $user->id == $simbrief->user_id && Theme::getSetting('gen_manual_pireps'))
+          @if(!$simbrief->pirep_id && $user->id == $simbrief->user_id && Theme::getSetting('pireps_manual'))
             <a class="btn btn-sm btn-info my-1" href="{{ url(route('frontend.simbrief.prefile', [$simbrief->id])) }}">Manual PIREP</a>
           @endif
         </div>

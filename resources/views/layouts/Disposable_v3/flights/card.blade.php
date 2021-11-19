@@ -163,7 +163,11 @@
             <a href="vmsacars:flight/{{ $flight->id }}" class="btn btn-sm btn-warning m-0 mx-1 p-0 px-1">@lang('disposable.load_acars')</a>
           @endif
           {{-- Manual Pirep --}}
-          <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">@lang('disposable.new_pirep')</a>
+          @if(Theme::getSetting('pireps_manual'))
+            <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">
+              @lang('disposable.new_pirep')
+            </a>
+          @endif
         </div>
       </div>
     </div>

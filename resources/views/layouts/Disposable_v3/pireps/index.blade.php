@@ -9,7 +9,7 @@
 @if(!$pireps->count())
   <div class="alert alert-info mb-1 p-1 px-2 fw-bold">You have no flight reports</div>
   @if(Theme::getSetting('pireps_manual'))
-    <a class="btn btn-sm btn-info m-0 mx-1 p-0 px-1 float-start" href="{{ route('frontend.pireps.create') }}">@lang('pireps.filenewpirep')</a>
+    <a class="btn btn-sm btn-info m-0 mx-1 p-0 px-1 float-start" href="{{ route('frontend.pireps.create') }}">@lang('disposable.new_pirep')</a>
   @endif
 @else
   <div class="row">
@@ -26,7 +26,7 @@
         </div>
         <div class="card-footer p-1 text-end small">
           @if(Theme::getSetting('pireps_manual'))
-            <a class="btn btn-sm btn-info m-0 mx-1 p-0 px-1 float-start" href="{{ route('frontend.pireps.create') }}">@lang('pireps.filenewpirep')</a>
+            <a class="btn btn-sm btn-info m-0 mx-1 p-0 px-1 float-start" href="{{ route('frontend.pireps.create') }}">@lang('disposable.new_pirep')</a>
           @endif
           @if($pireps->count() > 0)
             <b>@lang('disposable.pagination', ['first' => $pireps->firstItem(),'last' => $pireps->lastItem(),'total' =>$pireps->total()])</b>

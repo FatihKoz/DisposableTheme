@@ -41,12 +41,12 @@
           {{-- vmsAcars Load --}}
           @if($acars_plugin)
             @if(isset($saved[$flight->id]))
-              <a href="vmsacars:bid/{{ $saved[$flight->id] }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-warning" title="Load in vmsAcars">
-                <i class="fas fa-file-download"></i>
+              <a href="vmsacars:bid/{{ $saved[$flight->id] }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-warning">
+                <i class="fas fa-file-download" title="Load in vmsAcars"></i>
               </a>
             @else
-              <a href="vmsacars:flight/{{ $flight->id }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-warning" title="Load in vmsAcars">
-                <i class="fas fa-file-download"></i>
+              <a href="vmsacars:flight/{{ $flight->id }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-warning">
+                <i class="fas fa-file-download" title="Load in vmsAcars"></i>
               </a>
             @endif
           @endif
@@ -54,14 +54,14 @@
           @if($simbrief !== false)
             {{-- Show --}}
             @if($flight->simbrief && $flight->simbrief->user_id === $user->id)
-              <a href="{{ route('frontend.simbrief.briefing', $flight->simbrief->id) }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-secondary" title="View SimBrief OFP">
-                <i class="fas fa-file-pdf"></i>
+              <a href="{{ route('frontend.simbrief.briefing', $flight->simbrief->id) }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-secondary">
+                <i class="fas fa-file-pdf"  title="View SimBrief OFP"></i>
               </a>
             @else
               {{-- Create --}}
               @if($simbrief_bids === false || ($simbrief_bids === true && isset($saved[$flight->id])))
-                <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-primary" title="Generate SimBrief OFP">
-                  <i class="fas fa-file-signature"></i>
+                <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-primary">
+                  <i class="fas fa-file-pdf" title="Generate SimBrief OFP"></i>
                 </a>
               @endif
             @endif
@@ -73,6 +73,11 @@
                     type="button" title="@lang('flights.addremovebid')">
               <i class="fas fa-map-marker"></i>
             </button>
+          @endif
+          @if(Theme::getSetting('pireps_manual'))
+            <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">
+              <i class="fas fa-file-upload" title="@lang('disposable.new_pirep')"></i>
+            </a>
           @endif
         </td>
       </tr>
