@@ -165,6 +165,8 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 * Fixed manual pirep sending buttons not following theme settings in some blades
 * Reduced the empty space at login page when logo is enabled
+* Added menu item language/translation definitions
+* Fixed SimBrief NO ALTN display
 
 18.NOV.21
 
