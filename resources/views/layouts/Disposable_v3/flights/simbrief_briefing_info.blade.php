@@ -68,7 +68,7 @@
         <div class="card mb-2 text-center">
           <div class="card-body p-1">
             <h6 class="m-1">
-              @if($simbrief->xml->alternate)
+              @if($simbrief->xml->alternate != '')
                 <span title="{{ $simbrief->xml->alternate->name }}">
                   {{ $simbrief->xml->alternate->icao_code }} / Rwy.{{ $simbrief->xml->alternate->plan_rwy }}
                 </span>

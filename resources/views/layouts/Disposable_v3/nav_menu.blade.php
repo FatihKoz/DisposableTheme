@@ -49,32 +49,32 @@
       <li>
         <a class="dropdown-item" href="{{ route('frontend.pilots.index') }}">
           <i class="fas fa-users {{ $icon_style }}"></i>
-          Roster
+          @lang('disposable.menu_roster')
         </a>
       </li>
       @if($DBasic)
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.airlines') }}">
             <i class="fas fa-hotel {{ $icon_style }}"></i>
-            Airlines
+            @lang('disposable.menu_airlines')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.ranks') }}">
             <i class="fas fa-tags {{ $icon_style }}"></i>
-            Ranks
+            @lang('disposable.menu_ranks')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.awards') }}">
             <i class="fas fa-trophy {{ $icon_style }}"></i>
-            Awards
+            @lang('disposable.menu_awards')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.stats') }}">
             <i class="fas fa-cogs {{ $icon_style }}"></i>
-            Statistics
+            @lang('disposable.menu_stats')
           </a>
         </li>
       @endif
@@ -85,20 +85,20 @@
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="fas fa-paper-plane {{ $icon_style }}"></i>
-      Flight Operations
+      @lang('disposable.menu_fltops')
     </a>
     <ul class="dropdown-menu {{ $border }}" aria-labelledby="offcanvasNavbarDropdown">
       <li>
         <a class="dropdown-item" href="{{ route('frontend.flights.index') }}">
           <i class="fas fa-paper-plane {{ $icon_style }}"></i>
-          Flights
+          @lang('disposable.menu_flights')
         </a>
       </li>
       @if($DSpecial)
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.tours') }}">
             <i class="fas fa-directions {{ $icon_style }}"></i>
-            Tours
+            @lang('disposable.menu_tours')
           </a>
         </li>
       @endif
@@ -106,33 +106,33 @@
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.fleet') }}">
             <i class="fas fa-plane {{ $icon_style }}"></i>
-            Fleet
+            @lang('disposable.menu_fleet')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.hubs') }}">
             <i class="fas fa-house-user {{ $icon_style }}"></i>
-            Hubs
+            @lang('disposable.menu_hubs')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.pireps') }}">
             <i class="fas fa-file-upload {{ $icon_style }}"></i>
-            Pilot Reports
+            @lang('disposable.menu_reports')
           </a>
         </li>
       @endif
       <li>
         <a class="dropdown-item" href="{{ route('frontend.livemap.index') }}">
           <i class="fas fa-map {{ $icon_style }}"></i>
-          Live Flights Map
+          @lang('disposable.menu_mapflt')
         </a>
       </li>
       @if($DBasic)
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.livewx') }}">
             <i class="fas fa-cloud-sun-rain {{ $icon_style }}"></i>
-            Live Weather Map
+            @lang('disposable.menu_mapwx')
           </a>
         </li>
       @endif
@@ -143,7 +143,7 @@
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="fas fa-paperclip {{ $icon_style }}"></i>
-      Docs & Resources
+      @lang('disposable.menu_docs')
     </a>
     <ul class="dropdown-menu {{ $border }}" aria-labelledby="offcanvasNavbarDropdown">
       <li>
@@ -156,7 +156,7 @@
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.news') }}">
             <i class="fas fa-book-open {{ $icon_style }}"></i>
-            News
+            @lang('disposable.menu_news')
           </a>
         </li>
       @endif
@@ -164,20 +164,20 @@
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.notams') }}">
             <i class="fas fa-sticky-note {{ $icon_style }}"></i>
-            NOTAMs
+            @lang('disposable.menu_notams')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.ops_manual') }}">
             <i class="fas fa-book {{ $icon_style }}"></i>
-            Ops Manual
+            @lang('disposable.menu_opsman')
           </a>
         </li>
       @endif
       @foreach($page_links as $page)
         <li>
           <a class="dropdown-item" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank' : '_self' }}">
-            <i class="{{ $page['icon'] }} {{ $icon_style }}"></i>
+            <i class="{{ $page['icon'] ?? 'fas fa-file-alt' }} {{ $icon_style }}"></i>
             {{ $page['name'] }}
           </a>
         </li>
@@ -189,7 +189,7 @@
   @foreach($moduleSvc->getFrontendLinks($logged_in=true) as &$link)
     <li class="nav-item">
       <a class="nav-link" href="{{ url($link['url']) }}">
-        <i class="{{ $link['icon'] }} {{ $icon_style }}"></i>
+        <i class="{{ $link['icon'] ?? 'fas fa-boxes' }} {{ $icon_style }}"></i>
         {{ ($link['title']) }}
       </a>
     </li>
@@ -199,7 +199,7 @@
   @foreach($moduleSvc->getFrontendLinks($logged_in=false) as &$link)
     <li class="nav-item">
       <a class="nav-link" href="{{ url($link['url']) }}">
-        <i class="{{ $link['icon'] }} {{ $icon_style }}"></i>
+        <i class="{{ $link['icon'] ?? 'fas fa-boxes' }} {{ $icon_style }}"></i>
         {{ ($link['title']) }}
       </a>
     </li>
@@ -219,20 +219,20 @@
       <li>
         <a class="dropdown-item" href="{{ route('frontend.profile.index') }}">
           <i class="far fa-id-badge {{ $icon_style }}"></i>
-          Profile
+          @lang('disposable.menu_profile')
         </a>
       </li>
       @if($DBasic && $user)
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.myairline', [$user->airline_id]) }}">
             <i class="fas fa-hotel {{ $icon_style }}"></i>
-            Airline
+            @lang('disposable.menu_company')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.hub', [$user->home_airport_id ?? '']) }}">
             <i class="fas fa-house-user {{ $icon_style }}"></i>
-            Hub
+            @lang('disposable.menu_base')
           </a>
         </li>
       @endif
@@ -240,26 +240,26 @@
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.assignments') }}">
             <i class="fas fa-hourglass-half {{ $icon_style }}"></i>
-            Assignments
+            @lang('disposable.menu_assign')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.freeflight') }}">
             <i class="fas fa-paper-plane {{ $icon_style }}"></i>
-            Free Flight
+            @lang('disposable.menu_myflight')
           </a>
         </li>
       @endif
       <li>
         <a class="dropdown-item" href="{{ route('frontend.flights.bids') }}">
           <i class="fas fa-file-download {{ $icon_style }}"></i>
-          Bids
+          @lang('disposable.menu_bids')
         </a>
       </li>  
       <li>
         <a class="dropdown-item" href="{{ route('frontend.pireps.index') }}">
           <i class="fas fa-file-upload {{ $icon_style }}"></i>
-          PIREPs
+          @lang('disposable.menu_pireps')
         </a>
       </li>
     </ul>
@@ -295,9 +295,25 @@
   <li class="nav-item">
     <a class="nav-link" href="{{ route('frontend.pilots.index') }}">
       <i class="fas fa-users {{ $icon_style }}"></i>
-      Roster
+      @lang('disposable.menu_roster')
     </a>
   </li>
+
+  <li>
+    <a class="nav-link" href="{{ route('frontend.livemap.index') }}">
+      <i class="fas fa-map {{ $icon_style }}"></i>
+      @lang('disposable.menu_mapflt')
+    </a>
+  </li>
+
+  @foreach($page_links as $page)
+    <li>
+      <a class="nav-link" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank' : '_self' }}">
+        <i class="{{ $page['icon'] ?? 'fas fa-file-alt' }} {{ $icon_style }}"></i>
+        {{ $page['name'] }}
+      </a>
+    </li>
+  @endforeach
 
   <li class="nav-item">
     <a class="nav-link" href="{{ url('/register') }}">

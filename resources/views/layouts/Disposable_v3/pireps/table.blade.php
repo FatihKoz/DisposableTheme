@@ -10,9 +10,9 @@
       <th>@lang('common.arrival')</th>
       <th class="text-center">@lang('common.aircraft')</th>
       <th class="text-center">@lang('flights.flighttime')</th>
-      <th class="text-center">Fuel Used</th>
-      <th class="text-center">Score</th>
-      <th class="text-center">Landing Rate</th>
+      <th class="text-center">@lang('disposable.fused')</th>
+      <th class="text-center">@lang('disposable.score')</th>
+      <th class="text-center">@lang('disposable.lrate')</th>
       <th class="text-end">@lang('pireps.submitted')</th>
       <th class="text-end">@lang('common.status')</th>
     </tr>

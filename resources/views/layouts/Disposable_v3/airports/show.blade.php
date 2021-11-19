@@ -76,19 +76,27 @@
       {{-- Show Pills For Map/WX/Downloads--}}
       <ul class="nav nav-pills nav-justified mb-2" id="pills-tab" role="tablist">
         <li class="nav-item mx-1" role="presentation">
-          <a class="nav-link active pt-1 pb-1" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map" aria-selected="true">@lang('disposable.map')</a>
+          <a class="nav-link active pt-1 pb-1" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map" aria-selected="true">
+            @lang('disposable.map')
+          </a>
         </li>
         @if($DBasic)
           <li class="nav-item mx-1" role="presentation">
-            <a class="nav-link pt-1 pb-1" id="pills-wxmap-tab" data-toggle="pill" href="#pills-wxmap" role="tab" aria-controls="pills-wxmap" aria-selected="true">WX @lang('disposable.map')</a>
+            <a class="nav-link pt-1 pb-1" id="pills-wxmap-tab" data-toggle="pill" href="#pills-wxmap" role="tab" aria-controls="pills-wxmap" aria-selected="true">
+              WX @lang('disposable.map')
+            </a>
           </li>
         @endif
         <li class="nav-item mx-1" role="presentation">
-          <a class="nav-link pt-1 pb-1" id="pills-weather-tab" data-toggle="pill" href="#pills-weather" role="tab" aria-controls="pills-weather" aria-selected="false">@lang('disposable.weather')</a>
+          <a class="nav-link pt-1 pb-1" id="pills-weather-tab" data-toggle="pill" href="#pills-weather" role="tab" aria-controls="pills-weather" aria-selected="false">
+            @lang('disposable.weather')
+          </a>
         </li>
         @if(count($airport->files) > 0 && Auth::check())
           <li class="nav-item mx-1" role="presentation">
-            <a class="nav-link pt-1 pb-1" id="pills-files-tab" data-toggle="pill" href="#pills-files" role="tab" aria-controls="pills-files" aria-selected="false">{{ trans_choice('common.download', 2) }}</a>
+            <a class="nav-link pt-1 pb-1" id="pills-files-tab" data-toggle="pill" href="#pills-files" role="tab" aria-controls="pills-files" aria-selected="false">
+              {{ trans_choice('common.download', 2) }}
+            </a>
           </li>
         @endif
       </ul>

@@ -20,6 +20,7 @@
         @lang('common.airline')
       </button>
     </div>
+
     {{-- Aircraft Downloads --}}
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade" id="aircraft" role="tabpanel" aria-labelledby="aircraft-tab">
