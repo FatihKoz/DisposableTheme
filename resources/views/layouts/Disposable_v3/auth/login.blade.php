@@ -2,7 +2,11 @@
 @section('title', __('common.login'))
 
 @section('content')
-  <div class="clearfix" style="height: 30vh;"></div>
+  @if(Theme::getSetting('login_logo'))
+    <div class="clearfix" style="height: 2vh;"></div>
+  @else 
+    <div class="clearfix" style="height: 30vh;"></div>
+  @endif
   <div class="row mt-2">
     <div class="col-4 mx-auto content-center">
       {{ Form::open(['url' => url('/login'), 'method' => 'post', 'class' => 'form']) }}
