@@ -161,6 +161,11 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+19.NOV.21
+
+* Fixed manual pirep sending buttons not following theme settings in some blades
+* Reduced the empty space at login page when logo is enabled
+
 18.NOV.21
 
 * Added Quick Travel button to flight details page (requires Disposable Basic to work)
