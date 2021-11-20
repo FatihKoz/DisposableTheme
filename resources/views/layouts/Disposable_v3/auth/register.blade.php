@@ -58,7 +58,7 @@
 
             <div class="input-group input-group-sm mb-1">
               <span class="input-group-text col-2" id="password_confirmation">@lang('passwords.confirm')</span>
-              {{ Form::password('password', ['class' => 'form-control']) }}
+              {{ Form::password('password_confirmation', ['class' => 'form-control']) }}
             </div>
 
             @if($userFields)
