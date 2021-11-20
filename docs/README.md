@@ -163,7 +163,7 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 20.NOV.21
 
-* Fix for new user registration (password confirmation field)
+* Fix new user registration (password confirmation field)
 
 19.NOV.21
 
