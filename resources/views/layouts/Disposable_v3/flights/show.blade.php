@@ -89,12 +89,12 @@
           @if($flight->subfleets->count() > 0)
             <div class="card-footer p-1">
               <i class="fas fa-link me-1" title="Subfleets"></i>
-              @foreach($flight->subfleets as $sf)
+              @foreach($flight->subfleets->sortBy('name', SORT_NATURAL) as $sf)
                 @if(!$loop->first) &bull; @endif
                 @if($DBasic)
-                  <a href="{{ route('DBasic.subfleet', [$sf->type]) }}">{{ $sf->name.' | '.optional($sf->airline)->icao }}</a>
+                  <a href="{{ route('DBasic.subfleet', [$sf->type]) }}">{{ $sf->name.' ('.optional($sf->airline)->icao.')' }}</a>
                 @else
-                  {{ $sf->name.' | '.optional($sf->airline)->icao }}
+                  {{ $sf->name.' ('.optional($sf->airline)->icao.')' }}
                 @endif
               @endforeach
             </div>

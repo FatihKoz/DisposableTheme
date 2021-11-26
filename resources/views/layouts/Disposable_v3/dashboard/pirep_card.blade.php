@@ -48,7 +48,7 @@
       @if($pirep->comments->count() > 0)
         @foreach($pirep->comments as $comment)
           <tr>
-            <td colspan="7">{!! $comment->comment !!}</td>
+            <td colspan="7">&bull; {!! $comment->comment !!}</td>
           </tr>
         @endforeach
       @endif

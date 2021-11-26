@@ -10,6 +10,7 @@
     <div class="form-group">
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-4">@lang('common.airline')</span>
+        @php asort($airlines, SORT_NATURAL); @endphp
         {{ Form::select('airline_id', $airlines, null , ['class' => 'form-control select2']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
@@ -48,6 +49,7 @@
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-4">@lang('common.subfleet')</span>
+        @php asort($subfleets, SORT_NATURAL); @endphp
         {{ Form::select('subfleet_id', $subfleets, null , ['class' => 'form-control select2']) }}
       </div>
     </div>

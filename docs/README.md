@@ -161,6 +161,11 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+26.NOV.21
+
+* Added natural sort for flight search > dropdowns and flight > subfleets.
+* Italian translation (Thanks to Fabietto for his support)
+
 20.NOV.21
 
 * Fix new user registration (password confirmation field)
