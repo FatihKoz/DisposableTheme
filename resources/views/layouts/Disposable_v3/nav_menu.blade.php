@@ -262,6 +262,14 @@
           @lang('disposable.menu_pireps')
         </a>
       </li>
+      @if($DBasic && Theme::getSetting('gen_stable_approach'))
+        <li>
+          <a class="dropdown-item" href="{{ route('DBasic.stable') }}">
+            <i class="fas fa-file-upload {{ $icon_style }}"></i>
+            Stable Approach
+          </a>
+        </li>
+      @endif
     </ul>
   </li>
 
