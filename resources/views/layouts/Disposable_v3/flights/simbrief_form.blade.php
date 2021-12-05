@@ -5,6 +5,7 @@
   $units = isset($units) ? $units : DT_GetUnits();
   $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
   $Addon_Specs = ($DBasic && Theme::getSetting('simbrief_specs')) ? DB_GetSpecs($aircraft, true) : null;
+  $Check_SSL = (stripos(config('app_url'), 'https://') !== false) ? true : false;
 @endphp
 @section('content')
   <form id="sbapiform">
@@ -107,9 +108,11 @@
           <div class="card-body p-1">
             <div class="row mb-1">
               <div class="col">
-                <input name="orig" type="hidden" value="{{ $flight->dpt_airport_id }}">
+                <input name="orig" type="hidden" value="{{ $flight->dpt_airport_id }}"> 
                 <div class="input-group input-group-sm">
-                  <span class="input-group-text"><i class="fas fa-plane-departure" title="Departure"></i></span>
+                  @if(!Theme::getSetting('simbrief_taxitimes'))
+                    <span class="input-group-text"><i class="fas fa-plane-departure" title="Departure"></i></span>
+                  @endif
                   <input id="dorig" type="text" class="form-control" value="{{ $flight->dpt_airport_id }}" disabled>
                   @if($DBasic && Theme::getSetting('simbrief_runways'))
                     <span class="input-group-text"><i class="fas fa-road" title="Departure Runway"></i></span>
@@ -122,12 +125,22 @@
                       </select>
                     </div>
                   @endif
+                  @if($DBasic && Theme::getSetting('simbrief_taxitimes'))
+                    <span class="input-group-text"><i class="fas fa-clock" title="Departure Taxi Time"></i></span>
+                    <select id="taxiout" name="taxiout" class="form-control form-control-sm">
+                      @for ($i = 1; $i < 30; $i++)
+                        <option value="{{ $i }}" @if($i == DB_AvgTaxiTime($flight->dpt_airport_id, 'out', 10)) selected @endif>{{ $i }} min</option>
+                      @endfor
+                    </select>
+                  @endif
                 </div>
               </div>
               <div class="col">
                 <input name="dest" type="hidden" value="{{ $flight->arr_airport_id }}">
                 <div class="input-group input-group-sm">
-                  <span class="input-group-text"><i class="fas fa-plane-arrival" title="Arrival"></i></span>
+                  @if(!Theme::getSetting('simbrief_taxitimes'))
+                    <span class="input-group-text"><i class="fas fa-plane-arrival" title="Arrival"></i></span>
+                  @endif
                   <input id="ddest" type="text" class="form-control" value="{{ $flight->arr_airport_id }}" disabled>
                   @if($DBasic && Theme::getSetting('simbrief_runways'))
                     <span class="input-group-text"><i class="fas fa-road" title="Arrival Runway"></i></span>
@@ -139,6 +152,14 @@
                         @endforeach
                       </select>
                     </div>
+                  @endif
+                  @if($DBasic && Theme::getSetting('simbrief_taxitimes'))
+                    <span class="input-group-text"><i class="fas fa-clock" title="Arrival Taxi Time"></i></span>
+                    <select id="taxiin" name="taxiin" class="form-control form-control-sm">
+                      @for ($i = 1; $i < 30; $i++)
+                        <option value="{{ $i }}" @if($i == DB_AvgTaxiTime($flight->arr_airport_id, 'in', 5)) selected @endif>{{ $i }} min</option>
+                      @endfor
+                    </select>
                   @endif
                 </div>
               </div>
@@ -162,7 +183,11 @@
                   <span class="input-group-text"><i class="fas fa-route" title="Route"></i></span>
                   <input name="route" type="text" class="form-control" value="{{ $flight->route }}">
                   @if(Theme::getSetting('simbrief_rfinder'))
-                    <button id="rfinder" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#rfinderModal">RouteFinder</button>
+                    @if($Check_SSL)
+                      <button id="rfinder" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#rfinderModal">RouteFinder</button>
+                    @else 
+                      <a href="http://rfinder.asalink.net/free" target="_blank" class="btn btn-sm btn-secondary">RouteFinder</a>
+                    @endif
                   @endif
                 </div>
               </div>
