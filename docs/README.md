@@ -8,8 +8,8 @@ phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)
 * Bootstrap version changed from v4.x to v5.x
 * Theme helpers logic changed and now can be customized by duplication as per your needs. Theme no longer uses other Disposable addon helpers.
 * Theme is NOT compatible with older seperate Disposable addons, it is designed to be fully compatible with Disposable v3 series addons (Basic and Special as of date)
-* Theme is NOT compatible with beta4 or earlier development builds of phpVMS v7 prior to 09.NOV.21
-* Minimum required phpVMS v7 version is `7.0.0-dev+211109.4e7149`
+* Theme is NOT compatible with beta4 or earlier development builds of phpVMS v7 prior to 30.NOV.21
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211130.c45d52`
 
 ## Installation
 
@@ -104,6 +104,7 @@ There are some options defined in this file for quick settings or for pre-define
     "gen_map_fleet": 1,               // Map Widget for fleet (Disposable Basic)
     "gen_darkmode": 0,                // Enable - Disable dark mode switch
     "gen_nicescroll": 0,              // Enable - Disable nice scroll (kills page performance and has issues!)
+    "gen_stable_approach": 0,         // Enable - Disable Stable Approach plugin support (not active yet)
     
     "home_disable": 0,                // Disable home (landing) page for quests
     "home_ivao_logo": 0,              // Home page IVAO logo (with link)
@@ -123,7 +124,7 @@ There are some options defined in this file for quick settings or for pre-define
     "flight_notams": 0,               // Display NOTAMs at flight details page (Disposable Special)
 
     "flights_flags": 1,               // Enable - Disable country flags on flight related pages
-    "flights_table": 1,               // Classic table or card view switch for flights searc page
+    "flights_table": 1,               // Classic table or card view switch for flights search page
 
     "login_logo": 0,                  // Show bigger VA logo at login page
 
@@ -142,6 +143,7 @@ There are some options defined in this file for quick settings or for pre-define
     "simbrief_raw_wx": 1,             // Raw wx display at SimBrief form
     "simbrief_rfinder": 1,            // RouteFinder modal at SimBrief form
     "simbrief_runways": 1,            // Runway selection at SimBrief form (Disposable Basic)
+    "simbrief_taxitimes": 0,          // Taxi Times droddown for Dep - Arrival Airports (with averages, Disposable Basic)
     "simbrief_rvr": "500",            // SimBrief ATC Flight plan RVR value
     "simbrief_rmk": "Disposable VA",  // SimBrief ATC Flight plan remark field addition (like RMK/TCAS Disposable VA)
     "simbrief_crew": 1,               // SimBrief Crew names at SimBrief summary page
@@ -160,6 +162,13 @@ As per the license, **theme name should be always visible in all pages**. Editin
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
+
+05.DEC.21
+
+* Added "Type Ratings" at user profile page (requires phpVms 7.0.0-dev+211130.c45d52 or later)
+* Added Taxi Time selection dropdowns to SimBrief form (like the old theme, needs Disposable Basic)
+* Changed the logic of "Route Finder" setting, on SSL enabled servers it will be a link, non-SSL servers will have a modal  
+  (Route Finder change is related to recent browser changes blocking non-secure content in secure pages)
 
 26.NOV.21
 
