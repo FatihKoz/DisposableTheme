@@ -117,7 +117,7 @@
               <span class="float-end mb-0">
                 @widget('DBasic::Map', ['source' => 'user'])
               </span>
-            @endif            
+            @endif
           </div>
         @endif
       </div>
@@ -127,6 +127,13 @@
           <li class="nav-item mx-1" role="presentation">
             <button class="nav-link p-0 px-1" id="profile-tab" data-bs-toggle="pill" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">
               Profile Details</button>
+          </li>
+        @endif
+        @if($user->typeratings->count() > 0)
+          <li class="nav-item mx-1" role="presentation">
+            <button class="nav-link p-0 px-1" id="typeratings-tab" data-bs-toggle="pill" data-bs-target="#typeratings" type="button" role="tab" aria-controls="typeratingss" aria-selected="false">
+              Type Ratings
+            </button>
           </li>
         @endif
         @if(filled($user->awards))
@@ -158,7 +165,7 @@
                   title="{{ optional($user->current_airport)->name ?? optional($user->home_airport)->name }}">
                   {{ $user->curr_airport_id ?? $user->home_airport_id }}
                 </a>
-              @else 
+              @else
                --
               @endif
             </div>
@@ -174,7 +181,7 @@
             <div class="card-body p-2">
               @if($user->last_pirep)
                 {{ $user->last_pirep->submitted_at->diffForHumans() }}
-              @else 
+              @else
                 --
               @endif
             </div>
@@ -251,6 +258,11 @@
     @if($Auth_ID)
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         @include('profile.user_fields')
+      </div>
+    @endif
+    @if($user->typeratings->count() > 0)
+      <div class="tab-pane fade" id="typeratings" role="tabpanel" aria-labelledby="typeratings-tab">
+        @include('profile.user_typeratings')
       </div>
     @endif
     @if(filled($user->awards))
