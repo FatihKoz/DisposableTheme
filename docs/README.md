@@ -8,8 +8,8 @@ phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)
 * Bootstrap version changed from v4.x to v5.x
 * Theme helpers logic changed and now can be customized by duplication as per your needs. Theme no longer uses other Disposable addon helpers.
 * Theme is NOT compatible with older seperate Disposable addons, it is designed to be fully compatible with Disposable v3 series addons (Basic and Special as of date)
-* Theme is NOT compatible with beta4 or earlier development builds of phpVMS v7 prior to 30.NOV.21
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211130.c45d52`
+* Theme is NOT compatible with beta4 or earlier development builds of phpVMS v7 prior to 14.DEC.21
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0`
 
 ## Installation
 
@@ -162,6 +162,10 @@ As per the license, **theme name should be always visible in all pages**. Editin
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
+
+14.DEC.21
+
+* Update Live Map Widget blade (added refresh interval setting)
 
 05.DEC.21
 
