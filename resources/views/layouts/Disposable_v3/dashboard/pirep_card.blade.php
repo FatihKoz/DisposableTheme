@@ -14,6 +14,9 @@
         <th class="text-center">@lang('common.aircraft')</th>
         <th class="text-center">@lang('disposable.score')</th>
         <th class="text-center">@lang('disposable.lrate')</th>
+        @if($DBasic && Theme::getSetting('gen_stable_approach'))
+          <th class="text-center">FDM Result</th>
+        @endif
         <th class="text-end">@lang('common.state')</th>
       </tr>
       <tr>
@@ -41,6 +44,11 @@
             {{ $pirep->landing_rate.' ft/min' }}
           @endif
         </td>
+        @if($DBasic && Theme::getSetting('gen_stable_approach'))
+          <td class="text-center">
+            @widget('DBasic::StableApproach', ['pirep' => $pirep])
+          </td>
+        @endif
         <td class="text-end">
           {!! DT_PirepState($pirep, 'badge') !!}
         </td>
@@ -48,7 +56,7 @@
       @if($pirep->comments->count() > 0)
         @foreach($pirep->comments as $comment)
           <tr>
-            <td colspan="7">&bull; {!! $comment->comment !!}</td>
+            <td @if($DBasic && Theme::getSetting('gen_stable_approach')) colspan="8" @else colspan="7" @endif>&bull; {!! $comment->comment !!}</td>
           </tr>
         @endforeach
       @endif

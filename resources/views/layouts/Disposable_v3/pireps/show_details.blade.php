@@ -103,12 +103,36 @@
       @endif
     </table>
   </div>
+  <div class="card-footer p-1 text-center">
+    <div class="float-start">
+      {!! DT_PirepStatus($pirep) !!}
+      {!! DT_PirepState($pirep) !!}
+      @if($DBasic && Theme::getSetting('gen_stable_approach'))
+        @widget('DBasic::StableApproach', ['pirep' => $pirep])
+      @endif
+      @if($pirep->comments->count() > 0)
+        <span class="badge bg-info text-black">Check Comments</span>
+      @endif
+    </div>
+    @if(!empty($pirep->simbrief))
+      <div class="float-end">
+        <a class="badge bg-secondary text-black" href="{{ route('frontend.simbrief.briefing', $pirep->simbrief->id) }}" target="_blank">
+          SimBrief Briefing
+        </a>
+        <span type="button" class="badge bg-primary text-black" data-bs-toggle="modal" data-bs-target="#OFP_Modal">
+          SimBrief OFP
+        </span>
+      </div>
+    @endif
+  </div>
+  {{--}}
   <div class="card-footer p-0 table-responsive">
     <table class="table table-sm table-borderless table-striped align-middle mb-0">
       <tr>
         <td class="text-start">
           {!! DT_PirepStatus($pirep) !!}
           {!! DT_PirepState($pirep) !!}
+          @widget('DBasic::StableApproach', ['pirep' => $pirep, 'type' => 'badge'])
         </td>
         @if($pirep->comments->count() > 0)
           <td class="text-center">
@@ -128,4 +152,5 @@
       </tr>
     </table>
   </div>
+  {{--}}
 </div>
