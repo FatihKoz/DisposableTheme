@@ -104,7 +104,7 @@ There are some options defined in this file for quick settings or for pre-define
     "gen_map_fleet": 1,               // Map Widget for fleet (Disposable Basic)
     "gen_darkmode": 0,                // Enable - Disable dark mode switch
     "gen_nicescroll": 0,              // Enable - Disable nice scroll (kills page performance and has issues!)
-    "gen_stable_approach": 0,         // Enable - Disable Stable Approach plugin support (not active yet)
+    "gen_stable_approach": 0,         // Enable - Disable Stable Approach plugin support
     
     "home_disable": 0,                // Disable home (landing) page for quests
     "home_ivao_logo": 0,              // Home page IVAO logo (with link)
@@ -162,6 +162,10 @@ As per the license, **theme name should be always visible in all pages**. Editin
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
+
+18.DEC.21
+
+* Stable Approach Plugin support (needs Disposable Basic and Stable Approach Plugin)
 
 14.DEC.21
 

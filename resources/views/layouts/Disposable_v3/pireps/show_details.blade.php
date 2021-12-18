@@ -111,7 +111,7 @@
         @widget('DBasic::StableApproach', ['pirep' => $pirep])
       @endif
       @if($pirep->comments->count() > 0)
-        <span class="badge bg-secondary text-black">Check Comments</span>
+        <span class="badge bg-info text-black">Check Comments</span>
       @endif
     </div>
     @if(!empty($pirep->simbrief))

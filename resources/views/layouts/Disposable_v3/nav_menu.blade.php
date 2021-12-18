@@ -266,7 +266,7 @@
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.stable') }}">
             <i class="fas fa-file-upload {{ $icon_style }}"></i>
-            Stable Approach
+            FDM Reports
           </a>
         </li>
       @endif
