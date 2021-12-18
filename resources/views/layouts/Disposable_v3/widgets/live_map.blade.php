@@ -104,6 +104,7 @@ and update() call is made
     phpvms.map.render_live_map({
       center: ['{{ $center[0] }}', '{{ $center[1] }}'],
       zoom: '{{ $zoom }}',
+      refresh_interval: {{ setting('acars.update_interval', 60) }},
       aircraft_icon: '{!! public_asset('/assets/img/acars/aircraft.png') !!}',
       units: '{{ setting('units.distance') }}',
       leafletOptions: {
