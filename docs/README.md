@@ -165,7 +165,8 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 18.DEC.21
 
-* Stable Approach Plugin support (needs Disposable Basic and Stable Approach Plugin)
+* Stable Approach Plugin support  
+  *Needs minimum Disposable Basic v3.0.6 and Stable Approach Plugin 1.2.0-beta.3*
 
 14.DEC.21
 
