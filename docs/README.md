@@ -157,11 +157,18 @@ There are some options defined in this file for quick settings or for pre-define
 
 ## Footer Positioning and Content
 
-As per the license, **theme name should be always visible in all pages**. Editing the footer is still possible but `Disposable` link SHOULD BE always visible.
+As per the license, **theme name should be always visible in all pages**. Editing the footer is still possible but `Disposable` link **SHOULD BE** always visible.
 
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
+
+05.JAN.22
+
+* Fixed the ordering of Type Ratings (it is now alphabetically sorted at user profile)
+* Added Stable Approach Plugin's FDM Results to personal pireps page
+* Added some new stats to user profile page (for FDM and Monthly Flight Assignments)  
+  *Both additions need minimum Disposable Basic v3.0.9 and Stable Approach Plugin*
 
 18.DEC.21
 
@@ -177,7 +184,7 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 * Added "Type Ratings" at user profile page (requires phpVms 7.0.0-dev+211130.c45d52 or later)
 * Added Taxi Time selection dropdowns to SimBrief form (like the old theme, needs Disposable Basic)
 * Changed the logic of "Route Finder" setting, on SSL enabled servers it will be a link, non-SSL servers will have a modal  
-  (Route Finder change is related to recent browser changes blocking non-secure content in secure pages)
+  *Route Finder change is related to recent browser changes blocking non-secure content in secure pages*
 
 26.NOV.21
 

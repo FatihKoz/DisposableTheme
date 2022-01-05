@@ -237,7 +237,9 @@
           </div>
           <div class="col">
             @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avglanding'])
-            @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'fdm'])
+            @if(Theme::getSetting('gen_stable_approach'))
+              @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'fdm'])
+            @endif
           </div>
           <div class="col">
             @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avgtime'])
