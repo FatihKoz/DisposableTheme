@@ -237,9 +237,11 @@
           </div>
           <div class="col">
             @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avglanding'])
+            @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'fdm'])
           </div>
           <div class="col">
             @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avgtime'])
+            @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'assignment'])
           </div>
           <div class="col">
             @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avgdistance'])

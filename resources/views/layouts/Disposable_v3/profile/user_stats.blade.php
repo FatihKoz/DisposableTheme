@@ -15,6 +15,11 @@
   <div class="col">
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avglanding', 'period' => 15])
   </div>
+  @if(Theme::getSetting('gen_stable_approach'))
+    <div class="col">
+      @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'fdm', 'period' => 15])
+    </div>
+  @endif
   <div class="col">
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avgscore', 'period' => 15])
   </div>
@@ -26,6 +31,11 @@
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'totflight', 'period' => 'currentm'])
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'totflight', 'period' => 'lastm'])
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'totflight', 'period' => 'prevm'])
+  </div>
+  <div class="col">
+    @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'assignment', 'period' => 'currentm'])
+    @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'assignment', 'period' => 'lastm'])
+    @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'assignment', 'period' => 'prevm'])
   </div>
   <div class="col">
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'tottime', 'period' => 'currentm'])
@@ -47,6 +57,13 @@
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avglanding', 'period' => 'lastm'])
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avglanding', 'period' => 'prevm'])
   </div>
+  @if(Theme::getSetting('gen_stable_approach'))
+    <div class="col">
+      @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'fdm', 'period' => 'currentm'])
+      @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'fdm', 'period' => 'lastm'])
+      @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'fdm', 'period' => 'prevm'])
+    </div>
+  @endif
   <div class="col">
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avgscore', 'period' => 'currentm'])
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avgscore', 'period' => 'lastm'])

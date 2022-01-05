@@ -1,5 +1,5 @@
 <div class="row row-cols-6">
-  @foreach($user->typeratings as $tr)
+  @foreach($user->typeratings->sortBy('type', SORT_NATURAL) as $tr)
     <div class="col">
       <div class="card text-center mb-2">
         <div class="card-body p-2">
