@@ -50,12 +50,15 @@
         </td>
         <td class="text-end">
           @if(filled($pirep->submitted_at))
-            {{ $pirep->submitted_at->diffForHumans() }}
+            {{ $pirep->submitted_at->diffForHumans().' | '.$pirep->submitted_at->format('d.M') }}
           @endif
         </td>
         <td class="text-end">
           @if(!$pirep->read_only)
             <a href="{{ route('frontend.pireps.edit', [$pirep->id]) }}" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">@lang('common.edit')</a>
+          @endif
+          @if($DBasic && Theme::getSetting('gen_stable_approach'))
+            @widget('DBasic::StableApproach', ['pirep' => $pirep])
           @endif
           {!! DT_PirepState($pirep) !!}
         </td>
