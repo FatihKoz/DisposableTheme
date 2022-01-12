@@ -163,6 +163,11 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+12.JAN.22
+
+* Fixed the error at user profile (caused by Monthy Flight Assignment stats)
+  *Disposable Special module needs to be installed and enabled for it to work*
+
 05.JAN.22
 
 * Fixed the ordering of Type Ratings (it is now alphabetically sorted at user profile)

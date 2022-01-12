@@ -32,11 +32,13 @@
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'totflight', 'period' => 'lastm'])
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'totflight', 'period' => 'prevm'])
   </div>
-  <div class="col">
-    @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'assignment', 'period' => 'currentm'])
-    @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'assignment', 'period' => 'lastm'])
-    @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'assignment', 'period' => 'prevm'])
-  </div>
+  @if($DSpecial)
+    <div class="col">
+      @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'assignment', 'period' => 'currentm'])
+      @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'assignment', 'period' => 'lastm'])
+      @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'assignment', 'period' => 'prevm'])
+    </div>
+  @endif
   <div class="col">
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'tottime', 'period' => 'currentm'])
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'tottime', 'period' => 'lastm'])
