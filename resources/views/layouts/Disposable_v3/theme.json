@@ -7,6 +7,7 @@
     "gen_ivao_logo": 1,
     "gen_ivao_field": "IVAO",
     "gen_ivao_vaid": "",
+    "gen_ivao_icao": "",
     "gen_vatsim_logo": 1,
     "gen_vatsim_field": "VATSIM",
     "gen_discord_invite": "",

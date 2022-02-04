@@ -95,7 +95,8 @@ There are some options defined in this file for quick settings or for pre-define
     "gen_utc_clock": 1,               // Enable - Disable local and utc clock display
     "gen_ivao_logo": 1,               // IVAO logo placed on all pages 
     "gen_ivao_field": "IVAO",         // Your phpvms custom profile field name defined for IVAO ID's 
-    "gen_ivao_vaid": "",              // Your IVAO Member VA ID (only changes the logo at the moment)
+    "gen_ivao_vaid": "",              // Your IVAO Member VA ID (will be used for VA System reports)
+    "gen_ivao_icao": "",              // Your IVAO Approved VA ICAO code (will be used for VA System reports)
     "gen_vatsim_logo": 1,             // VATSIM logo placed on all pages
     "gen_vatsim_field": "VATSIM",     // Your phpvms custom profile field name defined for VATSIM CID's
     "gen_discord_invite": "",         // Your static discord invite link (get only the last part like 4fkDHiNv )
@@ -162,6 +163,10 @@ As per the license, **theme name should be always visible in all pages**. Editin
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
+
+04.FEB.22
+
+* Added French translation (Thanks to Jbaltazar67, from phpVMS Forum)
 
 12.JAN.22
 
