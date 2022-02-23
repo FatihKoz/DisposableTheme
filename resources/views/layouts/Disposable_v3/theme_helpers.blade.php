@@ -457,6 +457,77 @@
     }
   }
 
+  // Prepare IVAO VA System Report
+  // Return array
+  if (!function_exists('DT_PrepareIVAO_Report')) {
+    function DT_PrepareIVAO_Report($pirep = null)
+    {
+      // VA Details
+      $vasys['Id'] = Theme::getSetting('gen_ivao_vaid');
+      $vasys['VA_ICAO'] = Theme::getSetting('gen_ivao_icao');
+
+      // User Details
+      $vasys['PersonId'] = optional($pirep->user->fields->firstWhere('name', Theme::getSetting('gen_ivao_field')))->value;
+
+      if (!filled($vasys['PersonId'])) {
+        return [];
+      }
+
+      // Get Units
+      $units = DT_GetUnits();
+
+      // Pirep Details
+      $vasys['Type'] = 'I'; // I = IFR, V = VFR, S = SVFR
+      $vasys['TasCruise'] = '410'; // Not possible to calculate it without indicated/calibrated airspeed and ISA Deviation!
+      $vasys['Flight_Number'] = $pirep->airline->code.$pirep->flight_number;
+      $vasys['Aircraft'] = $pirep->aircraft->icao;
+      $vasys['DepAirport'] = $pirep->dpt_airport_id;
+      $vasys['LandAirport'] = $pirep->arr_airport_id;
+      $vasys['Distance'] = round($pirep->distance);
+      $vasys['Altitude'] = $pirep->level;
+      $vasys['DateDay'] = $pirep->created_at->format('d');
+      $vasys['DateMonth'] = $pirep->created_at->format('m');
+      $vasys['DateYear'] = $pirep->created_at->format('Y');
+
+      // Actual Times (From Acars Fields)
+      $time_takeoff = optional($pirep->fields->where('slug', 'takeoff-time-real')->first())->value;
+      $time_landing = optional($pirep->fields->where('slug', 'landing-time-real')->first())->value;
+
+      $vasys['TakeOff'] = filled($time_takeoff) ? true : false;
+      $vasys['Landing'] = filled($time_landing) ? true : false;
+
+      $vasys['DepTime'] = filled($time_takeoff) ? Carbon::parse($time_takeoff)->format('H') : null;
+      $vasys['ActDepTime'] = filled($time_takeoff) ? Carbon::parse($time_takeoff)->format('i') : null;
+      $vasys['Land_Hour'] = filled($time_landing) ? Carbon::parse($time_landing)->format('H') : null;
+      $vasys['Land_Minute'] = filled($time_landing) ? Carbon::parse($time_landing)->format('i') : null;
+
+      // SimBrief Based Details (Fallback to Pirep)
+      if (filled($pirep->simbrief)) {
+        $vasys['SimBrief'] = true;
+        $vasys['Callsign'] = substr($pirep->simbrief->xml->atc->callsign, 3, 4);
+        $vasys['DestAirport'] = $pirep->simbrief->xml->destination->icao_code;
+        $vasys['AltAirport'] = $pirep->simbrief->xml->alternate->icao_code;
+        $vasys['Route'] = $pirep->simbrief->xml->general->route_ifps;
+      } else {
+        $vasys['SimBrief'] = false;
+        $vasys['Callsign'] = substr($pirep->user->ident, 3, 4);
+        $vasys['DestAirport'] = $pirep->flight->arr_airport_id;
+        $vasys['AltAirport'] = filled($pirep->flight->alt_airport_id) ? $pirep->flight->alt_airport_id : 'NONE';
+        $vasys['Route'] = $pirep->route;
+      }
+      // Fuel Conversion
+      if ($units['fuel'] === 'kg') {
+        $vasys['Fuel_Qty'] = round($pirep->fuel_used / 2.20462262185);
+        $vasys['Fuel_Type'] = 'K';
+      } else {
+        $vasys['Fuel_Qty'] = round($pirep->fuel_used);
+        $vasys['Fuel_Type'] = 'L';
+      }
+
+      return $vasys;
+    }
+  }
+
   // Round Numeric Values (conversion part for SimBrief usage mostly)
   // Return numeric
   if (!function_exists('DT_Round')) {
