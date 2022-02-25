@@ -15,7 +15,7 @@
   <div class="col">
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avglanding', 'period' => 15])
   </div>
-  @if(Theme::getSetting('gen_stable_approach'))
+  @if(Theme::getSetting('gen_stable_approach') && DB_SapReports($user->id))
     <div class="col">
       @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'fdm', 'period' => 15])
     </div>
@@ -59,7 +59,7 @@
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avglanding', 'period' => 'lastm'])
     @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avglanding', 'period' => 'prevm'])
   </div>
-  @if(Theme::getSetting('gen_stable_approach'))
+  @if(Theme::getSetting('gen_stable_approach') && DB_SapReports($user->id))
     <div class="col">
       @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'fdm', 'period' => 'currentm'])
       @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'fdm', 'period' => 'lastm'])
