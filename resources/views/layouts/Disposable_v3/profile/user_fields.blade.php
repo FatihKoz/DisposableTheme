@@ -28,3 +28,15 @@
     </div>
   </div>
 </div>
+@ability('admin', 'admin-access')
+  <div class="row">
+    @if($DSpecial)
+      <div class="col-5">
+        @widget('DSpecial::TourProgress', ['user' => $user->id])
+      </div>
+      <div class="col-5">
+        @widget('DSpecial::Assignments', ['user' => $user->id, 'hide' => false])
+      </div>
+    @endif
+  </div>
+@endability
