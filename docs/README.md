@@ -164,6 +164,15 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+28.FEB.22
+
+* Added support for IVAO VA System
+  *Needs to be manually placed and enabled if needed, be aware this system is too old for full automation*
+* Stable Approach Plugin stats will be visible if the pilot uses it and sends FDM reports to VA
+  *Needs Disposable Basic Module v3.0.18 or later if you are using it*
+* Added Assignment and Tour Progress Widgets to user profile (visible only to admins, check Profile Details pill)
+  *Needs Disposable Special Module v3.0.16 or later*
+
 04.FEB.22
 
 * Added French translation (Thanks to Jbaltazar67, from phpVMS Forum)
