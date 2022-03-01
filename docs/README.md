@@ -7,9 +7,14 @@ phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)
 * License changed
 * Bootstrap version changed from v4.x to v5.x
 * Theme helpers logic changed and now can be customized by duplication as per your needs. Theme no longer uses other Disposable addon helpers.
-* Theme is NOT compatible with older seperate Disposable addons, it is designed to be fully compatible with Disposable v3 series addons (Basic and Special as of date)
-* Theme is NOT compatible with beta4 or earlier development builds of phpVMS v7 prior to 14.DEC.21
+* Theme is **NOT** compatible with older seperate Disposable addons, it is designed to be fully compatible with Disposable v3 series addons (Basic and Special as of date)
+* Theme is **NOT** compatible with beta4 or earlier builds of phpVMS v7 prior to **14.DEC.21**
 * Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0`
+
+Compatible with latest development (dev) builds of phpVMS v7 as described below, which are released after **14.DEC.21**
+
+* Theme version v3.0.19 is the latest version with php7.4 and laravel8 support.
+* Theme versions starting with v3.1.xx will support only php8 and laravel9 as per phpVMS v7 improvements.
 
 ## Installation
 
@@ -105,7 +110,7 @@ There are some options defined in this file for quick settings or for pre-define
     "gen_map_fleet": 1,               // Map Widget for fleet (Disposable Basic)
     "gen_darkmode": 0,                // Enable - Disable dark mode switch
     "gen_nicescroll": 0,              // Enable - Disable nice scroll (kills page performance and has issues!)
-    "gen_stable_approach": 0,         // Enable - Disable Stable Approach plugin support
+    "gen_stable_approach": 0,         // Enable - Disable Stable Approach plugin support (Disposable Basic)
     
     "home_disable": 0,                // Disable home (landing) page for quests
     "home_ivao_logo": 0,              // Home page IVAO logo (with link)
@@ -156,6 +161,32 @@ There are some options defined in this file for quick settings or for pre-define
     "user_disable_airline": 0         // Disable changing airlines from profile edit
 ```
 
+## About IVAO VA System Support
+
+As this is a really an optional feature and the system itself is too old, it is provided only for VA's already using it. Therefore you will see no buttons or forms automatically placed by me. To enable it, you should include the required file to a blade you need that button. Also you should define your IVAO approved `Airline ID` and `Airline ICAO code` at theme.json file.
+
+Below you can find two examples, both will check if you have necessary definitions at theme.json and includes the file. Which will have a visible badge/button, when clicked it will open up a modal window for the pilot to send the report.
+
+```php
+@if(Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
+  @include('pireps.ivao_vasys')
+@endif
+```
+
+```php
+@if(Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
+  @include('ivao_vasys')
+@endif
+```
+
+Here is an answer from [IVAO Official Wiki](https://wiki.ivao.aero/en/home/flightoperations/FAQ_VA) about VA System usage
+
+```md
+Do the pilots need to report their flights? 
+
+Currently, the VA System is withdrawn, and not to be used anymore. The new VA system should be back alive in 2021. In the meantime, as we have no backup solution, no flight reporting is asked to pilots. 
+```
+
 ## Footer Positioning and Content
 
 As per the license, **theme name should be always visible in all pages**. Editing the footer is still possible but `Disposable` link **SHOULD BE** always visible.
@@ -163,6 +194,12 @@ As per the license, **theme name should be always visible in all pages**. Editin
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
+
+01.MAR.22
+
+**WARNING: THIS IS THE LAST VERSION SUPPORTING PHP 7.4.xx AND LARAVEL 8**
+
+* No functional changes, just version matching with all v3.0.xx series Disposable addons
 
 28.FEB.22
 
