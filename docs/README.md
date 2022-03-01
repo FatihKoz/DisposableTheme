@@ -2,6 +2,12 @@
 
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
+Compatible with latest development (dev) builds of phpVMS v7 as described below, which are released after **14.DEC.21**
+
+* Theme version v3.0.19 is the latest version with php7.4 and laravel8 support.
+* Theme versions starting with v3.1.xx will support only php8 and laravel9 as per phpVMS v7 improvements.
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0`
+
 ## Important Changes
 
 * License changed
@@ -9,12 +15,6 @@ phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)
 * Theme helpers logic changed and now can be customized by duplication as per your needs. Theme no longer uses other Disposable addon helpers.
 * Theme is **NOT** compatible with older seperate Disposable addons, it is designed to be fully compatible with Disposable v3 series addons (Basic and Special as of date)
 * Theme is **NOT** compatible with beta4 or earlier builds of phpVMS v7 prior to **14.DEC.21**
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0`
-
-Compatible with latest development (dev) builds of phpVMS v7 as described below, which are released after **14.DEC.21**
-
-* Theme version v3.0.19 is the latest version with php7.4 and laravel8 support.
-* Theme versions starting with v3.1.xx will support only php8 and laravel9 as per phpVMS v7 improvements.
 
 ## Installation
 
