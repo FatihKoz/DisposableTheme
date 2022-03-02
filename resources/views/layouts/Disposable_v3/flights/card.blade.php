@@ -17,7 +17,7 @@
               {{ ' | '.optional($flight->dpt_airport)->location.' > '.optional($flight->arr_airport)->location }}
             </h5>
           </th>
-          <th class="text-end">
+          <th class="text-end col-2">
             <h5 class="m-0 p-0">
               <a data-bs-toggle="collapse" href="#Details{{ $flight->id }}" role="button" aria-expanded="false" aria-controls="Details{{ $flight->id }}">
                 <i class="fas fa-angle-double-down mx-1"></i>
@@ -32,27 +32,27 @@
     </div>
     <div class="card-body p-0">
       <div class="row">
-        <div class="col text-start">
-          <i class="fas fa-plane-departure float-start m-1"></i>
+        <div class="col-lg text-start">
+          <i class="fas fa-plane-departure m-1"></i>
           <a href="{{route('frontend.airports.show', [$flight->dpt_airport_id])}}">
             {{ optional($flight->dpt_airport)->full_name ?? $flight->dpt_airport_id }}
           </a>
         </div>
-        <div class="col text-center">
+        <div class="col-lg text-center">
           <i class="fas fa-route m-1"></i>
           {{ DT_ConvertDistance($flight->distance) }}
         </div>
-        <div class="col text-end">
-          <i class="fas fa-plane-arrival float-end m-1"></i>
+        <div class="col-lg text-end">
           <a href="{{route('frontend.airports.show', [$flight->arr_airport_id])}}">
             {{ optional($flight->arr_airport)->full_name ?? $flight->arr_airport_id }}
           </a>
+          <i class="fas fa-plane-arrival m-1"></i>
         </div>
       </div>
       <div class="row">
         <div class="col text-start">
           @if(filled($flight->dpt_time))
-            <i class="fas fa-clock float-start m-1"></i>
+            <i class="fas fa-clock m-1"></i>
             {{ DT_FormatScheduleTime($flight->dpt_time) }}
           @endif
         </div>
@@ -62,8 +62,8 @@
         </div>
         <div class="col text-end">
           @if(filled($flight->arr_time))
-            <i class="fas fa-clock float-end m-1"></i>
             {{ DT_FormatScheduleTime($flight->arr_time) }}
+            <i class="fas fa-clock m-1"></i>
           @endif
         </div>
       </div>
@@ -71,7 +71,7 @@
         {{-- This section is collapsed/hidden by default --}}
         <hr class="m-1 p-0">
         <div class="row mb-1">
-          <div class="col text-start">
+          <div class="col-md text-start">
             @if($flight->start_date)
               <i class="fas fa-calendar-plus mx-1" title="Start Date"></i>
               {{ $flight->start_date->format('l, d.M.Y') }}
@@ -81,22 +81,22 @@
               {{ $flight->end_date->format('l, d.M.Y') }}
             @endif
           </div>
-          <div class="col text-center">
+          <div class="col-md text-center">
             {{ DT_FlightDays($flight->days) }}
           </div>
-          <div class="col text-end">
+          <div class="col-lg text-end">
             @if($flight->alt_airport_id)
-              <i class="fas fa-map-marker-alt m-1 float-end" title="Preferred Alternate Aerodrome"></i>
               <a href="{{ route('frontend.airports.show', [$flight->alt_airport_id]) }}">
                 {{ optional($flight->alt_airport)->full_name ?? $flight->alt_airport_id }}
               </a>
+              <i class="fas fa-map-marker-alt m-1" title="Preferred Alternate Aerodrome"></i>
             @endif
           </div>
         </div>
         @if($flight->route)
           <div class="row mb-1">
             <div class="col">
-              <i class="fas fa-route m-1 float-start" title="Preferred Route"></i>
+              <i class="fas fa-route m-1" title="Preferred Route"></i>
               {{ $flight->route }}
               <a href="{{ 'http://skyvector.com/?chart=304&fpl='.$flight->dpt_airport_id.' '.$flight->route.' '.$flight->arr_airport_id }}" target="_blank">
                 <span class="badge bg-info text-black mx-1">SkyVector</span>
@@ -127,13 +127,13 @@
     <div class="card-footer p-1 text-center">
       <div class="row">
         {{-- Badges --}}
-        <div class="col text-start">
+        <div class="col-md text-start">
           {!! DT_FlightType($flight->flight_type, 'button') !!}
           {!! DT_RouteCode($flight->route_code, 'button') !!}
           {!! DT_RouteLeg($flight->route_leg, 'button') !!}
         </div>
         {{-- Buttons --}}
-        <div class="col text-end">
+        <div class="col-md text-end">
           {{--}}
             !!! NOTE FOR BID BUTTON !!!
             Don't remove the "save_flight" class, or the x-id attribute. It will break the AJAX to save/delete

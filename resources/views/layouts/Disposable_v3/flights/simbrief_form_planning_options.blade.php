@@ -7,18 +7,18 @@
   </div>
   <div class="card-body p-1 form-group">
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">Cruise Fuel Policy</span>
+      <span class="input-group-text col-md-5">Cruise Fuel Policy</span>
       <select id="cruise" name="cruise" class="form-control" onchange="DisableCI()">
         <option value="LRC">LRC (Long Range Cruise)</option>
         <option value="CI" selected>CI (Cost Index)</option>
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">Cost Index (CI)</span>
+      <span class="input-group-text col-md-5">Cost Index (CI)</span>
       <input type="text" id="civalue" name="civalue" class="form-control" maxlength="4" value="AUTO">
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">Contingency Fuel</span>
+      <span class="input-group-text col-md-5">Contingency Fuel</span>
       <select name="contpct" class="form-control">
         <option value="0">None</option>
         <option value="auto">AUTO</option>
@@ -40,7 +40,7 @@
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">Reserve Fuel</span>
+      <span class="input-group-text col-md-5">Reserve Fuel</span>
       <select name="resvrule" class="form-control">
         <option value="auto">AUTO</option>
         <option value="0">0 MIN</option>
@@ -53,7 +53,7 @@
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">SID/STAR Type</span>
+      <span class="input-group-text col-md-5">SID/STAR Type</span>
       <select id="sidstar" class="form-control" onchange="SidStarSelection()">
         <option value="C">Conventional</option>
         <option value="R" selected>RNAV</option>
@@ -61,21 +61,21 @@
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">Automatic Step Climbs</span>
+      <span class="input-group-text col-md-5">Automatic Step Climbs</span>
       <select id="stepclimbs" name="stepclimbs" class="form-control" onchange="DisableFL()">
         <option value="0" selected>Disabled</option>
         <option value="1">Enabled</option>
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">ETOPS Planning</span>
+      <span class="input-group-text col-md-5">ETOPS Planning</span>
       <select name="etops" class="form-control">
         <option value="0" selected>Disabled</option>
         <option value="1">Enabled</option>
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">Alternate Airports</span>
+      <span class="input-group-text col-md-5">Alternate Airports</span>
       <select name="altn_count" class="form-control">
         <option value="1">1</option>
         <option value="2" selected>2</option>

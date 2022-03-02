@@ -9,46 +9,46 @@
   <div class="card-body p-1">
     <div class="form-group">
       <div class="input-group input-group-sm mt-1">
-        <span class="input-group-text col-4">@lang('common.airline')</span>
+        <span class="input-group-text col-lg-4">@lang('common.airline')</span>
         @php asort($airlines, SORT_NATURAL); @endphp
         {{ Form::select('airline_id', $airlines, null , ['class' => 'form-control select2']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
-        <span class="input-group-text col-4">@lang('flights.flighttype')</span>
+        <span class="input-group-text col-lg-4">@lang('flights.flighttype')</span>
         {{ Form::select('flight_type', $flight_types, null , ['class' => 'form-control select2']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
-        <span class="input-group-text col-4">@lang('flights.flightnumber')</span>
+        <span class="input-group-text col-lg-4">@lang('flights.flightnumber')</span>
         {{ Form::text('flight_number', null, ['class' => 'form-control']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
-        <span class="input-group-text col-4">@lang('flights.callsign')</span>
+        <span class="input-group-text col-lg-4">@lang('flights.callsign')</span>
         {{ Form::text('callsign', null, ['class' => 'form-control']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
-        <span class="input-group-text col-4">@lang('flights.code')</span>
+        <span class="input-group-text col-lg-4">@lang('flights.code')</span>
         {{ Form::text('route_code', null, ['class' => 'form-control']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
-        <span class="input-group-text col-4">@lang('flights.flighttime')</span>
+        <span class="input-group-text col-lg-4">@lang('flights.flighttime')</span>
         {{ Form::number('tgt', null, ['class' => 'form-control', 'title' => 'Minimum (mins)']) }}
         {{ Form::number('tlt', null, ['class' => 'form-control', 'title' => 'Maximum (mins)']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
-        <span class="input-group-text col-4">@lang('common.distance')</span>
+        <span class="input-group-text col-lg-4">@lang('common.distance')</span>
         {{ Form::number('dgt', null, ['class' => 'form-control', 'title' => 'Minimum (nm)']) }}
         {{ Form::number('dlt', null, ['class' => 'form-control', 'title' => 'Maximum (nm)']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
-        <span class="input-group-text col-4">@lang('airports.departure')</span>
+        <span class="input-group-text col-lg-4">@lang('airports.departure')</span>
         {{ Form::select('dep_icao', $airports, null , ['class' => 'form-control select2']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
-        <span class="input-group-text col-4">@lang('airports.arrival')</span>
+        <span class="input-group-text col-lg-4">@lang('airports.arrival')</span>
         {{ Form::select('arr_icao', $airports, null , ['class' => 'form-control select2']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
-        <span class="input-group-text col-4">@lang('common.subfleet')</span>
+        <span class="input-group-text col-lg-4">@lang('common.subfleet')</span>
         @php asort($subfleets, SORT_NATURAL); @endphp
         {{ Form::select('subfleet_id', $subfleets, null , ['class' => 'form-control select2']) }}
       </div>

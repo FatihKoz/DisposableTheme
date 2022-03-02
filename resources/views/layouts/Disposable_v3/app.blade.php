@@ -13,9 +13,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/1310cf8385.js" crossorigin="anonymous"></script>
     <link href="{{ public_asset('/assets/global/css/vendor.css') }}" rel="stylesheet"/>
-    <link href="{{ public_asset('/disposable/stylesheet/theme_v3.css') }}" rel="stylesheet"/>
+    <link href="{{ public_asset('/disposable/stylesheet/theme_v3.css?ver=1') }}" rel="stylesheet"/>
     @if(Theme::getSetting('gen_darkmode'))
-      <link href="{{ public_asset('/disposable/stylesheet/theme_v3_darkmode.css') }}" rel="stylesheet"/>
+      <link href="{{ public_asset('/disposable/stylesheet/theme_v3_darkmode.css?ver=1') }}" rel="stylesheet"/>
     @endif
     @yield('scripts_head')
     @yield('css')
@@ -32,7 +32,6 @@
         $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
         $DSpecial = isset($DSpecial) ? $DSpecial : DT_CheckModule('DisposableSpecial');
       @endphp
-
     {{-- Navigation --}}
       @if(empty($disable_nav))
         @if(Theme::getSetting('gen_sidebar'))
@@ -41,16 +40,14 @@
           @include('nav_top')
         @endif
       @endif
-
     {{-- Page Contents --}}
       <div id="page-contents" class="container-fluid">
         @include('flash.message')
         @yield('content')
-
         {{-- Fixed position logos for IVAO and VATSIM, links are not possible --}}
         @if(empty($plain))
           @if(Theme::getSetting('gen_ivao_logo'))
-            <div class="card col-1 shadow-none bg-transparent border-0" style="position: absolute; bottom: 2rem; left: 2rem; z-index: -1;">
+            <div class="card col-3 col-lg-1 shadow-none bg-transparent border-0" style="position: absolute; bottom: 2rem; left: 2rem; z-index: -1;">
               @if(filled(Theme::getSetting('gen_ivao_vaid')))
                 <img class="card-img" src="{{ public_asset('disposable/logo_ivao_partner.svg') }}">
               @else
@@ -59,13 +56,12 @@
             </div>
           @endif
           @if(Theme::getSetting('gen_vatsim_logo'))
-            <div class="card col-1 shadow-none bg-transparent border-0" style="position: absolute; bottom: 2rem; right: 2rem; z-index: -1;">
+            <div class="card col-3 col-lg-1 shadow-none bg-transparent border-0" style="position: absolute; bottom: 2rem; right: 2rem; z-index: -1;">
               <img class="card-img" src="{{ public_asset('disposable/logo_vatsim.png') }}">
             </div>
           @endif
         @endif
       </div>
-
     {{-- Footer --}}
     @if(empty($plain))
       <div id="footer" class="container-fluid">
@@ -124,9 +120,9 @@
     You can modify to any tracking code and re-use that settings field, or
     just remove it completely. Only added as a convenience factor
     --}}
-      @php $gtag = setting('general.google_analytics_id'); @endphp
+      @php $gtag = setting('general.google_analytics_id', null); @endphp
       @if($gtag)
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+        {{-- Global site tag (gtag.js) - Google Analytics --}}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ $gtag }}"></script>
         <script>
           window.dataLayer = window.dataLayer || [];

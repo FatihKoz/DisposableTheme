@@ -8,7 +8,7 @@
 @endphp
 @section('content')
   <div class="row">
-    <div class="col-8">
+    <div class="col-lg-8">
       <div class="card mb-2">
         <div class="card-header p-1">
           <h5 class="m-1">
@@ -27,34 +27,34 @@
         </div>
         <div class="card-body p-0">
           <div class="row">
-            <div class="col text-start">
-              <i class="fas fa-plane-departure float-start m-1"></i>
+            <div class="col-lg text-start text-nowrap">
+              <i class="fas fa-plane-departure m-1"></i>
               <a href="{{route('frontend.airports.show', ['id' => $flight->dpt_airport_id])}}">
                 {{ optional($flight->dpt_airport)->full_name ?? $flight->dpt_airport_id }}
               </a>
             </div>
-            <div class="col text-center">
+            <div class="col-lg text-center">
               <i class="fas fa-route m-1"></i>
               {{ DT_ConvertDistance($flight->distance) }}
             </div>
-            <div class="col text-end">
-              <i class="fas fa-plane-arrival float-end m-1"></i>
+            <div class="col-lg text-end text-nowrap">
               <a href="{{route('frontend.airports.show', ['id' => $flight->arr_airport_id])}}">
                 {{ optional($flight->arr_airport)->full_name ?? $flight->arr_airport_id }}
               </a>
+              <i class="fas fa-plane-arrival m-1"></i>
             </div>
           </div>
           <div class="row">
-            <div class="col text-start">
+            <div class="col-lg text-start">
               @if(filled($flight->dpt_time))
                 <i class="fas fa-clock float-start m-1"></i>
                 {{ DT_FormatScheduleTime($flight->dpt_time) }}
               @endif
             </div>
-            <div class="col text-center">
+            <div class="col-lg text-center">
               {{ DT_FlightDays($flight->days) }}
             </div>
-            <div class="col text-end">
+            <div class="col-lg text-end">
               @if(filled($flight->arr_time))
                 <i class="fas fa-clock float-end m-1"></i>
                 {{ DT_FormatScheduleTime($flight->arr_time) }}
@@ -63,10 +63,10 @@
           </div>
           @if(filled($flight->start_date) || filled($flight->end_date) || filled($flight->alt_airport_id))
             <div class="row">
-              <div class="col text-start">
+              <div class="col-lg text-start text-nowrap">
                 {{-- Blank --}}
               </div>
-              <div class="col text-center">
+              <div class="col-lg text-center text-nowrap">
                 @if($flight->start_date)
                   <i class="fas fa-calendar-plus mx-1" title="Start Date"></i>
                   {{ $flight->start_date->format('l, d.M.Y') }}
@@ -76,12 +76,12 @@
                   {{ $flight->end_date->format('l, d.M.Y') }}
                 @endif
               </div>
-              <div class="col text-end">
+              <div class="col-lg text-end text-nowrap">
                 @if(filled($flight->alt_airport_id))
-                  <i class="fas fa-map-marker-alt float-end m-1" title="Preferred Alternate Aerodrome"></i>
                   <a href="{{ route('frontend.airports.show', [$flight->alt_airport_id]) }}">
                     {{ optional($flight->alt_airport)->full_name }}
                   </a>
+                  <i class="fas fa-map-marker-alt m-1" title="Preferred Alternate Aerodrome"></i>
                 @endif
               </div>
             </div>
@@ -107,14 +107,14 @@
         @endif
         <div class="card-footer p-1">
           <div class="row">
-            <div class="col text-start">
+            <div class="col-lg text-start">
               {!! DT_FlightType($flight->flight_type, 'button') !!}
             </div>
-            <div class="col text-center">
+            <div class="col-lg text-center">
               <i class="fas fa-stopwatch m-1"></i>
               {{ DT_ConvertMinutes($flight->flight_time, '%2dh %2dm') }}
             </div>
-            <div class="col text-end">
+            <div class="col-lg text-end">
               {!! DT_RouteCode($flight->route_code, 'button') !!} {!! DT_RouteLeg($flight->route_leg, 'button') !!}
             </div>
           </div>
@@ -156,7 +156,7 @@
       </div>
     </div>
 
-    <div class="col-4">
+    <div class="col-lg-4">
       {{-- Inline navigation for WX Widgets --}}
       <ul class="nav nav-pills nav-justified mb-2" id="pills-tab" role="tablist">
         <li class="nav-item mx-1" role="presentation">

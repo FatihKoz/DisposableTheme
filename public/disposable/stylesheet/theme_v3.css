@@ -41,7 +41,7 @@ a:active {
   box-shadow: 0px 2px 3px black;
 }
 .card .card-header {
-  background-color: rgba(129, 22, 8, 0.9);
+  background-color: rgba(31, 13, 192, 0.9);
 }
 .card .card-footer {
   background-color: rgba(223, 213, 203, 0.5);
@@ -69,7 +69,7 @@ a:active {
 
 /* Modal Style */
 .modal .modal-header {
-  background-color: rgba(129, 22, 8, 1);
+  background-color: rgba(31, 13, 192, 1);
   color: lightgoldenrodyellow;
 }
 
@@ -80,17 +80,17 @@ a:active {
 .modal .modal-footer {
   color: lightgoldenrodyellow;
   font-weight: 400;
-  background-color: rgba(129, 22, 8, 1);
+  background-color: rgba(31, 13, 192, 1);
 }
 
 /* Accordion Style */
 .accordion .accordion-button {
   box-shadow: none;
   color: goldenrod !important;
-  background-color: rgba(129, 22, 8, 0.9) !important;
+  background-color: rgba(31, 13, 192, 0.9) !important;
 }
 .accordion .collapsed {
-  background-color: rgba(129, 22, 8, 0.7) !important;
+  background-color: rgba(31, 13, 192, 0.7) !important;
   color: lightgoldenrodyellow !important;
 }
 .accordion .accordion-item {
@@ -102,18 +102,18 @@ a:active {
 
 /* NavBar Style */
 #Dispo_NavBar {
-  background-color: rgba(129, 22, 8, 0.8);
+  background-color: rgba(31, 13, 192, 0.8);
   box-shadow: 0px 2px 4px black;
   margin-bottom: 10px;
 }
 #Dispo_NavBar a {
   text-decoration: none;
-  color: black;
+  color: aliceblue;
   font-weight: 500;
 }
 #Dispo_NavBar a:hover {
   text-decoration: none;
-  color: lightgoldenrodyellow;
+  color: goldenrod;
   font-weight: 500;
 }
 #Dispo_NavBar a:active {
@@ -123,12 +123,12 @@ a:active {
 }
 
 #Dispo_NavBar .dropdown-menu {
-    background-color: rgba(129, 22, 8, 0.9);
+    background-color: rgba(31, 13, 192, 0.9);
 }
 
 #Dispo_NavBar .dropdown-menu a:hover {
     background-color: transparent;
-    color: lightgoldenrodyellow;
+    color: goldenrod;
 }
 
 #Dispo_NavBar .dropdown-item {
@@ -158,11 +158,11 @@ a:active {
 /* Navigation Pills Style */
 .nav-pills .nav-link {
   color: wheat;
-  background-color: rgba(129, 22, 8, 0.8) !important;
+  background-color: rgba(31, 13, 192, 0.7) !important;
 }
 .nav-pills .active {
   color: darkgoldenrod;
-  background-color: rgba(129, 22, 8, 0.9) !important;
+  background-color: rgba(31, 13, 192, 0.9) !important;
 }
 
 /* Navigation Tabs Style (when used in a card) */

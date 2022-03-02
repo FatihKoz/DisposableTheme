@@ -6,8 +6,8 @@
 @endphp
 @section('content')
   <div class="row">
-    <div class="col">
-      <div class="card col-6">
+    <div class="col-lg">
+      <div class="card col-lg-6">
         <div class="card-header p-1">
           <h5 class="m-1">
             Aircraft Selection
@@ -20,8 +20,8 @@
             @foreach($aircrafts as $ac)
               <option value="{{ $ac->id }}">
                 [{{ $ac->icao }}] {{ $ac->registration }} @if($ac->registration != $ac->name)'{{ $ac->name }}'@endif
-                @if(filled($ac->fuel_onboard))
-                  {{ ' ('.__('disposable.fuel_ob').': '.DT_ConvertWeight($ac->fuel_onboard, $units['fuel']).')' }}
+                @if($ac->fuel_onboard->local() > 0)
+                  {{ ' ('.__('disposable.fuel_ob').': '. DT_ConvertWeight($ac->fuel_onboard, $units['fuel']).')' }}
                 @endif
               </option>
             @endforeach

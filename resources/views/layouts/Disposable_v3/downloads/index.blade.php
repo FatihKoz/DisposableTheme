@@ -24,7 +24,7 @@
     {{-- Aircraft Downloads --}}
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade" id="aircraft" role="tabpanel" aria-labelledby="aircraft-tab">
-        <div id="DownloadsAircraft" class="row row-cols-3">
+        <div id="DownloadsAircraft" class="row row-cols-md-2 row-cols-lg-3">
           @foreach($grouped_files as $group => $files)
             @if(strpos($group, 'Aircraft >') !== false)
               @include('downloads.card', ['substr' => 11])
@@ -34,7 +34,7 @@
       </div>
       {{-- Subfleet Downloads --}}
       <div class="tab-pane fade" id="subfleet" role="tabpanel" aria-labelledby="subfleet-tab">
-        <div id="DownloadsSubfleet" class="row row-cols-3">
+        <div id="DownloadsSubfleet" class="row row-cols-md-2 row-cols-lg-3">
           @foreach($grouped_files as $group => $files)
             @if(strpos($group, 'Subfleet >') !== false)
               @include('downloads.card', ['substr' => 11])
@@ -44,7 +44,7 @@
       </div>
       {{-- Airport Downloads --}}
       <div class="tab-pane fade" id="airport" role="tabpanel" aria-labelledby="airport-tab">
-        <div id="DownloadsAirport" class="row row-cols-3">
+        <div id="DownloadsAirport" class="row row-cols-md-2 row-cols-lg-3">
           @foreach($grouped_files as $group => $files)
             @if(strpos($group, 'Airport >') !== false)
               @include('downloads.card', ['substr' => 10])
@@ -54,7 +54,7 @@
       </div>
       {{-- Airline Downloads --}}
       <div class="tab-pane fade show active" id="airline" role="tabpanel" aria-labelledby="airline-tab">
-        <div id="DownloadsAirline" class="row row-cols-3">
+        <div id="DownloadsAirline" class="row row-cols-md-2 row-cols-lg-3">
           @foreach($grouped_files as $group => $files)
             @if(strpos($group, 'Airline >') !== false)
               @include('downloads.card', ['substr' => 10])

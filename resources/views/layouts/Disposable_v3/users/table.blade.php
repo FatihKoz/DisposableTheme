@@ -1,4 +1,4 @@
-<table class="table table-sm table-borderless table-striped align-middle text-center mb-0" id="users-table">
+<table class="table table-sm table-borderless table-striped align-middle text-center text-nowrap mb-0" id="users-table">
   <thead>
     @if(Theme::getSetting('roster_userimage'))
       <th class="text-start" style="width: 50px;"></th>

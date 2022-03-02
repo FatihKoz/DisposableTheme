@@ -24,7 +24,7 @@
 
   <div class="row">
     {{-- Main Dashboard : LEFT --}}
-    <div class="col-8">
+    <div class="col-lg-8">
       {{-- Only 4 icons with core data --}}
       @if(!$DBasic)
         @include('dashboard.icons')
@@ -65,7 +65,7 @@
       @endif
     </div>
     {{-- Main Dashboard : RIGHT --}}
-    <div class="col-4">
+    <div class="col-lg-4">
       @if(Theme::getSetting('dash_embed_wx') && $current_airport)
         <div class="card p-0 mb-2 bg-transparent">
           <iframe style="pointer-events: none; border-radius: 5px;" src="https://metar-taf.com/embed/{{ $current_airport }}?bg_color=811608E6&layout=landscape" frameBorder="0" width="100%" height="256" scrolling="no"></iframe>

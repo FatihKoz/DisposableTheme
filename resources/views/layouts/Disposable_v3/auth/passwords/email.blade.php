@@ -4,7 +4,7 @@
 @section('content')
   <div class="clearfix" style="height: 30vh;"></div>
   <div class="row mt-3">
-    <div class="col-6 mx-auto content-center">
+    <div class="col-lg-6 mx-auto content-center">
       <div class="card mb-2">
         <div class="card-header p-1">
           <h5 class="m-1">
@@ -22,7 +22,7 @@
             @endif
 
             <div class="input-group input-group-sm my-2 {{ $errors->has('email') ? ' has-error' : '' }}">
-              <span class="input-group-text col-2" id="email">{{ __('Email Address') }}</span>
+              <span class="input-group-text col-lg-2" id="email">{{ __('Email Address') }}</span>
               <input
                 class="form-control" name="email" type="email" aria-label="email" aria-describedby="email"
                 placeholder="Provide the email address used for {{ config('app.name') }} registration" value="{{ old('email') }}"

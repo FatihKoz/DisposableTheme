@@ -1,4 +1,4 @@
-<table class="table table-sm table-borderless table-striped align-middle text-start mb-0">
+<table class="table table-sm table-borderless table-striped align-middle text-start text-nowrap mb-0">
   <thead>
     <tr>
       <th>@lang('flights.flightnumber')</th>
@@ -18,24 +18,24 @@
           </a>
         </td>
         <td>
+          @if(Theme::getSetting('flights_flags'))
+            <img class="img-mh25 mx-1" title="{{ strtoupper(optional($flight->dpt_airport)->country) }}" 
+              src="{{ public_asset('/image/flags_new/'.strtolower(optional($flight->dpt_airport)->country).'.png') }}" alt=""/>
+          @endif
           <a href="{{ route('frontend.airports.show', [$flight->dpt_airport_id]) }}">
             {{ $flight->dpt_airport->full_name ?? $flight->dpt_airport_id }}
           </a>
-          @if(Theme::getSetting('flights_flags'))
-            <img class="img-mh25 float-start mx-1" title="{{ strtoupper(optional($flight->dpt_airport)->country) }}" 
-              src="{{ public_asset('/image/flags_new/'.strtolower(optional($flight->dpt_airport)->country).'.png') }}" alt=""/>
-          @endif
         </td>
         <td class="text-center" title="{{ DT_FlightDays($flight->days) }}">{{ DT_FormatScheduleTime($flight->dpt_time) }}</td>
         <td class="text-center">{{ DT_FormatScheduleTime($flight->arr_time) }}</td>
         <td>
+          @if(Theme::getSetting('flights_flags'))
+            <img class="img-mh25 mx-1" title="{{ strtoupper(optional($flight->arr_airport)->country) }}"
+              src="{{ public_asset('/image/flags_new/'.strtolower(optional($flight->arr_airport)->country).'.png') }}" alt=""/>
+          @endif
           <a href="{{ route('frontend.airports.show', [$flight->arr_airport_id]) }}">
             {{ $flight->arr_airport->full_name ?? $flight->arr_airport_id }}
           </a>
-          @if(Theme::getSetting('flights_flags'))
-            <img class="img-mh25 float-start mx-1" title="{{ strtoupper(optional($flight->arr_airport)->country) }}"
-              src="{{ public_asset('/image/flags_new/'.strtolower(optional($flight->arr_airport)->country).'.png') }}" alt=""/>
-          @endif
         </td>
         <td class="text-end">
           {{-- vmsAcars Load --}}

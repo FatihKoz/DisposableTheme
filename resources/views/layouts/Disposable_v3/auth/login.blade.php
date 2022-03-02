@@ -8,7 +8,7 @@
     <div class="clearfix" style="height: 30vh;"></div>
   @endif
   <div class="row mt-2">
-    <div class="col-4 mx-auto content-center">
+    <div class="col-lg-4 mx-auto content-center">
       {{ Form::open(['url' => url('/login'), 'method' => 'post', 'class' => 'form']) }}
       <div class="card">
         @if(Theme::getSetting('login_logo'))

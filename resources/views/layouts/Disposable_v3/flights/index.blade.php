@@ -10,7 +10,7 @@
   <div class="alert alert-info mb-1 p-1 px-2 fw-bold">No flights found !</div>
 @else
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-lg-9">
       @if(Theme::getSetting('flights_table'))
         <div class="card mb-2">
           <div class="card-header p-1">
@@ -33,7 +33,7 @@
       @endif
       {{ $flights->links('pagination.auto') }}
     </div>
-    <div class="col-md-3">
+    <div class="col-lg-3">
       @include('flights.search')
       @include('flights.nav')
       @if($DBasic && Theme::getSetting('gen_map_flight'))
