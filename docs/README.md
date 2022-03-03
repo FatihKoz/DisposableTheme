@@ -6,7 +6,6 @@ Compatible with phpVMS v7 builds as described below;
 
 * Theme versions starting with v3.1.xx supports **only** php8.x and laravel9.x
 * Minimum required phpVMS v7 version is `phpVms 7.0.0-Laravel9` for v3.1.xx
-
 * Theme version v3.0.19 is the latest version with php7.4 and laravel8 support
 * Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0` (14.DEC.21) for v3.0.19
 * Latest available phpVMS v7 version is `phpVms 7.0.0-dev+220228.b81dd9` (28.FEB.22) for v3.0.19
