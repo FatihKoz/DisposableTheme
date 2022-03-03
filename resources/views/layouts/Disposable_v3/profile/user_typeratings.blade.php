@@ -1,4 +1,4 @@
-<div class="row row-cols-6">
+<div class="row row-cols-2 row-cols-md-4 row-cols-lg-6">
   @foreach($user->typeratings->sortBy('type', SORT_NATURAL) as $tr)
     <div class="col">
       <div class="card text-center mb-2">

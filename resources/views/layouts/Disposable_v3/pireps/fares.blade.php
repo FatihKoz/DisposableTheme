@@ -8,9 +8,9 @@
       {{ trans_choice('pireps.fare', 2) }}
     </h6>
     <div class="form-group">
-      <div class="row row-cols-4">
+      <div class="row row-cols-lg-4">
         @foreach($aircraft->subfleet->fares as $fare)
-          <div class="col">
+          <div class="col-lg">
             <div class="input-group input-group-sm">
               <span class="input-group-text">{{ $fare->name.' ('.$fare->code.')' }}</span>
               {{ Form::number('fare_'.$fare->id, $fare->count, ['class' => 'form-control', 'min' => 0, $readonly]) }}

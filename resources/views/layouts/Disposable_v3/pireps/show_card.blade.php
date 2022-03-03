@@ -7,40 +7,40 @@
     </h5>
   </div>
   <div class="card-body p-1">
-    <div class="row">
-      <div class="col text-start">
-          <i class="fas fa-plane-departure float-start m-1"></i>
+    <div class="row row-cols-md-3">
+      <div class="col-md-5 text-start">
+          <i class="fas fa-plane-departure m-1"></i>
           <a href="{{ route('frontend.airports.show', [$pirep->dpt_airport_id]) }}">
             {{ optional($pirep->dpt_airport)->full_name ?? $pirep->dpt_airport_id }}
           </a>
       </div>
-      <div class="col text-center">
+      <div class="col-md-2 text-center">
         @if(filled($pirep->distance))
           <i class="fas fa-route m-1"></i>
           {{ DT_ConvertDistance($pirep->distance, $units['distance']) }}
         @endif
       </div>
-      <div class="col text-end">
-        <i class="fas fa-plane-arrival float-end m-1"></i>
+      <div class="col-md-5 text-end">
         <a href="{{ route('frontend.airports.show', [$pirep->arr_airport_id]) }}">
           {{ optional($pirep->arr_airport)->full_name ?? $pirep->arr_airport_id }}
         </a>
+        <i class="fas fa-plane-arrival m-1"></i>
       </div>
     </div>
-    <div class="row">
-      <div class="col text-start">
+    <div class="row row-cols-md-3">
+      <div class="col-md text-start">
         @if(filled($pirep->block_off_time))
           <i class="fas fa-clock float-start m-1" title="Off Block"></i>
           {{ $pirep->block_off_time->format('H:i | l d.M.Y') }}
         @endif
       </div>
-      <div class="col text-center">
+      <div class="col-md text-center">
         @if(filled($pirep->flight_time))
           <i class="fas fa-stopwatch m-1" title="Block Time"></i>
           {{ DT_ConvertMinutes($pirep->flight_time, '%2dh %2dm') }}
         @endif
       </div>
-      <div class="col text-end">
+      <div class="col-md text-end">
         @if($pirep->block_on_time > $pirep->block_off_time)
           <i class="fas fa-clock float-end m-1" title="On Block"></i>
           {{ $pirep->block_on_time->format('H:i | l d.M.Y') }}
@@ -59,7 +59,7 @@
     </div>
   </div>
   <div class="card-footer bg-transparent p-1">
-    <div class="row">
+    <div class="row row-cols-lg-3">
       <div class="col text-start">
         {!! DT_FlightType($pirep->flight_type, 'button') !!}
       </div>
@@ -67,7 +67,7 @@
         {!! DT_RouteCode($pirep->route_code, 'button') !!} {!! DT_RouteLeg($pirep->route_leg, 'button') !!}
       </div>
       @if(!$pirep->read_only && $user && $pirep->user_id === $user->id)
-        <div class="col-2 text-end">
+        <div class="col-lg-2 text-end">
           <form method="post" action="{{ route('frontend.pireps.submit', $pirep->id) }}">
             @csrf
             <button class="btn btn-sm btn-success m-0 mx-1 p-0 px-1 float-end">@lang('common.submit')</button>

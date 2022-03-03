@@ -15,7 +15,7 @@
 @endability
 @section('content')
   <div class="row">
-    <div class="col-3">
+    <div class="col-lg-3">
       {{-- Pilot ID Card --}}
       <div class="card mb-2">
         <div class="card-header p-1">
@@ -158,8 +158,8 @@
       </ul>
     </div>
     {{-- Info Boxes --}}
-    <div class="col">
-      <div class="row">
+    <div class="col-lg-9">
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5">
         <div class="col">
           {{-- Current Airport --}}
           <div class="card text-center mb-2">
@@ -236,7 +236,7 @@
       </div>
 
       @if($DBasic && $user->flights > 0)
-        <div class="row row-cols-5">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5">
           <div class="col">
             @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avgscore'])
             {{-- User Balance and Last Transactions Display --}}

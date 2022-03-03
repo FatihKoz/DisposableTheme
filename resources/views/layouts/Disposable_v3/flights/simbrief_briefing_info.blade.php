@@ -1,7 +1,7 @@
-<div class="row row-cols-2">
-  <div class="col col-7">
+<div class="row row-cols-xl-2">
+  <div class="col col-xl-7">
     {{-- Row : Basic Data --}}
-    <div class="row row-cols-4">
+    <div class="row row-cols-2 row-cols-lg-4">
       <div class="col">
         <div class="card mb-2 text-center">
           <div class="card-body p-1">
@@ -39,7 +39,7 @@
       </div>
     </div>
     {{-- Row : Aerodromes --}}
-    <div class="row row-cols-4">
+    <div class="row row-cols-2 row-cols-lg-4">
       <div class="col">
         <div class="card mb-2 text-center">
           <div class="card-body p-1">
@@ -88,7 +88,7 @@
       </div>
     </div>
     {{-- Row : Weights --}}
-    <div class="row row-cols-4">
+    <div class="row row-cols-2 row-cols-lg-4">
       <div class="col">
         <div class="card mb-2 text-center">
           <div class="card-body p-1"><h6 class="m-1">{{ number_format(intval($simbrief->xml->weights->payload)).' '.$simbrief->xml->params->units }}</h6></div>
@@ -133,7 +133,7 @@
       </div>
     </div>
     {{-- Row : Fuels --}}
-    <div class="row row-cols-4">
+    <div class="row row-cols-2 row-cols-lg-4">
       <div class="col">
         <div class="card mb-2 text-center">
           <div class="card-body p-1"><h6 class="m-1">{{ number_format(DT_Round($simbrief->xml->fuel->plan_ramp, 100)).' '.$simbrief->xml->params->units }}</h6></div>
@@ -166,7 +166,7 @@
       </div>
     </div>
     {{-- Row : FMC Info --}}
-    <div class="row row-cols-4">
+    <div class="row row-cols-2 row-cols-lg-4">
       <div class="col">
         <div class="card mb-2 text-center">
           <div class="card-body p-1"><h6 class="m-1">{{ $simbrief->xml->general->initial_altitude }}</h6></div>
@@ -199,8 +199,8 @@
       </div>
     </div>
     {{-- Row : Remarks --}}
-    <div class="row row-cols-2">
-      <div class="col">
+    <div class="row row-cols-lg-2">
+      <div class="col-lg">
         <div class="card mb-2 text-center">
           <div class="card-body p-1">
             <h6 class="m-1">
@@ -217,7 +217,7 @@
           <div class="card-footer p-1 small fw-bold">Dispatch Remarks</div>
         </div>
       </div>
-      <div class="col">
+      <div class="col-lg">
         <div class="card mb-2 text-center">
           <div class="card-body p-1">
             <h6 class="m-1">
@@ -252,7 +252,7 @@
     if($simbrief->xml->crew->pu) { $crew_count++; }
     $crew_count = $crew_count + count($simbrief->xml->crew->fa);
   @endphp
-  <div class="col col-5">
+  <div class="col col-xl-5">
     <div class="card mb-2">
       <div class="card-header p-1">
         <h5 class="m-1">
@@ -264,6 +264,10 @@
         {!!  str_replace("\n", "<br>", $simbrief->xml->atc->flightplan_text) !!}
       </div>
       <div class="card-footer p-1 small fw-bold">
+        <div class="float-start">
+          <a href="http://skyvector.com/?chart=304&fpl={{ $simbrief->xml->origin->icao_code }} {{ $simbrief->xml->general->route }} {{ $simbrief->xml->destination->icao_code }}"
+            target="_blank" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">View > SkyVector</a>
+        </div>
         @if(Theme::getSetting('simbrief_poscon'))
           <div class="float-end">
             <a href="{{ $simbrief->xml->poscon_prefile }}" target="_blank" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1">File ATC > PosCon</a>
@@ -309,10 +313,6 @@
             </form>
           </div>
         @endif
-        <div class="float-start">
-          <a href="http://skyvector.com/?chart=304&fpl={{ $simbrief->xml->origin->icao_code }} {{ $simbrief->xml->general->route }} {{ $simbrief->xml->destination->icao_code }}"
-            target="_blank" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">View > SkyVector</a>
-        </div>
       </div>
     </div>
     <div class="card mb-2">

@@ -10,7 +10,7 @@
       </h5>
     </div>
     <div class="card-body p-0 table-responsive">
-      <table class="table table-sm table-borderless table-striped align-middle mb-0">
+      <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
         @foreach($pireps as $p)
           <tr>
             <th>

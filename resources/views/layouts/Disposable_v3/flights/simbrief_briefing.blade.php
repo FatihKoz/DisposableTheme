@@ -7,8 +7,8 @@
   $now = Carbon::now();
 @endphp
 @section('content')
-  <div class="row row-cols-2">
-    <div class="col-11">
+  <div class="row row-cols-xl-2">
+    <div class="col-xl-11">
       <div class="accordion accordion-flush" id="sb-accordion">
         <div class="accordion-item">
           <h5 class="accordion-header" id="headingOne">
@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="col-1">
+    <div class="col-xl-1">
       <div class="d-flex align-items-start">
         <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           @if($simbrief->flight_id && $user->id == $simbrief->user_id && $acars_plugin)

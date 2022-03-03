@@ -1,7 +1,7 @@
 <tr>
   <td>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">
+      <span class="input-group-text col-lg-4">
         {{ $field->name }}
         @if($field->required === true)
           <span class="fw-bold text-danger mx-1">*</span>

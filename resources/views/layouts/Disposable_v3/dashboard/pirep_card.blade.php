@@ -6,7 +6,7 @@
     </h5>
   </div>
   <div class="card-body p-0 table-responsive">
-    <table class="table table-sm table-borderless table-striped align-middle text-start mb-0">
+    <table class="table table-sm table-borderless table-striped align-middle text-start text-nowrap mb-0">
       <tr>
         <th>@lang('flights.flightnumber')</th>
         <th>@lang('airports.departure')</th>

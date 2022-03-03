@@ -1,6 +1,6 @@
-<div class="row row-cols-2">
+<div class="row row-cols-lg-2">
   {{-- Origin --}}
-  <div class="col">
+  <div class="col-lg">
     <div class="card mb-1">
       <div class="card-body p-0">
         <iframe id="origin-frame"
@@ -19,7 +19,7 @@
     </div>
   </div>
   {{-- Destination --}}
-  <div class="col">
+  <div class="col-lg">
     <div class="card mb-1">
       <div class="card-body p-0">
         <iframe id="destination-frame" 
@@ -39,8 +39,8 @@
   </div>
   {{-- Alternate Raw WX Only --}}
   @if(filled($simbrief->xml->weather->altn_metar))
-    <div class="col"></div>
-    <div class="col">
+    <div class="col-lg"></div>
+    <div class="col-lg">
       <div class="card mb-1">
         <div class="card-footer p-1 small">
           {{ $simbrief->xml->weather->altn_metar }}

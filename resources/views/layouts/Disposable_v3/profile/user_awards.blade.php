@@ -1,5 +1,5 @@
 @if($user->awards)
-  <div class="row row-cols-6">
+  <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6">
     @foreach($user->awards as $award)
       <div class="col">
         <div class="card mb-2">

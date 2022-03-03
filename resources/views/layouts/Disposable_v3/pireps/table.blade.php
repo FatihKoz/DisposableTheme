@@ -2,7 +2,7 @@
   $units = isset($units) ? $units : DT_GetUnits();
   $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
 @endphp
-<table class="table table-sm table-borderless table-striped align-middle mb-0">
+<table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
   <thead>
     <tr>
       <th>@lang('flights.flightnumber')</th>

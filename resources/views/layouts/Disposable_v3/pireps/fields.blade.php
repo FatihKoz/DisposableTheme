@@ -29,8 +29,8 @@ flight reports that have been filed. You've been warned!
         </h6>
         <div class="form-group">
           {{-- Airline, Flight Ident, Flight Type--}}
-          <div class="row mb-2">
-            <div class="col-4">
+          <div class="row row-cols-lg-3 mb-2">
+            <div class="col-lg">
               @if($readonly)
                 {{ Form::hidden('airline_id') }}
               @endif
@@ -39,14 +39,14 @@ flight reports that have been filed. You've been warned!
                 {{ Form::select('airline_id', $airline_list, null, ['class' => 'form-control select2', $select2_readonly]) }}
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-lg">
               <div class="input-group input-group-sm">
                 {{ Form::text('flight_number', null, ['placeholder' => __('flights.flightnumber'), 'class' => 'form-control', $readonly]) }}
                 {{ Form::text('route_code', null, ['placeholder' => __('pireps.codeoptional'), 'class' => 'form-control', $readonly]) }}
                 {{ Form::text('route_leg', null, ['placeholder' => __('pireps.legoptional'), 'class' => 'form-control', $readonly]) }}
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-lg">
               @if($readonly)
                 {{ Form::hidden('flight_type') }}
               @endif
@@ -57,8 +57,8 @@ flight reports that have been filed. You've been warned!
             </div>
           </div>
           {{-- Departure & Arrival Airports --}}
-          <div class="row mb-2">
-            <div class="col">
+          <div class="row row-cols-lg-2 mb-2">
+            <div class="col-lg">
               @if($readonly)
                 {{ Form::hidden('dpt_airport_id') }}
               @endif
@@ -67,7 +67,7 @@ flight reports that have been filed. You've been warned!
                 {{ Form::select('dpt_airport_id', $airport_list, null, ['class' => 'form-control select2', $select2_readonly]) }}
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg">
               @if($readonly)
                 {{ Form::hidden('arr_airport_id') }}
               @endif
@@ -78,33 +78,33 @@ flight reports that have been filed. You've been warned!
             </div>
           </div>
           {{-- Flight Times, Level, Distance, Fuel Figures --}}
-          <div class="row">
-            <div class="col">
+          <div class="row row-cols-lg-5">
+            <div class="col-lg">
               <div class="input-group input-group-sm">
                 <span class="input-group-text">@lang('flights.flighttime')</span>
                 {{ Form::number('hours', null, ['class' => 'form-control', 'placeholder' => trans_choice('common.hour', 2), 'min' => '0', $readonly]) }}
                 {{ Form::number('minutes', null, ['class' => 'form-control', 'placeholder' => trans_choice('common.minute', 2), 'min' => 0, 'max' => 59, $readonly]) }}
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg">
               <div class="input-group input-group-sm">
                 <span class="input-group-text">@lang('flights.level') ({{config('phpvms.internal_units.altitude')}})</span>
                 {{ Form::number('level', null, ['class' => 'form-control', 'min' => '0', 'step' => '500', $readonly]) }}
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg">
               <div class="input-group input-group-sm">
                 <span class="input-group-text">@lang('common.distance') ({{config('phpvms.internal_units.distance')}})</span>
                 {{ Form::number('distance', null, ['class' => 'form-control', 'min' => '0', 'step' => '0.01', $readonly]) }}
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg">
               <div class="input-group input-group-sm">
                 <span class="input-group-text">@lang('pireps.block_fuel') ({{ $units['fuel'] }})</span>
                 {{ Form::number('block_fuel', null, ['class' => 'form-control', 'min' => '0', 'step' => '0.01', $readonly]) }}
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg">
               <div class="input-group input-group-sm">
                 <span class="input-group-text">@lang('pireps.fuel_used') ({{ $units['fuel'] }})</span>
                 {{ Form::number('fuel_used', null, ['class' => 'form-control', 'min' => '0', 'step' => '0.01', $readonly]) }}
@@ -121,7 +121,7 @@ flight reports that have been filed. You've been warned!
         </h6>
         <div class="form-group">
           <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6">
               @if($readonly)
                 {{ Form::hidden('aircraft_id') }}
               @endif

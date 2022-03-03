@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col-5">
+  <div class="col-lg-5">
     <div class="card mb-2 table-responsive">
       <table class="table table-sm table-borderless table-striped align-middle text-start mb-0">
         <tr>
-          <th class="col-4">@lang('disposable.registered')</th>
+          <th class="col-md-4">@lang('disposable.registered')</th>
           <td>{{ $user->created_at->diffForHumans() }}</td>
         </tr>
         <tr>
@@ -14,7 +14,7 @@
           @if(!$field->private && $field->name != Theme::getSetting('gen_ivao_field') && $field->name != Theme::getSetting('gen_vatsim_field'))
           {{-- @if(!$field->private) --}}
             <tr>
-              <th class="col-4">
+              <th class="col-md-4">
                 {{ $field->name }}
                 @if(filled($field->description))
                   <i class="fas fa-info-circle mx-2 text-primary" title="{{ $field->description }}"></i>
@@ -31,10 +31,10 @@
 @ability('admin', 'admin-access')
   <div class="row">
     @if($DSpecial)
-      <div class="col-5">
+      <div class="col-lg-5">
         @widget('DSpecial::TourProgress', ['user' => $user->id])
       </div>
-      <div class="col-5">
+      <div class="col-lg-5">
         @widget('DSpecial::Assignments', ['user' => $user->id, 'hide' => false])
       </div>
     @endif

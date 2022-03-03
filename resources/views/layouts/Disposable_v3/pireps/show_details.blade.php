@@ -71,7 +71,8 @@
           </td>
           <td class="text-end col-4" title="Remaining Fuel">
             @if($pirep->block_fuel && $pirep->fuel_used)
-              {{ DT_ConvertWeight($pirep->block_fuel - $pirep->fuel_used, $units['fuel']) }}
+              {{ number_format($pirep->block_fuel->local() - $pirep->fuel_used->local()).' '.$units['fuel'] }}
+              {{-- DT_ConvertWeight($pirep->block_fuel->local() - $pirep->fuel_used->local(), $units['fuel']) --}}
             @endif
             <i class="fas fa-plane-arrival mx-1"></i>
           </td>

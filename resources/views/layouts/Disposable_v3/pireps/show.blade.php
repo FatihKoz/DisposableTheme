@@ -9,7 +9,7 @@
 @section('content')
   <div class="row">
     {{-- LEFT --}}
-    <div class="col-8">
+    <div class="col-lg-8">
       @include('pireps.show_card')
 
       <div class="card mb-2">
@@ -47,7 +47,7 @@
             </ul>
           </h5>
         </div>
-        <div class="card-body p-0">
+        <div class="card-body table-responsive p-0">
           {{-- Navigation Contents --}}
           <div class="tab-content" id="PirepTabContent">
             @php $tab_height = '62vh'; @endphp
@@ -56,16 +56,10 @@
             </div>
             @if($AuthCheck && $pirep->fields && $pirep->fields->count() > 0 && $pirep->fields->count() <= 150)
               <div class="tab-pane fade overflow-auto" style="max-height: {{ $tab_height }};" id="fields" role="tabpanel" aria-labelledby="fields-tab">
-                <table class="table table-sm table-borderless table-striped align-middle mb-0">
-                  {{--}}
-                    <tr>
-                      <th>@lang('common.name')</th>
-                      <th>{{ trans_choice('common.value', 1) }}</th>
-                    </tr>
-                  {{--}}
+                <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
                   @foreach($pirep->fields as $field)
                     <tr>
-                      <td class="col-3">{{ $field->name }}</td>
+                      <td class="col-md-3">{{ $field->name }}</td>
                       <td>{!! DT_PirepField($field, $units) !!}</td>
                     </tr>
                   @endforeach
@@ -74,10 +68,10 @@
             @endif
             @if($AuthCheck && $pirep->acars_logs && $pirep->acars_logs->count() > 0 && $pirep->acars_logs->count() <= 250)
               <div class="tab-pane fade overflow-auto" style="max-height: {{ $tab_height }};" id="log" role="tabpanel" aria-labelledby="logs-tab">
-                <table class="table table-sm table-borderless table-striped align-middle mb-0">
+                <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
                   @foreach($pirep->acars_logs->sortBy('created_at') as $log)
                     <tr>
-                      <td class="col-3">{{ $log->created_at->format('d.M.Y H:i') }}</td>
+                      <td class="col-md-3">{{ $log->created_at->format('d.M.Y H:i') }}</td>
                       <td>{{ $log->log }}</td>
                     </tr>
                   @endforeach
@@ -86,7 +80,7 @@
             @endif
             @if($AuthCheck && $pirep->comments->count() > 0)
               <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
-                <table class="table table-sm table-borderless table-striped align-middle mb-0">
+                <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
                   @foreach($pirep->comments as $comment)
                     <tr>
                       <td class="col-3">{{ $comment->created_at->format('d.M.Y H:i') }}</td>
@@ -100,14 +94,14 @@
         </div>
         <div class="card-footer p-1">
           @if(filled($pirep->route))
-            <i class="fas fa-route float-start m-1" title="Planned Route"></i>
+            <i class="fas fa-route m-1" title="Planned Route"></i>
             {{ $pirep->dpt_airport_id.' '.$pirep->route }}
           @endif
         </div>
       </div>
     </div>
     {{-- RIGHT --}}
-    <div class="col">
+    <div class="col-lg-4">
       @include('pireps.show_details')
       @include('pireps.show_finance')
     </div>
@@ -116,7 +110,7 @@
   {{-- SimBrief OFP Modal --}}
   @if(!empty($pirep->simbrief))
     <div class="modal fade" id="OFP_Modal" tabindex="-1" aria-labelledby="OFP_ModalLabel" aria-hidden="true">
-      <div class="modal-dialog" style="width: 470px;">
+      <div class="modal-dialog" style="max-width: 470px;">
         <div class="modal-content">
           <div class="modal-header p-0">
             <h6 class="modal-title m-1" id="OFP_ModalLabel">
