@@ -314,7 +314,7 @@
     </a>
   </li>
 
-  @foreach($page_links as $page)
+  @foreach($page_links->sortBy('name', SORT_NATURAL) as $page)
     <li>
       <a class="nav-link" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank' : '_self' }}">
         <i class="{{ $page['icon'] ?? 'fas fa-file-alt' }} {{ $icon_style }}"></i>

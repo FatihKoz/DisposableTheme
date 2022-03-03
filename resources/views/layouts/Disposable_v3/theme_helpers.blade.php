@@ -273,9 +273,10 @@
       }
 
       if ($route_code === 'H') { $route_code = 'Historic' ;}
+      elseif ($route_code === 'AJ') { $route_code = 'AnadoluJet' ;}
+      elseif (str_contains($route_code, 'PF')) { $route_code = 'Personal Flight' ;}
       // You can add more text for your own codes like below
-      // elseif ($route_code === 'AJ'){ $route_code = 'AnadoluJet' ;}
-      // elseif ($route_code === 'PF'){ $route_code = 'Personal Flight' ;}
+      // elseif ($route_code === 'XX') { $route_code = 'My Route Code' ;}
 
       if ($type === 'badge') {
         $route_code = '<span class="badge bg-warning mx-1 text-black">'.$route_code.'</span>';
@@ -509,12 +510,11 @@
         $vasys['AltAirport'] = filled(optional($pirep->flight)->alt_airport_id) ? $pirep->flight->alt_airport_id : 'NONE';
         $vasys['Route'] = $pirep->route;
       }
-      // Fuel Conversion
+      // Fuel Used and Unit Type
+      $vasys['Fuel_Qty'] = $pirep->fuel_used->local(0);
       if ($units['fuel'] === 'kg') {
-        $vasys['Fuel_Qty'] = round($pirep->fuel_used / 2.20462262185);
         $vasys['Fuel_Type'] = 'K';
       } else {
-        $vasys['Fuel_Qty'] = round($pirep->fuel_used);
         $vasys['Fuel_Type'] = 'L';
       }
 

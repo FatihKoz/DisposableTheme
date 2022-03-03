@@ -126,32 +126,4 @@
       </div>
     @endif
   </div>
-  {{--}}
-  <div class="card-footer p-0 table-responsive">
-    <table class="table table-sm table-borderless table-striped align-middle mb-0">
-      <tr>
-        <td class="text-start">
-          {!! DT_PirepStatus($pirep) !!}
-          {!! DT_PirepState($pirep) !!}
-          @widget('DBasic::StableApproach', ['pirep' => $pirep, 'type' => 'badge'])
-        </td>
-        @if($pirep->comments->count() > 0)
-          <td class="text-center">
-            <span class="badge bg-warning text-black">Check Comments</span>
-          </td>
-        @endif
-        @if(!empty($pirep->simbrief))
-          <td class="text-end">
-            <span type="button" class="badge bg-primary text-black" data-bs-toggle="modal" data-bs-target="#OFP_Modal">
-              SimBrief OFP
-            </span>
-            <a class="badge bg-secondary text-black" href="{{ route('frontend.simbrief.briefing', $pirep->simbrief->id) }}" target="_blank">
-              SimBrief Briefing
-            </a>
-          </td>
-        @endif
-      </tr>
-    </table>
-  </div>
-  {{--}}
 </div>

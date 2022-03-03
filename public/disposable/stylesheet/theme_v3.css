@@ -36,7 +36,7 @@ a:active {
 
 /* Card Style */
 .card {
-  background-color: rgba(223, 213, 203, 0.65);
+  background-color: rgba(206, 200, 194, 0.65);
   border-color: black;
   box-shadow: 0px 2px 3px black;
 }
@@ -69,7 +69,7 @@ a:active {
 
 /* Modal Style */
 .modal .modal-header {
-  background-color: rgba(31, 13, 192, 1);
+  background-color: rgba(31, 13, 192, 0.9);
   color: lightgoldenrodyellow;
 }
 
@@ -80,7 +80,7 @@ a:active {
 .modal .modal-footer {
   color: lightgoldenrodyellow;
   font-weight: 400;
-  background-color: rgba(31, 13, 192, 1);
+  background-color: rgba(31, 13, 192, 0.9);
 }
 
 /* Accordion Style */
@@ -90,7 +90,7 @@ a:active {
   background-color: rgba(31, 13, 192, 0.9) !important;
 }
 .accordion .collapsed {
-  background-color: rgba(31, 13, 192, 0.7) !important;
+  background-color: rgba(31, 13, 192, 0.6) !important;
   color: lightgoldenrodyellow !important;
 }
 .accordion .accordion-item {
@@ -158,7 +158,7 @@ a:active {
 /* Navigation Pills Style */
 .nav-pills .nav-link {
   color: wheat;
-  background-color: rgba(31, 13, 192, 0.7) !important;
+  background-color: rgba(31, 13, 192, 0.6) !important;
 }
 .nav-pills .active {
   color: darkgoldenrod;
