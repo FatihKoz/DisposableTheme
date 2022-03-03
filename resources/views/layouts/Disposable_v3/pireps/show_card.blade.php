@@ -59,25 +59,23 @@
     </div>
   </div>
   <div class="card-footer bg-transparent p-1">
-    <div class="row row-cols-lg-3">
+    <div class="row row-cols-lg-2">
       <div class="col text-start">
         {!! DT_FlightType($pirep->flight_type, 'button') !!}
       </div>
       <div class="col text-end">
         {!! DT_RouteCode($pirep->route_code, 'button') !!} {!! DT_RouteLeg($pirep->route_leg, 'button') !!}
-      </div>
-      @if(!$pirep->read_only && $user && $pirep->user_id === $user->id)
-        <div class="col-lg-2 text-end">
-          <form method="post" action="{{ route('frontend.pireps.submit', $pirep->id) }}">
-            @csrf
-            <button class="btn btn-sm btn-success m-0 mx-1 p-0 px-1 float-end">@lang('common.submit')</button>
-          </form>
+        @if(!$pirep->read_only && $user && $pirep->user_id === $user->id)
           <form method="get" action="{{ route('frontend.pireps.edit', $pirep->id) }}">
             @csrf
-            <button class="btn btn-sm btn-info m-0 mx-1 p-0 px-1 float-end">@lang('common.edit')</button>
+            <button class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">@lang('common.edit')</button>
           </form>
-        </div>
-      @endif
+          <form method="post" action="{{ route('frontend.pireps.submit', $pirep->id) }}">
+            @csrf
+            <button class="btn btn-sm btn-success m-0 mx-1 p-0 px-1">@lang('common.submit')</button>
+          </form>
+        @endif
+      </div>
     </div>
   </div>
 </div>
