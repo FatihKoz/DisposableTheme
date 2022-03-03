@@ -2,11 +2,14 @@
 
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
-Compatible with latest development (dev) builds of phpVMS v7 as described below, which are released after **14.DEC.21**
+Compatible with phpVMS v7 builds as described below;
 
-* Theme version v3.0.19 is the latest version with php7.4 and laravel8 support.
-* Theme versions starting with v3.1.xx will support only php8 and laravel9 as per phpVMS v7 improvements.
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0`
+* Theme versions starting with v3.1.xx supports **only** php8.x and laravel9.x
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-Laravel9` for v3.1.xx
+
+* Theme version v3.0.19 is the latest version with php7.4 and laravel8 support
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0` (14.DEC.21) for v3.0.19
+* Latest available phpVMS v7 version is `phpVms 7.0.0-dev+220228.b81dd9` (28.FEB.22) for v3.0.19
 
 ## Important Changes
 
@@ -44,7 +47,7 @@ Below you can find some details about the theme, customization of it and some mi
 
 ```json
 "name"    : "MyTheme",        // Theme Name (and also the folder name)
-"extends" : "Disposable_v3",  // Here we tell Laravel that we are extending DH2 theme
+"extends" : "Disposable_v3",  // Here we tell Laravel that we are extending Disposable_v3 theme
 ```
 
 * Now copy any file you want to edit/change from `Disposable_v3` folder to your `MyTheme` folder, for example take `home.blade.php`
@@ -68,7 +71,7 @@ You can simply define your own custom default gravatar for pilots. Just edit you
 
 ```php
 # GRAVATAR DEFAULT
-GRAVATAR_DEFAULT_AVATAR='http://your.phpvms.url.comes.here/disposable/nophoto.jpg'
+GRAVATAR_DEFAULT_AVATAR='https://your.phpvms.url.comes.here/disposable/nophoto.jpg'
 ```
 
 ### Defining a custom FavIcon
@@ -83,7 +86,7 @@ Edit your duplicated `app.blade.php` and add below line to the `head` section
 
 This can be achieved in two ways, either you need to change the image files provided in the package `theme_logo.png` and `theme_logo_big.png` or you need to edit blade files to use your own paths for your logos (preferred way)
 
-Files holding logo definitions `nav_side.blade.php` , `nav_top.blade.php` and `nav_menu.blade.php`
+Files holding logo definitions are `nav_side.blade.php`, `nav_top.blade.php` and `nav_menu.blade.php`
 
 Both SideBar and NavBar uses the same file for menu items `nav_menu.blade.php`
 

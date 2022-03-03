@@ -8,7 +8,7 @@
         <div class="card-header p-1">
           <h5 class="m-1">
             {{ $page->name }}
-            <i class="fas fa-file-alt float-end"></i>
+            <i class="{{ $page->icon ?? 'fas fa-file-alt' }} float-end"></i>
           </h5>
         </div>
         <div class="card-body p-1">
