@@ -32,10 +32,22 @@
   <div class="row">
     @if($DSpecial)
       <div class="col-lg-5">
-        @widget('DSpecial::TourProgress', ['user' => $user->id])
+        @widget('DSpecial::Assignments', ['user' => $user->id, 'hide' => false])
+        @ability('admin', 'admin-user')
+          <div class="float-end">
+            {{ Form::open(array('route' => 'DSpecial.assignments_manual', 'method' => 'post')) }}
+              <input type="hidden" name="curr_page" value="{{ url()->full() }}">
+              <input type="hidden" name="userid" value="{{ $user->id }}">
+              <input type="hidden" name="resetmonth" value="true">
+              <button class="btn btn-sm bg-danger p-0 px-1 mb-2 text-black" type="submit" onclick="return confirm('Are you REALLY sure ? This will DELETE and re-assign flights !')">
+                Re-Assign Current Month
+              </button>
+            {{ Form::close() }}
+          </div>
+        @endability   
       </div>
       <div class="col-lg-5">
-        @widget('DSpecial::Assignments', ['user' => $user->id, 'hide' => false])
+        @widget('DSpecial::TourProgress', ['user' => $user->id])
       </div>
     @endif
   </div>
