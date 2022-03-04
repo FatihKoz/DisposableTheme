@@ -121,7 +121,7 @@
     just remove it completely. Only added as a convenience factor
     --}}
       @php $gtag = setting('general.google_analytics_id', null); @endphp
-      @if($gtag)
+      @if(filled($gtag))
         {{-- Global site tag (gtag.js) - Google Analytics --}}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ $gtag }}"></script>
         <script>
