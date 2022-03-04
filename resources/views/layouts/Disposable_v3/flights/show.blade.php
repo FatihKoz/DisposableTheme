@@ -212,12 +212,12 @@
       {{-- Generic Buttons --}}
       <div class="text-end">
         @if($DBasic && Theme::getSetting('flight_jumpseat'))
-          <div class="float-start">@widget('DBasic::JumpSeat', ['dest' => $flight->dpt_airport_id])</div>
+          <div class="mb-1 float-start">@widget('DBasic::JumpSeat', ['dest' => $flight->dpt_airport_id])</div>
         @endif
         @if(Theme::getSetting('flight_bid'))
           @if(!setting('pilots.only_flights_from_current') || $flight->dpt_airport_id === Auth::user()->curr_airport_id)
             {{-- !!! IMPORTANT NOTE !!! Don't remove the "save_flight" class, It will break the AJAX to save/delete --}}
-            <span class="btn btn-sm save_flight {{isset($bid) ? 'btn-danger':'btn-success'}} mx-1" onclick="AddRemoveBid('{{isset($bid) ? 'remove':'add'}}')">
+            <span class="btn btn-sm save_flight {{isset($bid) ? 'btn-danger':'btn-success'}} mx-1 mb-1" onclick="AddRemoveBid('{{isset($bid) ? 'remove':'add'}}')">
               {{isset($bid) ? __('disposable.bid_rem'): __('disposable.bid_add')}}
             </span>
           @endif
@@ -225,27 +225,27 @@
         @if(Theme::getSetting('flight_simbrief') && filled(setting('simbrief.api_key')))
           @if(!setting('simbrief.only_bids') || setting('simbrief.only_bids') && isset($bid))
             @if($flight->simbrief && $flight->simbrief->user_id == Auth::user()->id)
-              <a id="mylink" href="{{ route('frontend.simbrief.briefing', $flight->simbrief->id) }}" class="btn btn-sm btn-secondary mx-1">
+              <a id="mylink" href="{{ route('frontend.simbrief.briefing', $flight->simbrief->id) }}" class="btn btn-sm btn-secondary mx-1 mb-1">
                 @lang('disposable.sb_view')
               </a>
             @else
-              <a id="mylink" href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-primary mx-1">
+              <a id="mylink" href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-primary mx-1 mb-1">
                 @lang('disposable.sb_generate')
               </a>
             @endif
           @endif
         @endif
         @if($acars_plugin && isset($bid))
-          <a href="vmsacars:bid/{{ $bid->id }}" class="btn btn-sm btn-warning mx-1">
+          <a href="vmsacars:bid/{{ $bid->id }}" class="btn btn-sm btn-warning mx-1 mb-1">
             @lang('disposable.load_acars')
           </a>
         @elseif($acars_plugin)
-          <a href="vmsacars:flight/{{ $flight->id }}" class="btn btn-sm btn-warning mx-1">
+          <a href="vmsacars:flight/{{ $flight->id }}" class="btn btn-sm btn-warning mx-1 mb-1">
             @lang('disposable.load_acars')
           </a>
         @endif
         @if(Theme::getSetting('pireps_manual'))
-          <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info mx-1">
+          <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info mx-1 mb-1">
             @lang('disposable.new_pirep')
           </a>
         @endif

@@ -1,5 +1,5 @@
 {{-- ROW WITH ICONS --}}
-<div class="row mb-0">
+<div class="row row-cols-2 row-cols-md-4 row-cols-xl-8 mb-0">
 
   <div class="col-lg">
     <div class="card bg-transparent shadow-none text-dark border-0 mb-2">

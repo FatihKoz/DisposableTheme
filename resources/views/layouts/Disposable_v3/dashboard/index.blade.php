@@ -40,25 +40,25 @@
       @widget('latestNews', ['count' => 3])
       {{-- Jumpseat Traver and Aircraft Transfer Widgets--}}
       @if($DBasic)
-        <div class="row">
-          <div class="col">
+        <div class="row row-cols-md-2">
+          <div class="col-md">
             @widget('DBasic::JumpSeat')
           </div>
-          <div class="col">
+          <div class="col-md">
             @widget('DBasic::TransferAircraft')
           </div>
         </div>
       @endif
       {{-- Current Month Leaderboard Widgets--}}
       @if($DBasic)
-        <div class="row">
-          <div class="col">
+        <div class="row row-cols-lg-3">
+          <div class="col-md">
             @widget('DBasic::LeaderBoard', ['source' => 'pilot', 'period' => 'currentm', 'count' => 5, 'type' => 'flights'])
           </div>
-          <div class="col">
+          <div class="col-md">
             @widget('DBasic::LeaderBoard', ['source' => 'pilot', 'period' => 'currentm', 'count' => 5, 'type' => 'time'])
           </div>
-          <div class="col">
+          <div class="col-md">
             @widget('DBasic::LeaderBoard', ['source' => 'pilot', 'period' => 'currentm', 'count' => 5, 'type' => 'lrate'])
           </div>
         </div>
