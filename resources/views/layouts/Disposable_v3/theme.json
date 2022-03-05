@@ -2,7 +2,7 @@
     "name": "Disposable_v3",
     "extends": "default",
     "gen_background_img": 1,
-    "gen_sidebar": 1,
+    "gen_sidebar": 0,
     "gen_utc_clock": 1,
     "gen_ivao_logo": 1,
     "gen_ivao_field": "IVAO",

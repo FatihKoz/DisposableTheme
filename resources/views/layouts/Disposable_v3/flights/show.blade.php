@@ -45,16 +45,16 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-lg text-start">
+            <div class="col text-start">
               @if(filled($flight->dpt_time))
                 <i class="fas fa-clock float-start m-1"></i>
                 {{ DT_FormatScheduleTime($flight->dpt_time) }}
               @endif
             </div>
-            <div class="col-lg text-center">
+            <div class="col text-center">
               {{ DT_FlightDays($flight->days) }}
             </div>
-            <div class="col-lg text-end">
+            <div class="col text-end">
               @if(filled($flight->arr_time))
                 <i class="fas fa-clock float-end m-1"></i>
                 {{ DT_FormatScheduleTime($flight->arr_time) }}
