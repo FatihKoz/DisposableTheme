@@ -165,9 +165,9 @@ There are some options defined in this file for quick settings or for pre-define
 
 ## About IVAO VA System Support
 
-As this is a really an optional feature and the system itself is too old, it is provided only for VA's already using it. Therefore you will see no buttons or forms automatically placed by me. To enable it, you should include the required file to a blade you need that button. Also you should define your IVAO approved `Airline ID` and `Airline ICAO code` at theme.json file.
+As this is really an optional feature and the system itself is too old, it is provided only for VA's already using it. You should define your IVAO approved `Airline ID` and `Airline ICAO code` at theme.json file for the auto placed badges to show up.
 
-Below you can find two examples, both will check if you have necessary definitions at theme.json and includes the file. Which will have a visible badge/button, when clicked it will open up a modal window for the pilot to send the report.
+Below you can find an example, it checks if you have necessary definitions at theme.json and includes the file. Which will have a visible badge/button, when clicked it will open up a modal window for the pilot to send the report.
 
 ```php
 @if(Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
@@ -175,11 +175,7 @@ Below you can find two examples, both will check if you have necessary definitio
 @endif
 ```
 
-```php
-@if(Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
-  @include('ivao_vasys')
-@endif
-```
+Be advised, IVAO's login cookies do not work properly even if you click "Remember Me". This is the reason of that "Login IVAO" button placed in the modal. It is higly advised that pilots click that button first, complete their login to IVAO, which will send them back to your VA, then click the "Send Report" button.
 
 Here is an answer from [IVAO Official Wiki](https://wiki.ivao.aero/en/home/flightoperations/FAQ_VA) about VA System usage
 
@@ -196,6 +192,13 @@ As per the license, **theme name should be always visible in all pages**. Editin
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
+
+06.MAR.22
+
+* Theme is now only compatible with php8 and Laravel9
+* All blades changed to provide better support mobile devices
+* Theme helpers updated to meet new core requirements
+* Added some admin only items to pilot profile page (to support Disposable Special features)
 
 01.MAR.22
 

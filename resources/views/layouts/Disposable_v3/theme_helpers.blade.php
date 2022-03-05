@@ -478,7 +478,7 @@
       $vasys['Aircraft'] = $pirep->aircraft->icao;
       $vasys['DepAirport'] = $pirep->dpt_airport_id;
       $vasys['LandAirport'] = $pirep->arr_airport_id;
-      $vasys['Distance'] = round($pirep->distance);
+      $vasys['Distance'] = $pirep->distance->local(0);
       $vasys['Altitude'] = $pirep->level;
       $vasys['DateDay'] = $pirep->created_at->format('d');
       $vasys['DateMonth'] = $pirep->created_at->format('m');
@@ -511,7 +511,7 @@
         $vasys['Route'] = $pirep->route;
       }
       // Fuel Used and Unit Type
-      $vasys['Fuel_Qty'] = $pirep->fuel_used->local(0);
+      $vasys['Fuel_Qty'] = round($pirep->fuel_used->local());
       if ($units['fuel'] === 'kg') {
         $vasys['Fuel_Type'] = 'K';
       } else {

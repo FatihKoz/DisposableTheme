@@ -50,6 +50,9 @@
           </td>
         @endif
         <td class="text-end">
+          @if($pirep->read_only && Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
+            @include('pireps.ivao_vasys')
+          @endif
           {!! DT_PirepState($pirep, 'badge') !!}
         </td>
       </tr>
