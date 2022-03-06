@@ -58,7 +58,7 @@
           @endif
           <a class="btn btn-sm btn-primary my-1" data-bs-toggle="modal" data-bs-target="#ofp-view" href="#">View</a>
           @if(filled($simbrief->xml->params->static_id) && $user->id == $simbrief->user_id && $simbrief->flight_id)
-            <a class="btn btn-sm btn-warning my-1" data-bs-toggle="modal" data-bs-target="#ofp-edit" href="#">Edit</a>
+            <a class="btn btn-sm btn-warning my-1" data-bs-toggle="modal" data-bs-target="#ofp-edit" href="#" onclick="OpenEditPage()">Edit</a>
           @endif
           @if($user->id == $simbrief->user_id && $simbrief->flight_id)
             <a class="btn btn-sm btn-danger my-1" href="{{ url(route('frontend.simbrief.generate_new', [$simbrief->id])) }}">Generate New</a>
@@ -107,7 +107,7 @@
             <button type="button" class="btn-close mx-1" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body border-0 p-0">
-            <iframe src="https://www.simbrief.com/system/dispatch.php?editflight=last&static_id={{ $simbrief->xml->params->static_id }}" style="width: 100%; height: 82vh; display:block;" frameBorder="0" title="SimBrief"></iframe>
+            <iframe id="EditSimBriefOfp" src="about:blank" data-src="https://www.simbrief.com/system/dispatch.php?editflight=last&static_id={{ $simbrief->xml->params->static_id }}" style="width: 100%; height: 82vh; display:block;" frameBorder="0" title="SimBrief"></iframe>
           </div>
           <div class="modal-footer border-0 text-end p-1">
             <a
@@ -125,6 +125,12 @@
 
 @section('scripts')
   @parent
+  <script>
+    function OpenEditPage () {
+      var edit_frame = $("#EditSimBriefOfp");
+      edit_frame.attr("src", edit_frame.data("src")); 
+    }
+  </script>
   <script>
     $(document).ready(function () {
       $("#download_fms").click(e => {
