@@ -5,7 +5,7 @@
   $units = isset($units) ? $units : DT_GetUnits();
   $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
   $Addon_Specs = ($DBasic && Theme::getSetting('simbrief_specs')) ? DB_GetSpecs($aircraft, true) : null;
-  $Check_SSL = (stripos(config('app_url'), 'https://') !== false) ? true : false;
+  $Check_SSL = str_contains(url()->current(), 'https://');
 @endphp
 @section('content')
   <form id="sbapiform">
@@ -184,9 +184,9 @@
                   <input name="route" type="text" class="form-control" value="{{ $flight->route }}">
                   @if(Theme::getSetting('simbrief_rfinder'))
                     @if($Check_SSL)
-                      <button id="rfinder" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#rfinderModal">RouteFinder</button>
-                    @else
                       <a href="http://rfinder.asalink.net/free" target="_blank" class="btn btn-sm btn-secondary">RouteFinder</a>
+                    @else
+                      <button id="RouteFinder" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#rfinderModal" onclick="OpenRouteFinder()">RouteFinder</button>
                     @endif
                   @endif
                 </div>
@@ -375,7 +375,7 @@
     </div>
   </form>
 
-@if(Theme::getSetting('simbrief_rfinder') && $Check_SSL)
+@if(Theme::getSetting('simbrief_rfinder') && !$Check_SSL)
   @include('flights.simbrief_form_routefinder')
 @endif
 
