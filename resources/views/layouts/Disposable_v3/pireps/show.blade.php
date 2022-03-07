@@ -4,6 +4,7 @@
 @php
   $units = isset($units) ? $units : DT_GetUnits();
   $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
+  $DSpecial = isset($DSpecial) ? $DSpecial : DT_CheckModule('DisposableSpecial');
   $AuthCheck = Auth::check();
 @endphp
 @section('content')

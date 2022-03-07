@@ -65,6 +65,16 @@
       </div>
       <div class="col text-end">
         {!! DT_RouteCode($pirep->route_code, 'button') !!} {!! DT_RouteLeg($pirep->route_leg, 'button') !!}
+        @ability('admin', 'admin-user')
+          @if($DSpecial && filled($pirep->route_code) && filled($pirep->route_leg))
+            <a href="{{ route('DSpecial.tour_remove', [$pirep->id]) }}">
+              <span class="btn btn-sm bg-danger m-0 mx-1 p-0 px-1"
+                onclick="return confirm('Are you really sure ?\nRemoving tour details from the pirep is irreversible !!!')"
+                title="Remove Tour details from Pirep !">Remove Tour
+              </span>
+            </a>
+          @endif
+        @endability
         @if(!$pirep->read_only && $user && $pirep->user_id === $user->id)
           <form method="get" action="{{ route('frontend.pireps.edit', $pirep->id) }}">
             @csrf

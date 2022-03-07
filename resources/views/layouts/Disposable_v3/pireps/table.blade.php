@@ -24,10 +24,10 @@
           <a href="{{ route('frontend.pireps.show', [$pirep->id]) }}">{{ $pirep->ident }}</a>
         </td>
         <td>
-          <a href="{{route('frontend.airports.show', [$pirep->dpt_airport_id])}}">{{ optional($pirep->dpt_airport)->full_name }}</a>
+          <a href="{{ route('frontend.airports.show', [$pirep->dpt_airport_id]) }}">{{ optional($pirep->dpt_airport)->full_name }}</a>
         </td>
         <td>
-          <a href="{{route('frontend.airports.show', [$pirep->arr_airport_id])}}">{{ optional($pirep->arr_airport)->full_name }}</a>
+          <a href="{{ route('frontend.airports.show', [$pirep->arr_airport_id]) }}">{{ optional($pirep->arr_airport)->full_name }}</a>
         </td>
         <td class="text-center">
           @if($DBasic) <a href="{{ route('DBasic.aircraft', [optional($pirep->aircraft)->registration ?? '-'])}}"> @endif
