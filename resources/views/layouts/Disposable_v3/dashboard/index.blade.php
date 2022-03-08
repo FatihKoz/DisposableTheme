@@ -74,7 +74,7 @@
         @widget('Weather', ['icao' => $current_airport])
       @endif
       {{-- Two Map side by side positioning --}}
-      <div class="row">
+      <div class="row mb-1">
         <div class="col">
           @if($DBasic && Theme::getSetting('gen_map_flight'))
             @widget('DBasic::Map', ['source' => $current_airport])

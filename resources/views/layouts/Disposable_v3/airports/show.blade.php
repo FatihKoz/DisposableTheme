@@ -71,7 +71,9 @@
         @endif
       </div>
       @if($DBasic && Theme::getSetting('gen_map_flight'))
-        @widget('DBasic::Map', ['source' => $airport->id])
+        <div class="mb-2">
+          @widget('DBasic::Map', ['source' => $airport->id])
+        </div>
       @endif
       {{-- Show Pills For Map/WX/Downloads--}}
       <ul class="nav nav-pills nav-justified mb-2" id="pills-tab" role="tablist">

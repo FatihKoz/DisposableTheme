@@ -37,10 +37,14 @@
       @include('flights.search')
       @include('flights.nav')
       @if($DBasic && Theme::getSetting('gen_map_flight'))
-        @widget('DBasic::Map')
+        <div class="mb-2">
+          @widget('DBasic::Map')
+        </div>
       @endif
       @if($DBasic && Theme::getSetting('gen_map_fleet'))
-        @widget('DBasic::Map', ['source' => 'fleet'])
+        <div class="mb-2">
+          @widget('DBasic::Map', ['source' => 'fleet'])
+        </div>
       @endif
     </div>
   </div>
