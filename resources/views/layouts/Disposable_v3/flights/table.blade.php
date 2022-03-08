@@ -26,8 +26,12 @@
             {{ $flight->dpt_airport->full_name ?? $flight->dpt_airport_id }}
           </a>
         </td>
-        <td class="text-center" title="{{ DT_FlightDays($flight->days) }}">{{ DT_FormatScheduleTime($flight->dpt_time) }}</td>
-        <td class="text-center">{{ DT_FormatScheduleTime($flight->arr_time) }}</td>
+        @if(filled($flight->dpt_time) && filled($flight->arr_time))
+          <td class="text-center" title="{{ DT_FlightDays($flight->days) }}">{{ DT_FormatScheduleTime($flight->dpt_time) }}</td>
+          <td class="text-center">{{ DT_FormatScheduleTime($flight->arr_time) }}</td>
+        @else 
+          <td class="text-center" colspan="2" title="{{ DT_FlightDays($flight->days) }}">{{ DT_ConvertMinutes($flight->flight_time, '%2dh %2dm') }}</td>
+        @endif
         <td>
           @if(Theme::getSetting('flights_flags'))
             <img class="img-mh25 mx-1" title="{{ strtoupper(optional($flight->arr_airport)->country) }}"
