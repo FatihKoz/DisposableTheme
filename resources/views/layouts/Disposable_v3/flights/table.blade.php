@@ -46,11 +46,11 @@
           @if($acars_plugin)
             @if(isset($saved[$flight->id]))
               <a href="vmsacars:bid/{{ $saved[$flight->id] }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-warning">
-                <i class="fas fa-file-download" title="Load in vmsAcars"></i>
+                <i class="fas fa-file-download" title="Load in Acars"></i>
               </a>
             @else
               <a href="vmsacars:flight/{{ $flight->id }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-warning">
-                <i class="fas fa-file-download" title="Load in vmsAcars"></i>
+                <i class="fas fa-file-download" title="Load in Acars"></i>
               </a>
             @endif
           @endif
