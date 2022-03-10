@@ -15,7 +15,7 @@
           console.log('successfully saved flight');
           btn.addClass(class_name);
           alert('@lang("flights.bidadded")');
-          location.reload();
+          location.replace('/flights/bids');
         } else {
           await phpvms.bids.removeBid(flight_id);
 

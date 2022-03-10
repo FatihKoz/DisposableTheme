@@ -22,7 +22,7 @@
         </td>
         <td>
           @if(Theme::getSetting('flights_flags'))
-            <img class="img-mh25 mx-1" title="{{ strtoupper(optional($flight->dpt_airport)->country) }}" 
+            <img class="img-mh25 mx-1" title="{{ strtoupper(optional($flight->dpt_airport)->country) }}"
               src="{{ public_asset('/image/flags_new/'.strtolower(optional($flight->dpt_airport)->country).'.png') }}" alt=""/>
           @endif
           <a href="{{ route('frontend.airports.show', [$flight->dpt_airport_id]) }}">
@@ -32,7 +32,7 @@
         @if(filled($flight->dpt_time) && filled($flight->arr_time))
           <td class="text-center" title="{{ DT_FlightDays($flight->days) }}">{{ DT_FormatScheduleTime($flight->dpt_time) }}</td>
           <td class="text-center">{{ DT_FormatScheduleTime($flight->arr_time) }}</td>
-        @else 
+        @else
           <td class="text-center" colspan="2" title="{{ DT_FlightDays($flight->days) }}">{{ DT_ConvertMinutes($flight->flight_time, '%2dh %2dm') }}</td>
         @endif
         <td>
@@ -45,46 +45,41 @@
           </a>
         </td>
         <td class="text-end">
-          {{-- Bid/Unbid --}}
           @if(!setting('pilots.only_flights_from_current') || $flight->dpt_airport_id == optional($user->current_airport)->icao)
-            <button class="btn btn-sm m-0 mx-1 p-0 px-1 save_flight {{ isset($saved[$flight->id]) ? 'btn-danger':'btn-success' }}"
-                    x-id="{{ $flight->id }}" x-saved-class="btn-danger"
-                    type="button" title="@lang('flights.addremovebid')">
-              <i class="fas fa-map-marker"></i>
-            </button>
-          @endif
-          {{-- Simbrief --}}
-          @if($simbrief !== false)
-            {{-- Show --}}
-            @if($flight->simbrief && $flight->simbrief->user_id === $user->id)
+            {{-- Bid --}}
+            @if(setting('bids.allow_multiple_bids') === true || setting('bids.allow_multiple_bids') === false && count($saved) === 0)
+              <button class="btn btn-sm m-0 mx-1 p-0 px-1 save_flight {{ isset($saved[$flight->id]) ? 'btn-danger':'btn-success' }}"
+                      x-id="{{ $flight->id }}"
+                      x-saved-class="btn-danger"
+                      type="button" title="@lang('flights.addremovebid')">
+                <i class="fas fa-map-marker"></i>
+              </button>
+            @endif
+            {{-- Simbrief --}}
+            @if($simbrief !== false && $flight->simbrief && $flight->simbrief->user_id === $user->id)
               <a href="{{ route('frontend.simbrief.briefing', $flight->simbrief->id) }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-secondary">
                 <i class="fas fa-file-pdf"  title="View SimBrief OFP"></i>
               </a>
-            @else
-              {{-- Create --}}
-              @if($simbrief_bids === false || ($simbrief_bids === true && isset($saved[$flight->id])))
-                <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-primary">
-                  <i class="fas fa-file-pdf" title="Generate SimBrief OFP"></i>
-                </a>
-              @endif
+            @elseif($simbrief !== false && ($simbrief_bids === false || $simbrief_bids === true && isset($saved[$flight->id])))
+              <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-primary">
+                <i class="fas fa-file-pdf" title="Generate SimBrief OFP"></i>
+              </a>
             @endif
-          @endif
-          {{-- vmsAcars Load --}}
-          @if($acars_plugin)
-            @if(isset($saved[$flight->id]))
+            {{-- vmsAcars Load --}}
+            @if($acars_plugin && isset($saved[$flight->id]))
               <a href="vmsacars:bid/{{ $saved[$flight->id] }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-warning">
                 <i class="fas fa-file-download" title="Load in Acars"></i>
               </a>
-            @else
+            @elseif($acars_plugin)
               <a href="vmsacars:flight/{{ $flight->id }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-warning">
                 <i class="fas fa-file-download" title="Load in Acars"></i>
               </a>
             @endif
-          @endif
-          @if(Theme::getSetting('pireps_manual'))
-            <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">
-              <i class="fas fa-file-upload" title="@lang('disposable.new_pirep')"></i>
-            </a>
+            @if(Theme::getSetting('pireps_manual'))
+              <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">
+                <i class="fas fa-file-upload" title="@lang('disposable.new_pirep')"></i>
+              </a>
+            @endif
           @endif
         </td>
       </tr>
