@@ -6,6 +6,7 @@
   $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
   $DSpecial = isset($DSpecial) ? $DSpecial : DT_CheckModule('DisposableSpecial');
   $tour_codes = ($DSpecial) ? DS_GetTourCodes() : [];
+  $auto_extend = (setting('bids.allow_multiple_bids') === false) ? 'show' : '';
 @endphp
 @section('content')
   @if(!$flights->count())
