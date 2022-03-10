@@ -193,12 +193,13 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
-06.MAR.22
+10.MAR.22
 
 * Theme is now only compatible with php8 and Laravel9
 * All blades changed to provide better support mobile devices
 * Theme helpers updated to meet new core requirements
 * Added some admin only items to pilot profile page (to support Disposable Special features)
+* Added some details to My Bids page, allowed deletion of bids when the pilot is not at that airport
 
 01.MAR.22
 
