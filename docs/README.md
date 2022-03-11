@@ -193,7 +193,7 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
-10.MAR.22
+11.MAR.22
 
 * Theme is now only compatible with php8 and Laravel9
 * All blades changed to provide better support mobile devices
