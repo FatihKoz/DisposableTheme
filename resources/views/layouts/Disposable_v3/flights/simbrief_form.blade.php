@@ -59,35 +59,35 @@
             </div>
             @if($Addon_Specs)
               <div id="specs" class="row row-cols-md-2 row-cols-lg-5 my-1">
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">DOW</span>
                     <input id="dow" type="text" class="form-control text-right" value="--" disabled/>
                     <span class="input-group-text input-group-text-prepend">{{ $units['weight'] }}</span>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">MZFW</span>
                     <input id="mzfw" type="text" class="form-control text-right" value="--" disabled/>
                     <span class="input-group-text input-group-text-prepend">{{ $units['weight'] }}</span>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">MTOW</span>
                     <input id="mtow" type="text" class="form-control text-right" value="--" disabled/>
                     <span class="input-group-text input-group-text-prepend">{{ $units['weight'] }}</span>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">MLW</span>
                     <input id="mlw" type="text" class="form-control text-right" value="--" disabled/>
                     <span class="input-group-text input-group-text-prepend">{{ $units['weight'] }}</span>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">Fuel Cap</span>
                     <input id="maxfuel" type="text" class="form-control text-right" value="--" disabled/>
@@ -236,10 +236,10 @@
             </h5>
           </div>
           <div class="card-body p-1">
-            <div class="row row-cols-lg-4 mb-1">
+            <div class="row row-cols-md-2 row-cols-lg-4 mb-1">
               {{-- Pax Fares --}}
                 @foreach($pax_load_sheet as $pfare)
-                  <div class="col">
+                  <div class="col-md">
                     <div class="input-group input-group-sm">
                       <span class="input-group-text">{{ $pfare['name'] }}</span>
                       <input id="LoadFare{{ $pfare['id'] }}" type="text" class="form-control" value="{{ $pfare['count'] }}" disabled>
@@ -249,7 +249,7 @@
                 @endforeach
               {{-- Cargo Fares --}}
                 @foreach($cargo_load_sheet as $cfare)
-                  <div class="col">
+                  <div class="col-md">
                     <div class="input-group input-group-sm">
                       <span class="input-group-text">{{ $cfare['name'] }}</span>
                       <input id="LoadFare{{ $cfare['id'] }}" type="text" class="form-control" value="{{ number_format($cfare['count']).' '.$units['weight'] }}" disabled>
@@ -260,15 +260,15 @@
             </div>
             @if(isset($tpayload) && $tpayload > 0)
               {{-- Display The Weights Generated --}}
-              <div class="row row-cols-lg-4 mb-1">
+              <div class="row row-cols-md-2 row-cols-lg-4 mb-1">
                 @if($tpaxload)
-                  <div class="col">
+                  <div class="col-md">
                     <div class="input-group input-group-sm">
                       <span class="input-group-text"><i class="fas fa-users" title="Passenger Weight"></i></span>
                       <input id="tdPaxLoad" type="text" class="form-control" value="{{ number_format($tpaxload).' '.$units['weight'] }}" disabled>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="col-md">
                     <div class="input-group input-group-sm">
                       <span class="input-group-text"><i class="fas fa-suitcase" title="Baggage Weight"></i></span>
                       <input id="tdBagLoad" type="text" class="form-control" value="{{ number_format($tbagload).' '.$units['weight'] }}" disabled>
@@ -276,14 +276,14 @@
                   </div>
                 @endif
                 @if($tpaxload && $tcargoload)
-                  <div class="col">
+                  <div class="col-md">
                     <div class="input-group input-group-sm">
                       <span class="input-group-text"><i class="fas fa-dolly-flatbed" title="Cargo Weight"></i></span>
                       <input id="tdCargoLoad" type="text" class="form-control" value="{{ number_format($tcargoload).' '.$units['weight'] }}" disabled>
                     </div>
                   </div>
                 @endif
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">TRAFFIC LOAD</span>
                     <input id="tdPayload" type="text" class="form-control" value="{{ number_format($tpayload).' '.$units['weight'] }}" disabled>
