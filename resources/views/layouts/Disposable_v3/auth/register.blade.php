@@ -52,7 +52,7 @@
             @endif
 
             <div class="input-group input-group-sm mb-1">
-              <span class="input-group-text col-lg-3" id="timezone">@lang('auth.password')</span>
+              <span class="input-group-text col-lg-3" id="password">@lang('auth.password')</span>
               {{ Form::password('password', ['class' => 'form-control']) }}
             </div>
 
