@@ -4,19 +4,11 @@ phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)
 
 Compatible with phpVMS v7 builds as described below;
 
-* Theme versions starting with v3.1.xx supports **only** php8.x and laravel9.x
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-Laravel9` for v3.1.xx
+* Theme versions starting with v3.1.xx supports **only** php8 and laravel9
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+220314.128480` for v3.1.xx
 * Theme version v3.0.19 is the latest version with php7.4 and laravel8 support
 * Latest available phpVMS v7 version is `phpVms 7.0.0-dev+220307.00bf18` (07.MAR.22) for v3.0.19
 * Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0` (14.DEC.21) for v3.0.19
-
-## Important Changes
-
-* License changed
-* Bootstrap version changed from v4.x to v5.x
-* Theme helpers logic changed and now can be customized by duplication as per your needs. Theme no longer uses other Disposable addon helpers.
-* Theme is **NOT** compatible with older seperate Disposable addons, it is designed to be fully compatible with Disposable v3 series addons (Basic and Special as of date)
-* Theme is **NOT** compatible with beta4 or earlier builds of phpVMS v7 prior to **14.DEC.21**
 
 ## Installation
 
@@ -193,13 +185,14 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
-11.MAR.22
+14.MAR.22
 
 * Theme is now only compatible with php8 and Laravel9
 * All blades changed to provide better support mobile devices
 * Theme helpers updated to meet new core requirements
 * Added some admin only items to pilot profile page (to support Disposable Special features)
 * Added some details to My Bids page, allowed deletion of bids when the pilot is not at that airport
+* Spanish (Spain) translation, thanks to @arv187
 
 01.MAR.22
 
