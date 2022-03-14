@@ -4,6 +4,13 @@
   @if($DBasic)
     @include('DBasic::flights.simbrief_special_scripts')
   @endif
+  <script>
+    // Open RouteFinder iframe on click, not before
+    function OpenRouteFinder () {
+      var rfinder_frame = $("#rfinder");
+      rfinder_frame.attr("src", rfinder_frame.data("src")); 
+    }
+  </script>
   <script type="text/javascript">
     // Calculate the Scheduled Enroute Time for Simbrief API
     // Your PHPVMS flight_time value must be from BLOCK to BLOCK

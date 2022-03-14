@@ -1,8 +1,12 @@
-<div class="col">
+<div class="col-lg-4">
   <div class="card mb-2">
     <div class="card-header p-1">
       <h5 class="m-1">
-        {{ substr($group, $substr) }}
+        @isset($substr)
+          {{ substr($group, $substr) }}
+        @else
+          {{ $group }}
+        @endisset
         <i class="fas fa-file-download float-end"></i>
       </h5>
     </div>

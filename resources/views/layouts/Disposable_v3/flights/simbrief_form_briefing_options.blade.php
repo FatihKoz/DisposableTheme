@@ -7,7 +7,7 @@
   </div>
   <div class="card-body p-1 form-group">
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">OFP Units</span>
+      <span class="input-group-text col-md-5">OFP Units</span>
       <select id="ofp_weights" name="units" class="form-control" onchange="ConvertWeights()">
         @if($units['weight'] === 'kg')
           <option value="KGS" selected>KGS</option>
@@ -19,7 +19,7 @@
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">OFP Format</span>
+      <span class="input-group-text col-md-5">OFP Format</span>
       <select name="planformat" class="form-control">
         <option value="lido" selected>LIDO (SimBrief Default)</option>
         <option value="aal" >American Airlines</option>
@@ -48,35 +48,35 @@
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">Navigation Log</span>
+      <span class="input-group-text col-md-5">Navigation Log</span>
       <select name="navlog" class="form-control">
         <option value="0">Disabled</option>
         <option value="1" selected>Enabled</option>
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">Runway Analysis (TLR)</span>
+      <span class="input-group-text col-md-5">Runway Analysis (TLR)</span>
       <select name="tlr" class="form-control">
         <option value="0">Disabled</option>
         <option value="1" selected>Enabled</option>
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">NOTAMs (Airport)</span>
+      <span class="input-group-text col-md-5">NOTAMs (Airport)</span>
       <select name="notams" class="form-control">
         <option value="0">Disabled</option>
         <option value="1" selected>Enabled</option>
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">NOTAMs (FIR)</span>
+      <span class="input-group-text col-md-5">NOTAMs (FIR)</span>
       <select name="firnot" class="form-control">
         <option value="0" selected>Disabled</option>
         <option value="1">Enabled</option>
       </select>
     </div>
     <div class="input-group input-group-sm">
-      <span class="input-group-text col-4">Maps</span>
+      <span class="input-group-text col-md-5">Maps</span>
       <select name="maps" class="form-control">
         <option value="detail" selected>Detailed</option>
         <option value="simple">Simple</option>

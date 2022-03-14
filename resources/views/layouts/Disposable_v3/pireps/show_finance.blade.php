@@ -21,11 +21,11 @@
         </ul>
       </h5>
     </div>
-    <div class="card-body p-0">
+    <div class="card-body table-responsive p-0">
       <div class="tab-content" id="FinanceTabContent">
         <div class="tab-pane fade" id="fares" role="tabpanel" aria-labelledby="fares-tab">
           <table class="table table-sm table-borderless table-striped align-middle mb-0">
-            <th class="col-3">
+            <th class="text-start">
               @lang('pireps.class')
             </th>
             <th class="text-end">
@@ -33,7 +33,7 @@
             </th>
             @foreach($pirep->fares->sortBy('count', SORT_NATURAL) as $fare)
               <tr>
-                <td class="col-3">{{ optional($fare->fare)->name.' ('.optional($fare->fare)->code.')' }}</td>
+                <td class="text-start">{{ optional($fare->fare)->name.' ('.optional($fare->fare)->code.')' }}</td>
                 <td class="text-end">
                   {{ $fare->count }}
                   @if($fare->fare->type === 1) {{ $units['weight'] }} @else pax @endif

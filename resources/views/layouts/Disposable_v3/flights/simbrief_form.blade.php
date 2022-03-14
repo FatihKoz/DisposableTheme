@@ -5,12 +5,12 @@
   $units = isset($units) ? $units : DT_GetUnits();
   $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
   $Addon_Specs = ($DBasic && Theme::getSetting('simbrief_specs')) ? DB_GetSpecs($aircraft, true) : null;
-  $Check_SSL = (stripos(config('app_url'), 'https://') !== false) ? true : false;
+  $Check_SSL = str_contains(url()->current(), 'https://');
 @endphp
 @section('content')
   <form id="sbapiform">
     <div class="row">
-      <div class="col-8">
+      <div class="col-lg-8">
         {{-- Aircraft --}}
         <div class="card mb-2">
           <div class="card-header p-1">
@@ -21,22 +21,22 @@
           </div>
           <div class="card-body p-1">
             <div class="row mb-1">
-              <div class="col-3">
+              <div class="col-md-4 col-lg-3">
                 <div class="input-group input-group-sm">
                   <span class="input-group-text">AC</span>
                   <input type="text" class="form-control" value="{{ $aircraft->registration }} @if($aircraft->registration != $aircraft->name){{ ' `'.$aircraft->name.'`' }}@endif" disabled>
                 </div>
                 <input type="hidden" name="reg" value="{{ $aircraft->registration }}">
               </div>
-              <div class="col-2">
+              <div class="col-md-4 col-lg-2">
                 <div class="input-group input-group-sm">
                   <span class="input-group-text">ICAO</span>
                   <input type="text" class="form-control" value="{{ $aircraft->icao }}" disabled/>
                 </div>
                 <input type="hidden" id="type" name="type" value="{{ optional($aircraft->subfleet)->simbrief_type ?? $aircraft->icao }}">
               </div>
-              @if($aircraft->fuel_onboard > 0)
-                <div class="col-2">
+              @if($aircraft->fuel_onboard->local() > 0)
+                <div class="col-md-4 col-lg-2">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text"><i class="fas fa-gas-pump" title="Fuel On Board"></i></span>
                     <input type="text" class="form-control" value="{{ DT_ConvertWeight($aircraft->fuel_onboard, $units['fuel']) }}" disabled>
@@ -44,7 +44,7 @@
                 </div>
               @endif
               @if($Addon_Specs)
-                <div class="col">
+                <div class="col-lg">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">Addon Specs</span>
                     <select id="addon" class="form-control" onchange="ChangeSpecs()">
@@ -58,36 +58,36 @@
               @endif
             </div>
             @if($Addon_Specs)
-              <div id="specs" class="row row-cols-5 my-1">
-                <div class="col">
+              <div id="specs" class="row row-cols-md-2 row-cols-lg-5 my-1">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">DOW</span>
                     <input id="dow" type="text" class="form-control text-right" value="--" disabled/>
                     <span class="input-group-text input-group-text-prepend">{{ $units['weight'] }}</span>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">MZFW</span>
                     <input id="mzfw" type="text" class="form-control text-right" value="--" disabled/>
                     <span class="input-group-text input-group-text-prepend">{{ $units['weight'] }}</span>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">MTOW</span>
                     <input id="mtow" type="text" class="form-control text-right" value="--" disabled/>
                     <span class="input-group-text input-group-text-prepend">{{ $units['weight'] }}</span>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">MLW</span>
                     <input id="mlw" type="text" class="form-control text-right" value="--" disabled/>
                     <span class="input-group-text input-group-text-prepend">{{ $units['weight'] }}</span>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">Fuel Cap</span>
                     <input id="maxfuel" type="text" class="form-control text-right" value="--" disabled/>
@@ -107,8 +107,8 @@
           </div>
           <div class="card-body p-1">
             <div class="row mb-1">
-              <div class="col">
-                <input name="orig" type="hidden" value="{{ $flight->dpt_airport_id }}"> 
+              <div class="col-lg-4">
+                <input name="orig" type="hidden" value="{{ $flight->dpt_airport_id }}">
                 <div class="input-group input-group-sm">
                   @if(!Theme::getSetting('simbrief_taxitimes'))
                     <span class="input-group-text"><i class="fas fa-plane-departure" title="Departure"></i></span>
@@ -135,7 +135,7 @@
                   @endif
                 </div>
               </div>
-              <div class="col">
+              <div class="col-lg-4">
                 <input name="dest" type="hidden" value="{{ $flight->arr_airport_id }}">
                 <div class="input-group input-group-sm">
                   @if(!Theme::getSetting('simbrief_taxitimes'))
@@ -163,13 +163,13 @@
                   @endif
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-md-6 col-lg-2">
                 <div class="input-group input-group-sm">
                   <span class="input-group-text">ALTN</span>
                   <input name="altn" type="text" class="form-control" maxlength="4" value="{{ $flight->alt_airport_id ?? 'AUTO' }}">
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-md-6 col-lg-2">
                 <div class="input-group input-group-sm">
                   <span class="input-group-text">LVL</span>
                   <input id="fl" name="fl" type="number" class="form-control" min="0" max="99600" step="500" value="{{ $flight->level }}" onchange="CheckFL()">
@@ -184,23 +184,23 @@
                   <input name="route" type="text" class="form-control" value="{{ $flight->route }}">
                   @if(Theme::getSetting('simbrief_rfinder'))
                     @if($Check_SSL)
-                      <button id="rfinder" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#rfinderModal">RouteFinder</button>
-                    @else 
                       <a href="http://rfinder.asalink.net/free" target="_blank" class="btn btn-sm btn-secondary">RouteFinder</a>
+                    @else
+                      <button id="RouteFinder" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#rfinderModal" onclick="OpenRouteFinder()">RouteFinder</button>
                     @endif
                   @endif
                 </div>
               </div>
             </div>
 
-            <div class="row row-cols-4 mb-1">
-              <div class="col">
+            <div class="row row-cols-lg-4 mb-1">
+              <div class="col-md-4 col-lg">
                 <div class="input-group input-group-sm">
                   <span class="input-group-text"><i class="fas fa-calendar-day" title="Date Of Flight"></i></span>
                   <input id="dof" type="text" class="form-control" disabled>
                 </div>
               </div>
-              <div class="col">
+              <div class="col-6 col-md-4 col-lg">
                 @if($flight->dpt_time)
                   <div class="input-group input-group-sm">
                     <span class="input-group-text"><i class="fas fa-plane-departure" title="Scheduled Departure Time"></i></span>
@@ -208,7 +208,7 @@
                   </div>
                 @endif
               </div>
-              <div class="col">
+              <div class="col-6 col-md-4 col-lg">
                 @if($flight->arr_time)
                   <div class="input-group input-group-sm">
                     <span class="input-group-text"><i class="fas fa-plane-arrival" title="Scheduled Arrival Time"></i></span>
@@ -216,7 +216,7 @@
                   </div>
                 @endif
               </div>
-              <div class="col">
+              <div class="col-6 col-md-4 col-lg">
                 <div class="input-group input-group-sm">
                   <span class="input-group-text"><i class="fas fa-clock" title="Estimated Departure Time"></i></span>
                   <input id="deph" name="deph" type="number" class="form-control text-center" min="0" max="23" maxlength="2">
@@ -236,10 +236,10 @@
             </h5>
           </div>
           <div class="card-body p-1">
-            <div class="row row-cols-4 mb-1">
+            <div class="row row-cols-md-2 row-cols-lg-4 mb-1">
               {{-- Pax Fares --}}
                 @foreach($pax_load_sheet as $pfare)
-                  <div class="col">
+                  <div class="col-md">
                     <div class="input-group input-group-sm">
                       <span class="input-group-text">{{ $pfare['name'] }}</span>
                       <input id="LoadFare{{ $pfare['id'] }}" type="text" class="form-control" value="{{ $pfare['count'] }}" disabled>
@@ -249,7 +249,7 @@
                 @endforeach
               {{-- Cargo Fares --}}
                 @foreach($cargo_load_sheet as $cfare)
-                  <div class="col">
+                  <div class="col-md">
                     <div class="input-group input-group-sm">
                       <span class="input-group-text">{{ $cfare['name'] }}</span>
                       <input id="LoadFare{{ $cfare['id'] }}" type="text" class="form-control" value="{{ number_format($cfare['count']).' '.$units['weight'] }}" disabled>
@@ -260,15 +260,15 @@
             </div>
             @if(isset($tpayload) && $tpayload > 0)
               {{-- Display The Weights Generated --}}
-              <div class="row row-cols-4 mb-1">
+              <div class="row row-cols-md-2 row-cols-lg-4 mb-1">
                 @if($tpaxload)
-                  <div class="col">
+                  <div class="col-md">
                     <div class="input-group input-group-sm">
                       <span class="input-group-text"><i class="fas fa-users" title="Passenger Weight"></i></span>
                       <input id="tdPaxLoad" type="text" class="form-control" value="{{ number_format($tpaxload).' '.$units['weight'] }}" disabled>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="col-md">
                     <div class="input-group input-group-sm">
                       <span class="input-group-text"><i class="fas fa-suitcase" title="Baggage Weight"></i></span>
                       <input id="tdBagLoad" type="text" class="form-control" value="{{ number_format($tbagload).' '.$units['weight'] }}" disabled>
@@ -276,14 +276,14 @@
                   </div>
                 @endif
                 @if($tpaxload && $tcargoload)
-                  <div class="col">
+                  <div class="col-md">
                     <div class="input-group input-group-sm">
                       <span class="input-group-text"><i class="fas fa-dolly-flatbed" title="Cargo Weight"></i></span>
                       <input id="tdCargoLoad" type="text" class="form-control" value="{{ number_format($tcargoload).' '.$units['weight'] }}" disabled>
                     </div>
                   </div>
                 @endif
-                <div class="col">
+                <div class="col-md">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">TRAFFIC LOAD</span>
                     <input id="tdPayload" type="text" class="form-control" value="{{ number_format($tpayload).' '.$units['weight'] }}" disabled>
@@ -294,14 +294,14 @@
           </div>
         </div>
         @if(Theme::getSetting('simbrief_raw_wx'))
-          <div class="row">
-            <div class="col">@widget('Weather', ['icao' => $flight->dpt_airport_id, 'raw_only' => true])</div>
-            <div class="col">@widget('Weather', ['icao' => $flight->arr_airport_id, 'raw_only' => true])</div>
+          <div class="row row-cols-md-2">
+            <div class="col-lg">@widget('Weather', ['icao' => $flight->dpt_airport_id, 'raw_only' => true])</div>
+            <div class="col-lg">@widget('Weather', ['icao' => $flight->arr_airport_id, 'raw_only' => true])</div>
           </div>
         @endif
       </div>
 
-      <div class="col-4">
+      <div class="col-lg-4">
         @include('flights.simbrief_form_planning_options')
         @include('flights.simbrief_form_briefing_options')
         @if(Theme::getSetting('simbrief_extrafuel'))
@@ -314,7 +314,7 @@
             </div>
             <div class="card-body p-1">
               <div class="input-group input-group-sm">
-                <span class="input-group-text col-4">@if($units['fuel'] === 'kg') Metric @else Imperial @endif Tonnes</span>
+                <span class="input-group-text col-md-4">@if($units['fuel'] === 'kg') Metric @else Imperial @endif Tonnes</span>
                 <input id="addedfuel" name="addedfuel" type="number" class="form-control form-control-sm" placeholder="0.0" min="0" max="60" step="0.1"/>
                 @if(Theme::getSetting('simbrief_tankering'))
                   <span class="input-group-text input-group-text-append">{!! DT_CheckTankering($flight, $aircraft) !!}</span>
@@ -375,7 +375,7 @@
     </div>
   </form>
 
-@if(Theme::getSetting('simbrief_rfinder'))
+@if(Theme::getSetting('simbrief_rfinder') && !$Check_SSL)
   @include('flights.simbrief_form_routefinder')
 @endif
 

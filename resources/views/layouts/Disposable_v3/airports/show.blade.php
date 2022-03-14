@@ -8,7 +8,7 @@
 @section('content')
   <div class="row">
     {{-- LEFT --}}
-    <div class="col-4">
+    <div class="col-lg-4">
       <div class="card mb-2">
         <div class="card-header p-1">
           <h5 class="m-1">
@@ -71,7 +71,9 @@
         @endif
       </div>
       @if($DBasic && Theme::getSetting('gen_map_flight'))
-        @widget('DBasic::Map', ['source' => $airport->id])
+        <div class="mb-2">
+          @widget('DBasic::Map', ['source' => $airport->id])
+        </div>
       @endif
       {{-- Show Pills For Map/WX/Downloads--}}
       <ul class="nav nav-pills nav-justified mb-2" id="pills-tab" role="tablist">
@@ -102,7 +104,7 @@
       </ul>
     </div>
     {{-- RIGHT --}}
-    <div class="col-8">
+    <div class="col-lg-8">
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
           <div class="card mb-2">
@@ -160,7 +162,7 @@
     </div>
   </div>
 
-  <div class="row row-cols-2">
+  <div class="row row-cols-lg-2">
     <div class="col">
       @if($inbound_flights)
         <div class="card mb-2">
@@ -200,7 +202,7 @@
   </div>
 
   @if($DBasic)
-    <div class="row row-cols-3">
+    <div class="row row-cols-lg-3">
       <div class="col">
         @widget('DBasic::AirportAssets', ['type' => 'aircraft', 'location' => $airport->id])
       </div>

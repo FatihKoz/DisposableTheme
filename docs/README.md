@@ -2,11 +2,13 @@
 
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
-Compatible with latest development (dev) builds of phpVMS v7 as described below, which are released after **14.DEC.21**
+Compatible with phpVMS v7 builds as described below;
 
-* Theme version v3.0.19 is the latest version with php7.4 and laravel8 support.
-* Theme versions starting with v3.1.xx will support only php8 and laravel9 as per phpVMS v7 improvements.
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0`
+* Theme versions starting with v3.1.xx supports **only** php8.x and laravel9.x
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-Laravel9` for v3.1.xx
+* Theme version v3.0.19 is the latest version with php7.4 and laravel8 support
+* Latest available phpVMS v7 version is `phpVms 7.0.0-dev+220307.00bf18` (07.MAR.22) for v3.0.19
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0` (14.DEC.21) for v3.0.19
 
 ## Important Changes
 
@@ -44,7 +46,7 @@ Below you can find some details about the theme, customization of it and some mi
 
 ```json
 "name"    : "MyTheme",        // Theme Name (and also the folder name)
-"extends" : "Disposable_v3",  // Here we tell Laravel that we are extending DH2 theme
+"extends" : "Disposable_v3",  // Here we tell Laravel that we are extending Disposable_v3 theme
 ```
 
 * Now copy any file you want to edit/change from `Disposable_v3` folder to your `MyTheme` folder, for example take `home.blade.php`
@@ -68,7 +70,7 @@ You can simply define your own custom default gravatar for pilots. Just edit you
 
 ```php
 # GRAVATAR DEFAULT
-GRAVATAR_DEFAULT_AVATAR='http://your.phpvms.url.comes.here/disposable/nophoto.jpg'
+GRAVATAR_DEFAULT_AVATAR='https://your.phpvms.url.comes.here/disposable/nophoto.jpg'
 ```
 
 ### Defining a custom FavIcon
@@ -83,7 +85,7 @@ Edit your duplicated `app.blade.php` and add below line to the `head` section
 
 This can be achieved in two ways, either you need to change the image files provided in the package `theme_logo.png` and `theme_logo_big.png` or you need to edit blade files to use your own paths for your logos (preferred way)
 
-Files holding logo definitions `nav_side.blade.php` , `nav_top.blade.php` and `nav_menu.blade.php`
+Files holding logo definitions are `nav_side.blade.php`, `nav_top.blade.php` and `nav_menu.blade.php`
 
 Both SideBar and NavBar uses the same file for menu items `nav_menu.blade.php`
 
@@ -163,9 +165,9 @@ There are some options defined in this file for quick settings or for pre-define
 
 ## About IVAO VA System Support
 
-As this is a really an optional feature and the system itself is too old, it is provided only for VA's already using it. Therefore you will see no buttons or forms automatically placed by me. To enable it, you should include the required file to a blade you need that button. Also you should define your IVAO approved `Airline ID` and `Airline ICAO code` at theme.json file.
+As this is really an optional feature and the system itself is too old, it is provided only for VA's already using it. You should define your IVAO approved `Airline ID` and `Airline ICAO code` at theme.json file for the auto placed badges to show up.
 
-Below you can find two examples, both will check if you have necessary definitions at theme.json and includes the file. Which will have a visible badge/button, when clicked it will open up a modal window for the pilot to send the report.
+Below you can find an example, it checks if you have necessary definitions at theme.json and includes the file. Which will have a visible badge/button, when clicked it will open up a modal window for the pilot to send the report.
 
 ```php
 @if(Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
@@ -173,11 +175,7 @@ Below you can find two examples, both will check if you have necessary definitio
 @endif
 ```
 
-```php
-@if(Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
-  @include('ivao_vasys')
-@endif
-```
+Be advised, IVAO's login cookies do not work properly even if you click "Remember Me". This is the reason of that "Login IVAO" button placed in the modal. It is higly advised that pilots click that button first, complete their login to IVAO, which will send them back to your VA, then click the "Send Report" button.
 
 Here is an answer from [IVAO Official Wiki](https://wiki.ivao.aero/en/home/flightoperations/FAQ_VA) about VA System usage
 
@@ -194,6 +192,14 @@ As per the license, **theme name should be always visible in all pages**. Editin
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
+
+11.MAR.22
+
+* Theme is now only compatible with php8 and Laravel9
+* All blades changed to provide better support mobile devices
+* Theme helpers updated to meet new core requirements
+* Added some admin only items to pilot profile page (to support Disposable Special features)
+* Added some details to My Bids page, allowed deletion of bids when the pilot is not at that airport
 
 01.MAR.22
 

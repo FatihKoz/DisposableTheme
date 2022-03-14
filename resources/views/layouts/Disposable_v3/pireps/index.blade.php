@@ -33,8 +33,8 @@
           @endif
         </div>
       </div>
-      {{ $pireps->links('pagination.auto') }}
     </div>
   </div>
+  {{ $pireps->links('pagination.auto') }}
 @endif
 @endsection

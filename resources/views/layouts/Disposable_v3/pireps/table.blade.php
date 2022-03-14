@@ -2,7 +2,7 @@
   $units = isset($units) ? $units : DT_GetUnits();
   $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
 @endphp
-<table class="table table-sm table-borderless table-striped align-middle mb-0">
+<table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
   <thead>
     <tr>
       <th>@lang('flights.flightnumber')</th>
@@ -24,10 +24,10 @@
           <a href="{{ route('frontend.pireps.show', [$pirep->id]) }}">{{ $pirep->ident }}</a>
         </td>
         <td>
-          <a href="{{route('frontend.airports.show', [$pirep->dpt_airport_id])}}">{{ optional($pirep->dpt_airport)->full_name }}</a>
+          <a href="{{ route('frontend.airports.show', [$pirep->dpt_airport_id]) }}">{{ optional($pirep->dpt_airport)->full_name }}</a>
         </td>
         <td>
-          <a href="{{route('frontend.airports.show', [$pirep->arr_airport_id])}}">{{ optional($pirep->arr_airport)->full_name }}</a>
+          <a href="{{ route('frontend.airports.show', [$pirep->arr_airport_id]) }}">{{ optional($pirep->arr_airport)->full_name }}</a>
         </td>
         <td class="text-center">
           @if($DBasic) <a href="{{ route('DBasic.aircraft', [optional($pirep->aircraft)->registration ?? '-'])}}"> @endif
@@ -56,6 +56,9 @@
         <td class="text-end">
           @if(!$pirep->read_only)
             <a href="{{ route('frontend.pireps.edit', [$pirep->id]) }}" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">@lang('common.edit')</a>
+          @endif
+          @if($pirep->read_only && Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
+            @include('pireps.ivao_vasys')
           @endif
           @if($DBasic && Theme::getSetting('gen_stable_approach'))
             @widget('DBasic::StableApproach', ['pirep' => $pirep])

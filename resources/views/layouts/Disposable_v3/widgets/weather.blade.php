@@ -77,7 +77,7 @@
                 {{ $metar['dew_point'][$unit_temp] }}
               @else
                 0
-              @endif &deg;{{strtoupper($unit_temp)}}
+              @endif &deg;{{ strtoupper($unit_temp) }}
             @endif
             @if($metar['humidity'])
               , @lang('widgets.weather.humidity') {{ $metar['humidity'] }}&#37;

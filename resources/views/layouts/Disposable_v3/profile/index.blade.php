@@ -15,7 +15,7 @@
 @endability
 @section('content')
   <div class="row">
-    <div class="col-3">
+    <div class="col-lg-3">
       {{-- Pilot ID Card --}}
       <div class="card mb-2">
         <div class="card-header p-1">
@@ -158,8 +158,8 @@
       </ul>
     </div>
     {{-- Info Boxes --}}
-    <div class="col">
-      <div class="row">
+    <div class="col-lg-9">
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5">
         <div class="col">
           {{-- Current Airport --}}
           <div class="card text-center mb-2">
@@ -236,81 +236,13 @@
       </div>
 
       @if($DBasic && $user->flights > 0)
-        <div class="row row-cols-5">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5">
           <div class="col">
             @widget('DBasic::PersonalStats', ['disp' => 'full', 'user' => $user->id, 'type' => 'avgscore'])
             {{-- User Balance and Last Transactions Display --}}
-              @if($Auth_ID || $AdminCheck)
-                <div class="card text-center mb-2">
-                  <div class="card-body p-2">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#JournalModal">{{ $user->journal->balance }}</a>
-                  </div>
-                  <div class="card-footer p-0 small fw-bold">
-                    Current Balance
-                  </div>
-                </div>
-                {{-- Transaction Modal --}}
-                <div class="modal fade" id="JournalModal" tabindex="-1" aria-labelledby="JournalModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header p-1">
-                        <h5 class="modal-title" id="JournalModalLabel">Journal Transactions & Summary</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body p-0">
-                        <table class="table table-sm table-borderless table-striped mb-0 text-center">
-                          <tr>
-                            <th class="text-start">Description / Memo</th>
-                            <th>Credit</th>
-                            <th>Debit</th>
-                            <th class="text-end">Date</th>
-                          </tr>
-                          @if($user->journal->transactions->count() > 0)
-                            @foreach($user->journal->transactions->sortbyDesc('created_at')->take(15) as $record)
-                              <tr>
-                                <td class="text-start">{{ $record->memo }}</td>
-                                <td>
-                                  @if(filled($record->credit))
-                                    {{ money($record->credit, $units['currency']) }}
-                                  @endif
-                                </td>
-                                <td>
-                                  @if(filled($record->debit))
-                                    {{ money($record->debit, $units['currency']) }}
-                                  @endif
-                                </td>
-                                <td class="text-end">{{ $record->created_at->format('d.m.Y H:i') }}</td>
-                              </tr>
-                            @endforeach
-                            <tr>
-                              <td colspan="4" class="text-end small">Only last 15 entries are displayed</td>
-                            </tr>
-                          @else
-                            <tr>
-                              <td colspan="4">No Records Found</td>
-                            </tr>
-                          @endif
-                        </table>
-                        <table class="table table-sm table-borderless table-striped mb-0 text-center">
-                          <tr>
-                            <th>Total Credit</th>
-                            <th>Total Debit</th>
-                            <th>Current Balance</th>
-                          </tr>
-                          <tr>
-                            <td>{{ money($user->journal->transactions->sum('credit'), setting('units.currency')) }}</td>
-                            <td>{{ money($user->journal->transactions->sum('debit'), setting('units.currency')) }}</td>
-                            <td>{{ $user->journal->balance }}</td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="modal-footer p-1">
-                        <button type="button" class="btn btn-sm btn-secondary m-0 mx-1 p-0 px-1" data-bs-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              @endif
+            @if($Auth_ID || $AdminCheck)
+              @widget('DBasic::JournalDetails', ['user' => $user->id, 'card' => true, 'limit' => 20])
+            @endif
             {{-- End User Balance Section --}}
           </div>
           <div class="col">

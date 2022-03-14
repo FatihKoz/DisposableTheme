@@ -67,7 +67,7 @@
           @endif
         </div>
       </div>
-      <div class="collapse" id="Details{{ $flight->id }}">
+      <div class="collapse {{ $auto_extend }}" id="Details{{ $flight->id }}">
         {{-- This section is collapsed/hidden by default --}}
         <hr class="m-1 p-0">
         <div class="row mb-1">
@@ -168,6 +168,19 @@
           @endif
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row collapse {{ $auto_extend }}" id="Details{{ $flight->id }}">
+    <div class="col-lg-4">
+      @widget('Weather', ['icao' => $flight->dpt_airport_id])
+    </div>
+    <div class="col-lg-4">
+      @widget('Weather', ['icao' => $flight->arr_airport_id])
+    </div>
+    <div class="col-lg-4">
+      @if(filled($flight->alt_airport_id))
+        @widget('Weather', ['icao' => $flight->alt_airport_id])
+      @endif
     </div>
   </div>
 @endforeach

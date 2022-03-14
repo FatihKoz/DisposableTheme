@@ -6,7 +6,7 @@
     </h5>
   </div>
   <div class="card-body p-0 table-responsive">
-    <table class="table table-sm table-borderless table-striped align-middle text-start mb-0">
+    <table class="table table-sm table-borderless table-striped align-middle text-start text-nowrap mb-0">
       <tr>
         <th>@lang('flights.flightnumber')</th>
         <th>@lang('airports.departure')</th>
@@ -50,6 +50,9 @@
           </td>
         @endif
         <td class="text-end">
+          @if($pirep->read_only && Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
+            @include('pireps.ivao_vasys')
+          @endif
           {!! DT_PirepState($pirep, 'badge') !!}
         </td>
       </tr>

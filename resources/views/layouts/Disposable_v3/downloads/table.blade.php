@@ -1,5 +1,5 @@
-<table class="table table-sm table-borderless table-striped text-start align-middle mb-0">
-  @foreach($files as $file)
+<table class="table table-sm table-borderless table-striped text-start text-nowrap align-middle mb-0">
+  @foreach($files->sortBy('name', SORT_NATURAL) as $file)
     <tr>
       <td>
         <a href="{{ route('frontend.downloads.download', [$file->id]) }}" target="_blank">{{ $file->name }}</a>

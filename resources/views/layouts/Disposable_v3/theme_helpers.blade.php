@@ -120,21 +120,17 @@
   }
 
   // Convert Distance / Nautical Miles
-  // Return formatted string
+  // Return string
   if (!function_exists('DT_ConvertDistance')) {
     function DT_ConvertDistance($distance, $unit = null)
     {
       $unit = isset($unit) ? $unit : setting('units.distance');
 
-      if ($distance <= 1) {
+      if (!$distance[$unit] > 1) {
         return null;
       }
-      if ($unit === 'km') {
-        $distance = $distance * 1.852;
-      } elseif ($unit === 'mi') {
-        $distance = $distance * 1.15078;
-      }
-      $distance = number_format($distance).' '.$unit;
+
+      $distance = number_format($distance[$unit]).' '.$unit;
 
       return $distance;
     }
@@ -160,17 +156,15 @@
   // Convert Weight / Pounds
   // Return string
   if (!function_exists('DT_ConvertWeight')) {
-    function DT_ConvertWeight($value = 0, $target_unit = null)
+    function DT_ConvertWeight($value, $target_unit = null)
     {
-      if ($value == 0) {
-          return null;
-      }
       $target_unit = isset($target_unit) ? $target_unit : setting('units.weight');
 
-      if ($target_unit === 'kg') {
-          $value = $value / 2.20462262185;
+      if (!$value[$target_unit] > 0) {
+        return null;
       }
-      $value = number_format($value) . ' ' . $target_unit;
+
+      $value = number_format($value[$target_unit]) . ' ' . $target_unit;
 
       return $value;
     }
@@ -279,9 +273,10 @@
       }
 
       if ($route_code === 'H') { $route_code = 'Historic' ;}
+      elseif ($route_code === 'AJ') { $route_code = 'AnadoluJet' ;}
+      elseif (str_contains($route_code, 'PF')) { $route_code = 'Personal Flight' ;}
       // You can add more text for your own codes like below
-      // elseif ($route_code === 'AJ'){ $route_code = 'AnadoluJet' ;}
-      // elseif ($route_code === 'PF'){ $route_code = 'Personal Flight' ;}
+      // elseif ($route_code === 'XX') { $route_code = 'My Route Code' ;}
 
       if ($type === 'badge') {
         $route_code = '<span class="badge bg-warning mx-1 text-black">'.$route_code.'</span>';
@@ -317,7 +312,7 @@
     function DT_PirepField($field, $units = null, $aircraft = null)
     {
       $slug = $field->slug;
-      $value = $field->value;
+      $value = (string) $field->value;
       $units = isset($units) ? $units : DT_GetUnits();
       $error = null;
 
@@ -330,7 +325,7 @@
           $value = number_format($value).' ft/min'.$error;
         }
         // Threshold Distance
-        elseif (strpos($slug, 'threshold-distance') !== false) {
+        elseif (str_contains($slug, 'threshold-distance')) {
           if ($units['distance'] === 'km') {
             $value = number_format($value / 3.2808).' m'.$error;
           } else {
@@ -342,7 +337,7 @@
           $value = number_format($value, 2).' g'.$error;
         }
         // Fuel Values
-        elseif (strpos($slug, '-fuel') !== false) {
+        elseif (str_contains($slug, '-fuel')) {
           if ($units['fuel'] === 'kg') {
             $value = $value / 2.20462262185;
           }
@@ -356,19 +351,19 @@
           }
         }
         // Weight Values
-        elseif (strpos($slug, '-weight') !== false) {
+        elseif (str_contains($slug, '-weight')) {
           if ($units['weight'] === 'kg') {
             $value = $value / 2.20462262185;
           }
           $value = number_format($value).' '.$units['weight'].$error;
         }
         // Pitch, Roll, Heading : Angle
-        elseif (strpos($slug, 'roll') !== false || strpos($slug, 'pitch') !== false || strpos($slug, 'heading') !== false) {
+        elseif (str_contains($slug, 'roll') || str_contains($slug, 'pitch') || str_contains($slug, 'heading')) {
           // $value = number_format($value,2)."&deg;".$error;
           $value = $value.'&deg;'.$error;
         }
         // Centerline Deviation : Distance
-        elseif (strpos($slug, 'centerline-dev') !== false) {
+        elseif (str_contains($slug, 'centerline-dev')) {
           if ($units['distance'] === 'km') {
             $value = number_format(($value / 3.2808), 2).' m'.$error;
           } else {
@@ -376,12 +371,12 @@
           }
         }
         // TakeOff and Landing Speeds
-        elseif (strpos($slug, '-speed') !== false) {
+        elseif (str_contains($slug, '-speed')) {
           $value = number_format($value).' kts';
         }
       }
       // Date/Time Values (not displaying full date on purpose)
-      elseif (strpos($slug, 'time-real') !== false || strpos($slug, 'time-sim') !== false) {
+      elseif (str_contains($slug, 'time-real') || str_contains($slug, 'time-sim')) {
         $value = Carbon::parse($value)->format('H:i').' UTC';
       }
 
@@ -483,7 +478,7 @@
       $vasys['Aircraft'] = $pirep->aircraft->icao;
       $vasys['DepAirport'] = $pirep->dpt_airport_id;
       $vasys['LandAirport'] = $pirep->arr_airport_id;
-      $vasys['Distance'] = round($pirep->distance);
+      $vasys['Distance'] = $pirep->distance->internal(0);
       $vasys['Altitude'] = $pirep->level;
       $vasys['DateDay'] = $pirep->created_at->format('d');
       $vasys['DateMonth'] = $pirep->created_at->format('m');
@@ -511,16 +506,15 @@
       } else {
         $vasys['SimBrief'] = false;
         $vasys['Callsign'] = substr($pirep->user->ident, 3, 4);
-        $vasys['DestAirport'] = $pirep->flight->arr_airport_id;
-        $vasys['AltAirport'] = filled($pirep->flight->alt_airport_id) ? $pirep->flight->alt_airport_id : 'NONE';
+        $vasys['DestAirport'] = optional($pirep->flight)->arr_airport_id ?? $pirep->alt_airport_id;
+        $vasys['AltAirport'] = filled(optional($pirep->flight)->alt_airport_id) ? $pirep->flight->alt_airport_id : 'NONE';
         $vasys['Route'] = $pirep->route;
       }
-      // Fuel Conversion
+      // Fuel Used and Unit Type
+      $vasys['Fuel_Qty'] = $pirep->fuel_used->local(0);
       if ($units['fuel'] === 'kg') {
-        $vasys['Fuel_Qty'] = round($pirep->fuel_used / 2.20462262185);
         $vasys['Fuel_Type'] = 'K';
       } else {
-        $vasys['Fuel_Qty'] = round($pirep->fuel_used);
         $vasys['Fuel_Type'] = 'L';
       }
 

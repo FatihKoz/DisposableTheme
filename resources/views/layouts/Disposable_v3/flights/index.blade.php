@@ -3,14 +3,16 @@
 @include('theme_helpers')
 @php
   $units = isset($units) ? $units : DT_GetUnits();
-  $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic'); 
+  $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
+  $DSpecial = isset($DSpecial) ? $DSpecial : DT_CheckModule('DisposableSpecial');
+  $tour_codes = ($DSpecial) ? DS_GetTourCodes() : [];
 @endphp
 @section('content')
 @if(!$flights->count())
   <div class="alert alert-info mb-1 p-1 px-2 fw-bold">No flights found !</div>
 @else
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-lg-9">
       @if(Theme::getSetting('flights_table'))
         <div class="card mb-2">
           <div class="card-header p-1">
@@ -33,14 +35,18 @@
       @endif
       {{ $flights->links('pagination.auto') }}
     </div>
-    <div class="col-md-3">
+    <div class="col-lg-3">
       @include('flights.search')
       @include('flights.nav')
       @if($DBasic && Theme::getSetting('gen_map_flight'))
-        @widget('DBasic::Map')
+        <div class="mb-2">
+          @widget('DBasic::Map')
+        </div>
       @endif
       @if($DBasic && Theme::getSetting('gen_map_fleet'))
-        @widget('DBasic::Map', ['source' => 'fleet'])
+        <div class="mb-2">
+          @widget('DBasic::Map', ['source' => 'fleet'])
+        </div>
       @endif
     </div>
   </div>

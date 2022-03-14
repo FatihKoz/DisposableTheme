@@ -11,10 +11,10 @@
 @endphp
 @section('content')
   {{-- Top Row --}}
-  <div class="row row-cols-3 mb-1">
-    <div class="col-2">
+  <div class="row row-cols-lg-3 mb-1">
+    <div class="col-lg-2">
       @if(Theme::getSetting('home_ivao_logo'))
-        <div class="card col-7 shadow-none bg-transparent border-0 my-3 float-start">
+        <div class="card col-lg-7 shadow-none bg-transparent border-0 my-3 float-start">
           <a href="https://www.ivao.aero" target="_blank">
             @if(filled(Theme::getSetting('gen_ivao_vaid')))
               <img class="card-img" src="{{ public_asset('disposable/logo_ivao_partner.svg') }}">
@@ -26,7 +26,7 @@
       @endif
     </div>
     {{-- Center --}}
-    <div class="col-8">
+    <div class="col-lg-8">
       @if(Theme::getSetting('home_carousel'))
         {{-- Carousel --}}
         @php $images = DT_GetImages('image/slide/'); @endphp
@@ -54,9 +54,9 @@
         {{-- End Carousel --}}
       @endif
     </div>
-    <div class="col-2">
+    <div class="col-lg-2">
       @if(Theme::getSetting('home_vatsim_logo'))
-        <div class="card col-7 shadow-none bg-transparent border-0 my-3 float-end">
+        <div class="card col-lg-7 shadow-none bg-transparent border-0 my-3 float-end">
           <a href="https://www.vatsim.net" target="_blank">
             <img class="card-img" src=" {{ public_asset('disposable/logo_vatsim.png') }}">
           </a>
@@ -65,8 +65,8 @@
     </div>
   </div>
   {{-- Another row for possible widgets and fixed content --}}
-  <div class="row row-cols-4">
-    <div class="col">
+  <div class="row row-cols-xl-4">
+    <div class="col-lg">
       {{-- Latest Pilots --}}
       <div class="card mb-2">
         <div class="card-header p-1">
@@ -86,7 +86,7 @@
                 <img class="img-fluid rounded-start border-end border-dark img-mh80" src="{{ $user->gravatar(100) }}" alt="">
               @endif
             </div>
-            <div class="col">
+            <div class="col-9">
               <div class="card-body p-1">
                 <h5 class="card-title m-0">
                   <a href="{{ route('frontend.profile.show', [$user->id]) }}">{{ $user->name_private }}</a>
@@ -100,20 +100,16 @@
       @endforeach
       {{-- End Latest Pilots --}}
     </div>
-    <div class="col">
-      @if($DBasic)
+    @if($DBasic)
+      <div class="col-lg">
         @widget('DBasic::LeaderBoard', ['source' => 'pilot', 'period' => 'lastm', 'count' => 1, 'type' => 'flights'])
-      @endif
-    </div>
-    <div class="col">
-      @if($DBasic)
+      </div>
+      <div class="col-lg">
         @widget('DBasic::LeaderBoard', ['source' => 'pilot', 'period' => 'lastm', 'count' => 1, 'type' => 'time'])
-      @endif
-    </div>
-    <div class="col">
-      @if($DBasic)
+      </div>
+      <div class="col-lg">
         @widget('DBasic::Stats', ['type' => 'home'])
-      @endif
-    </div>
+      </div>
+    @endif
   </div>
 @endsection
