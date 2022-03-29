@@ -9,6 +9,11 @@ Compatible with phpVMS v7 builds as described below;
 * Theme version v3.0.19 is the latest version with php7.4 and laravel8 support
 * Latest available phpVMS v7 version is `phpVms 7.0.0-dev+220307.00bf18` (07.MAR.22) for v3.0.19
 * Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0` (14.DEC.21) for v3.0.19
+---
+* If you try to use latest version of this addon with an old version of phpvms, it will fail.
+* If you try to use latest phpvms with an old version of this addon, it will fail.
+* If you try to use your duplicated old blades with this version without checking and applying necessary changes, it will fail.
+---
 
 ## Installation
 
