@@ -190,6 +190,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+17.APR.22
+
+* Fixed Date Of Flight (DOF) issue in SimBrief form (was effecting ofp generation around 23 UTC with edited ETD and changed dates)
+
 14.MAR.22
 
 * Theme is now only compatible with php8 and Laravel9

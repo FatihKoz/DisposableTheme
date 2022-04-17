@@ -219,7 +219,7 @@
               <div class="col-6 col-md-4 col-lg">
                 <div class="input-group input-group-sm">
                   <span class="input-group-text"><i class="fas fa-clock" title="Estimated Departure Time"></i></span>
-                  <input id="deph" name="deph" type="number" class="form-control text-center" min="0" max="23" maxlength="2">
+                  <input id="deph" name="deph" type="number" class="form-control text-center" min="0" max="23" maxlength="2" onchange="CheckDOF()">
                   <span class="input-group-text px-1">:</span>
                   <input id="depm" name="depm" type="number" class="form-control text-center" min="0" max="59" maxlength="2">
                 </div>

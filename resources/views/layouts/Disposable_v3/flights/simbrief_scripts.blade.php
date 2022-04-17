@@ -142,25 +142,45 @@
     }
   </script>
   <script type="text/javascript">
-    // Get current UTC time, add 45 minutes to it and format according to Simbrief API
+    // Get current UTC time, add some margin to it and format according to Simbrief API
     // Script also rounds the minutes to nearest 5 to avoid a Departure time like 1538 ;)
-    // If you need to reduce the margin of 45 mins, change value below
-    let d = new Date();
+    // If you need to reduce the margin change value below. 45 (Mins) is the default
+    let prepMargin = 45;
+    let ofpDate = new Date();
+    let realDate = new Date();
     const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-    d.setMinutes(d.getMinutes() + 45); // Change the value here
-    let deph = ("0" + d.getUTCHours(d)).slice(-2);
-    let depm = d.getUTCMinutes(d);
+
+    ofpDate.setMinutes(ofpDate.getMinutes() + prepMargin);
+    let deph = ("0" + ofpDate.getUTCHours(ofpDate)).slice(-2);
+    let depm = ofpDate.getUTCMinutes(ofpDate);
+
     if (depm < 55) {
       depm = Math.ceil(depm / 5) * 5;
     } else if (depm > 55) {
       depm = Math.floor(depm / 5) * 5;
     }
-    depm = ("0" + depm).slice(-2);
-    let dof = ("0" + d.getUTCDate()).slice(-2) + months[d.getUTCMonth()] + d.getUTCFullYear();
 
-    document.getElementById("dof").setAttribute('value', dof);
-    document.getElementById("date").setAttribute('value', dof); // Sent to Simbrief
+    depm = ("0" + depm).slice(-2);
+    let planDOF = ("0" + ofpDate.getUTCDate()).slice(-2) + months[ofpDate.getUTCMonth()] + ofpDate.getUTCFullYear();
+
+    document.getElementById("dof").setAttribute('value', planDOF);
+    document.getElementById("date").setAttribute('value', planDOF); // Sent to Simbrief
     document.getElementById("deph").setAttribute('value', deph); // Sent to SimBrief
     document.getElementById("depm").setAttribute('value', depm); // Sent to SimBrief
+
+    // Check manually changed ETD hours and adjust DOF if needed
+    function CheckDOF() {
+      let utcHours = realDate.getUTCHours(realDate);
+      let inputHours = document.getElementById("deph").value;
+
+      if (utcHours == 23 && inputHours <= utcHours) {
+        let realDOF = ("0" + realDate.getUTCDate()).slice(-2) + months[realDate.getUTCMonth()] + realDate.getUTCFullYear();
+        document.getElementById("dof").setAttribute('value', realDOF);
+        document.getElementById("date").setAttribute('value', realDOF); // Sent to Simbrief
+      } else {
+        document.getElementById("dof").setAttribute('value', planDOF);
+        document.getElementById("date").setAttribute('value', planDOF); // Sent to Simbrief
+      }
+    }
   </script>
 @endsection
