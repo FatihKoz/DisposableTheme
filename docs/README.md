@@ -190,6 +190,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+11.JUN.22
+
+* Fixed a conversion error in Theme Helpers (fuel price conversion from lbs to kgs)
+
 17.APR.22
 
 * Fixed Date Of Flight (DOF) issue in SimBrief form (was effecting ofp generation around 23 UTC with edited ETD and changed dates)
