@@ -334,7 +334,7 @@
         @endphp
           {{-- If Disposable Basic Module is installed and activated, Specs will overwrite below two form fields according to your defined specifications and pilot selections --}}
           {{-- Below value fields are just defaults and should remain in the form --}}
-          <input type="hidden" id="acdata" name="acdata" value="{'extrarmk':'RVR/{{ $sb_rvr }} RMK/TCAS {{ $sb_rmk }}','paxwgt':{{ round($pax_weight + $bag_weight) }}}" readonly>
+          <input type="hidden" id="acdata" name="acdata" value="{'extrarmk':'RVR/{{ $sb_rvr }} RMK/TCAS {{ $sb_rmk }}','paxwgt':{{ round($pax_weight) }}, 'bagwgt':{{ round($bag_weight) }}}" readonly>
           <input type="hidden" id="fuelfactor" name="fuelfactor" value="" readonly>
           @if($tpaxfig)
             <input type="hidden" name="pax" value="{{ $tpaxfig }}">

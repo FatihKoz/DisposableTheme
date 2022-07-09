@@ -190,6 +190,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+09.JUL.22
+
+* Added baggage weight definitions to SimBrief form (follow up for SimBrief API changes)
+
 11.JUN.22
 
 * Fixed a conversion error in Theme Helpers (fuel price conversion from lbs to kgs)
