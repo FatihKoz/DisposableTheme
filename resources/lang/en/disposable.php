@@ -13,6 +13,7 @@ return [
     'fuel_ob'     => 'Fuel On Board',
     'latest'      => 'Latest',
     'map'         => 'Map',
+    'notes'       => 'Notes',
     'orig'        => 'Orig',
     'origin'      => 'Origin',
     'registered'  => 'Registered',

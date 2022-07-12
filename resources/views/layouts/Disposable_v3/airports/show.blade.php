@@ -101,6 +101,13 @@
             </a>
           </li>
         @endif
+        @if(filled($airport->notes) && Auth::check())
+          <li class="nav-item mx-1" role="presentation">
+            <a class="nav-link pt-1 pb-1" id="pills-notes-tab" data-toggle="pill" href="#pills-notes" role="tab" aria-controls="pills-notes" aria-selected="false">
+              @lang('disposable.notes')
+            </a>
+          </li>
+        @endif
       </ul>
     </div>
     {{-- RIGHT --}}
@@ -154,6 +161,21 @@
               </div>
               <div class="card-body p-0">
                 @include('downloads.table', ['files' => $airport->files])
+              </div>
+            </div>
+          </div>
+        @endif
+        @if(filled($airport->notes) && Auth::check())
+          <div class="tab-pane fade" id="pills-notes" role="tabpanel" aria-labelledby="pills-notes-tab">
+            <div class="card mb-2">
+              <div class="card-header p-1">
+                <h5 class="m-1">
+                  @lang('disposable.notes')
+                  <i class="fas fa-info-circle float-end"></i>
+                </h5>
+              </div>
+              <div class="card-body p-1">
+                {!! $airport->notes !!}
               </div>
             </div>
           </div>

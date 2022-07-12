@@ -13,6 +13,7 @@ return [
     'fuel_ob'     => 'Carburante a Bordo',
     'latest'      => 'Ultimo',
     'map'         => 'Map',
+    'notes'       => 'Appunti',
     'orig'        => 'Orig',
     'origin'      => 'Origine',
     'registered'  => 'Registrato',

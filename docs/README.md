@@ -190,6 +190,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+12.JUL.22
+
+* Added notes to Airport Details page (needs latest dev release)
+
 09.JUL.22
 
 * Added baggage weight definitions to SimBrief form (follow up for SimBrief API changes)
