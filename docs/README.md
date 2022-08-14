@@ -190,9 +190,9 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
-12.JUL.22
+14.AUG.22
 
-* Added notes to Airport Details page (needs latest dev release)
+* Added notes to Airport Details page (needs phpvms core update, possible upcoming dev release)
 
 09.JUL.22
 
