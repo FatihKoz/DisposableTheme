@@ -329,12 +329,13 @@
         @php
           // Get RVR and Remark Text from Theme Settings with some failsafe defaults,
           // Below two variables are also used when DisposableTech module is installed and activated.
-          $sb_rvr = filled(Theme::getSetting('simbrief_rvr')) ? Theme::getSetting('simbrief_rvr') : '500';
-          $sb_rmk = filled(Theme::getSetting('simbrief_rmk')) ? Theme::getSetting('simbrief_rmk') : strtoupper(config('app.name'));
+          $sb_rvr = filled(Theme::getSetting('simbrief_rvr')) ? 'RVR/'.Theme::getSetting('simbrief_rvr') : 'RVR/500';
+          $sb_rmk = filled(Theme::getSetting('simbrief_rmk')) ? ' RMK/TCAS '.Theme::getSetting('simbrief_rmk') : 'RMK/TCAS '.strtoupper(config('app.name'));
+          $sb_callsign = filled(optional($flight->airline)->callsign) ? ' CALLSIGN/'.$flight->airline->callsign : null;
         @endphp
           {{-- If Disposable Basic Module is installed and activated, Specs will overwrite below two form fields according to your defined specifications and pilot selections --}}
           {{-- Below value fields are just defaults and should remain in the form --}}
-          <input type="hidden" id="acdata" name="acdata" value="{'extrarmk':'RVR/{{ $sb_rvr }} RMK/TCAS {{ $sb_rmk }}','paxwgt':{{ round($pax_weight) }}, 'bagwgt':{{ round($bag_weight) }}}" readonly>
+          <input type="hidden" id="acdata" name="acdata" value="{'extrarmk':'{{ $sb_rvr.$sb_rmk.$sb_callsign }}','paxwgt':{{ round($pax_weight) }}, 'bagwgt':{{ round($bag_weight) }}}" readonly>
           <input type="hidden" id="fuelfactor" name="fuelfactor" value="" readonly>
           @if($tpaxfig)
             <input type="hidden" name="pax" value="{{ $tpaxfig }}">

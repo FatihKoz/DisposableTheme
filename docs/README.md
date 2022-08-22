@@ -190,6 +190,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+22.AUG.22
+
+* Added radio telephony callsign to SimBrief form (if defined at airline it will be used automatically)
+
 14.AUG.22
 
 * Added notes to Airport Details page (needs phpvms core update, possible upcoming dev release)
