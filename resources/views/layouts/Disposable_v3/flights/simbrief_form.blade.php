@@ -330,8 +330,8 @@
           // Get RVR and Remark Text from Theme Settings with some failsafe defaults,
           // Below two variables are also used when DisposableTech module is installed and activated.
           $sb_rvr = filled(Theme::getSetting('simbrief_rvr')) ? 'RVR/'.Theme::getSetting('simbrief_rvr') : 'RVR/500';
-          $sb_rmk = filled(Theme::getSetting('simbrief_rmk')) ? ' RMK/TCAS '.Theme::getSetting('simbrief_rmk') : 'RMK/TCAS '.strtoupper(config('app.name'));
-          $sb_callsign = filled(optional($flight->airline)->callsign) ? ' CALLSIGN/'.$flight->airline->callsign : null;
+          $sb_rmk = filled(Theme::getSetting('simbrief_rmk')) ? ' RMK/TCAS '.strtoupper(Theme::getSetting('simbrief_rmk')) : ' RMK/TCAS '.strtoupper(config('app.name'));
+          $sb_callsign = filled(optional($flight->airline)->callsign) ? ' CALLSIGN/'.strtoupper($flight->airline->callsign) : null;
         @endphp
           {{-- If Disposable Basic Module is installed and activated, Specs will overwrite below two form fields according to your defined specifications and pilot selections --}}
           {{-- Below value fields are just defaults and should remain in the form --}}
