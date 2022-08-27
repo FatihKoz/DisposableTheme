@@ -190,6 +190,11 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+27.AUG.22
+
+* Added customizations for core map support (pirep maps and live flights widget)
+  *Needs phpvms 7.0.0-dev+220822.231e54 and later*
+
 22.AUG.22
 
 * Added radio telephony callsign to SimBrief form (if defined at airline it will be used automatically)
