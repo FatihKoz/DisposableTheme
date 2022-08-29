@@ -140,31 +140,31 @@
             "x-saved-class" is the class to add/remove if the bid exists or not If you change it, remember to change it in the isset line as well
           {{--}}
           {{-- Bid Add/Remove --}}
+          <button class="btn btn-sm save_flight m-0 mx-1 p-0 px-1 {{ isset($saved[$flight->id]) ? 'btn-danger':'btn-success' }}"
+                  x-id="{{ $flight->id }}"
+                  x-saved-class="btn-danger"
+                  type="button">
+            @lang('flights.addremovebid')
+          </button>
           @if (!setting('pilots.only_flights_from_current') || $flight->dpt_airport_id == optional($user->current_airport)->icao)
-            <button class="btn btn-sm save_flight m-0 mx-1 p-0 px-1 {{ isset($saved[$flight->id]) ? 'btn-danger':'btn-success' }}"
-                    x-id="{{ $flight->id }}"
-                    x-saved-class="btn-danger"
-                    type="button">
-              @lang('flights.addremovebid')
-            </button>
-          @endif
-          {{-- SimBrief --}}
-          @if($simbrief !== false && $flight->simbrief && $flight->simbrief->user_id === $user->id)
-            <a href="{{ route('frontend.simbrief.briefing', $flight->simbrief->id) }}" class="btn btn-sm btn-secondary m-0 mx-1 p-0 px-1">@lang('disposable.sb_view')</a>
-          @elseif($simbrief !== false && ($simbrief_bids === false || $simbrief_bids === true && isset($saved[$flight->id])))
-            <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1">@lang('disposable.sb_generate')</a>
-          @endif
-          {{-- vmsACARS --}}
-          @if($acars_plugin && isset($saved[$flight->id]))
-            <a href="vmsacars:bid/{{ $saved[$flight->id] }}" class="btn btn-sm btn-warning m-0 mx-1 p-0 px-1">@lang('disposable.load_acars')</a>
-          @elseif($acars_plugin)
-            <a href="vmsacars:flight/{{ $flight->id }}" class="btn btn-sm btn-warning m-0 mx-1 p-0 px-1">@lang('disposable.load_acars')</a>
-          @endif
-          {{-- Manual Pirep --}}
-          @if(Theme::getSetting('pireps_manual'))
-            <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">
-              @lang('disposable.new_pirep')
-            </a>
+            {{-- SimBrief --}}
+            @if($simbrief !== false && $flight->simbrief && $flight->simbrief->user_id === $user->id)
+              <a href="{{ route('frontend.simbrief.briefing', $flight->simbrief->id) }}" class="btn btn-sm btn-secondary m-0 mx-1 p-0 px-1">@lang('disposable.sb_view')</a>
+            @elseif($simbrief !== false && ($simbrief_bids === false || $simbrief_bids === true && isset($saved[$flight->id])))
+              <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1">@lang('disposable.sb_generate')</a>
+            @endif
+            {{-- vmsACARS --}}
+            @if($acars_plugin && isset($saved[$flight->id]))
+              <a href="vmsacars:bid/{{ $saved[$flight->id] }}" class="btn btn-sm btn-warning m-0 mx-1 p-0 px-1">@lang('disposable.load_acars')</a>
+            @elseif($acars_plugin)
+              <a href="vmsacars:flight/{{ $flight->id }}" class="btn btn-sm btn-warning m-0 mx-1 p-0 px-1">@lang('disposable.load_acars')</a>
+            @endif
+            {{-- Manual Pirep --}}
+            @if(Theme::getSetting('pireps_manual'))
+              <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">
+                @lang('disposable.new_pirep')
+              </a>
+            @endif
           @endif
         </div>
       </div>
