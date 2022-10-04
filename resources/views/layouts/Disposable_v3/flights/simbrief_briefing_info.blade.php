@@ -244,6 +244,19 @@
         </div>
       </div>
     </div>
+        {{-- Row : Metar --}}
+    <div class="row row-cols-lg-2">
+        <div class="col-lg">
+            <div class="card p-0 mb-2 bg-transparent">
+            <iframe style="pointer-events: none; border-radius: 5px;" src="https://metar-taf.com/embed/{{ $simbrief->xml->origin->icao_code }}?bg_color=1f0dc0e6&layout=landscape" frameBorder="0" width="100%" height="256" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="card p-0 mb-2 bg-transparent">
+            <iframe style="pointer-events: none; border-radius: 5px;" src="https://metar-taf.com/embed/{{ $simbrief->xml->destination->icao_code }}?bg_color=1f0dc0e6&layout=landscape" frameBorder="0" width="100%" height="256" scrolling="no"></iframe>
+            </div>
+        </div>
+    </div>
   </div>
   @php
     $crew_count = 0;
