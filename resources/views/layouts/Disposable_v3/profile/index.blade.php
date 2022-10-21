@@ -43,7 +43,7 @@
                     </tr>
                     <tr>
                       <td class="text-center">
-                        <a href='https://www.ivao.aero/member?Id={{ $ivao_id }}' title="{{ Theme::getSetting('gen_ivao_field') }}" target='_blank'>{{ $ivao_id }}</a>
+                        <a href='https://www.ivao.aero/member.aspx?id={{ $ivao_id }}' title="{{ Theme::getSetting('gen_ivao_field') }}" target='_blank'>{{ $ivao_id }}</a>
                       </td>
                       <td class="text-center">
                         <a href='https://stats.vatsim.net/search_id.php?id={{ $vatsim_id }}' title="{{ Theme::getSetting('gen_vatsim_field') }}" target='_blank'>{{ $vatsim_id }}</a>

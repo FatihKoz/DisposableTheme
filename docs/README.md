@@ -190,6 +190,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+21.OCT.22
+
+* IVAO URL/Link fixes (User profile and Roster)
+
 27.AUG.22
 
 * Added customizations for core map support (pirep maps and live flights widget)

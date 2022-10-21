@@ -103,7 +103,7 @@
         @if(Theme::getSetting('roster_ivao'))
           <td>
             @php $ivao_id = optional($user->fields->firstWhere('name', Theme::getSetting('gen_ivao_field')))->value; @endphp
-            <a href='https://www.ivao.aero/member?Id={{ $ivao_id }}' target='_blank'>{{ $ivao_id }}</a>
+            <a href='https://www.ivao.aero/member.aspx?id={{ $ivao_id }}' target='_blank'>{{ $ivao_id }}</a>
           </td>
         @endif
         @if(Theme::getSetting('roster_vatsim'))
