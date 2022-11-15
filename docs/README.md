@@ -190,6 +190,12 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+15.NOV.22
+
+* PT-BR Translation (Thanks to @Joaolzc)
+* PT-PT Translation (Thanks to @PVPVA , specially JCB)
+* License Updated (more non-authorized virtual airlines added !)
+
 21.OCT.22
 
 * IVAO URL/Link fixes (User profile and Roster)
