@@ -307,6 +307,15 @@
     </a>
   </li>
 
+  @if($DBasic)
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('DBasic.reports') }}">
+        <i class="fas fa-file-upload {{ $icon_style }}"></i>
+        @lang('disposable.menu_reports')
+      </a>
+    </li>
+  @endif
+
   <li>
     <a class="nav-link" href="{{ route('frontend.livemap.index') }}">
       <i class="fas fa-map {{ $icon_style }}"></i>
