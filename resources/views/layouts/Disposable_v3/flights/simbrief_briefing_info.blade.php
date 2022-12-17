@@ -270,11 +270,13 @@
         </div>
         @if(Theme::getSetting('simbrief_poscon'))
           <div class="float-end">
-            <a href="{{ $simbrief->xml->poscon_prefile }}" target="_blank" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1">File ATC > PosCon</a>
+            <a href="{{ $simbrief->xml->prefile->poscon->link }}" target="_blank" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1">File ATC > POSCON</a>
           </div>
         @endif
         @if(Theme::getSetting('simbrief_vatsim'))
           <div class="float-end">
+            <a href="{{ $simbrief->xml->prefile->vatsim->link }}" target="_blank" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1">File ATC > VATSIM</a>
+            {{--}}
             <form action="https://my.vatsim.net/pilots/flightplan" method="GET" target="_blank">
               <input type="hidden" name="raw" value="{{ $simbrief->xml->atc->flightplan_text }}">
               <input type="hidden" name="fuel_time" value="@secstohhmm($simbrief->xml->times->endurance)">
@@ -282,10 +284,13 @@
               <input type="hidden" name="altitude" value="{{ $simbrief->xml->general->initial_altitude }}">
               <input id="vatsim_prefile" type="submit" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1" value="File ATC > VATSIM"/>
             </form>
+            {{--}}
           </div>
         @endif
         @if(Theme::getSetting('simbrief_ivao'))
           <div class="float-end">
+            <a href="{{ $simbrief->xml->prefile->ivao->link }}" target="_blank" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1">File ATC > IVAO</a>
+            {{--}}
             <form action="https://fpl.ivao.aero/api/fp/load" method="POST" target="_blank">
               <input type="hidden" name="CALLSIGN" value="{{ $simbrief->xml->atc->callsign }}"/>
               <input type="hidden" name="RULES" value="I"/>
@@ -311,6 +316,7 @@
               <input type="hidden" name="POB" value="{{ round($crew_count + $simbrief->xml->weights->pax_count) }}"/>
               <input id="ivao_prefile" type="submit" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1" value="File ATC > IVAO"/>
             </form>
+            {{--}}
           </div>
         @endif
       </div>

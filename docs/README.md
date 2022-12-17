@@ -190,6 +190,11 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+17.DEC.22
+
+* Added public pireps page link to menu/nav (Needs Dispo Basic)
+* Quick fixes applied for IVAO/VATSIM/POSCON plan filing systems applied (IVAO API Change, SB xml changes)
+
 15.NOV.22
 
 * PT-BR Translation (Thanks to @Joaolzc)
