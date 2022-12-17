@@ -129,29 +129,36 @@
       {{-- Inline Navigation --}}
       <ul class="nav nav-pills nav-fill mb-2" id="details-tab" role="tablist">
         @if($Auth_ID)
-          <li class="nav-item mx-1" role="presentation">
+          <li class="nav-item m-1" role="presentation">
             <button class="nav-link p-0 px-1" id="profile-tab" data-bs-toggle="pill" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">
               Profile Details</button>
           </li>
         @endif
         @if($user->typeratings->count() > 0)
-          <li class="nav-item mx-1" role="presentation">
+          <li class="nav-item m-1" role="presentation">
             <button class="nav-link p-0 px-1" id="typeratings-tab" data-bs-toggle="pill" data-bs-target="#typeratings" type="button" role="tab" aria-controls="typeratingss" aria-selected="false">
               Type Ratings
             </button>
           </li>
         @endif
         @if(filled($user->awards))
-          <li class="nav-item mx-1" role="presentation">
+          <li class="nav-item m-1" role="presentation">
             <button class="nav-link p-0 px-1" id="awards-tab" data-bs-toggle="pill" data-bs-target="#awards" type="button" role="tab" aria-controls="awards" aria-selected="false">
               Awards
             </button>
           </li>
         @endif
         @if($DBasic && $user->flights > 0)
-          <li class="nav-item mx-1" role="presentation">
+          <li class="nav-item m-1" role="presentation">
             <button class="nav-link p-0 px-1" id="stats-tab" data-bs-toggle="pill" data-bs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="false">
               Statistics
+            </button>
+          </li>
+        @endif
+        @if($DBasic && $user->flights > 0)
+          <li class="nav-item m-1" role="presentation">
+            <button class="nav-link p-0 px-1" id="pireps-tab" data-bs-toggle="pill" data-bs-target="#pireps" type="button" role="tab" aria-controls="pireps" aria-selected="false">
+              PIREPs
             </button>
           </li>
         @endif
@@ -289,6 +296,13 @@
     @if($DBasic && $user->flights > 0)
       <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">
         @include('profile.user_stats')
+      </div>
+      <div class="tab-pane fade" id="pireps" role="tabpanel" aria-labelledby="pireps-tab">
+        <div class="row">
+          <div class="col-lg-6">
+            @widget('DBasic::UserPireps', ['user' => $user->id, 'limit' => 50])
+          </div>
+        </div>
       </div>
     @endif
   </div>

@@ -4,7 +4,7 @@ phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)
 
 Compatible with phpVMS v7 builds as described below;
 
-* Theme versions starting with v3.1.xx supports **only** php8 and laravel9
+* Theme versions starting with v3.1.xx and up supports **only** php8 and laravel9
 * Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+220314.128480` for v3.1.xx
 * Theme version v3.0.19 is the latest version with php7.4 and laravel8 support
 * Latest available phpVMS v7 version is `phpVms 7.0.0-dev+220307.00bf18` (07.MAR.22) for v3.0.19
@@ -192,8 +192,9 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 17.DEC.22
 
-* Added public pireps page link to menu/nav (Needs Dispo Basic)
 * Quick fixes applied for IVAO/VATSIM/POSCON plan filing systems applied (IVAO API Change, SB xml changes)
+* Added public pireps page link to menu/nav (Needs Dispo Basic)
+* Added UserPireps widget to profile index (Needs Dispo Basic)
 
 15.NOV.22
 
