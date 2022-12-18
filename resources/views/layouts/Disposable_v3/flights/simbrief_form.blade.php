@@ -348,13 +348,8 @@
           @if(isset($tpayload) && $tpayload > 0)
             <input type="hidden" name="manualrmk" value="Load Distribution {{ $loaddist }}">
           @endif
-          <input type="hidden" name="airline" value="{{ optional($flight->airline)->icao }}">
+          <input type="hidden" name="airline" value="{{ optional($flight->airline)->code }}">
           <input type="hidden" name="fltnum" value="{{ $flight->flight_number }}">
-          @if(setting('simbrief.callsign', false))
-            <input type="hidden" name="callsign" value="{{ $user->ident }}">
-          @elseif(filled($flight->callsign))
-            <input type="hidden" name="callsign" value="{{ optional($flight->airline)->icao.$flight->callsign }}">
-          @endif
           @if(setting('simbrief.name_private', false))
             <input type="hidden" name="cpt" value="{{ $user->name_private }}">
           @endif
