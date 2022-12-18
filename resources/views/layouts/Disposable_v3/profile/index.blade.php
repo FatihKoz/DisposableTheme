@@ -20,7 +20,10 @@
       <div class="card mb-2">
         <div class="card-header p-1">
           <h5 class="m-1">
-            @if(Theme::getSetting('roster_ident')) {{ $user->ident.' | ' }} @endif
+            @if(Theme::getSetting('roster_ident')) 
+              {{ $user->ident.' | ' }} 
+              @if(filled($user->callsign)) {{ $user->callsign.' > ' }} @endif
+            @endif
             {{ $user->name_private }}
             <span class="flag-icon flag-icon-{{ $user->country }} float-end mt-1"></span>
           </h5>
