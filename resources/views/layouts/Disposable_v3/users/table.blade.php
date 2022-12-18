@@ -36,7 +36,7 @@
           @if(filled($user->country) && strlen($user->country) === 2 && Theme::getSetting('roster_flags'))
             <span class="mx-1 p-0 float-end flag-icon flag-icon-{{ $user->country }}" title="{{ $country->alpha2($user->country)['name'] }}" style="font-size: 1.2rem;"></span>
           @endif
-          <a href="{{ route('frontend.profile.show', [$user->id]) }}">
+          <a href="{{ route('frontend.users.show.public', [$user->id]) }}">
             @if(Theme::getSetting('roster_ident'))
               {{$user->ident}}&nbsp;
             @endif
