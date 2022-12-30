@@ -9,11 +9,6 @@
     $icon_style = "float-start m-1 me-2";
     $border = null;
   }
-  if (Theme::getSetting('gen_multilang')) {
-    // Get Languages and Locale once
-    $languages = Config::get('languages');
-    $locale = App::getLocale();
-  }
   $user = Auth::user();
 
 @endphp
