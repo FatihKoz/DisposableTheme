@@ -196,7 +196,8 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 30.DEC.22
 
-* Added support for multi language (can be enabled via theme.json)
+* Added support for multi language (can be enabled via theme.json, needs core update to latest dev)
+* Updated SimBrief form to allow pilots to choose their ATC Callsign (VA ident, VA Callsign, Flight Callsign, Flight Number)
 
 17.DEC.22
 
