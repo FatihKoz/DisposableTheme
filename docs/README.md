@@ -5,8 +5,10 @@ phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)
 Compatible with phpVMS v7 builds as described below;
 
 * Theme versions starting with v3.1.xx and up supports **only** php8 and laravel9
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+220314.128480` for v3.1.xx
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+221227.f4fc71` for v3.2.xx
+---
 * Theme version v3.0.19 is the latest version with php7.4 and laravel8 support
+* It is not supported and updated anymore, so use it at your own risk.
 * Latest available phpVMS v7 version is `phpVms 7.0.0-dev+220307.00bf18` (07.MAR.22) for v3.0.19
 * Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+211214.c12cf0` (14.DEC.21) for v3.0.19
 ---
@@ -84,7 +86,8 @@ This can be achieved in two ways, either you need to change the image files prov
 
 Files holding logo definitions are `nav_side.blade.php`, `nav_top.blade.php` and `nav_menu.blade.php`
 
-Both SideBar and NavBar uses the same file for menu items `nav_menu.blade.php`
+Both SideBar and NavBar uses the same file for menu items `nav_menu.blade.php`  
+`nav_menu.blade.php` also holds the new language switching dropdown
 
 ## Settings (via theme.json)
 
@@ -110,6 +113,7 @@ There are some options defined in this file for quick settings or for pre-define
     "gen_darkmode": 0,                // Enable - Disable dark mode switch
     "gen_nicescroll": 0,              // Enable - Disable nice scroll (kills page performance and has issues!)
     "gen_stable_approach": 0,         // Enable - Disable Stable Approach plugin support (Disposable Basic)
+    "gen_multilang": 0,               // Enable - Disable Language Selection / Multiple Languages
     
     "home_disable": 0,                // Disable home (landing) page for quests
     "home_ivao_logo": 0,              // Home page IVAO logo (with link)
@@ -189,6 +193,10 @@ As per the license, **theme name should be always visible in all pages**. Editin
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
+
+30.DEC.22
+
+* Added support for multi language (can be enabled via theme.json)
 
 17.DEC.22
 
