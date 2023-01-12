@@ -197,6 +197,7 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 12.JAN.23
 
 * Quickfix for core improvements (navigation changes)
+* DE Translation ([Cyber Air](http://www.cyber-air.org/))
 
 30.DEC.22
 
