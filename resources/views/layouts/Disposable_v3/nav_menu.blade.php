@@ -1,24 +1,3 @@
-{{-- Generic Style Settings For Navbar / SideBar --}}
-@php
-  $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
-  $DSpecial = isset($DSpecial) ? $DSpecial : DT_CheckModule('DisposableSpecial');
-  if (Theme::getSetting('gen_sidebar')) {
-    $icon_style = "float-end m-1 me-0";
-    $border = "border-0";
-  } else {
-    $icon_style = "float-start m-1 me-2";
-    $border = null;
-  }
-
-  $user = Auth::user();
-
-  if (Theme::getSetting('gen_multilang')) {
-    // Get Languages and Locale once
-    $languages = Config::get('languages');
-    $locale = App::getLocale();
-  }
-@endphp
-
 @if (Auth::check())
 {{-- Menu Items For Users --}}
   @if(Theme::getSetting('gen_darkmode') && !Theme::getSetting('gen_sidebar'))

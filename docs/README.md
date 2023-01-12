@@ -194,6 +194,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+12.JAN.23
+
+* Quickfix for core improvements (navigation changes)
+
 30.DEC.22
 
 * Added support for multi language (can be enabled via theme.json, needs core update to latest dev)

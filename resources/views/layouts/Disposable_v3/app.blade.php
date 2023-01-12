@@ -34,11 +34,7 @@
       @endphp
     {{-- Navigation --}}
       @if(empty($disable_nav))
-        @if(Theme::getSetting('gen_sidebar'))
-          @include('nav_side')
-        @else
-          @include('nav_top')
-        @endif
+        @include('nav')
       @endif
     {{-- Page Contents --}}
       <div id="page-contents" class="container-fluid">
