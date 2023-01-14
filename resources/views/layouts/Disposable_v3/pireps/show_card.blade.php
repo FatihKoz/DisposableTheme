@@ -79,7 +79,7 @@
             </a>
           @endif
         @endability
-        @if(!$pirep->read_only && $user && $pirep->user_id === $user->id)
+        @if(!$pirep->read_only && !$pirep->source == 1 && $user && $pirep->user_id === $user->id)
           <form method="get" action="{{ route('frontend.pireps.edit', $pirep->id) }}">
             @csrf
             <button class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">@lang('common.edit')</button>

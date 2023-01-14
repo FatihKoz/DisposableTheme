@@ -54,7 +54,7 @@
           @endif
         </td>
         <td class="text-end">
-          @if(!$pirep->read_only)
+          @if(!$pirep->read_only && !$pirep->source == 1)
             <a href="{{ route('frontend.pireps.edit', [$pirep->id]) }}" class="btn btn-sm btn-info m-0 mx-1 p-0 px-1">@lang('common.edit')</a>
           @endif
           @if($pirep->read_only && Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
