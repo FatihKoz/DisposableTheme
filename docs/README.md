@@ -194,6 +194,11 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+14.JAN.23
+
+* Added network display for pireps (blade changes and helper update)  
+  (to ease up IVAO/VATSIM audits, compatible with Dispo Basic Network Presence Check system)
+
 12.JAN.23
 
 * Quickfix for core improvements (navigation changes)

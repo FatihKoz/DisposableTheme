@@ -64,6 +64,7 @@
             @widget('DBasic::StableApproach', ['pirep' => $pirep])
           @endif
           {!! DT_PirepState($pirep) !!}
+          {!! DT_NetworkPresence($pirep) !!}
         </td>
       </tr>
     @endforeach
