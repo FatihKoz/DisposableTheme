@@ -68,7 +68,10 @@
     <div class="col-lg-4">
       @if(Theme::getSetting('dash_embed_wx') && $current_airport)
         <div class="card p-0 mb-2 bg-transparent">
-          <iframe style="pointer-events: none; border-radius: 5px;" src="https://metar-taf.com/embed/{{ $current_airport }}?bg_color=1f0dc0e6&layout=landscape" frameBorder="0" width="100%" height="256" scrolling="no"></iframe>
+          <div class="card-header ps-2 p-1 m-0">
+            <a href="https://metar-taf.com/{{ $current_airport }}" id="metartaf-DispoThM" style="font-size: 0.925rem; width:100%; height:255px; display:block; pointer-events: none">METAR {{ $current_airport }}</a>
+          </div>
+          <script async defer crossorigin="anonymous" src="https://metar-taf.com/embed-js/{{ $current_airport }}?bg_color=1f0dc0e6&layout=landscape&target=DispoThM"></script>
         </div>
       @elseif($current_airport)
         @widget('Weather', ['icao' => $current_airport])
