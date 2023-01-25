@@ -194,6 +194,12 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+25.JAN.23
+
+* Fixed weahter widget embed at dashboard
+* Removed some buttons (about editing live acars pireps)
+* Updated theme helpers for network display (now it will use different colors per network flown)
+
 14.JAN.23
 
 * Added network display for pireps (blade changes and helper update)  
