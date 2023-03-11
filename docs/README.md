@@ -194,6 +194,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+11.MAR.23
+
+* Fixed pagination bug of flight search page (Thanks to @dougjuk)
+
 25.JAN.23
 
 * Fixed weather widget embed at dashboard
