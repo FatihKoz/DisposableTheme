@@ -33,7 +33,7 @@
       @else
         @include('flights.card')
       @endif
-      {{ $flights->appends(\Illuminate\Support\Facades\Request::except('page'))->links('pagination.default') }}
+      {{ $flights->appends(\Illuminate\Support\Facades\Request::except('page'))->links('pagination.auto') }}
     </div>
     <div class="col-lg-3">
       @include('flights.search')
