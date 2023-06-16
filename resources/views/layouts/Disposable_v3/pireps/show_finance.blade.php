@@ -33,10 +33,10 @@
             </th>
             @foreach($pirep->fares->sortBy('count', SORT_NATURAL) as $fare)
               <tr>
-                <td class="text-start">{{ optional($fare->fare)->name.' ('.optional($fare->fare)->code.')' }}</td>
+                <td class="text-start">{{ optional($fare)->name.' ('.optional($fare)->code.')' }}</td>
                 <td class="text-end">
                   {{ $fare->count }}
-                  @if($fare->fare->type === 1) {{ $units['weight'] }} @else pax @endif
+                  @if($fare->type === 1) {{ $units['weight'] }} @else pax @endif
                 </td>
               </tr>
             @endforeach

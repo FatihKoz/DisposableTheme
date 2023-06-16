@@ -3,7 +3,7 @@
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
 * Theme supports **only** php8 and laravel9 (php8.1.x is preferred)
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+230515.3828b8`
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+230616.75d6e2` (16.Jun.2023)  
 
 If you are somehow stuck with php7.4 and laravel8 check releases and use v3.0.19  
 
@@ -193,6 +193,10 @@ As per the license, **theme name should be always visible in all pages**. Editin
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
 ## Release / Update Notes
+
+16.JUN.23
+
+* Pirep Details > Fare display update (following v7 dev changes)
 
 11.JUN.23
 
