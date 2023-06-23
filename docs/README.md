@@ -2,10 +2,10 @@
 
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
-* Theme supports **only** php8 and laravel9 (php8.1.x is preferred)
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+230616.75d6e2` (16.Jun.2023)  
-
-If you are somehow stuck with php7.4 and laravel8 check releases and use v3.0.19  
+* Theme supports **only** php8.1+ and laravel10
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+230621.16a31d`
+* _php8.0 and laravel9 compatible latest version: v3.3.1_
+* _php7.4 and laravel8 compatible latest version: v3.0.19_
 
 ## Compatibility with other addons
 
@@ -192,9 +192,19 @@ As per the license, **theme name should be always visible in all pages**. Editin
 
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
+## Known Bugs / Problems
+
+Beta testers of SmartCars v3 reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data.  
+
 ## Release / Update Notes
 
+23.JUN.23
+
+* Theme is compatible with php8.1+ and Laravel10
+
 16.JUN.23
+
+**WARNING: THIS IS THE LAST VERSION SUPPORTING PHP 8.0.x AND LARAVEL 9**
 
 * Pirep Details > Fare display update (following v7 dev changes)
 
