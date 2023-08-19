@@ -202,7 +202,7 @@ Beta testers of SmartCars v3 reported problems with some of the features theme o
 19.AUG.23
 
 * Added support for sortable results (Flights, Pireps, Users)
-* Added support for airport search dropdowns (Register, Profile, Flights, Pireps)
+* Added support for airport search dropdowns (Register, Profile, Flights, Pireps)  
   _Warning: both changes require latest dev as of 19.AUG.23_
 
 23.JUN.23
