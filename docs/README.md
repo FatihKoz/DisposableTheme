@@ -134,13 +134,14 @@ There are some options defined in this file for quick settings or for pre-define
 
     "flights_flags": 1,               // Enable - Disable country flags on flight related pages
     "flights_table": 1,               // Classic table or card view switch for flights search page
+    "flights_codeleg": 0,             // Displays the Route Code and Leg fields separately (Flight and Pireps)
 
     "login_logo": 0,                  // Show bigger VA logo at login page
 
     "pireps_manual": 1,               // Hide or show manual pirep filing buttons
 
     "roster_userimage": 1,            // Use profile images (or gravatar) at roster
-    "roster_ident": 0,                // Use ident at roster (like DSP001 Name P)
+    "roster_ident": 0,                // Use ident at roster in a separate column (like DSP001 Name P)
     "roster_flags": 0,                // Use country flags at roster
     "roster_airline": 1,              // Display user's airline at roster
     "roster_combinetimes": 0,         // Combine flight time and transfer time at roster
