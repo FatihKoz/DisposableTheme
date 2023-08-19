@@ -3,7 +3,7 @@
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
 * Theme supports **only** php8.1+ and laravel10
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+230621.16a31d`
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+230818.7f346a`
 * _php8.0 and laravel9 compatible latest version: v3.3.1_
 * _php7.4 and laravel8 compatible latest version: v3.0.19_
 
@@ -197,6 +197,12 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 Beta testers of SmartCars v3 reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data.  
 
 ## Release / Update Notes
+
+19.AUG.23
+
+* Added support for sortable results (Flights, Pireps, Users)
+* Added support for airport search dropdowns (Register, Profile, Flights, Pireps)
+  _Warning: both changes require latest dev as of 19.AUG.23_
 
 23.JUN.23
 
