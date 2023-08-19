@@ -129,7 +129,7 @@
       @endif
     {{-- End of the Google Analytics code --}}
     {{-- UTC Clock --}}
-      @if(Theme::getSetting('gen_utc_clock'))
+      @if(Theme::getSetting('gen_utc_clock') && Auth::check())
         <script type="text/javascript">
           var timeInterval = setInterval(display_ct, 500);
           function display_ct() {
