@@ -1,8 +1,10 @@
 @php
   $disable_hub = (Theme::getSetting('user_disable_hub')) ? 'disabled' : null;
   $disable_airline = (Theme::getSetting('user_disable_airline')) ? 'disabled' : null;
+  $only_hubs = ($hubs_only === true) ? 'hubs_only' : null;
 @endphp
 <div class="form-group">
+
   <div class="input-group input-group-sm">
     <span class="input-group-text col-md-3">{{ __('common.name') }}</span>
     {{ Form::text('name', null, ['class' => 'form-control']) }}
@@ -52,7 +54,7 @@
   <div class="input-group input-group-sm">
     <span class="input-group-text col-md-3">{{ __('airports.home') }}</span>
     {{ Form::hidden('home_airport_id', $user->home_airport_id, false) }}
-    {{ Form::select('home_airport_id', $airports, null , ['class' => 'form-control select2 ', $disable_hub]) }}
+    {{ Form::select('home_airport_id', $airports, null , ['class' => 'form-control '.$only_hubs.' airport_search', $disable_hub]) }}
   </div>
 
   <div class="input-group input-group-sm mb-3">

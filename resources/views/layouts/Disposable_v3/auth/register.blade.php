@@ -1,6 +1,8 @@
 @extends('app')
 @section('title', __('auth.register'))
-
+@php
+  $only_hubs = ($hubs_only === true) ? 'hubs_only' : null;
+@endphp
 @section('content')
   <div class="row mt-2">
     <div class="col-lg-6 mx-auto content-center">
@@ -31,7 +33,7 @@
 
             <div class="input-group input-group-sm mb-1">
               <span class="input-group-text col-lg-3" id="home_airport_id">@lang('airports.home')</span>
-              {{ Form::select('home_airport_id', $airports, null , ['class' => 'form-control select2']) }}
+              {{ Form::select('home_airport_id', [], null , ['class' => 'form-control '.$only_hubs.' airport_search']) }}
             </div>
 
             <div class="input-group input-group-sm mb-1">
@@ -147,4 +149,6 @@
       }
     });
   </script>
+
+  @include('scripts.airport_search')
 @endsection

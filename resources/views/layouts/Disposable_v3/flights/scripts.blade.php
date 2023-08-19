@@ -11,15 +11,13 @@
 
         if (!btn.hasClass(class_name)) {
           await phpvms.bids.addBid(flight_id);
-
-          console.log('successfully saved flight');
+          console.log('successfully saved bid for flight');
           btn.addClass(class_name);
           alert('@lang("flights.bidadded")');
           location.replace('/flights/bids');
         } else {
           await phpvms.bids.removeBid(flight_id);
-
-          console.log('successfully removed flight');
+          console.log('successfully removed bid from flight');
           btn.removeClass(class_name);
           alert('@lang("flights.bidremoved")');
           location.reload();
@@ -27,4 +25,6 @@
       });
     });
   </script>
+
+  @include('scripts.airport_search')
 @endsection

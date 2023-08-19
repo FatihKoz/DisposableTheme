@@ -64,7 +64,7 @@ flight reports that have been filed. You've been warned!
               @endif
               <div class="input-group input-group-sm">
                 <span class="input-group-text" id="dpt_airport_id">@lang('airports.departure')</span>
-                {{ Form::select('dpt_airport_id', $airport_list, null, ['class' => 'form-control select2', $select2_readonly]) }}
+                {{ Form::select('dpt_airport_id', $airport_list, null, ['class' => 'form-control airport_search', $select2_readonly]) }}
               </div>
             </div>
             <div class="col-lg">
@@ -73,7 +73,7 @@ flight reports that have been filed. You've been warned!
               @endif
               <div class="input-group input-group-sm">
                 <span class="input-group-text" id="arr_airport_id">@lang('airports.arrival')</span>
-                {{ Form::select('arr_airport_id', $airport_list, null, ['class' => 'form-control select2', $select2_readonly]) }}
+                {{ Form::select('arr_airport_id', $airport_list, null, ['class' => 'form-control airport_search', $select2_readonly]) }}
               </div>
             </div>
           </div>

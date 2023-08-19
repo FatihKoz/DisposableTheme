@@ -41,11 +41,11 @@
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('airports.departure')</span>
-        {{ Form::select('dep_icao', $airports, null , ['class' => 'form-control select2']) }}
+        {{ Form::select('dep_icao', [], null , ['class' => 'form-control airport_search']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('airports.arrival')</span>
-        {{ Form::select('arr_icao', $airports, null , ['class' => 'form-control select2']) }}
+        {{ Form::select('arr_icao', [], null , ['class' => 'form-control airport_search']) }}
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('common.subfleet')</span>

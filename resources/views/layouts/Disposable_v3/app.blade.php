@@ -109,7 +109,7 @@
           });
         </script>
       @endif
-      <script>$(document).ready(function () { $(".select2").select2({width: 'resolve'}); });</script>
+      <script>$(document).ready(function () { $("select.select2").select2({width: 'resolve'}); });</script>
     {{-- End the required tags block --}}
     {{--
     Google Analytics tracking code. Only active if an ID has been entered

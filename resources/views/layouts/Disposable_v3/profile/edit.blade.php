@@ -29,3 +29,8 @@
     </div>
   </div>
 @endsection
+
+@section('scripts')
+  @parent
+  @include('scripts.airport_search')
+@endsection

@@ -14,4 +14,7 @@
       });
     });
   </script>
+
+  @include('scripts.airport_search')
+
 @endsection
