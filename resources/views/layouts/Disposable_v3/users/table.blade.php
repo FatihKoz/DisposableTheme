@@ -1,18 +1,21 @@
 <table class="table table-sm table-borderless table-striped align-middle text-center text-nowrap mb-0" id="users-table">
   <thead>
     @if(Theme::getSetting('roster_userimage'))
-      <th class="text-start" style="width: 50px;"></th>
+      <th class="text-start" style="width: 50px;">@sortablelink('id', 'ID')</th>
     @endif
-    <th class="text-start">@lang('common.name')</th>
-    <th>@lang('airports.home')</th>
+    @if(Theme::getSetting('roster_ident'))
+      <th class="text-start">@sortablelink('pilot_id', 'IDENT')</th>
+    @endif
+    <th class="text-start">@sortablelink('name', __('common.name'))</th>
+    <th>@sortablelink('home_airport_id', __('airports.home'))</th>
     @if(Theme::getSetting('roster_airline'))
-      <th>@lang('common.airline')</th>
+      <th>@sortablelink('airline_id', __('common.airline'))</th>
     @endif
-    <th>@lang('airports.current')</th>
-    <th>@lang('disposable.rank')</th>
-    <th>{{ trans_choice('common.flight', 2) }}</th>
-    <th>{{ trans_choice('common.hour', 2) }}</th>
-    <th>@lang('disposable.awards')</th>
+    <th>@sortablelink('curr_airport_id', __('airports.current'))</th>
+    <th>@sortablelink('rank_id', __('disposable.rank'))</th>
+    <th>@sortablelink('flights', trans_choice('common.flight', 2))</th>
+    <th>@sortablelink('flight_time', trans_choice('common.hour', 2))</th>
+    <th>@sortablelink('awards_count', __('disposable.awards'))</th>
     @if(Theme::getSetting('roster_ivao'))
       <th>IVAO</th>
     @endif
@@ -32,16 +35,16 @@
             @endif
           </td>
         @endif
+        @if(Theme::getSetting('roster_ident'))
+          <td class="text-start">
+            <a href="{{ route('frontend.users.show.public', [$user->id]) }}">{{$user->ident}}</a>
+          </td>
+        @endif
         <td class="text-start">
           @if(filled($user->country) && strlen($user->country) === 2 && Theme::getSetting('roster_flags'))
             <span class="mx-1 p-0 float-end flag-icon flag-icon-{{ $user->country }}" title="{{ $country->alpha2($user->country)['name'] }}" style="font-size: 1.2rem;"></span>
           @endif
-          <a href="{{ route('frontend.users.show.public', [$user->id]) }}">
-            @if(Theme::getSetting('roster_ident'))
-              {{$user->ident}}&nbsp;
-            @endif
-            {{ $user->name_private }}
-          </a>
+          <a href="{{ route('frontend.users.show.public', [$user->id]) }}">{{ $user->name_private }}</a>
         </td>
         <td>
           @if(filled($user->home_airport_id))
@@ -56,7 +59,7 @@
         </td>
         @if(Theme::getSetting('roster_airline'))
           <td>
-            @if($DBasic) 
+            @if($DBasic)
               <a href="{{ route('DBasic.airline', [optional($user->airline)->icao ?? '']) }}">
             @endif
             @if($user->airline && filled($user->airline->logo))

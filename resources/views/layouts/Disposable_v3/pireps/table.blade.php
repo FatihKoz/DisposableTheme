@@ -1,19 +1,23 @@
-@php 
+@php
   $units = isset($units) ? $units : DT_GetUnits();
   $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
 @endphp
 <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
   <thead>
     <tr>
-      <th>@lang('flights.flightnumber')</th>
-      <th>@lang('common.departure')</th>
-      <th>@lang('common.arrival')</th>
-      <th class="text-center">@lang('common.aircraft')</th>
-      <th class="text-center">@lang('flights.flighttime')</th>
-      <th class="text-center">@lang('disposable.fused')</th>
-      <th class="text-center">@lang('disposable.score')</th>
-      <th class="text-center">@lang('disposable.lrate')</th>
-      <th class="text-end">@lang('pireps.submitted')</th>
+      <th>@sortablelink('flight_number', __('flights.flightnumber'))</th>
+      @if(Theme::getSetting('flights_codeleg'))
+        <th>@sortablelink('route_code', __('flights.code'))</th>
+        <th>@sortablelink('route_leg', 'Leg')</th>
+      @endif
+      <th>@sortablelink('dpt_airport_id', __('common.departure'))</th>
+      <th>@sortablelink('arr_airport_id', __('common.arrival'))</th>
+      <th class="text-center">@sortablelink('aircraft_id', __('common.aircraft'))</th>
+      <th class="text-center">@sortablelink('flight_time', __('flights.flighttime'))</th>
+      <th class="text-center">@sortablelink('fuel_used', __('disposable.fused'))</th>
+      <th class="text-center">@sortablelink('score', __('disposable.score'))</th>
+      <th class="text-center">@sortablelink('landing_rate', __('disposable.lrate'))</th>
+      <th class="text-end">@sortablelink('submitted_at', __('pireps.submitted'))</th>
       <th class="text-end">@lang('common.status')</th>
     </tr>
   </thead>
@@ -21,8 +25,16 @@
     @foreach($pireps as $pirep)
       <tr>
         <td>
-          <a href="{{ route('frontend.pireps.show', [$pirep->id]) }}">{{ $pirep->ident }}</a>
+          @if(Theme::getSetting('flights_codeleg'))
+            <a href="{{ route('frontend.pireps.show', [$pirep->id]) }}">{{ $pirep->airline->code.' '.$pirep->flight_number }}</a>
+          @else
+            <a href="{{ route('frontend.pireps.show', [$pirep->id]) }}">{{ $pirep->ident }}</a>
+          @endif
         </td>
+        @if(Theme::getSetting('flights_codeleg'))
+          <td>{{ $pirep->route_code }}</td>
+          <td>{{ $pirep->route_leg }}</td>
+        @endif
         <td>
           <a href="{{ route('frontend.airports.show', [$pirep->dpt_airport_id]) }}">{{ optional($pirep->dpt_airport)->full_name }}</a>
         </td>

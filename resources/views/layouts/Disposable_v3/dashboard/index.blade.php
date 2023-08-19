@@ -71,6 +71,10 @@
           <div class="card-header ps-2 p-1 m-0">
             <a href="https://metar-taf.com/{{ $current_airport }}" id="metartaf-DispoThM" style="font-size: 0.925rem; width:100%; height:255px; display:block; pointer-events: none">METAR {{ $current_airport }}</a>
           </div>
+          <div class="card-header px-1 p-0 m-0 small text-end">
+            <a class="float-start" href="https://metar-taf.com/live/{{ $current_airport }}" target="_blank">Livestream</a>
+            <a href="https://metar-taf.com/{{ $current_airport }}" target="_blank">Data provided by Metar-Taf.com</a>
+          </div>
           <script async defer crossorigin="anonymous" src="https://metar-taf.com/embed-js/{{ $current_airport }}?bg_color=1f0dc0e6&layout=landscape&target=DispoThM"></script>
         </div>
       @elseif($current_airport)

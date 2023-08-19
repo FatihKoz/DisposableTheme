@@ -33,6 +33,7 @@
     "flight_notams": 0,
     "flights_flags": 1,
     "flights_table": 1,
+    "flights_codeleg": 0,
     "login_logo": 0,
     "pireps_manual": 1,
     "roster_userimage": 1,

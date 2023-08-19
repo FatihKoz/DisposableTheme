@@ -1,11 +1,15 @@
 <table class="table table-sm table-borderless table-striped align-middle text-start text-nowrap mb-0">
   <thead>
     <tr>
-      <th>@lang('flights.flightnumber')</th>
-      <th>@lang('airports.departure')</th>
-      <th class="text-center">STD</th>
-      <th class="text-center">STA</th>
-      <th>@lang('airports.arrival')</th>
+      <th>@sortablelink('flight_number', __('flights.flightnumber'))</th>
+      @if(Theme::getSetting('flights_codeleg'))
+        <th>@sortablelink('route_code', 'Code')</th>
+        <th>@sortablelink('route_leg', 'Leg')</th>
+      @endif
+      <th>@sortablelink('dpt_airport_id', __('airports.departure'))</th>
+      <th class="text-center">@sortablelink('dpt_time', 'STD')</th>
+      <th class="text-center">@sortablelink('arr_time', 'STA')</th>
+      <th>@sortablelink('arr_airport_id', __('airports.arrival'))</th>
       <th class="text-end pe-2">@lang('disposable.actions')</th>
     </tr>
   </thead>
@@ -20,6 +24,10 @@
             @endif
           </a>
         </td>
+        @if(Theme::getSetting('flights_codeleg'))
+          <td>{{ $flight->route_code }}</td>
+          <td>{{ $flight->route_leg }}</td>
+        @endif
         <td>
           @if(Theme::getSetting('flights_flags'))
             <img class="img-mh25 mx-1" title="{{ strtoupper(optional($flight->dpt_airport)->country) }}"
