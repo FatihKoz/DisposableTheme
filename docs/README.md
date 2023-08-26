@@ -127,7 +127,7 @@ There are some options defined in this file for quick settings or for pre-define
 
     "download_counts": 0,             // Download counts display
 
-    "flight_bid": 1,                  // Bid Add/Remove button on flight details page
+    "flight_bid": 0,                  // Bid Add/Remove button on flight details page
     "flight_simbrief": 1,             // SimBrief OFP generation button on flight details page
     "flight_jumpseat": 0,             // Quick Travel button on flight details page (Disposable Basic)
     "flight_notams": 0,               // Display NOTAMs at flight details page (Disposable Special)
@@ -198,6 +198,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 Beta testers of SmartCars v3 reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data.  
 
 ## Release / Update Notes
+
+26.AUG.23
+
+* Added aircraft selection/booking feature while bidding on flights
 
 19.AUG.23
 
