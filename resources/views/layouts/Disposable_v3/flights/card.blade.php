@@ -155,7 +155,7 @@
           @php
             $aircraft_id = isset($saved[$flight->id]) ? App\Models\Bid::find($saved[$flight->id])->aircraft_id : null;
           @endphp
-            <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}@if($aircraft_id)&aircraft_id={{ $aircraft_id }} @endif" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1">@lang('disposable.sb_generate')</a>
+            <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}@if($aircraft_id)&aircraft_id={{ $aircraft_id }} @endif" class="btn btn-sm {{ isset($saved[$flight->id]) ? 'btn-success':'btn-primary' }} m-0 mx-1 p-0 px-1">@lang('disposable.sb_generate')</a>
           @endif
           {{-- vmsACARS --}}
           @if($acars_plugin && isset($saved[$flight->id]))
