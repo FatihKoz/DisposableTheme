@@ -15,22 +15,6 @@
     <div class="row">
       <div class="col">
         @include('flights.bids_card')
-        {{--}}
-        <div class="card mb-2">
-          <div class="card-header p-1">
-            <h5 class="m-1">
-              @lang('flights.mybid')
-              <i class="fas fa-file-signature float-end"></i>
-            </h5>
-          </div>
-          <div class="card-body p-0 table-responsive">
-            @include('flights.table')
-          </div>
-          <div class="card-footer p-0 px-1 small text-end">
-            <b>{{ $flights->count() }} Bids</b>
-          </div>
-        </div>
-        {{--}}
       </div>
     </div>
   @endif

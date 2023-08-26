@@ -152,7 +152,10 @@
           @if($simbrief !== false && $flight->simbrief && $flight->simbrief->user_id === $user->id)
             <a href="{{ route('frontend.simbrief.briefing', $flight->simbrief->id) }}" class="btn btn-sm btn-secondary m-0 mx-1 p-0 px-1">@lang('disposable.sb_view')</a>
           @elseif($simbrief !== false && ($simbrief_bids === false || $simbrief_bids === true && isset($saved[$flight->id])))
-            <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1">@lang('disposable.sb_generate')</a>
+          @php
+            $aircraft_id = isset($saved[$flight->id]) ? App\Models\Bid::find($saved[$flight->id])->aircraft_id : null;
+          @endphp
+            <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}@if($aircraft_id)&aircraft_id={{ $aircraft_id }} @endif" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1">@lang('disposable.sb_generate')</a>
           @endif
           {{-- vmsACARS --}}
           @if($acars_plugin && isset($saved[$flight->id]))

@@ -69,7 +69,10 @@
                 <i class="fas fa-file-pdf"  title="View SimBrief OFP"></i>
               </a>
             @elseif($simbrief !== false && ($simbrief_bids === false || $simbrief_bids === true && isset($saved[$flight->id])))
-              <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-primary">
+              @php
+                $aircraft_id = isset($saved[$flight->id]) ? App\Models\Bid::find($saved[$flight->id])->aircraft_id : null;
+              @endphp
+              <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}@if($aircraft_id)&aircraft_id={{ $aircraft_id }} @endif" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-primary">
                 <i class="fas fa-file-pdf" title="Generate SimBrief OFP"></i>
               </a>
             @endif
