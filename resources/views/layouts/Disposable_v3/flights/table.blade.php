@@ -72,7 +72,7 @@
               @php
                 $aircraft_id = isset($saved[$flight->id]) ? App\Models\Bid::find($saved[$flight->id])->aircraft_id : null;
               @endphp
-              <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}@if($aircraft_id)&aircraft_id={{ $aircraft_id }} @endif" class="btn btn-sm m-0 mx-1 p-0 px-1 btn-primary">
+              <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}@if($aircraft_id)&aircraft_id={{ $aircraft_id }} @endif" class="btn btn-sm m-0 mx-1 p-0 px-1 {{ isset($saved[$flight->id]) ? 'btn-success':'btn-primary' }}">
                 <i class="fas fa-file-pdf" title="Generate SimBrief OFP"></i>
               </a>
             @endif
