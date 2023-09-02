@@ -74,4 +74,6 @@ return [
     'menu_myflight' => 'Voo Livre',
     'menu_bids'     => 'Reservas',
     'menu_pireps'   => 'Reportes',
+    'menu_market'   => 'Loja Piloto',
+    'menu_mymarket' => 'Itens Comprados',
 ];

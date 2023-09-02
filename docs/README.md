@@ -3,7 +3,7 @@
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
 * Theme supports **only** php8.1+ and laravel10
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+230826.f2a4c9`
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-beta.5`
 * _php8.0 and laravel9 compatible latest version: v3.3.1_
 * _php7.4 and laravel8 compatible latest version: v3.0.19_
 
@@ -198,6 +198,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 Beta testers of SmartCars v3 reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data.  
 
 ## Release / Update Notes
+
+02.SEP.23
+
+* Added support for DisposableSpecial > Market feature (only links, needs latest DispoSpecial)
 
 26.AUG.23
 

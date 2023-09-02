@@ -75,4 +75,6 @@ return [
     'menu_myflight' => 'Voli Liberi',
     'menu_bids'     => 'Prenotazioni',
     'menu_pireps'   => 'Reports',
+    'menu_market'   => 'Negozio Pilota',
+    'menu_mymarket' => 'Articoli Acquistati',
 ];

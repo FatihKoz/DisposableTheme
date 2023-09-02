@@ -64,6 +64,14 @@
           </a>
         </li>
       @endif
+      @if($DSpecial)
+        <li>
+          <a class="dropdown-item" href="{{ route('DSpecial.market') }}">
+            <i class="fas fa-shopping-bag {{ $icon_style }}"></i>
+            @lang('disposable.menu_market')
+          </a>
+        </li>
+      @endif
     </ul>
   </li>
 
@@ -241,6 +249,12 @@
         </li>
       @endif
       @if($DSpecial)
+        <li>
+          <a class="dropdown-item" href="{{ route('DSpecial.market.show', [$user->id]) }}">
+            <i class="fas fa-shopping-basket {{ $icon_style }}"></i>
+            @lang('disposable.menu_mymarket')
+          </a>
+        </li>
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.assignments') }}">
             <i class="fas fa-hourglass-half {{ $icon_style }}"></i>

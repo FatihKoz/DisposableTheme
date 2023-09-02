@@ -75,4 +75,6 @@ return [
     'menu_myflight' => 'Free Flight',
     'menu_bids'     => 'Bids',
     'menu_pireps'   => 'Reports',
+    'menu_market'   => 'Pilot Shop',
+    'menu_mymarket' => 'Bought Items',
 ];
