@@ -201,7 +201,8 @@ Beta testers of SmartCars v3 reported problems with some of the features theme o
 
 02.SEP.23
 
-* Added support for DisposableSpecial > Market feature (only links, needs latest DispoSpecial)
+* Added support for DisposableSpecial Market feature  
+  __(only links, needs DispoSpecial v3.4.3 with Market)__
 
 26.AUG.23
 
