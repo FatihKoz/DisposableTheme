@@ -8,18 +8,21 @@
   <div class="card-body p-1 form-group">
     <div class="input-group input-group-sm">
       <span class="input-group-text col-md-5">ATC Callsign</span>
-        <select id="callsign" name="callsign" class="form-control">
-          @if(setting('simbrief.callsign', false))
-            <option value="{{ $user->ident }}" selected>{{ $user->ident }}</option>
-          @else
-            @if(filled($flight->callsign))
-              <option value="{{ optional($flight->airline)->icao.$flight->callsign }}">{{ optional($flight->airline)->icao.$flight->callsign }}</option>
-            @endif
-            @if(filled($user->callsign))
-              <option value="{{ optional($flight->airline)->icao.$user->callsign }}">{{ optional($flight->airline)->icao.$user->callsign }}</option>
-            @endif
-              <option value="{{ optional($flight->airline)->icao.$flight->flight_number }}">{{ optional($flight->airline)->icao.$flight->flight_number }}</option>
-              <option value="{{ $user->ident }}">{{ $user->ident }}</option>
+      <select id="callsign" name="callsign" class="form-control">
+        @if(setting('simbrief.callsign', false))
+          <option value="{{ $user->ident }}" selected>{{ $user->ident }}</option>
+        @else
+          @if(filled($flight->callsign))
+            <option value="{{ $flight->atc }}">{{ $flight->atc }}</option>
+          @endif
+          @if(filled($user->callsign))
+            <option value="{{ optional($flight->airline)->icao.$user->callsign }}">{{ optional($flight->airline)->icao.$user->callsign }}</option>
+          @endif
+          <option value="{{ optional($flight->airline)->icao.$flight->flight_number }}">{{ optional($flight->airline)->icao.$flight->flight_number }}</option>
+          @if(filled($user->callsign))
+            <option value="{{ $user->atc }}">{{ $user->atc }}</option>
+          @endif
+          <option value="{{ $user->ident }}">{{ $user->ident }}</option>
         @endif
       </select>
     </div>
