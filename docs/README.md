@@ -199,6 +199,11 @@ Beta testers of SmartCars v3 reported problems with some of the features theme o
 
 ## Release / Update Notes
 
+17.SEP.23
+
+* Simbrief form updates (to follow User model changes about alphanumeric callsigns)  
+* License update (Another disallowed VA was added)  
+
 02.SEP.23
 
 * Added support for DisposableSpecial Market feature  
