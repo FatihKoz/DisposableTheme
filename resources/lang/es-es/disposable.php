@@ -76,5 +76,5 @@ return [
     'menu_bids'     => 'Reservas',
     'menu_pireps'   => 'Informes',
     'menu_market'   => 'Tienda Piloto',
-    'menu_mymarket' => 'Articulos Comprados',
+    'menu_mymarket' => 'Adquisiciones',
 ];
