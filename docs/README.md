@@ -199,6 +199,10 @@ Beta testers of SmartCars v3 reported problems with some of the features theme o
 
 ## Release / Update Notes
 
+03.NOV.23
+
+* Spanish (ES-ES) translation update
+
 17.SEP.23
 
 * Simbrief form updates (to follow User model changes about alphanumeric callsigns)  
