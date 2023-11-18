@@ -308,19 +308,64 @@
           <div class="card mb-2">
             <div class="card-header p-1">
               <h5 class="m-1">
-                Extra Fuel
+                Additional Fuel Planning
                 <i class="fas fa-gas-pump float-end"></i>
               </h5>
             </div>
             <div class="card-body p-1">
               <div class="input-group input-group-sm">
-                <span class="input-group-text col-md-4">@if($units['fuel'] === 'kg') Metric @else Imperial @endif Tonnes</span>
-                <input id="addedfuel" name="addedfuel" type="number" class="form-control form-control-sm" placeholder="0.0" min="0" max="60" step="0.1"/>
-                @if(Theme::getSetting('simbrief_tankering'))
-                  <span class="input-group-text input-group-text-append">{!! DT_CheckTankering($flight, $aircraft) !!}</span>
-                @endif
+                <span class="input-group-text col-md-4">Minimum Block Fuel <i class="fas fa-info-circle mx-2 text-info" title="Holds already on board fuel from previous flight or defines the minimum block fuel"></i></span>
+                <input class="form-control form-control-sm" id="minfob" name="minfob" type="number" placeholder="0.0" min="0" max="9999" step="0.1" value="{{ round($aircraft->fuel_onboard->local() / 1000, 1) }}"/>
+                <input type='hidden' name="minfob_units" value="wgt">
               </div>
-              <input type='hidden' name="addedfuel_units" value="wgt">
+              <div class="input-group input-group-sm">
+                <span class="input-group-text col-md-4">Minimum Arrival Fuel <i class="fas fa-info-circle mx-2 text-info" title="Forces minimum fuel over destination (FOD)"></i></span>
+                <input class="form-control form-control-sm" id="minfod" name="minfod" type="number" placeholder="0.0" min="0" max="9999" step="0.1"/>
+                <input type='hidden' name="minfod_units" value="wgt">
+              </div>
+              <hr class="my-1 px-1">
+              <div class="input-group input-group-sm">
+                <span class="input-group-text col-md-4">MEL Fuel <i class="fas fa-info-circle mx-2 text-info" title="When weight is selected it should be metric tonnes or 1000's of pounds"></i></span>
+                <input class="form-control form-control-sm" id="melfuel" name="melfuel" type="number" placeholder="0.0" min="0" max="999" step="0.1"/>
+                <select name="melfuel_units" class="form-control form-control-sm col-md-4">
+                  <option value="wgt" selected>Weight</option>
+                  <option value="min">Minutes</option>
+                </select>
+              </div>
+              <div class="input-group input-group-sm">
+                <span class="input-group-text col-md-4">ATC Fuel <i class="fas fa-info-circle mx-2 text-info" title="When weight is selected it should be metric tonnes or 1000's of pounds"></i></span>
+                <input class="form-control form-control-sm" id="atcfuel" name="atcfuel" type="number" placeholder="0.0" min="0" max="999" step="0.1"/>
+                <select name="atcfuel_units" class="form-control form-control-sm col-md-4">
+                  <option value="wgt" selected>Weight</option>
+                  <option value="min">Minutes</option>
+                </select>
+              </div>
+              <div class="input-group input-group-sm">
+                <span class="input-group-text col-md-4">WXX Fuel <i class="fas fa-info-circle mx-2 text-info" title="When weight is selected it should be metric tonnes or 1000's of pounds"></i></span>
+                <input class="form-control form-control-sm" id="wxxfuel" name="wxxfuel" type="number" placeholder="0.0" min="0" max="999" step="0.1"/>
+                <select name="wxxfuel_units" class="form-control form-control-sm col-md-4">
+                  <option value="wgt" selected>Weight</option>
+                  <option value="min">Minutes</option>
+                </select>
+              </div>
+              <div class="input-group input-group-sm">
+                <span class="input-group-text col-md-4">OPN Fuel <i class="fas fa-info-circle mx-2 text-info" title="When weight is selected it should be metric tonnes or 1000's of pounds"></i></span>
+                <input class="form-control form-control-sm" id="addedfuel" name="addedfuel" type="number" placeholder="0.0" min="0" max="999" step="0.1"/>
+                <select name="addedfuel_units" class="form-control form-control-sm col-md-4">
+                  <option value="wgt" selected>Weight</option>
+                  <option value="min">Minutes</option>
+                </select>
+                <input type="hidden" name="addedfuel_label" value="opn">
+              </div>
+              <hr class="my-1 px-1">
+              <div class="input-group input-group-sm">
+                <span class="input-group-text col-md-4">Fuel Tankering <i class="fas fa-info-circle mx-2 text-info" title="Metric tonnes or 1000's of pounds"></i></span>
+                <input class="form-control form-control-sm" id="tankering" name="tankering" type="number" placeholder="0.0" min="0" max="60" step="0.1"/>
+                @if(Theme::getSetting('simbrief_tankering'))
+                  <span class="input-group-text input-group-text-append col-md-4">{!! DT_CheckTankering($flight, $aircraft) !!}</span>
+                @endif
+                <input type='hidden' name="tankering_units" value="wgt">
+              </div>
             </div>
           </div>
         @endif
