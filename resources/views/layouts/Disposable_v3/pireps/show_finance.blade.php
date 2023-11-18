@@ -36,7 +36,7 @@
                 <td class="text-start">{{ optional($fare)->name.' ('.optional($fare)->code.')' }}</td>
                 <td class="text-end">
                   {{ $fare->count }}
-                  @if($fare->type === 1) {{ $units['weight'] }} @else pax @endif
+                  @if(filled($fare) && $fare->type === 1) {{ $units['weight'] }} @else pax @endif
                 </td>
               </tr>
             @endforeach
