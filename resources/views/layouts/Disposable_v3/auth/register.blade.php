@@ -72,7 +72,11 @@
                       <i class="fas fa-info-circle text-primary mx-2" title="{{ $field->description }}"></i>
                     @endif
                   </span>
-                  {{ Form::text('field_'.$field->slug, null, ['class' => 'form-control']) }}
+                  @if(in_array(strtoupper($field->name), ['IVAO', 'IVAO ID', 'IVAO CID', 'VATSIM', 'VATSIM ID', 'VATSIM CID']))
+                    {{ Form::number('field_'.$field->slug, null, ['class' => 'form-control', 'autocomplete' => 'off']) }}
+                  @else
+                    {{ Form::text('field_'.$field->slug, null, ['class' => 'form-control', 'autocomplete' => 'off']) }}
+                  @endif
                 </div>
               @endforeach
             @endif
