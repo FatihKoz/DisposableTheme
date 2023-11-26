@@ -199,6 +199,11 @@ Beta testers of SmartCars v3 reported problems with some of the features theme o
 
 ## Release / Update Notes
 
+26.NOV.23
+
+* Update Simbrief form (according to latest API changes to provide more details for additional fuel planning)
+* Disable autocomplete feature for custom profile fields (also provide a number field for IVAO/VATSIM ID's)
+
 03.NOV.23
 
 * Spanish (ES-ES) translation update
