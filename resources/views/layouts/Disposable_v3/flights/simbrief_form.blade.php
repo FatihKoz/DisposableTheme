@@ -384,11 +384,13 @@
           <input type="hidden" id="fuelfactor" name="fuelfactor" value="" readonly>
           @if($tpaxfig)
             <input type="hidden" name="pax" value="{{ $tpaxfig }}">
-          @elseif(!$tpaxfig && $tcargoload)
+          @else
             <input type="hidden" name="pax" value="0">
           @endif
           @if($tcargoload)
             <input type='hidden' id='cargo' name='cargo' value="{{ number_format(($tcargoload / 1000),1) }}">
+          @else
+            <input type="hidden" name="cargo" value="0">
           @endif
           @if(isset($tpayload) && $tpayload > 0)
             <input type="hidden" name="manualrmk" value="Load Distribution {{ $loaddist }}">
