@@ -9,7 +9,7 @@ phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)
 
 ## Compatibility with other addons
 
-This addon is fully compatible with phpVMS v7 and it will work with any other addon, specially acars softwares which are %100 compatible with phpVMS v7 too.  
+This addon is fully compatible with phpVMS v7 and it will work with any other addon, specially acars softwares which are 100% compatible with phpVMS v7 too.  
 
 If the acars solution you are using is not compatible with phpVMS v7, then it is highly probable that you will face errors over and there. In this case, please speak with your addon provider not me 'cause I can not fix something I did not broke, or I can not cover somebody else's mistakes, poor compatibility problems etc.
 
@@ -79,6 +79,15 @@ Edit your duplicated `app.blade.php` and add below line to the `head` section
 ```html
 <link rel="shortcut icon" type="image/png" href="{{ public_asset('/disposable/your_airline_icon_file.png') }}"/>
 ```
+
+### Using your own FontAwesome Kit
+
+This theme uses FontAwesome v5.x by default and all blades are designed with them, for better performance and optimization you should define your own free kit from [FontAwesome](https://fontawesome.com) and then enter your kit url in your duplicated `app.blade.php`'s HEAD section like below
+
+```html
+<script src="https://kit.fontawesome.com/YOUR-KIT-CODE-HERE.js" crossorigin="anonymous"></script>
+```
+Using theme provided kit code is NOT suggested on a live server because of the limits FontAwesome applying to page hits and loads.
 
 ### Customizing VA Logo images and Menu items
 
