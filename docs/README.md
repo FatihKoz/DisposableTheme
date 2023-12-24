@@ -219,6 +219,7 @@ Beta testers of SmartCars v3 reported problems with some of the features theme o
 24.DEC.23
 
 * Fixed pagination errors on roster and pireps pages (sortable columns)
+* Fixed SimBrief form for "no pax" and/or "no load" conditions
 * Added oAuth support for login, register and profile pages (needs Discord application and settings)
 
 26.NOV.23
