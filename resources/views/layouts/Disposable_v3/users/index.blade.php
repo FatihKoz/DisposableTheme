@@ -28,13 +28,13 @@
             </span>
           @endif
           @if($users->hasPages())
-          <span class="float-end">
-            @lang('disposable.pagination', ['first' => $users->firstItem(), 'last' => $users->lastItem(), 'total' => $users->total()])
-          </span>
+            <span class="float-end">
+              @lang('disposable.pagination', ['first' => $users->firstItem(), 'last' => $users->lastItem(), 'total' => $users->total()])
+            </span>
           @endif
         </div>
       </div>
-      {{ $users->links('pagination.auto') }}
+      {{ $users->withQueryString()->links('pagination.auto') }}
     </div>
   </div>
 @endsection

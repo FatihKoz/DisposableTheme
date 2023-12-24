@@ -16,13 +16,17 @@
   </div>
 
   <div class="input-group input-group-sm">
-    <span class="input-group-text col-md-3">
-      Discord ID
-      <a href="https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-" target="_blank">
-        <i class="fas fa-info-circle text-primary mx-2" title="How to find your ID ?"></i>
-      </a>
-    </span>
-    {{ Form::text('discord_id', null, ['class' => 'form-control']) }}
+    <span class="input-group-text col-md-3">Discord ID</span>
+    {{ Form::text('discord_id', null, ['class' => 'form-control', 'readonly' => 'readonly']) }}
+    @if(config('services.discord.enabled') == true && blank($user->discord_id))
+      <span class="input-group-text col-md-3">
+        <a href="{{ route('oauth.redirect', ['provider' => 'discord']) }}">Link Discord Account</a>
+      </span>
+    @elseif(config('services.discord.enabled') == true && filled($user->discord_id))
+      <span class="input-group-text col-md-3">
+        <a href="{{ route('oauth.logout', ['provider' => 'discord']) }}">Unlink Discord Account</a>
+      </span>
+    @endif
   </div>
 
   <div class="input-group input-group-sm mb-3">

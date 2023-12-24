@@ -68,7 +68,7 @@ Unless really necessary for technical reasons, no hard coded style tags used in 
 You can simply define your own custom default gravatar for pilots. Just edit your `env.php` file and add below lines to the end of it  
 
 ```php
-# GRAVATAR DEFAULT
+## GRAVATAR DEFAULT
 GRAVATAR_DEFAULT_AVATAR='https://your.phpvms.url.comes.here/disposable/nophoto.jpg'
 ```
 
@@ -189,7 +189,15 @@ Currently, the VA System is withdrawn, and not to be used anymore. The new VA sy
 
 ## Footer Positioning and Content
 
-As per the license, **theme name should be always visible in all pages**. Editing the footer is still possible but `Disposable` link **SHOULD BE** always visible.
+As per the license, **addon/theme name should be always visible in all pages**. Editing the footer is still possible but `Disposable Theme` or `Powered By DH Addons` link **SHOULD BE** always visible.
+
+```html
+Powered by <a href="https://www.phpvms.net" target="_blank">phpVMS v7</a> & <a href="https://github.com/FatihKoz" target="_blank">DH Addons</a>
+```
+or
+```html
+Powered by <a href="https://github.com/FatihKoz" target="_blank">DH Addons</a>
+```
 
 If you need more space in footer area, kindly check theme stylesheet to add yourself some space 'cause it is really limited with a small area and always placed at the bottom.
 
@@ -198,6 +206,11 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 Beta testers of SmartCars v3 reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data.  
 
 ## Release / Update Notes
+
+24.DEC.23
+
+* Fixed pagination errors on roster and pireps pages (sortable columns)
+* Added oAuth support for login, register and profile pages (needs Discord application and settings)
 
 26.NOV.23
 

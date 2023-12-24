@@ -35,6 +35,6 @@
       </div>
     </div>
   </div>
-  {{ $pireps->links('pagination.auto') }}
+  {{ $pireps->withQueryString()->links('pagination.auto') }}
 @endif
 @endsection

@@ -91,7 +91,7 @@
           @if($captcha['enabled'] === true)
             <div class="card-footer p-1">
               <div class="input-group input-group-sm mb-1">
-                <span class="input-group-text col-lg-3">@lang('auth.fillcaptcha')</span>
+                <span class="input-group-text col-lg-3 mb-2">@lang('auth.fillcaptcha')</span>
                 <span class="h-captcha" data-sitekey="{{ $captcha['site_key'] }}"></span>
               </div>
             </div>
@@ -129,7 +129,19 @@
           </div>
 
           <div class="card-footer p-1 d-grid">
-            {{ Form::submit(__('auth.register'), ['id' => 'register_button', 'class' => 'btn btn-primary btn-sm', 'disabled' => true]) }}
+            <div class="row">
+              @if(config('services.discord.enabled'))
+                <div class="col d-grid">
+                  <a href="{{ route('oauth.redirect', ['provider' => 'discord']) }}" id="discord_button" class="btn btn-primary btn-sm disabled">
+                    <i class="fab fa-discord mx-1"></i>
+                    @lang('auth.loginwith', ['provider' => 'Discord'])
+                  </a>
+                </div>
+              @endif
+              <div class="col d-grid">
+                {{ Form::submit(__('auth.register'), ['id' => 'register_button', 'class' => 'btn btn-primary btn-sm', 'disabled' => true]) }}
+              </div>
+            </div>
           </div>
         </div>
       {{ Form::close() }}
@@ -147,9 +159,11 @@
       if ($(this).is(':checked')) {
         console.log('toc accepted');
         $('#register_button').removeAttr('disabled');
+        $('#discord_button').removeClass('disabled');
       } else {
         console.log('toc not accepted');
         $('#register_button').attr('disabled', 'true');
+        $('#discord_button').addClass('disabled');
       }
     });
   </script>

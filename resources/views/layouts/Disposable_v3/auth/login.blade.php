@@ -34,7 +34,22 @@
           </div>
         </div>
         <div class="card-footer p-1 text-center d-grid">
-          <button class="btn btn-primary btn-sm">@lang('common.login')</button>
+          <div class="row">
+            @if(config('services.discord.enabled'))
+              <div class="col d-grid">
+                <a href="{{ route('oauth.redirect', ['provider' => 'discord']) }}" class="btn btn-primary btn-sm">
+                  <i class="fab fa-discord mx-1"></i>
+                  @lang('auth.loginwith', ['provider' => 'Discord'])
+                </a>
+              </div>
+            @endif
+            <div class="col d-grid">
+              <button class="btn btn-primary btn-sm">
+                <i class="fas fa-sign-in-alt mx-1"></i>
+                @lang('common.login')
+              </button>
+            </div>
+          </div>
         </div>
         <div class="card-footer p-1 text-end">
           <span class="float-start"><a href="{{ url('/register') }}">@lang('auth.createaccount')</a></span>
