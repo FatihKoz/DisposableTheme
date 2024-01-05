@@ -219,7 +219,7 @@ Beta testers of SmartCars v3 reported problems with some of the features theme o
 05.JAN.24
 
 * Added country flags to pirep details page (follow theme settings for flight flags)
-* License update (Two new dissalowed VA's are added)
+* License update (Two new disallowed VA's are added)
 
 24.DEC.23
 
