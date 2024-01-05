@@ -4,8 +4,14 @@
       @if(filled($pirep->flight_id) && !str_contains($pirep->route_code, 'PF'))
         <a href="{{ route('frontend.flights.show', [$pirep->flight_id]) }}"><i class="fas fa-paper-plane mx-1" title="Flight Details"></i></a>
       @endif
-      {{ optional($pirep->airline)->code.' '.$pirep->flight_number }}
-      {{ ' | '.optional($pirep->dpt_airport)->location.' > '.optional($pirep->arr_airport)->location }}
+      {{ optional($pirep->airline)->code.' '.$pirep->flight_number.' | ' }}
+      @if(Theme::getSetting('flights_flags'))
+        <img class="img-mh20 mx-1" title="{{ strtoupper(optional($pirep->dpt_airport)->country) }}" src="{{ public_asset('/image/flags_new/'.strtolower(optional($pirep->dpt_airport)->country).'.png') }}" alt=""/>
+      @endif
+      {{ optional($pirep->dpt_airport)->location.' > '.optional($pirep->arr_airport)->location }}
+      @if(Theme::getSetting('flights_flags'))
+        <img class="img-mh20 mx-1" title="{{ strtoupper(optional($pirep->arr_airport)->country) }}" src="{{ public_asset('/image/flags_new/'.strtolower(optional($pirep->arr_airport)->country).'.png') }}" alt=""/>
+      @endif
       <i class="fas fa-file-upload float-end"></i>
     </h5>
   </div>
