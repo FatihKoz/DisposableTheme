@@ -130,14 +130,6 @@
 
           <div class="card-footer p-1 d-grid">
             <div class="row">
-              @if(config('services.discord.enabled'))
-                <div class="col d-grid">
-                  <a href="{{ route('oauth.redirect', ['provider' => 'discord']) }}" id="discord_button" class="btn btn-primary btn-sm disabled">
-                    <i class="fab fa-discord mx-1"></i>
-                    @lang('auth.loginwith', ['provider' => 'Discord'])
-                  </a>
-                </div>
-              @endif
               <div class="col d-grid">
                 {{ Form::submit(__('auth.register'), ['id' => 'register_button', 'class' => 'btn btn-primary btn-sm', 'disabled' => true]) }}
               </div>
@@ -159,11 +151,9 @@
       if ($(this).is(':checked')) {
         console.log('toc accepted');
         $('#register_button').removeAttr('disabled');
-        $('#discord_button').removeClass('disabled');
       } else {
         console.log('toc not accepted');
         $('#register_button').attr('disabled', 'true');
-        $('#discord_button').addClass('disabled');
       }
     });
   </script>
