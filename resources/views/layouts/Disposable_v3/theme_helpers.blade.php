@@ -420,7 +420,7 @@
         }
       }
       // Date/Time Values (not displaying full date on purpose)
-      elseif (str_contains($slug, 'time-real') || str_contains($slug, 'time-sim')) {
+      elseif (str_contains($slug, 'time-real') || str_contains($slug, 'time-sim') || str_contains($slug, '-reached-')) {
         $value = Carbon::parse($value)->format('H:i').' UTC';
       }
 
