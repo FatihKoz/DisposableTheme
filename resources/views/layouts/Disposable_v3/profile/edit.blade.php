@@ -11,20 +11,22 @@
             <i class="fas fa-user-alt float-end"></i>
           </h5>
         </div>
-        {{ Form::model($user, ['route' => ['frontend.profile.update', $user->id], 'files' => true, 'method' => 'patch']) }}
-        <div class="card-body p-1">
-          @include("profile.fields")
-        </div>
-        {{-- Validation Responses --}}
-        @if($errors->any())
-          <div class="card-footer p-1">
-            {!! implode('', $errors->all('<div class="alert alert-danger mb-1 p-1 px-2 fw-bold">:message</div>')) !!}
+        <form class="form" method="post" action="{{ route('frontend.profile.update', $user->id) }}" enctype="multipart/form-data">
+            @csrf
+            @method('PATCH')
+          <div class="card-body p-1">
+            @include("profile.fields")
           </div>
-        @endif
-        <div class="card-footer p-1 text-end">
-          {{ Form::submit(__('profile.updateprofile'), ['class' => 'btn btn-sm btn-primary m-0 mx-1 p-0 px-1']) }}
-        </div>
-        {{ Form::close() }}
+          {{-- Validation Responses --}}
+          @if($errors->any())
+            <div class="card-footer p-1">
+              {!! implode('', $errors->all('<div class="alert alert-danger mb-1 p-1 px-2 fw-bold">:message</div>')) !!}
+            </div>
+          @endif
+          <div class="card-footer p-1 text-end">
+            <button class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1" type="submit">@lang('profile.updateprofile')</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

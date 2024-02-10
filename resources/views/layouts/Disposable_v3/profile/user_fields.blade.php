@@ -12,7 +12,6 @@
         </tr>
         @foreach($userFields->where('active', 1) as $field)
           @if(!$field->private && $field->name != Theme::getSetting('gen_ivao_field') && $field->name != Theme::getSetting('gen_vatsim_field'))
-          {{-- @if(!$field->private) --}}
             <tr>
               <th class="col-md-4">
                 {{ $field->name }}
@@ -35,16 +34,17 @@
         @widget('DSpecial::Assignments', ['user' => $user->id, 'hide' => false])
         @ability('admin', 'admin-user')
           <div class="float-end">
-            {{ Form::open(array('route' => 'DSpecial.assignments_manual', 'method' => 'post')) }}
+            <form class="form" method="post" action="{{ route('DSpecial.assignments_manual') }}">
+              @csrf
               <input type="hidden" name="curr_page" value="{{ url()->full() }}">
               <input type="hidden" name="userid" value="{{ $user->id }}">
               <input type="hidden" name="resetmonth" value="true">
-              <button class="btn btn-sm bg-danger p-0 px-1 mb-2 text-black" type="submit" onclick="return confirm('Are you REALLY sure ? This will DELETE and re-assign flights !')">
+              <button class="btn btn-sm bg-danger p-0 px-1 mb-2 text-black" type="submit" onclick="return confirm('Are you REALLY sure ? This will DELETE and re-assign flights of this user!')">
                 Re-Assign Current Month
               </button>
-            {{ Form::close() }}
+            </form>
           </div>
-        @endability   
+        @endability
       </div>
       <div class="col-lg-5">
         @widget('DSpecial::TourProgress', ['user' => $user->id])

@@ -12,7 +12,8 @@
             <i class="fas fa-unlock-alt float-end"></i>
           </h5>
         </div>
-        {{ Form::open(['url' => url('/password/email'), 'method' => 'post', 'role' => 'form', 'class' => 'form-group'])}}
+        <form class="form form-group" method="post" action="{{ url('/password/email') }}">
+          @csrf
           <div class="card-body p-1">
             @if(session('status'))
               <div class="alert alert-success p-1 px-2 fw-bold">{{ session('status') }}</div>
@@ -20,20 +21,15 @@
             @if($errors->any())
               {!! implode('', $errors->all('<div class="alert alert-danger mb-1 p-1 px-2 fw-bold">:message</div>')) !!}
             @endif
-
             <div class="input-group input-group-sm my-2 {{ $errors->has('email') ? ' has-error' : '' }}">
-              <span class="input-group-text col-lg-2" id="email">{{ __('Email Address') }}</span>
-              <input
-                class="form-control" name="email" type="email" aria-label="email" aria-describedby="email"
-                placeholder="Provide the email address used for {{ config('app.name') }} registration" value="{{ old('email') }}"
-                required
-              />
+              <span class="input-group-text col-lg-2">{{ __('Email Address') }}</span>
+              <input class="form-control" type="email" name="email" id="email" placeholder="Provide the email address used for {{ config('app.name') }} registration" value="{{ old('email') }}" required />
             </div>
           </div>
           <div class="card-footer p-1 d-grid">
-            <button type="submit" class="btn btn-primary btn-sm">{{ __('Send Password Reset Link') }}</button>
+            <button class="btn btn-primary btn-sm" type="submit">{{ __('Send Password Reset Link') }}</button>
           </div>
-        {{ Form::close() }}
+        </form>
       </div>
     </div>
   </div>

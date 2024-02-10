@@ -5,58 +5,69 @@
       <i class="fas fa-search float-end"></i>
     </h5>
   </div>
-  {{ Form::open(['route' => 'frontend.flights.search', 'method' => 'GET']) }}
-  <div class="card-body p-1">
-    <div class="form-group">
+  <form method="get" action="{{ route('frontend.flights.search') }}">
+    @csrf
+    <div class="card-body p-1 form-group">
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('common.airline')</span>
         @php asort($airlines, SORT_NATURAL); @endphp
-        {{ Form::select('airline_id', $airlines, null , ['class' => 'form-control select2']) }}
+        <select class="form-control select2" name="airline_id" id="airline_id">
+          @foreach($airlines as $airline_id => $airline_label)
+            <option value="{{ $airline_id }}" @if(request()->query('airline_id') == $airline_id) selected @endif>{{ $airline_label }}</option>
+          @endforeach
+        </select>
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('flights.flighttype')</span>
-        {{ Form::select('flight_type', $flight_types, null , ['class' => 'form-control select2']) }}
+        <select class="form-control select2" name="flight_type" id="flight_type">
+          @foreach($flight_types as $flight_type_id => $flight_type_label)
+            <option value="{{ $flight_type_id }}" @if(request()->query('flight_type') == $flight_type_id) selected @endif>{{ $flight_type_label }}</option>
+          @endforeach
+        </select>
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('flights.flightnumber')</span>
-        {{ Form::text('flight_number', null, ['class' => 'form-control']) }}
+        <input class="form-control" type="number" name="flight_number" id="flight_number" value="{{ request()->query('flight_number') }}" min="0" step="1" />
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('flights.callsign')</span>
-        {{ Form::text('callsign', null, ['class' => 'form-control']) }}
+        <input class="form-control" type="text" name="callsign" id="callsign" value="{{ request()->query('callsign') }}" />
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('flights.code')</span>
-        {{ Form::text('route_code', null, ['class' => 'form-control']) }}
+        <input class="form-control" type="text" name="route_code" id="route_code" value="{{ request()->query('route_code') }}" />
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('flights.flighttime')</span>
-        {{ Form::number('tgt', null, ['class' => 'form-control', 'title' => 'Minimum (mins)']) }}
-        {{ Form::number('tlt', null, ['class' => 'form-control', 'title' => 'Maximum (mins)']) }}
+        <input class="form-control" type="number" name="tgt" id="tgt" value="{{ request()->query('tgt') }}" min="0" step="1" title="Minimum (mins)" />
+        <input class="form-control" type="number" name="tlt" id="tlt" value="{{ request()->query('tlt') }}" min="0" step="1" title="Maximum (mins)" />
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('common.distance')</span>
-        {{ Form::number('dgt', null, ['class' => 'form-control', 'title' => 'Minimum (nm)']) }}
-        {{ Form::number('dlt', null, ['class' => 'form-control', 'title' => 'Maximum (nm)']) }}
+        <input class="form-control" type="number" name="dgt" id="dgt" value="{{ request()->query('dgt') }}" min="0" step="1" title="Minimum (mins)" />
+        <input class="form-control" type="number" name="dlt" id="dlt" value="{{ request()->query('dlt') }}" min="0" step="1" title="Maximum (mins)" />
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('airports.departure')</span>
-        {{ Form::select('dep_icao', [], null , ['class' => 'form-control airport_search']) }}
+        <select class="form-control airport_search" name="dep_icao" id="dep_icao"></select>
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('airports.arrival')</span>
-        {{ Form::select('arr_icao', [], null , ['class' => 'form-control airport_search']) }}
+        <select class="form-control airport_search" name="arr_icao" id="arr_icao"></select>
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('common.subfleet')</span>
         @php asort($subfleets, SORT_NATURAL); @endphp
-        {{ Form::select('subfleet_id', $subfleets, null , ['class' => 'form-control select2']) }}
+        <select class="form-control select2" name="subfleet_id" id="subfleet_id">
+          @foreach($subfleets as $subfleet_id => $subfleet_label)
+            <option value="{{ $subfleet_id }}" @if(request()->query('subfleet_id') == $subfleet_id) selected @endif>{{ $subfleet_label }}</option>
+          @endforeach
+        </select>
       </div>
     </div>
-  </div>
-  <div class="card-footer bg-transparent p-1 text-end">
-    {{ Form::submit(__('common.find'), ['class' => 'btn btn-sm btn-primary m-0 mx-1 p-0 px-1']) }}
-    <a href="{{ route('frontend.flights.index') }}" class="btn btn-sm btn-secondary m-0 mx-1 p-0 px-1">@lang('common.reset')</a>
-  </div>
-  {{ Form::close() }}
+    <div class="card-footer bg-transparent p-1 text-end">
+      <button class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1" type="submit">@lang('common.find')</button>
+      <a class="btn btn-sm btn-secondary m-0 mx-1 p-0 px-1" href="{{ route('frontend.flights.index') }}">@lang('common.reset')</a>
+    </div>
+  </form>
 </div>

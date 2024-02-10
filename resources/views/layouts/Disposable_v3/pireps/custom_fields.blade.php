@@ -8,7 +8,7 @@
         @endif
       </span>
       @if(!$field->read_only)
-        {{ Form::text($field->slug, $field->value, ['class' => 'form-control', 'readonly' => (!empty($pirep) && $pirep->read_only)]) }}
+        <input class="form-control" type="text" name="{{ $field->slug }}" value="{{ $field->value }}" @if(!empty($pirep) && $pirep->read_only) readonly @endif >
       @else
         {{ $field->value }}
       @endif

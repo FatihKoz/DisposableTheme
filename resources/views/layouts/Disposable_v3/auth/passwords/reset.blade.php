@@ -12,31 +12,30 @@
             <i class="fas fa-unlock-alt float-end"></i>
           </h5>
         </div>
-        {{ Form::open(['url' => url('/password/reset'), 'method' => 'post', 'role' => 'form', 'class' => 'form-group'])}}
-          <input type="hidden" name="token" value="{{ $token }}">
+        <form class="form form-group" method="post" action="{{ url('/password/reset') }}">
+          @csrf
+          <input type="hidden" name="token" value="{{ $token }}"/>
           <div class="card-body p-1">
             @if($errors->any())
               {!! implode('', $errors->all('<div class="alert alert-danger mb-1 p-1 px-2 fw-bold">:message</div>')) !!}
             @endif
-
             <div class="input-group input-group-sm my-2">
-              <span class="input-group-text col-lg-2" id="email">{{ __('Email Address') }}</span>
-              <input class="form-control" id="email" name="email" type="email" aria-label="email" aria-describedby="email" value="{{ $email ?? old('email') }}" required>
+              <span class="input-group-text col-lg-2">{{ __('Email Address') }}</span>
+              <input class="form-control" type="email" name="email" id="email" value="{{ $email ?? old('email') }}" required />
             </div>
             <div class="input-group input-group-sm my-2">
-              <span class="input-group-text col-lg-2" id="password">{{ __('Password') }}</span>
-              <input class="form-control" id="password" name="password" type="password" aria-label="password" aria-describedby="password" required autofocus>
+              <span class="input-group-text col-lg-2">{{ __('Password') }}</span>
+              <input class="form-control" type="password" name="password" id="password" required />
             </div>
             <div class="input-group input-group-sm my-2">
-              <span class="input-group-text col-lg-2" id="password_conf">{{ __('Confirm Password') }}</span>
-              <input class="form-control" id="password_conf" name="password_confirmation" type="password" aria-label="password_conf" aria-describedby="password_conf" required>
+              <span class="input-group-text col-lg-2">{{ __('Confirm Password') }}</span>
+              <input class="form-control" type="password" name="password_confirmation" id="password_confirmation" required />
             </div>
-
           </div>
           <div class="card-footer p-1 d-grid">
-            <button type="submit" class="btn btn-primary btn-sm">{{ __('Reset Password') }}</button>
+            <button class="btn btn-primary btn-sm" type="submit">{{ __('Reset Password') }}</button>
           </div>
-        {{ Form::close() }}
+        </form>
       </div>
     </div>
   </div>

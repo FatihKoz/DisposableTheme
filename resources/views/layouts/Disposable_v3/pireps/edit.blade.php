@@ -16,9 +16,11 @@
             <i class="fas fa-file-upload float-end"></i>
           </h5>
         </div>
-        {{ Form::model($pirep, ['route' => ['frontend.pireps.update', $pirep->id], 'class' => 'form-group', 'method' => 'patch']) }}
-        @include('pireps.fields')
-        {{ Form::close() }}
+        <form class="form-group" method="post" action="{{ route('frontend.pireps.update', $pirep->id) }}">
+          @csrf
+          @method('PATCH')
+          @include('pireps.fields')
+        </form>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-@php 
+@php
   $readonly = (!empty($pirep) && $pirep->read_only) ? 'readonly' : null;
 @endphp
 @if($aircraft)
@@ -13,7 +13,7 @@
           <div class="col-lg">
             <div class="input-group input-group-sm">
               <span class="input-group-text">{{ $fare->name.' ('.$fare->code.')' }}</span>
-              {{ Form::number('fare_'.$fare->id, $fare->count, ['class' => 'form-control', 'min' => 0, $readonly]) }}
+              <input class="form-control" type="number" name="fare_{{ $fare->id }}" id="fare_{{ $fare->id }}" value="{{ $fare->count }}" min="0" {{ $readonly }}>
             </div>
           </div>
         @endforeach
