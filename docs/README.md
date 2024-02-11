@@ -216,6 +216,13 @@ Beta testers of SmartCars v3 reported problems with some of the features theme o
 
 ## Release / Update Notes
 
+11.FEB.24
+
+* Removed `laravelcollective/html` package features/usage
+  **WARNING: Code Breaking Changes Present, update your duplicates**
+* Removed `Login With Discord` button from register page
+* Added support for new pirep field values (TOC/TOD reached)
+
 05.JAN.24
 
 * Added country flags to pirep details page (follow theme settings for flight flags)
