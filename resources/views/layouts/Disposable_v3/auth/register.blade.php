@@ -92,7 +92,7 @@
                 </div>
               @endforeach
             @endif
-            @if($invite)
+            @if(isset($invite) && $invite)
               <input type="hidden" name="invite" value="{{ $invite->id }}" />
               <input type="hidden" name="invite_token" value="{{ base64_encode($invite->token) }}" />
             @endif
