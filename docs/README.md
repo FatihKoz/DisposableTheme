@@ -216,6 +216,13 @@ Beta testers of SmartCars v3 reported problems with some of the features theme o
 
 ## Release / Update Notes
 
+17.FEB.24
+
+* Fixed some translation errors in pirep fields
+* Fixed manual pirep creation form
+* Updated SimBrief form to use aircraft selcal (if defined in admin > fleet)
+* Added a failsafe for beta.5 users (user registration form)
+
 11.FEB.24
 
 * Removed `laravelcollective/html` package features/usage

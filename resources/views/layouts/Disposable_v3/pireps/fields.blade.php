@@ -32,7 +32,7 @@ flight reports that have been filed. You've been warned!
           <div class="row row-cols-lg-3 mb-2">
             <div class="col-lg">
               <div class="input-group input-group-sm">
-                <input type="hidden" name="airline_id" value="{{ $pirep->airline_id }}" />
+                <input type="hidden" name="airline_id" value="{{ optional($pirep)->airline_id }}" />
                 <span class="input-group-text">@lang('common.airline')</span>
                 <select class="form-control select2" name="airline_id" id="airline_id" {{ $select2_readonly }}>
                   @foreach($airline_list as $airline_id => $airline_label)
@@ -43,14 +43,14 @@ flight reports that have been filed. You've been warned!
             </div>
             <div class="col-lg">
               <div class="input-group input-group-sm">
-                <input class="form-control" type="text" name="flight_number" id="flight_number" placeholder="@lang('flights.flightnumber')" value="{{ $pirep->flight_number }}" {{ $readonly }} />
-                <input class="form-control" type="text" name="route_code" id="route_code" placeholder="@lang('pireps.codeoptional')" value="{{ $pirep->route_code }}" {{ $readonly }} />
-                <input class="form-control" type="text" name="route_leg" id="route_leg" placeholder="@lang('pireps.legoptional')" value="{{ $pirep->route_leg }}" {{ $readonly }} />
+                <input class="form-control" type="text" name="flight_number" id="flight_number" placeholder="@lang('flights.flightnumber')" value="{{ optional($pirep)->flight_number }}" {{ $readonly }} />
+                <input class="form-control" type="text" name="route_code" id="route_code" placeholder="@lang('pireps.codeoptional')" value="{{ optional($pirep)->route_code }}" {{ $readonly }} />
+                <input class="form-control" type="text" name="route_leg" id="route_leg" placeholder="@lang('pireps.legoptional')" value="{{ optional($pirep)->route_leg }}" {{ $readonly }} />
               </div>
             </div>
             <div class="col-lg">
               <div class="input-group input-group-sm">
-                <input type="hidden" name="flight_type" value="{{ $pirep->flight_type }}" />
+                <input type="hidden" name="flight_type" value="{{ optional($pirep)->flight_type }}" />
                 <span class="input-group-text">@lang('flights.flighttype')</span>
                 <select class="form-control select2" name="flight_type" id="flight_type" {{ $select2_readonly }}>
                   @foreach(\App\Models\Enums\FlightType::select() as $flight_type_id => $flight_type_label)
@@ -64,7 +64,7 @@ flight reports that have been filed. You've been warned!
           <div class="row row-cols-lg-2 mb-2">
             <div class="col-lg">
               <div class="input-group input-group-sm">
-                <input type="hidden" name="dpt_airport_id" value="{{ $pirep->dpt_airport_id }}" />
+                <input type="hidden" name="dpt_airport_id" value="{{ optional($pirep)->dpt_airport_id }}" />
                 <span class="input-group-text">@lang('airports.departure')</span>
                 <select class="form-control airport_search" name="dpt_airport_id" id="dpt_airport_id" {{ $select2_readonly }}>
                   @foreach($airport_list as $dpt_airport_id => $dpt_airport_label)
@@ -75,7 +75,7 @@ flight reports that have been filed. You've been warned!
             </div>
             <div class="col-lg">
               <div class="input-group input-group-sm">
-                <input type="hidden" name="arr_airport_id" value="{{ $pirep->arr_airport_id }}" />
+                <input type="hidden" name="arr_airport_id" value="{{ optional($pirep)->arr_airport_id }}" />
                 <span class="input-group-text" id="arr_airport_id">@lang('airports.arrival')</span>
                 <select class="form-control airport_search" name="arr_airport_id" id="arr_airport_id" {{ $select2_readonly }}>
                   @foreach($airport_list as $dpt_airport_id => $dpt_airport_label)
@@ -90,32 +90,32 @@ flight reports that have been filed. You've been warned!
             <div class="col-lg">
               <div class="input-group input-group-sm">
                 <span class="input-group-text">@lang('flights.flighttime')</span>
-                <input class="form-control" type="number" name="hours" id="hours" placeholder="{{ __('common.hour', 2) }}" min="0" max="24" value="{{ $pirep->hours }}" {{ $readonly }} />
-                <input class="form-control" type="number" name="minutes" id="minutes" placeholder="{{ __('common.minute', 2) }}" min="0" max="59" value="{{ $pirep->minutes }}" {{ $readonly }} />
+                <input class="form-control" type="number" name="hours" id="hours" placeholder="{{ trans_choice('common.hour', 2) }}" min="0" max="24" value="{{ optional($pirep)->hours }}" {{ $readonly }} />
+                <input class="form-control" type="number" name="minutes" id="minutes" placeholder="{{ trans_choice('common.minute', 2) }}" min="0" max="59" value="{{ optional($pirep)->minutes }}" {{ $readonly }} />
               </div>
             </div>
             <div class="col-lg">
               <div class="input-group input-group-sm">
                 <span class="input-group-text">@lang('flights.level') ({{config('phpvms.internal_units.altitude')}})</span>
-                <input class="form-control" type="number" name="level" id="level" min="0" step="500" value="{{ $pirep->level }}" {{ $readonly }} />
+                <input class="form-control" type="number" name="level" id="level" min="0" step="500" value="{{ optional($pirep)->level }}" {{ $readonly }} />
               </div>
             </div>
             <div class="col-lg">
               <div class="input-group input-group-sm">
                 <span class="input-group-text">@lang('common.distance') ({{ config('phpvms.internal_units.distance') }})</span>
-                <input class="form-control" type="number" name="distance" id="distance" min="0" step="0.01" value="{{ optional($pirep->distance)->internal(2) }}" {{ $readonly }} />
+                <input class="form-control" type="number" name="distance" id="distance" min="0" step="0.01" value="{{ optional(optional($pirep)->distance)->internal(2) }}" {{ $readonly }} />
               </div>
             </div>
             <div class="col-lg">
               <div class="input-group input-group-sm">
                 <span class="input-group-text">@lang('pireps.block_fuel') ({{ $units['fuel'] }})</span>
-                <input class="form-control" type="number" name="block_fuel" id="block_fuel" min="0" step="0.01" value="{{ $pirep->block_fuel }}" {{ $readonly }} />
+                <input class="form-control" type="number" name="block_fuel" id="block_fuel" min="0" step="0.01" value="{{ optional($pirep)->block_fuel }}" {{ $readonly }} />
               </div>
             </div>
             <div class="col-lg">
               <div class="input-group input-group-sm">
                 <span class="input-group-text">@lang('pireps.fuel_used') ({{ $units['fuel'] }})</span>
-                <input class="form-control" type="number" name="fuel_used" id="fuel_used" min="0" step="0.01" value="{{ $pirep->fuel_used }}" {{ $readonly }} />
+                <input class="form-control" type="number" name="fuel_used" id="fuel_used" min="0" step="0.01" value="{{ optional($pirep)->fuel_used }}" {{ $readonly }} />
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ flight reports that have been filed. You've been warned!
           <div class="row">
             <div class="col-lg-6">
               <div class="input-group input-group-sm">
-                <input type="hidden" name="aircraft_id" value="{{ $pirep->aircraft_id }}" />
+                <input type="hidden" name="aircraft_id" value="{{ optional($pirep)->aircraft_id }}" />
                 <span class="input-group-text">@lang('common.aircraft')</span>
                 {{-- You probably don't want to change this ID if you want the fare select to work --}}
                 <select class="form-control select2" name="aircraft_id" id="aircraft_select" {{ $select2_readonly }}>
@@ -163,7 +163,7 @@ flight reports that have been filed. You've been warned!
           <div class="row">
             <div class="col">
               <div class="input-group input-group-sm">
-                <textarea class="form-control" name="route" id="route" rows="3" {{ $readonly }}>{{ $pirep->route }}</textarea>
+                <textarea class="form-control" name="route" id="route" rows="3" {{ $readonly }}>{{ optional($pirep)->route }}</textarea>
               </div>
             </div>
           </div>
@@ -179,7 +179,7 @@ flight reports that have been filed. You've been warned!
           <div class="row">
             <div class="col">
               <div class="input-group input-group-sm">
-                <textarea class="form-control" name="notes" id="notes" rows="3">{{ $pirep->notes }}</textarea>
+                <textarea class="form-control" name="notes" id="notes" rows="3">{{ optional($pirep)->notes }}</textarea>
               </div>
             </div>
           </div>
@@ -217,7 +217,7 @@ flight reports that have been filed. You've been warned!
 {{-- Form Actions --}}
 <div class="card-footer p-1 text-end">
   <div class="form-group">
-    <input type="hidden" name="flight_id" value="{{ $pirep->flight_id }}" />
+    <input type="hidden" name="flight_id" value="{{ optional($pirep)->flight_id }}" />
     <input type="hidden" name="sb_id" value="{{ $simbrief_id }}" />
     @if(isset($pirep) && !$pirep->read_only)
       <button class="btn btn-sm btn-warning m-0 mx-1 p-0 px-1" type="submit" name="submit" value="Delete" onclick="return confirm('Are you sure ?')">{{ __('pireps.deletepirep') }}</button>

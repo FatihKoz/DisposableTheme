@@ -33,7 +33,11 @@
                   <span class="input-group-text">ICAO</span>
                   <input type="text" class="form-control" value="{{ $aircraft->icao }}" disabled/>
                 </div>
-                <input type="hidden" id="type" name="type" value="{{ optional($aircraft->subfleet)->simbrief_type ?? $aircraft->icao }}">
+                @if(filled($aircraft->simbrief_type))
+                  <input type="hidden" id="type" name="type" value="{{ $aircraft->simbrief_type }}">
+                @else
+                  <input type="hidden" id="type" name="type" value="{{ optional($aircraft->subfleet)->simbrief_type ?? $aircraft->icao }}">
+                @endif
               </div>
               @if($aircraft->fuel_onboard->local() > 0)
                 <div class="col-md-4 col-lg-2">
@@ -403,7 +407,9 @@
           <input type="hidden" id="steh" name="steh" maxlength="2">
           <input type="hidden" id="stem" name="stem" maxlength="2">
           <input type="hidden" id="date" name="date" maxlength="9">
-          <input type="hidden" id="selcal" name="selcal" value="DS-HR">
+          @if(filled($aircraft->selcal))
+            <input type="hidden" id="selcal" name="selcal" value="{{ $aircraft->selcal ?? 'DS-HR' }}">
+          @endif
           <input type="hidden" id="omit_sids" name="omit_sids" value="0">
           <input type="hidden" id="omit_stars" name="omit_stars" value="0">
           <input type="hidden" id="find_sidstar" name="find_sidstar" value="R">
