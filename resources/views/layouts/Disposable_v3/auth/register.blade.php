@@ -35,7 +35,7 @@
             </div>
             <div class="input-group input-group-sm mb-1">
               <span class="input-group-text col-lg-3">@lang('airports.home')</span>
-              <select class="form-control airport_search {{ $hubs_only }}" name="home_airport_id" id="home_airport_id">
+              <select class="form-control airport_search {{ $only_hubs }}" name="home_airport_id" id="home_airport_id">
                 @foreach($airports as $airport_id => $airport_label)
                   <option value="{{ $airport_id }}">{{ $airport_label }}</option>
                 @endforeach
