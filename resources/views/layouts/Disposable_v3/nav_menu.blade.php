@@ -198,7 +198,7 @@
       </a>
     </li>
   @endforeach
-  
+
   {{-- Language Switcher --}}
   @if(Theme::getSetting('gen_multilang') && isset($languages))
     <li class="nav-item dropdown">
@@ -273,7 +273,7 @@
           <i class="fas fa-file-download {{ $icon_style }}"></i>
           @lang('disposable.menu_bids')
         </a>
-      </li>  
+      </li>
       <li>
         <a class="dropdown-item" href="{{ route('frontend.pireps.index') }}">
           <i class="fas fa-file-upload {{ $icon_style }}"></i>
@@ -334,7 +334,7 @@
     </li>
   @endif
 
-  <li>
+  <li class="nav-item">
     <a class="nav-link" href="{{ route('frontend.livemap.index') }}">
       <i class="fas fa-map {{ $icon_style }}"></i>
       @lang('disposable.menu_mapflt')
@@ -342,7 +342,7 @@
   </li>
 
   @foreach($page_links->sortBy('name', SORT_NATURAL) as $page)
-    <li>
+    <li class="nav-item">
       <a class="nav-link" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank' : '_self' }}">
         <i class="{{ $page['icon'] ?? 'fas fa-file-alt' }} {{ $icon_style }}"></i>
         {{ $page['name'] }}
