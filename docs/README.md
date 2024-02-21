@@ -216,6 +216,11 @@ Beta testers of SmartCars v3 reported problems with some of the features theme o
 
 ## Release / Update Notes
 
+21.FEB.24
+
+* Fixed register form (hub selection and form method)
+* Added missing classes to navigation menu items
+
 17.FEB.24
 
 * Fixed some translation errors in pirep fields
