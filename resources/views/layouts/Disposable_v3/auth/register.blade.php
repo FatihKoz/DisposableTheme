@@ -6,7 +6,7 @@
 @section('content')
   <div class="row mt-2">
     <div class="col-lg-6 mx-auto content-center">
-      <form class="form-control bg-transparent border-0" methot="post" action="{{ url('/register') }}">
+      <form class="form-control bg-transparent border-0" method="post" action="{{ url('/register') }}">
         @csrf
         <div class="card mb-2">
           <div class="card-header p-1">
