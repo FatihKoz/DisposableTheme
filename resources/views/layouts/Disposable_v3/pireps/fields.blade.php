@@ -67,8 +67,12 @@ flight reports that have been filed. You've been warned!
                 <input type="hidden" name="dpt_airport_id" value="{{ optional($pirep)->dpt_airport_id }}" />
                 <span class="input-group-text">@lang('airports.departure')</span>
                 <select class="form-control airport_search" name="dpt_airport_id" id="dpt_airport_id" {{ $select2_readonly }}>
-                  @foreach($airport_list as $dpt_airport_id => $dpt_airport_label)
-                    <option value="{{ $dpt_airport_id }}" @if(!empty($pirep) && $pirep->dpt_airport_id == $dpt_airport_id) selected @endif>{{ $dpt_airport_label }}</option>
+                  @foreach($airport_list as $key => $alist)
+                    @foreach($alist as $airport_id => $airport_label)
+                      @if(filled($airport_id))
+                        <option value="{{ $airport_id }}" @if(!empty($pirep) && $pirep->dpt_airport_id == $airport_id) {{ 'selected' }} @endif>{{ $airport_label }}</option>
+                      @endif
+                    @endforeach
                   @endforeach
                 </select>
               </div>
@@ -78,8 +82,12 @@ flight reports that have been filed. You've been warned!
                 <input type="hidden" name="arr_airport_id" value="{{ optional($pirep)->arr_airport_id }}" />
                 <span class="input-group-text" id="arr_airport_id">@lang('airports.arrival')</span>
                 <select class="form-control airport_search" name="arr_airport_id" id="arr_airport_id" {{ $select2_readonly }}>
-                  @foreach($airport_list as $dpt_airport_id => $dpt_airport_label)
-                    <option value="{{ $arr_airport_id }}" @if(!empty($pirep) && $pirep->arr_airport_id == $arr_airport_id) selected @endif>{{ $arr_airport_label }}</option>
+                  @foreach($airport_list as $key => $alist)
+                    @foreach($alist as $airport_id => $airport_label)
+                      @if(filled($airport_id))
+                        <option value="{{ $airport_id }}" @if(!empty($pirep) && $pirep->arr_airport_id == $airport_id) selected @endif>{{ $airport_label }}</option>
+                      @endif
+                    @endforeach
                   @endforeach
                 </select>
               </div>
