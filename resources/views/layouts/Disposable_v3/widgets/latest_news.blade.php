@@ -1,6 +1,6 @@
 @if($news->count() > 0)
   @php 
-    $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic'); 
+    $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic'); 
   @endphp
   <div class="card mb-2">
     <div class="card-header p-1">

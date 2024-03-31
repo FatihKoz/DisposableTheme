@@ -3,8 +3,8 @@
 @include('theme_helpers')
 @php
   $units = isset($units) ? $units : DT_GetUnits();
-  $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
-  $DSpecial = isset($DSpecial) ? $DSpecial : DT_CheckModule('DisposableSpecial');
+  $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
+  $DSpecial = isset($DSpecial) ? $DSpecial : check_module('DisposableSpecial');
   $Auth_ID = Auth::id();
   $ivao_id = optional($user->fields->firstWhere('name', Theme::getSetting('gen_ivao_field')))->value;
   $vatsim_id = optional($user->fields->firstWhere('name', Theme::getSetting('gen_vatsim_field')))->value;

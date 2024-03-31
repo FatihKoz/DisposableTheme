@@ -3,7 +3,7 @@
 @include('theme_helpers')
 @php
   $units = isset($units) ? $units : DT_GetUnits();
-  $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
+  $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
   $now = Carbon::now();
 @endphp
 @section('content')

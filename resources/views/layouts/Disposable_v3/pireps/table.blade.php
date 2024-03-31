@@ -1,6 +1,6 @@
 @php
   $units = isset($units) ? $units : DT_GetUnits();
-  $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
+  $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
 @endphp
 <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
   <thead>

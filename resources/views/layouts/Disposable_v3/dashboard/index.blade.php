@@ -2,8 +2,8 @@
 @section('title', __('common.dashboard'))
 @include('theme_helpers')
 @php
-  $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
-  $DSpecial = isset($DSpecial) ? $DSpecial : DT_CheckModule('DisposableSpecial');
+  $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
+  $DSpecial = isset($DSpecial) ? $DSpecial : check_module('DisposableSpecial');
   $units = isset($units) ? $units : DT_GetUnits();
 @endphp
 @section('content')

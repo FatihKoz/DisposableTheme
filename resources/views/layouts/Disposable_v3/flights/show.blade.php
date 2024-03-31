@@ -3,8 +3,8 @@
 @include('theme_helpers')
 @php
   $units = isset($units) ? $units : DT_GetUnits();
-  $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
-  $DSpecial = isset($DSpecial) ? $DSpecial : DT_CheckModule('DisposableSpecial');
+  $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
+  $DSpecial = isset($DSpecial) ? $DSpecial : check_module('DisposableSpecial');
 @endphp
 @section('content')
   <div class="row">
@@ -52,7 +52,7 @@
               @endif
             </div>
             <div class="col text-center">
-              {{ DT_FlightDays($flight->days) }}
+              {{ decode_days($flight->days) }}
             </div>
             <div class="col text-end">
               @if(filled($flight->arr_time))

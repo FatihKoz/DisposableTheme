@@ -2,7 +2,7 @@
 @section('title', $airport->full_name)
 @include('theme_helpers')
 @php
-  $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
+  $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
   $units = isset($units) ? $units : DT_GetUnits();
 @endphp
 @section('content')

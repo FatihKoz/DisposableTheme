@@ -82,7 +82,7 @@
             @endif
           </div>
           <div class="col-md text-center">
-            {{ DT_FlightDays($flight->days) }}
+            {{ decode_days($flight->days) }}
           </div>
           <div class="col-lg text-end">
             @if($flight->alt_airport_id)

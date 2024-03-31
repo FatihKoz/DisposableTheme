@@ -6,17 +6,6 @@
   use App\Models\Enums\UserState;
   use Carbon\Carbon;
 
-  // Check phpVMS Module
-  // Return boolean
-  if (!function_exists('DT_CheckModule')) {
-    function DT_CheckModule($module_name)
-    {
-      $phpvms_module = Module::find($module_name);
-
-      return filled($phpvms_module) ? $phpvms_module->isEnabled() : false;
-    }
-  }
-
   // Check Tankering Possiblity
   // Return html formatted string
   if (!function_exists('DT_CheckTankering')) {
@@ -170,23 +159,6 @@
     }
   }
 
-  // Decode Days Of Flights
-  // Return string
-  if (!function_exists('DT_FlightDays')) {
-    function DT_FlightDays($flight_days)
-    {
-      $days = array();
-
-      for ($i=0; $i<7; $i++) {
-        if ($flight_days & pow(2, $i)) {
-          $days[]=jddayofweek($i, 1);
-        }
-      }
-
-      return implode(', ', $days);;
-    }
-  }
-
   // Decode Flight Type
   // Return mixed (plain text or bootstrap badge/button)
   if (!function_exists('DT_FlightType')) {
@@ -312,7 +284,7 @@
         return null;
       }
 
-      if (DT_CheckModule('DisposableSpecial')) {
+      if (check_module('DisposableSpecial')) {
         $route_code = DS_GetTourName($route_code);
       }
 

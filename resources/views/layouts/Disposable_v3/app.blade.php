@@ -29,8 +29,8 @@
     {{-- Theme Helpers --}}
       @include('theme_helpers')
       @php
-        $DBasic = isset($DBasic) ? $DBasic : DT_CheckModule('DisposableBasic');
-        $DSpecial = isset($DSpecial) ? $DSpecial : DT_CheckModule('DisposableSpecial');
+        $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
+        $DSpecial = isset($DSpecial) ? $DSpecial : check_module('DisposableSpecial');
       @endphp
     {{-- Navigation --}}
       @if(empty($disable_nav))
@@ -81,6 +81,9 @@
         </div>
       </div>
     @endif
+
+    {{-- External Redirects Modal --}}
+    @include('external_redirect_modal')
 
     {{-- Start of the required tags block. Don't remove these or things will break!! --}}
       <script src="{{ public_asset('/assets/global/js/vendor.js') }}"></script>

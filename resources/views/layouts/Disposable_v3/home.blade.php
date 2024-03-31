@@ -7,7 +7,7 @@
 @endif
 @include('theme_helpers')
 @php
-  $DBasic = DT_CheckModule('DisposableBasic');
+  $DBasic = check_module('DisposableBasic');
 @endphp
 @section('content')
   {{-- Top Row --}}

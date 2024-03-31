@@ -2,7 +2,7 @@
   @foreach($files->sortBy('name', SORT_NATURAL) as $file)
     <tr>
       <td>
-        <a href="{{ route('frontend.downloads.download', [$file->id]) }}" target="_blank">{{ $file->name }}</a>
+        <a href="{{ route('frontend.downloads.download', [$file->id]) }}" target="_blank"  @if($file->isExternalFile) data-external-redirect="{{ $file->url }}" @endif>{{ $file->name }}</a>
       </td>
       <td class="text-end">
         @if(Theme::getSetting('download_counts') && $file->download_count > 0)
