@@ -220,7 +220,7 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 31.MAR.24
 
 * Helper changes to match phpvms v7 improvements
-* Support for external link notifications via modals (GDPR)
+* Support for external link notifications via modals (GDPR)  
   _Both changes require latest dev build as of 28th March 2024_
 
 21.FEB.24
