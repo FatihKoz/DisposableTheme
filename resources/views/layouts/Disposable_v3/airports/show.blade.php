@@ -91,7 +91,7 @@
         @endif
         <li class="nav-item mx-1" role="presentation">
           <a class="nav-link pt-1 pb-1" id="pills-weather-tab" data-toggle="pill" href="#pills-weather" role="tab" aria-controls="pills-weather" aria-selected="false">
-            @lang('disposable.weather')
+            @lang('disposable.weather') @if($DBasic) & NOTAMs @endif
           </a>
         </li>
         @if(count($airport->files) > 0 && Auth::check())
@@ -130,7 +130,16 @@
           </div>
         </div>
         <div class="tab-pane fade" id="pills-weather" role="tabpanel" aria-labelledby="pills-weather-tab">
-          @widget('Weather', ['icao' => $airport->icao])
+          <div class="row row-cols-xl-2">
+            <div class="col">
+              @widget('Weather', ['icao' => $airport->icao])
+            </div>
+            @if($DBasic)
+              <div class="col">
+                @widget('DBasic::Notams', ['icao' => $airport->icao])
+              </div>
+            @endif
+          </div>
         </div>
         @if($DBasic)
           <div class="tab-pane fade" id="pills-wxmap" role="tabpanel" aria-labelledby="pills-wxmap-tab">

@@ -159,7 +159,7 @@ There are some options defined in this file for quick settings or for pre-define
 
     "simbrief_extrafuel": 1,          // Extra fuel field in SimBrief form
     "simbrief_tankering": 1,          // Tankering advice for Extra Fuel field
-    "simbrief_raw_wx": 1,             // Raw wx display at SimBrief form
+    "simbrief_raw_wx": 1,             // Raw WX display at SimBrief form (and NOTAMs with Disposable Basic)
     "simbrief_rfinder": 1,            // RouteFinder modal at SimBrief form
     "simbrief_runways": 1,            // Runway selection at SimBrief form (Disposable Basic)
     "simbrief_taxitimes": 0,          // Taxi Times droddown for Dep - Arrival Airports (with averages, Disposable Basic)
@@ -216,6 +216,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 * External Redirection modal "close" button may not work, thus clicking somewhere else outside the modal or pressing ESC key is required to close it when needed.
 
 ## Release / Update Notes
+
+07.MAY.24
+
+* Added DisposableBasic Notams widget support (to Airport Details, Bids, SimBrief Form)
 
 31.MAR.24
 
