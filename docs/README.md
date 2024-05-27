@@ -3,7 +3,7 @@
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
 * Theme supports **only** php8.1+ and laravel10
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+240328.cc074f` / 28.MAR.2024
+* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+240524.84ecc6` / 24.MAY.2024
 * _php8.0 and laravel9 compatible latest version: v3.3.1_
 * _php7.4 and laravel8 compatible latest version: v3.0.19_
 
@@ -212,10 +212,15 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Known Bugs / Problems
 
-* Beta testers of SmartCars v3 reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data. With latest improvements done to SC3 implementation incompatibilities are reduced but still it may behave different than expected. Please follow changes/updates of SC3 modules being develop by other devs.
+* SmartCars v3 users reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data. With latest improvements done to SC3 implementation incompatibilities are reduced but still it may behave different than expected. Please follow changes/updates of SC3 modules being develop by other devs.
 * External Redirection modal "close" button may not work, thus clicking somewhere else outside the modal or pressing ESC key is required to close it when needed.
 
 ## Release / Update Notes
+
+27.MAY.24
+
+* Fixed manual pirep edit blade (was causing a server error)
+  _Change requires latest dev build as of 24th May 2024 or newer_
 
 07.MAY.24
 

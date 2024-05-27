@@ -64,32 +64,32 @@ flight reports that have been filed. You've been warned!
           <div class="row row-cols-lg-2 mb-2">
             <div class="col-lg">
               <div class="input-group input-group-sm">
-                <input type="hidden" name="dpt_airport_id" value="{{ optional($pirep)->dpt_airport_id }}" />
                 <span class="input-group-text">@lang('airports.departure')</span>
-                <select class="form-control airport_search" name="dpt_airport_id" id="dpt_airport_id" {{ $select2_readonly }}>
-                  @foreach($airport_list as $key => $alist)
-                    @foreach($alist as $airport_id => $airport_label)
-                      @if(filled($airport_id))
-                        <option value="{{ $airport_id }}" @if(!empty($pirep) && $pirep->dpt_airport_id == $airport_id) {{ 'selected' }} @endif>{{ $airport_label }}</option>
-                      @endif
+                @if(!empty($pirep) && ($pirep->read_only || request()->has('flight_id')))
+                  <input type="text" name="departure_text" class="form-control" value="{{ $pirep->dpt_airport->icao }}@if(filled($pirep->dpt_airport->iata)){{' | '.$pirep->dpt_airport->iata }}@endif{{', '.$pirep->dpt_airport->name }}" disabled/>
+                  <input type="hidden" name="dpt_airport_id" value="{{ optional($pirep)->dpt_airport_id }}" />
+                @else
+                  <select class="form-control airport_search" name="dpt_airport_id" id="dpt_airport_id" {{ $select2_readonly }}>
+                    @foreach($airport_list as $dpt_airport_id => $dpt_airport_label)
+                      <option value="{{ $dpt_airport_id }}" @if(!empty($pirep) && $pirep->dpt_airport_id == $dpt_airport_id) selected @endif>{{ $dpt_airport_label }}</option>
                     @endforeach
-                  @endforeach
-                </select>
+                  </select>
+                @endif
               </div>
             </div>
             <div class="col-lg">
               <div class="input-group input-group-sm">
-                <input type="hidden" name="arr_airport_id" value="{{ optional($pirep)->arr_airport_id }}" />
                 <span class="input-group-text" id="arr_airport_id">@lang('airports.arrival')</span>
-                <select class="form-control airport_search" name="arr_airport_id" id="arr_airport_id" {{ $select2_readonly }}>
-                  @foreach($airport_list as $key => $alist)
-                    @foreach($alist as $airport_id => $airport_label)
-                      @if(filled($airport_id))
-                        <option value="{{ $airport_id }}" @if(!empty($pirep) && $pirep->arr_airport_id == $airport_id) selected @endif>{{ $airport_label }}</option>
-                      @endif
+                @if(!empty($pirep) && ($pirep->read_only || request()->has('flight_id')))
+                  <input type="text" name="arrival_text" class="form-control" value="{{ $pirep->arr_airport->icao }}@if(filled($pirep->arr_airport->iata)){{' | '.$pirep->arr_airport->iata }}@endif{{', '.$pirep->arr_airport->name }}" disabled/>
+                  <input type="hidden" name="arr_airport_id" value="{{ optional($pirep)->arr_airport_id }}" />
+                @else
+                  <select class="form-control airport_search" name="arr_airport_id" id="arr_airport_id" {{ $select2_readonly }}>
+                    @foreach($airport_list as $arr_airport_id => $arr_airport_label)
+                      <option value="{{ $arr_airport_id }}" @if(!empty($pirep) && $pirep->arr_airport_id == $arr_airport_id) selected @endif>{{ $arr_airport_label }}</option>
                     @endforeach
-                  @endforeach
-                </select>
+                  </select>
+                @endif
               </div>
             </div>
           </div>
