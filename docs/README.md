@@ -219,7 +219,7 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 27.MAY.24
 
-* Fixed manual pirep edit blade (was causing a server error)
+* Fixed manual pirep edit blade (was causing a server error)  
   _Change requires latest dev build as of 24th May 2024 or newer_
 
 07.MAY.24
