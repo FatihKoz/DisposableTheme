@@ -111,7 +111,7 @@ There are some options defined in this file for quick settings or for pre-define
     "gen_utc_clock": 1,               // Enable - Disable local and utc clock display
     "gen_ivao_logo": 1,               // IVAO logo placed on all pages 
     "gen_ivao_field": "IVAO",         // Your phpvms custom profile field name defined for IVAO ID's 
-    "gen_ivao_vaid": "",              // Your IVAO Member VA ID (will be used for VA System reports)
+    "gen_ivao_vaid": "",              // OBSOLETE NOT USED ANYMORE --- Your IVAO Member VA ID (will be used for VA System reports)
     "gen_ivao_icao": "",              // Your IVAO Approved VA ICAO code (will be used for VA System reports)
     "gen_vatsim_logo": 1,             // VATSIM logo placed on all pages
     "gen_vatsim_field": "VATSIM",     // Your phpvms custom profile field name defined for VATSIM CID's
@@ -170,11 +170,15 @@ There are some options defined in this file for quick settings or for pre-define
     "simbrief_vatsim": 1,             // File ATC to VATSIM button at SimBrief summary page
     "simbrief_specs": 1,              // Use addon based specifications at SimBrief form (Disposable Basic)
 
-    "user_disable_hub": 0,            // Disable changing hubs from profile edit
-    "user_disable_airline": 0         // Disable changing airlines from profile edit
+    "user_disable_hub": 0,            // Disable changing hub from profile edit
+    "user_disable_airline": 0         // Disable changing airline from profile edit
 ```
 
 ## About IVAO VA System Support
+
+Recently IVAO introduced a new way to track registered VA flights, which is mostly automated and works along with their FPL system. A new field should be included in FPL ITEM 18 as `IVAOVA/nnn` where `nnn` is the ICAO code of the registered VA. Theme supports this new feature with SimBrief integration and if airline icao code is defined in theme settings required field will be included in all FPL's filed via theme SimBrief support.
+
+_Below is the old notice about obsolete IVAO VA System logic, if you still need it or somehow use it related files will be in relevant folders._
 
 As this is really an optional feature and the system itself is too old, it is provided only for VA's already using it. You should define your IVAO approved `Airline ID` and `Airline ICAO code` at theme.json file for the auto placed badges to show up.
 
@@ -216,6 +220,12 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 * External Redirection modal "close" button may not work, thus clicking somewhere else outside the modal or pressing ESC key is required to close it when needed.
 
 ## Release / Update Notes
+
+01.JUN.24
+
+* Added SimBrief TLR results to briefing page
+* Added support for IVAO registered VA's (FPL ITEM 18)
+* Removed old IVAO VA System calls from blades
 
 27.MAY.24
 

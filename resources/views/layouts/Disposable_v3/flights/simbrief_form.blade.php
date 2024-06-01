@@ -6,6 +6,12 @@
   $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
   $Addon_Specs = ($DBasic && Theme::getSetting('simbrief_specs')) ? DB_GetSpecs($aircraft, true) : null;
   $Check_SSL = str_contains(url()->current(), 'https://');
+  // Get RVR and Remark Text from Theme Settings with some failsafe defaults,
+  // Below variables are also used when DisposableTech module is installed and activated.
+  $sb_rvr = filled(Theme::getSetting('simbrief_rvr')) ? 'RVR/'.Theme::getSetting('simbrief_rvr') : 'RVR/550';
+  $sb_callsign = filled(optional($flight->airline)->callsign) ? ' CS/'.strtoupper($flight->airline->callsign) : null;
+  $sb_ivaova = filled(Theme::getSetting('gen_ivao_icao')) ? ' IVAOVA/'.strtoupper(Theme::getSetting('gen_ivao_icao')) : null;
+  $sb_rmk = filled(Theme::getSetting('simbrief_rmk')) ? ' RMK/TCAS '.strtoupper(Theme::getSetting('simbrief_rmk')) : ' RMK/TCAS '.strtoupper(config('app.name'));
 @endphp
 @section('content')
   <form id="sbapiform">
@@ -180,7 +186,6 @@
                 </div>
               </div>
             </div>
-
             <div class="row mb-1">
               <div class="col">
                 <div class="input-group input-group-sm">
@@ -196,7 +201,6 @@
                 </div>
               </div>
             </div>
-
             <div class="row row-cols-lg-4 mb-1">
               <div class="col-md-4 col-lg">
                 <div class="input-group input-group-sm">
@@ -314,7 +318,6 @@
           </div>
         @endif
       </div>
-
       <div class="col-lg-4">
         @include('flights.simbrief_form_planning_options')
         @include('flights.simbrief_form_briefing_options')
@@ -383,18 +386,10 @@
             </div>
           </div>
         @endif
-
         {{-- Prepare rest of the Form fields for SimBrief --}}
-        @php
-          // Get RVR and Remark Text from Theme Settings with some failsafe defaults,
-          // Below two variables are also used when DisposableTech module is installed and activated.
-          $sb_rvr = filled(Theme::getSetting('simbrief_rvr')) ? 'RVR/'.Theme::getSetting('simbrief_rvr') : 'RVR/550';
-          $sb_rmk = filled(Theme::getSetting('simbrief_rmk')) ? ' RMK/TCAS '.strtoupper(Theme::getSetting('simbrief_rmk')) : ' RMK/TCAS '.strtoupper(config('app.name'));
-          $sb_callsign = filled(optional($flight->airline)->callsign) ? ' CS/'.strtoupper($flight->airline->callsign) : null;
-        @endphp
           {{-- If Disposable Basic Module is installed and activated, Specs will overwrite below two form fields according to your defined specifications and pilot selections --}}
           {{-- Below value fields are just defaults and should remain in the form --}}
-          <input type="hidden" id="acdata" name="acdata" value="{'extrarmk':'{{ $sb_rvr.$sb_rmk.$sb_callsign }}','paxwgt':{{ round($pax_weight) }}, 'bagwgt':{{ round($bag_weight) }}}" readonly>
+          <input type="hidden" id="acdata" name="acdata" value="{'extrarmk':'{{ $sb_rvr.$sb_callsign.$sb_ivaova.$sb_rmk }}','paxwgt':{{ round($pax_weight) }}, 'bagwgt':{{ round($bag_weight) }}}" readonly>
           <input type="hidden" id="fuelfactor" name="fuelfactor" value="" readonly>
           @if($tpaxfig)
             <input type="hidden" name="pax" value="{{ $tpaxfig }}">
@@ -425,18 +420,14 @@
           <input type="hidden" id="find_sidstar" name="find_sidstar" value="R">
           <input type="hidden" id="static_id" name="static_id" value="{{ $static_id }}">
         {{-- For more info about form fields and their details check SimBrief / API Support --}}
-
         <div class="card bg-transparent mb-2 p-0 text-right border-0">
-          <input type="button" class="btn btn-sm btn-primary" value="Generate SimBrief OFP"
-              onclick="simbriefsubmit('{{ $flight->id }}', '{{ $aircraft->id }}', '{{ url(route('frontend.simbrief.briefing', [''])) }}');">
+          <input type="button" class="btn btn-sm btn-primary" value="Generate SimBrief OFP" onclick="simbriefsubmit('{{ $flight->id }}', '{{ $aircraft->id }}', '{{ url(route('frontend.simbrief.briefing', [''])) }}');">
         </div>
       </div>
     </div>
   </form>
-
-@if(Theme::getSetting('simbrief_rfinder') && !$Check_SSL)
-  @include('flights.simbrief_form_routefinder')
-@endif
-
+  @if(Theme::getSetting('simbrief_rfinder') && !$Check_SSL)
+    @include('flights.simbrief_form_routefinder')
+  @endif
 @endsection
 @include('flights.simbrief_scripts')

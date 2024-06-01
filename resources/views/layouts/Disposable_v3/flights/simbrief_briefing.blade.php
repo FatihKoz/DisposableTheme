@@ -48,6 +48,20 @@
             </div>
           </div>
         </div>
+        @if(isset($simbrief->xml->tlr->takeoff) && isset($simbrief->xml->tlr->landing))
+          <div class="accordion-item">
+            <h5 class="accordion-header" id="headingFour">
+              <button class="accordion-button p-1 px-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tlr" aria-expanded="false" aria-controls="tlr">
+                TakeOff & Landing Performance Calculations
+              </button>
+            </h5>
+            <div id="tlr" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#sb-accordion">
+              <div class="accordion-body p-1 pt-2">
+                @include('flights.simbrief_briefing_tlr')
+              </div>
+            </div>
+          </div>
+        @endif
       </div>
     </div>
     <div class="col-xl-1">
@@ -128,7 +142,7 @@
   <script>
     function OpenEditPage () {
       var edit_frame = $("#EditSimBriefOfp");
-      edit_frame.attr("src", edit_frame.data("src")); 
+      edit_frame.attr("src", edit_frame.data("src"));
     }
   </script>
   <script>

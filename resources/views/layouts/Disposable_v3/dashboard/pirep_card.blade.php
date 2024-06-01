@@ -15,7 +15,7 @@
         <th class="text-center">@lang('disposable.score')</th>
         <th class="text-center">@lang('disposable.lrate')</th>
         @if($DBasic && Theme::getSetting('gen_stable_approach'))
-          <th class="text-center">FDM Result</th>
+          <th class="text-center">FDM Report</th>
         @endif
         <th class="text-end">@lang('common.state')</th>
       </tr>
@@ -50,9 +50,6 @@
           </td>
         @endif
         <td class="text-end">
-          @if($pirep->read_only && Theme::getSetting('gen_ivao_vaid') && Theme::getSetting('gen_ivao_icao'))
-            @include('pireps.ivao_vasys')
-          @endif
           {!! DT_PirepState($pirep, 'badge') !!}
         </td>
       </tr>

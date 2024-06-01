@@ -125,6 +125,21 @@
     }
   }
 
+  // Convert Distance to Meter
+  // Return numeric string (used for SimBrief TLS)
+  if (!function_exists('DT_toMeter')) {
+    function DT_toMeter($distance, $unit = null)
+    {
+      $unit = isset($unit) ? $unit : setting('units.distance');
+
+      if ($unit == 'km') {
+        return round($distance / 3.280839895, 0);
+      } else {
+        return $distance;
+      }
+    }
+  }
+
   // Convert Minutes
   // Return string
   if (!function_exists('DT_ConvertMinutes')) {
