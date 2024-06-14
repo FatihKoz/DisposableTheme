@@ -20,7 +20,7 @@
           <a href="{{ route('frontend.flights.show', [$flight->id]) }}">
             {{ optional($flight->airline)->code.' '.$flight->flight_number }}
             @if(filled($flight->route_code) && in_array($flight->route_code, $tour_codes))
-              <span class="badge bg-warning text-black mx-1 px-1">Tour Flight</span>
+              <span class="badge bg-warning text-black mx-1 px-1" @if(!Theme::getSetting('flights_codeleg'))title="{{ $flight->route_code.' #'.$flight->route_leg }}"@endif>Tour Flight</span>
             @endif
           </a>
         </td>
