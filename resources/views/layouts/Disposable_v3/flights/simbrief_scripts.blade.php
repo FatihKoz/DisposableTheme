@@ -167,19 +167,24 @@
     document.getElementById("date").setAttribute('value', planDOF); // Sent to Simbrief
     document.getElementById("deph").setAttribute('value', deph); // Sent to SimBrief
     document.getElementById("depm").setAttribute('value', depm); // Sent to SimBrief
-
+  </script>
+  <script type="text/javascript">
     // Check manually changed ETD hours and adjust DOF if needed
     function CheckDOF() {
-      let utcHours = realDate.getUTCHours(realDate);
-      let inputHours = document.getElementById("deph").value;
+      let CalendarMonths = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+      let CurrentDate = new Date();
+      let Tomorrow = new Date(CurrentDate.getTime() + 86400000);
+      let HoursUTC = CurrentDate.getUTCHours(CurrentDate);
+      let HoursFRM = document.getElementById("deph").value;
+      let RealDOF = ("0" + CurrentDate.getUTCDate()).slice(-2) + months[CurrentDate.getUTCMonth()] + CurrentDate.getUTCFullYear();
+      let PlanDOF = ("0" + Tomorrow.getUTCDate()).slice(-2) + months[Tomorrow.getUTCMonth()] + Tomorrow.getUTCFullYear();
 
-      if (utcHours == 23 && inputHours <= utcHours) {
-        let realDOF = ("0" + realDate.getUTCDate()).slice(-2) + months[realDate.getUTCMonth()] + realDate.getUTCFullYear();
-        document.getElementById("dof").setAttribute('value', realDOF);
-        document.getElementById("date").setAttribute('value', realDOF); // Sent to Simbrief
+      if (HoursFRM < HoursUTC) {
+        document.getElementById("dof").setAttribute('value', PlanDOF);
+        document.getElementById("date").setAttribute('value', PlanDOF); // Sent to Simbrief
       } else {
-        document.getElementById("dof").setAttribute('value', planDOF);
-        document.getElementById("date").setAttribute('value', planDOF); // Sent to Simbrief
+        document.getElementById("dof").setAttribute('value', RealDOF);
+        document.getElementById("date").setAttribute('value', RealDOF); // Sent to Simbrief
       }
     }
   </script>
