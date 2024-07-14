@@ -44,8 +44,8 @@
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('common.distance')</span>
-        <input class="form-control" type="number" name="dgt" id="dgt" value="{{ request()->query('dgt') }}" min="0" step="1" title="Minimum (mins)" />
-        <input class="form-control" type="number" name="dlt" id="dlt" value="{{ request()->query('dlt') }}" min="0" step="1" title="Maximum (mins)" />
+        <input class="form-control" type="number" name="dgt" id="dgt" value="{{ request()->query('dgt') }}" min="0" step="1" title="Minimum (nmi)" />
+        <input class="form-control" type="number" name="dlt" id="dlt" value="{{ request()->query('dlt') }}" min="0" step="1" title="Maximum (nmi)" />
       </div>
       <div class="input-group input-group-sm mt-1">
         <span class="input-group-text col-lg-4">@lang('airports.departure')</span>
