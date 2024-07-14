@@ -57,7 +57,7 @@
                 <div class="col-lg">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text">Addon Specs</span>
-                    <select id="addon" class="form-control" onchange="ChangeSpecs()">
+                    <select id="addon" class="form-select" onchange="ChangeSpecs()">
                       <option value="0" selected>SimBrief Defaults</option>
                       @foreach($Addon_Specs as $sp)
                         <option value="{{ $sp->simbrief }}">{{ $sp->saircraft }}</option>
