@@ -214,7 +214,7 @@
         @if($DBasic && Theme::getSetting('flight_jumpseat'))
           <div class="mb-1 float-start">@widget('DBasic::JumpSeat', ['dest' => $flight->dpt_airport_id])</div>
         @endif
-        @if(Theme::getSetting('flight_bid'))
+        @if(Theme::getSetting('flight_bid') && DT_CheckDays($flight->days))
           @if(!setting('pilots.only_flights_from_current') || $flight->dpt_airport_id === Auth::user()->curr_airport_id)
             {{-- !!! IMPORTANT NOTE !!! Don't remove the "save_flight" class, It will break the AJAX to save/delete --}}
             <span class="btn btn-sm save_flight {{isset($bid) ? 'btn-danger':'btn-success'}} mx-1 mb-1" onclick="AddRemoveBid('{{isset($bid) ? 'remove':'add'}}')">
@@ -239,7 +239,7 @@
           <a href="vmsacars:bid/{{ $bid->id }}" class="btn btn-sm btn-warning mx-1 mb-1">
             @lang('disposable.load_acars')
           </a>
-        @elseif($acars_plugin)
+        @elseif($acars_plugin && DT_CheckDays($flight->days))
           <a href="vmsacars:flight/{{ $flight->id }}" class="btn btn-sm btn-warning mx-1 mb-1">
             @lang('disposable.load_acars')
           </a>

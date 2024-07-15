@@ -6,6 +6,30 @@
   use App\Models\Enums\UserState;
   use Carbon\Carbon;
 
+  // Check Flight Day
+  // Return boolean
+  // This should return TRUE if there are no days defined or the days is matching
+  // FALSE when days are defined and current day is not matching
+  if (!function_exists('DT_CheckDays')) {
+    function DT_CheckDays($days = null)
+    {
+      if (empty($days)) {
+
+        return true;
+      } else {
+        $weekdays = [];
+
+        for ($i = 0; $i < 7; $i++) {
+          if ($days & pow(2, $i)) {
+            $weekdays[] = jddayofweek($i);
+          }
+        }
+
+        return in_array(Carbon::now()->dayOfWeek, $weekdays);
+      }
+    }
+  }
+
   // Check Tankering Possiblity
   // Return html formatted string
   if (!function_exists('DT_CheckTankering')) {
@@ -16,12 +40,14 @@
       $result_skip = '<span class="text-secondary fw-bold">Tankering NOT Calculated</span>';
 
       if (!$flight || !$aircraft) {
+
         return $result_skip;
       }
 
       $fuel_type = optional($aircraft->subfleet)->fuel_type;
 
       if ($fuel_type !== 1) {
+
         return $result_skip;
       }
 
@@ -38,6 +64,7 @@
       }
 
       if ($dep_cost < ($arr_cost * $factor)) {
+
         return $result_ok;
       }
 
@@ -50,14 +77,14 @@
   if (!function_exists('DT_CheckUrl')) {
     function DT_CheckUrl($url = null)
     {
-      if (!$url) { return false; }
-      $headers = get_headers($url);
+      if (!$url) {
 
-      if ($headers && strpos($headers[0], '200')) {
-        return true;
-      } else {
         return false;
       }
+
+      $headers = get_headers($url);
+
+      return (filled($headers) && str_contains($headers[0], '200')) ? true : false;
     }
   }
 
@@ -80,11 +107,7 @@
         }
       }
 
-      if (isset($image_files)) {
-        shuffle($image_files);
-      }
-
-      return isset($image_files) ? $image_files : null;
+      return isset($image_files) ? shuffle($image_files) : null;
     }
   }
 
@@ -98,11 +121,8 @@
       $units['distance'] = setting('units.distance');
       $units['fuel'] = setting('units.fuel');
       $units['weight'] = setting('units.weight');
-
-      if ($type === 'full') {
-        $units['volume'] = settings('units.volume');
-        $units['altitude'] = settings('units.altitude');
-      }
+      $units['volume'] = setting('units.volume');
+      $units['altitude'] = setting('units.altitude');
 
       return $units;
     }
@@ -115,13 +135,7 @@
     {
       $unit = isset($unit) ? $unit : setting('units.distance');
 
-      if (!$distance[$unit] > 1) {
-        return null;
-      }
-
-      $distance = number_format($distance[$unit]).' '.$unit;
-
-      return $distance;
+      return ($distance[$unit] > 1) ? number_format($distance[$unit]).' '.$unit : null;
     }
   }
 
@@ -132,11 +146,7 @@
     {
       $unit = isset($unit) ? $unit : setting('units.distance');
 
-      if ($unit == 'km') {
-        return round($distance / 3.280839895, 0);
-      } else {
-        return $distance;
-      }
+      return ($unit == 'km') ? round($distance / 3.280839895, 0) : $distance;
     }
   }
 
@@ -148,8 +158,10 @@
       $minutes = intval($minutes);
 
       if ($minutes < 1) {
-          return null;
+
+        return null;
       }
+
       $hours = floor($minutes / 60);
       $minutes = ($minutes % 60);
 
@@ -164,13 +176,7 @@
     {
       $target_unit = isset($target_unit) ? $target_unit : setting('units.weight');
 
-      if (!$value[$target_unit] > 0) {
-        return null;
-      }
-
-      $value = number_format($value[$target_unit]) . ' ' . $target_unit;
-
-      return $value;
+      return ($value[$target_unit] > 0) ? number_format($value[$target_unit]) . ' ' . $target_unit : null;
     }
   }
 
@@ -197,6 +203,7 @@
     function DT_FormatScheduleTime($time = null)
     {
       if (is_null($time) || !is_numeric($time) || strlen($time) === 5) {
+
         return $time;
       }
 
@@ -280,6 +287,7 @@
       $file = isset($file) ? $file : 'disposable/simbrief_ofp_layouts.json';
 
       if (!is_file($file)) {
+
         return null;
       }
 
@@ -296,6 +304,7 @@
     function DT_RouteCode($route_code, $type = null)
     {
       if (empty($route_code)) {
+
         return null;
       }
 
@@ -325,8 +334,10 @@
     function DT_RouteLeg($route_leg, $type = null)
     {
       if (empty($route_leg)) {
+
         return null;
       }
+
       if ($type === 'badge') {
         $route_leg = '<span class="badge bg-warning mx-1 text-black"> Leg# '.$route_leg.'</span>';
       } elseif ($type === 'button') {
@@ -455,6 +466,7 @@
     function DT_PirepStatus($pirep, $type = 'badge')
     {
       if ($pirep->state === PirepState::DRAFT) {
+
         return null;
       }
 
@@ -496,6 +508,7 @@
       $vasys['PersonId'] = optional($pirep->user->fields->firstWhere('name', Theme::getSetting('gen_ivao_field')))->value;
 
       if (!filled($vasys['PersonId'])) {
+
         return [];
       }
 

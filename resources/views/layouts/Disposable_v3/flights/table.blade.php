@@ -53,7 +53,7 @@
           </a>
         </td>
         <td class="text-end">
-          @if(!setting('pilots.only_flights_from_current') || $flight->dpt_airport_id == optional($user->current_airport)->icao)
+          @if((!setting('pilots.only_flights_from_current') || $flight->dpt_airport_id == optional($user->current_airport)->icao) && DT_CheckDays($flight->days))
             {{-- Bid --}}
             @if(setting('bids.allow_multiple_bids') === true || setting('bids.allow_multiple_bids') === false && count($saved) === 0)
               <button class="btn btn-sm m-0 mx-1 p-0 px-1 save_flight {{ isset($saved[$flight->id]) ? 'btn-danger':'btn-success' }}"
