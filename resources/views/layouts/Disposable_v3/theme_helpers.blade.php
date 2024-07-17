@@ -99,7 +99,7 @@
       if (is_dir($dir)) {
         if ($dh = opendir($dir)) {
           while (($file = readdir($dh)) !== false) {
-            if (stripos($file, '.jpg') !== false || stripos($file, '.jpeg') !== false || stripos($file, '.png') !== false) {
+            if (str_contains($file, '.jpg') || str_contains($file, '.jpeg') || str_contains($file, '.png')) {
               $image_files[] = $dir.$file;
             }
           }
@@ -107,7 +107,9 @@
         }
       }
 
-      return isset($image_files) ? shuffle($image_files) : null;
+      shuffle($image_files);
+
+      return isset($image_files) ?  $image_files : null;
     }
   }
 

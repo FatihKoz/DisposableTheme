@@ -30,7 +30,7 @@
       @if(Theme::getSetting('home_carousel'))
         {{-- Carousel --}}
         @php $images = DT_GetImages('image/slide/'); @endphp
-        @if($images)
+        @if(isset($images))
           <div class="card mb-2">
             <div id="DT_HomeSlide" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
