@@ -43,7 +43,8 @@ and update() call is made
             <td><span rv-title="pirep.arr_airport.location">{ pirep.arr_airport.name } ({pirep.arr_airport.iata})</span></td>
             <td><span rv-title="pirep.aircraft.icao">{ pirep.aircraft.registration }</span></td>
             <td class="text-center"><span title="Ground Speed">{ pirep.position.gs } kt</span></td>
-            <td class="text-center"><span title="Altitude">{ pirep.position.altitude } ft</span></td>
+            <td class="text-center"><span title="Altitude MSL">{ pirep.position.altitude_msl } ft</span></td>
+            <td class="text-center"><span title="Altitude AGL">{ pirep.position.altitude_agl } ft</span></td>
             <td class="text-center"><span title="Heading">{ pirep.position.heading } &deg;</span></td>
             <td class="text-end">{ pirep.status_text }</td>
             <td class="text-end"><b>{ pirep.user.name_private }</b></td>
@@ -74,7 +75,8 @@ and update() call is made
         <th>@lang('common.departure')</th>
         <th>@lang('common.arrival')</th>
         <th>@lang('common.aircraft')</th>
-        <th>@lang('widgets.livemap.altitude')</th>
+        <th>@lang('widgets.livemap.altitude') MSL</th>
+        <th>@lang('widgets.livemap.altitude') AGL</th>
         <th>@lang('widgets.livemap.gs')</th>
         <th>@lang('widgets.livemap.distance')</th>
         <th>@lang('common.status')</th>
@@ -86,11 +88,12 @@ and update() call is made
         <td><span rv-title="pirep.dpt_airport.name">{ pirep.dpt_airport.icao }</span></td>
         <td><span rv-title="pirep.arr_airport.name">{ pirep.arr_airport.icao }</span></td>
         <td>{ pirep.aircraft.registration } / { pirep.aircraft.icao }</td>
-        <td>{ pirep.position.altitude }</td>
-        <td>{ pirep.position.gs }</td>
+        <td>{ pirep.position.altitude_msl } ft</td>
+        <td>{ pirep.position.altitude_agl } ft</td>
+        <td>{ pirep.position.gs } kt</td>
         <td>
           { pirep.position.distance.{{setting('units.distance')}} | fallback 0 } /
-          { pirep.planned_distance.{{setting('units.distance')}} | fallback 0 }
+          { pirep.planned_distance.{{setting('units.distance')}} | fallback 0 } {{setting('units.distance')}}
         </td>
         <td>{ pirep.status_text }</td>
       </tr>
