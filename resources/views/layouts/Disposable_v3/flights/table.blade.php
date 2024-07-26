@@ -38,8 +38,13 @@
           </a>
         </td>
         @if(filled($flight->dpt_time) && filled($flight->arr_time))
-          <td class="text-center" title="{{ decode_days($flight->days) }}">{{ DT_FormatScheduleTime($flight->dpt_time) }}</td>
-          <td class="text-center">{{ DT_FormatScheduleTime($flight->arr_time) }}</td>
+          @if(Theme::getSetting('flights_localtimes') && filled($flight->dpt_airport) && filled($flight->arr_airport))
+            <td class="text-center" title="{{ $flight->dpt_airport->timezone }}">{{ Carbon::parse(DT_FormatScheduleTime($flight->dpt_time), 'UTC')->setTimezone($flight->dpt_airport->timezone)->format('H:i') }}</td>
+            <td class="text-center" title="{{ $flight->arr_airport->timezone }}">{{ Carbon::parse(DT_FormatScheduleTime($flight->arr_time), 'UTC')->setTimezone($flight->arr_airport->timezone)->format('H:i') }}</td>
+          @else
+            <td class="text-center" title="{{ decode_days($flight->days) }}">{{ DT_FormatScheduleTime($flight->dpt_time) }}</td>
+            <td class="text-center">{{ DT_FormatScheduleTime($flight->arr_time) }}</td>
+          @endif
         @else
           <td class="text-center" colspan="2" title="{{ decode_days($flight->days) }}">{{ DT_ConvertMinutes($flight->flight_time, '%2dh %2dm') }}</td>
         @endif

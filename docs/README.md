@@ -144,6 +144,7 @@ There are some options defined in this file for quick settings or for pre-define
     "flights_flags": 1,               // Enable - Disable country flags on flight related pages
     "flights_table": 1,               // Classic table or card view switch for flights search page
     "flights_codeleg": 0,             // Displays the Route Code and Leg fields separately (Flight and Pireps)
+    "flights_localtimes":0,           // Displays local time for flight schedule, needs proper timezone definitions at airports
 
     "login_logo": 0,                  // Show bigger VA logo at login page
 
@@ -220,6 +221,14 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 * External Redirection modal "close" button may not work, thus clicking somewhere else outside the modal or pressing ESC key is required to close it when needed.
 
 ## Release / Update Notes
+
+26.JUL.24
+
+* Added option for displaying local times at flight schedule
+* Some helper improvements
+* Some tiny text fixes
+* Hide buttons for bids/simbrief/vmsacars load according to scheduled days
+* SimBrief form selection should now display a dropdown indicator
 
 01.JUN.24
 

@@ -52,8 +52,13 @@
       <div class="row">
         <div class="col text-start">
           @if(filled($flight->dpt_time))
-            <i class="fas fa-clock m-1"></i>
-            {{ DT_FormatScheduleTime($flight->dpt_time) }}
+            @if(Theme::getSetting('flights_localtime') && filled($flight->dpt_airport))
+              <i class="fas fa-clock m-1" title="{{ $flight->dpt_airport->timezone }}"></i>
+              {{ Carbon::parse(DT_FormatScheduleTime($flight->dpt_time), 'UTC')->setTimezone($flight->dpt_airport->timezone)->format('H:i') }}
+            @else
+              <i class="fas fa-clock m-1" title="UTC"></i>
+              {{ DT_FormatScheduleTime($flight->dpt_time) }}
+            @endif
           @endif
         </div>
         <div class="col text-center">
@@ -62,8 +67,13 @@
         </div>
         <div class="col text-end">
           @if(filled($flight->arr_time))
-            {{ DT_FormatScheduleTime($flight->arr_time) }}
-            <i class="fas fa-clock m-1"></i>
+            @if(Theme::getSetting('flights_localtime') && filled($flight->arr_airport))
+              {{ Carbon::parse(DT_FormatScheduleTime($flight->arr_time), 'UTC')->setTimezone($flight->arr_airport->timezone)->format('H:i') }}
+              <i class="fas fa-clock m-1" title="{{ $flight->arr_airport->timezone }}"></i>
+            @else
+              {{ DT_FormatScheduleTime($flight->arr_time) }}
+              <i class="fas fa-clock m-1" title="UTC"></i>
+            @endif
           @endif
         </div>
       </div>
