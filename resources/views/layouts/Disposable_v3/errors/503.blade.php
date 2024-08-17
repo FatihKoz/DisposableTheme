@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>@lang('errors.503.title')</title>
+    <title>Server Maintenance</title>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;800">
     <style>
       html, body {
@@ -40,7 +40,12 @@
     <div class="container">
       <div class="content">
         <div class="title">
-          @lang('errors.503.message')
+          Server Maintenance
+          <br>
+          <span style="color: darkorange; font-size: 36px;"> Please be patient while we are working on it</span>
+          <br>
+          <span style="color: darkred; font-size: 20px;">Check back later or kindly wait this page to refresh itself...</span>
+          <br>
         </div>
       </div>
     </div>
