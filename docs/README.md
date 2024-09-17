@@ -222,13 +222,17 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
-26.JUL.24
+17.SEP.24
 
 * Added option for displaying local times at flight schedule
-* Some helper improvements
-* Some tiny text fixes
 * Hide buttons for bids/simbrief/vmsacars load according to scheduled days
 * SimBrief form selection should now display a dropdown indicator
+* Updated LiveMap for upcoming vmsAcars v2
+* Some helper improvements and cleanup
+* Some tiny text/type fixes
+* Added a custom 503 page (for servers under maintenance)
+* Prepared flight search for upcoming new features of phpvms v7
+* Added a fix for SimBrief ICAO code requirements (affects US and CA only)
 
 01.JUN.24
 
