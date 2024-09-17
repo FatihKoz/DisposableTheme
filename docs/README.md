@@ -218,12 +218,12 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 ## Known Bugs / Problems
 
 * SmartCars v3 users reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data. With latest improvements done to SC3 implementation incompatibilities are reduced but still it may behave different than expected. Please follow changes/updates of SC3 modules being develop by other devs.
-* External Redirection modal "close" button may not work, thus clicking somewhere else outside the modal or pressing ESC key is required to close it when needed.
 
 ## Release / Update Notes
 
 17.SEP.24
 
+* Fixed external link warning modal bug (thanks to JCB)
 * Added option for displaying local times at flight schedule
 * Hide buttons for bids/simbrief/vmsacars load according to scheduled days
 * SimBrief form selection should now display a dropdown indicator
