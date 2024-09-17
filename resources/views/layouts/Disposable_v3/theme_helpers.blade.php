@@ -6,6 +6,28 @@
   use App\Models\Enums\UserState;
   use Carbon\Carbon;
 
+  // 3 Letter Airport ICAO Code Fix for United States and Canada
+  // Return string or null
+  if (!function_exists('DT_AirportCode')) {
+    function DT_AirportCode($airport)
+    {
+      $icao_code = null;
+
+      if (filled($airport) && filled(optional($airport)->id)) {
+
+        $icao_code = $airport->id;
+
+        if (iconv_strlen(trim($airport->id), 'UTF8') === 3 && $airport->country === 'US') {
+          $icao_code = 'K'.$airport->id;
+        } elseif (iconv_strlen(trim($airport->id), 'UTF8') === 3 && $airport->country === 'CA') {
+          $icao_code = 'C'.$airport->id;
+        }
+      }
+
+      return $icao_code;
+    }
+  }
+
   // Check Flight Day
   // Return boolean
   // This should return TRUE if there are no days defined or the days is matching

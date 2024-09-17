@@ -118,7 +118,7 @@
           <div class="card-body p-1">
             <div class="row mb-1">
               <div class="col-lg-4">
-                <input name="orig" type="hidden" value="{{ $flight->dpt_airport_id }}">
+                <input name="orig" type="hidden" value="{{ DT_AirportCode($flight->dpt_airport) ?? $flight->dpt_airport_id }}">
                 <div class="input-group input-group-sm">
                   @if(!Theme::getSetting('simbrief_taxitimes'))
                     <span class="input-group-text"><i class="fas fa-plane-departure" title="Departure"></i></span>
@@ -146,7 +146,7 @@
                 </div>
               </div>
               <div class="col-lg-4">
-                <input name="dest" type="hidden" value="{{ $flight->arr_airport_id }}">
+                <input name="dest" type="hidden" value="{{ DT_AirportCode($flight->arr_airport) ?? $flight->arr_airport_id }}">
                 <div class="input-group input-group-sm">
                   @if(!Theme::getSetting('simbrief_taxitimes'))
                     <span class="input-group-text"><i class="fas fa-plane-arrival" title="Arrival"></i></span>
@@ -176,7 +176,7 @@
               <div class="col-md-6 col-lg-2">
                 <div class="input-group input-group-sm">
                   <span class="input-group-text">ALTN</span>
-                  <input name="altn" type="text" class="form-control" maxlength="4" value="{{ $flight->alt_airport_id ?? 'AUTO' }}">
+                  <input name="altn" type="text" class="form-control" maxlength="4" value="{{ DT_AirportCode($flight->alt_airport) ?? 'AUTO' }}">
                 </div>
               </div>
               <div class="col-md-6 col-lg-2">
