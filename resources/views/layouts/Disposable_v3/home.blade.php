@@ -104,13 +104,17 @@
       <div class="col-lg">
         @widget('DBasic::LeaderBoard', ['source' => 'pilot', 'period' => 'lastm', 'count' => 1, 'type' => 'flights'])
         @widget('DBasic::LeaderBoard', ['source' => 'pilot', 'period' => 'lastm', 'count' => 1, 'type' => 'time'])
+        @widget('DBasic::LeaderBoard', ['source' => 'pilot', 'period' => 'lastm', 'count' => 1, 'type' => 'distance'])
       </div>
       <div class="col-lg">
         @widget('DBasic::Stats', ['type' => 'home'])
       </div>
-      <div class="col-lg">
-        @widget('LatestAwards', ['count' => 4])
-      </div>
+    @else
+      <div class="col-lg">&nbsp;</div>
+      <div class="col-lg">&nbsp;</div>
     @endif
+    <div class="col-lg">
+      @widget('LatestAwards', ['count' => 4])
+    </div>
   </div>
 @endsection
