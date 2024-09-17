@@ -64,6 +64,28 @@
           @endforeach
         </select>
       </div>
+      @if(filled($type_ratings))
+        <div class="input-group input-group-sm mt-1">
+          <span class="input-group-text col-lg-4">Type Rating</span>
+          <select class="form-control select2" name="type_rating_id" id="type_rating_id">
+            <option value=""></option>
+            @foreach($type_ratings as $tr)
+              <option value="{{ $tr->id }}" @if(request()->query('type_rating_id') == $tr->id) selected @endif>{{ $tr->type.' | '.$tr->name }}</option>
+            @endforeach
+          </select>
+        </div>
+      @endif
+      @if(filled($icao_codes))
+        <div class="input-group input-group-sm mt-1">
+          <span class="input-group-text col-lg-4">Aircraft ICAO</span>
+          <select class="form-control select2" name="icao_type" id="icao_type">
+            <option value=""></option>
+            @foreach($icao_codes as $icao)
+              <option value="{{ $icao }}" @if(request()->query('icao_type') == $icao) selected @endif>{{ $icao }}</option>
+            @endforeach
+          </select>
+        </div>
+      @endif
     </div>
     <div class="card-footer bg-transparent p-1 text-end">
       <button class="btn btn-sm btn-primary m-0 mx-1 p-0 px-1" type="submit">@lang('common.find')</button>
