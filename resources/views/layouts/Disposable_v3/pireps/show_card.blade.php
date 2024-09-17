@@ -1,7 +1,7 @@
 <div class="card mb-2">
   <div class="card-header p-1">
     <h5 class="m-1">
-      @if(filled($pirep->flight_id) && !str_contains($pirep->route_code, 'PF'))
+      @if(filled($pirep->flight) && !str_contains($pirep->route_code, 'PF'))
         <a href="{{ route('frontend.flights.show', [$pirep->flight_id]) }}"><i class="fas fa-paper-plane mx-1" title="Flight Details"></i></a>
       @endif
       {{ optional($pirep->airline)->code.' '.$pirep->flight_number.' | ' }}
