@@ -64,7 +64,7 @@
           @endforeach
         </select>
       </div>
-      @if(filled($type_ratings))
+      @if(isset($type_ratings) && filled($type_ratings))
         <div class="input-group input-group-sm mt-1">
           <span class="input-group-text col-lg-4">Type Rating</span>
           <select class="form-control select2" name="type_rating_id" id="type_rating_id">
@@ -75,7 +75,7 @@
           </select>
         </div>
       @endif
-      @if(filled($icao_codes))
+      @if(isset($icao_codes) && filled($icao_codes))
         <div class="input-group input-group-sm mt-1">
           <span class="input-group-text col-lg-4">Aircraft ICAO</span>
           <select class="form-control select2" name="icao_type" id="icao_type">

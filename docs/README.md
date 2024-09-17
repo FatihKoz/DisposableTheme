@@ -223,6 +223,8 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 17.SEP.24
 
+* Added support for Latest Awards widget
+* Fixed the flight search page (was updated for upcoming search options)
 * Fixed external link warning modal bug (thanks to JCB)
 * Added option for displaying local times at flight schedule
 * Hide buttons for bids/simbrief/vmsacars load according to scheduled days
