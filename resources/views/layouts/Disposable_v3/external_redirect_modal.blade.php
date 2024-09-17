@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="modal-footer p-1">
-        <button type="button" class="btn btn-sm btn-warning m-0 mx-1 p-0 px-1" data-dismiss="modal" aria-label="Close">Close</button>
+        <button type="button" class="btn btn-sm btn-warning m-0 mx-1 p-0 px-1" data-bs-dismiss="modal" aria-label="Close">Close</button>
         <a href="#" target="_blank" class="btn btn-sm btn-success m-0 mx-1 p-0 px-1" id="externalRedirectUrl">@lang('common.continue')</a>
       </div>
     </div>
