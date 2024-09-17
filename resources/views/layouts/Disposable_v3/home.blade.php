@@ -103,12 +103,13 @@
     @if($DBasic)
       <div class="col-lg">
         @widget('DBasic::LeaderBoard', ['source' => 'pilot', 'period' => 'lastm', 'count' => 1, 'type' => 'flights'])
-      </div>
-      <div class="col-lg">
         @widget('DBasic::LeaderBoard', ['source' => 'pilot', 'period' => 'lastm', 'count' => 1, 'type' => 'time'])
       </div>
       <div class="col-lg">
         @widget('DBasic::Stats', ['type' => 'home'])
+      </div>
+      <div class="col-lg">
+        @widget('LatestAwards', ['count' => 4])
       </div>
     @endif
   </div>
