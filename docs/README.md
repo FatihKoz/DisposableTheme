@@ -221,6 +221,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 ## Release / Update Notes
 
+29.SEP.24
+
+* Added Japanese traslation (Thanks to Minnsch, ANA Virtual Group)  
+
 17.SEP.24
 
 * Added support for Latest Awards widget
