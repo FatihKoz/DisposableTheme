@@ -6,6 +6,7 @@
   $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
   $DSpecial = isset($DSpecial) ? $DSpecial : check_module('DisposableSpecial');
   $AuthCheck = Auth::check();
+  $pirep->loadMissing('acars');
 @endphp
 @section('content')
   <div class="row">
@@ -24,6 +25,13 @@
                   Route Map
                 </button>
               </li>
+              @if($AuthCheck && $pirep->acars && $pirep->acars->count() > 0)
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link border-0 m-0 mx-1 p-0 px-1" id="chart-tab" data-bs-toggle="tab" data-bs-target="#chart" type="button" role="tab" aria-controls="chart" aria-selected="true">
+                    Altitude & Speed Chart
+                  </button>
+                </li>
+              @endif
               @if($AuthCheck && $pirep->fields && $pirep->fields->count() > 0)
                 <li class="nav-item" role="presentation">
                   <button class="nav-link border-0 m-0 mx-1 p-0 px-1" id="fields-tab" data-bs-toggle="tab" data-bs-target="#fields" type="button" role="tab" aria-controls="details" aria-selected="false">
@@ -55,6 +63,11 @@
             <div class="tab-pane fade show active" id="map" role="tabpanel" aria-labelledby="map-tab">
               @include('pireps.map', ['map_height' => $tab_height])
             </div>
+            @if($AuthCheck && $pirep->acars && $pirep->acars->count() > 0)
+              <div class="tab-pane fade show" id="chart" role="tabpanel" aria-labelledby="chart-tab">
+                @include('pireps.chart')
+              </div>
+            @endif
             @if($AuthCheck && $pirep->fields && $pirep->fields->count() > 0 && $pirep->fields->count() <= 150)
               <div class="tab-pane fade overflow-auto" style="max-height: {{ $tab_height }};" id="fields" role="tabpanel" aria-labelledby="fields-tab">
                 <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">

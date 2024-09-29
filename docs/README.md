@@ -223,7 +223,8 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 
 29.SEP.24
 
-* Added Japanese traslation (Thanks to Minnsch, ANA Virtual Group)  
+* Added Japanese traslation (Thanks to Minnsch, ANA Virtual Group)
+* Added Altitude and Speed chart to pirep details page (preparations for vmsAcars v2)  
 
 17.SEP.24
 
