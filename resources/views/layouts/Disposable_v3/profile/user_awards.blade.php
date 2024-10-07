@@ -11,6 +11,9 @@
           <div class="card-footer p-0 small text-center fw-bold">
             {{ $award->name }}
           </div>
+          <div class="card-footer p-0 small text-center fw-bold">
+            {{ $award->pivot->created_at->format('d.M.y H:i') }}
+          </div>
         </div>
       </div>
     @endforeach
