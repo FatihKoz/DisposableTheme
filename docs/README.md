@@ -3,7 +3,7 @@
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
 * Theme supports **only** php8.1+ and laravel10
-* Minimum required phpVMS v7 version is `phpVms 7.0.0-dev+240524.84ecc6` / 24.MAY.2024
+* Minimum required phpVMS v7 version is `phpVms 7.0.34-dev.g9cdbce8b15` / 08.NOV.2024
 * _php8.0 and laravel9 compatible latest version: v3.3.1_
 * _php7.4 and laravel8 compatible latest version: v3.0.19_
 
@@ -35,7 +35,7 @@ According to your installation, `public` folder may be `public` or `public_html`
 
 ## Customization and Theme Cloning
 
-Below you can find some details about the theme, customization of it and some minor technical info about duplication.
+Below you can find details about the theme, customization of it and some minor technical info about duplication.
 
 ### Theme Cloning / Theme Duplication
 
@@ -65,7 +65,7 @@ Unless really necessary for technical reasons, no hard coded style tags used in 
 
 ### Defining a custom default Gravatar
 
-You can simply define your own custom default gravatar for pilots. Just edit your `env.php` file and add below lines to the end of it  
+You can simply define your own custom default gravatar for pilots. Just edit your `.env` file and add below lines to the end of it  
 
 ```php
 ## GRAVATAR DEFAULT
@@ -82,12 +82,12 @@ Edit your duplicated `app.blade.php` and add below line to the `head` section
 
 ### Using your own FontAwesome Kit
 
-This theme uses FontAwesome v5.x by default and all blades are designed with them, for better performance and optimization you should define your own free kit from [FontAwesome](https://fontawesome.com) and then enter your kit url in your duplicated `app.blade.php`'s HEAD section like below
+This theme uses **FontAwesome v5.x** by default and all blades are designed with them, for better performance and optimization you must define your own free kit from [FontAwesome](https://fontawesome.com) and then enter your kit url in your duplicated `app.blade.php`'s HEAD section like below
 
 ```html
 <script src="https://kit.fontawesome.com/YOUR-KIT-CODE-HERE.js" crossorigin="anonymous"></script>
 ```
-Using theme provided kit code is NOT suggested on a live server because of the limits FontAwesome applying to page hits and loads.
+Using theme provided kit code is NOT POSSIBLE on a live server because of the limits FontAwesome applying to page hits and loads.
 
 ### Customizing VA Logo images and Menu items
 
@@ -220,6 +220,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 * SmartCars v3 users reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data. With latest improvements done to SC3 implementation incompatibilities are reduced but still it may behave different than expected. Please follow changes/updates of SC3 modules being develop by other devs.
 
 ## Release / Update Notes
+
+09.NOV.24
+
+* Added Award issue date to user/pilot profile
 
 29.SEP.24
 
