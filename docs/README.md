@@ -3,7 +3,7 @@
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
 * Theme supports **only** php8.1+ and laravel10
-* Minimum required phpVMS v7 version is `phpVms 7.0.34-dev.g9cdbce8b15` / 08.NOV.2024
+* Minimum required phpVMS v7 version is `phpVms 7.0.38-dev.g47ce6755b4` / 15.NOV.2024
 * _php8.0 and laravel9 compatible latest version: v3.3.1_
 * _php7.4 and laravel8 compatible latest version: v3.0.19_
 
@@ -220,6 +220,11 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 * SmartCars v3 users reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data. With latest improvements done to SC3 implementation incompatibilities are reduced but still it may behave different than expected. Please follow changes/updates of SC3 modules being develop by other devs.
 
 ## Release / Update Notes
+
+15.NOV.24
+
+* Added Turkish translation
+  _Requires latest dev as of 15.Nov.2024_  
 
 09.NOV.24
 
