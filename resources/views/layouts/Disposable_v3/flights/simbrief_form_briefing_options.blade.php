@@ -18,38 +18,19 @@
         @endif
       </select>
     </div>
-    <div class="input-group input-group-sm">
-      <span class="input-group-text col-md-5">OFP Format</span>
-      <select name="planformat" class="form-select">
-        <option value="lido" selected>LIDO (SimBrief Default)</option>
-        <option value="aal" >American Airlines</option>
-        <option value="aca" >Air Canada</option>
-        <option value="afr" >Air France (2012)</option>
-        <option value="afr2017" >Air France (2017)</option>
-        <option value="awe" >US Airways</option>
-        <option value="baw" >British Airways</option>
-        <option value="ber" >Air Berlin</option>
-        <option value="dal" >Delta Air Lines</option>
-        <option value="dlh" >Lufthansa</option>
-        <option value="ein" >Aer Lingus</option>
-        <option value="etd" >Etihad Airways</option>
-        <option value="ezy" >easyJet</option>
-        <option value="gwi" >Germanwings</option>
-        <option value="jbu" >JetBlue Airways</option>
-        <option value="jza" >Jazz Aviation</option>
-        <option value="klm" >KLM Royal Dutch Airlines</option>
-        <option value="qfa" >Qantas</option>
-        <option value="ryr" >Ryanair</option>
-        <option value="swa" >Southwest Airlines</option>
-        <option value="thy" >Turkish Airlines</option>
-        <option value="uae" >Emirates Airline</option>
-        <option value="ual" >United Airlines (2012)</option>
-        <option value="ual f:wz" >United Airlines (2018)</option>
-      </select>
-    </div>
+    @if($layouts)
+      <div class="input-group input-group-sm">
+        <span class="input-group-text col-md-5">OFP Format</span>
+        <select name="planformat" class="form-select">
+          @foreach($layouts as $ofp)
+            <option value="{{ $ofp->id }}" @if(strtoupper($ofp->id) == $flight->airline->icao) selected @elseif($ofp->id === 'lido') selected @endif>{{ $ofp->name_long }}</option>
+          @endforeach
+        </select>
+      </div>
+    @endif
     <div class="input-group input-group-sm">
       <span class="input-group-text col-md-5">Navigation Log</span>
-      <select name="navlog" class="form-select">
+      <select name="navlog" class="form-select" readonly>
         <option value="0">Disabled</option>
         <option value="1" selected>Enabled</option>
       </select>
