@@ -21,7 +21,7 @@
               <option value="{{ $ac->id }}">
                 [{{ $ac->icao }}] {{ $ac->registration }} @if($ac->registration != $ac->name)'{{ $ac->name }}'@endif
                 @if($ac->fuel_onboard->local() > 0)
-                  {{ ' ('.__('disposable.fuel_ob').': '. DT_ConvertWeight($ac->fuel_onboard, $units['fuel']).')' }}
+                  {{ ' ('.__('disposable.fuel_ob').': '. $ac->fuel_onboard->local(0).' '.$units['fuel'].')' }}
                 @endif
               </option>
             @endforeach

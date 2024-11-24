@@ -12,6 +12,58 @@
     }
   </script>
   <script type="text/javascript">
+    // ******
+    // Change Aircraft Type According to Airframe selection
+    // And remove pax and baggage weights from acdata
+    const acDataOrig = String(document.getElementById("acdata").value);
+
+    function CheckAirframe() {
+      let weight = Boolean({{ setting('simbrief.use_standard_weights', false) }})
+      let actype = String("{{ $actype }}");
+      let acData = String(document.getElementById("acdata").value);
+      acOrig = JSON.parse(acDataOrig.replace(/&quot;/g,'"'));
+      acJson = JSON.parse(acData.replace(/&quot;/g,'"'));
+      let airframe = document.getElementById("sbairframe").value;
+      if (airframe != "") {
+        document.getElementById("actype").value = airframe
+        if (!weight) {
+          delete acJson.paxwgt
+          delete acJson.bagwgt
+          document.getElementById("acdata").value = JSON.stringify(acJson)
+        }
+      } else {
+        document.getElementById("actype").value = actype
+        if (!weight) {
+          document.getElementById("acdata").value = JSON.stringify(acOrig)
+        }
+      }
+    }
+  </script>
+  <script type="text/javascript">
+    // Disable Cost Index value entry if CI not possible or selected
+    function CheckCruiseProfile() {
+      let profile = document.getElementById("cruise_profile").value;
+      if (profile === "CI") {
+        document.getElementById("civalue").disabled = false
+      } else {
+        document.getElementById("civalue").disabled = true
+      }
+    }
+  </script>
+  <script type="text/javascript">
+    // Disable ETOPS Threshold and Rule Time Fields if ETOPS is not used
+    function CheckEtops() {
+      let etops = document.getElementById("etops").value;
+      if (etops == 0) {
+        document.getElementById("etopstime").disabled = true
+        document.getElementById("etopsrule").disabled = true
+      } else {
+        document.getElementById("etopstime").disabled = false
+        document.getElementById("etopsrule").disabled = false
+      }
+    }
+  </script>
+  <script type="text/javascript">
     // Calculate the Scheduled Enroute Time for Simbrief API
     // Your PHPVMS flight_time value must be from BLOCK to BLOCK
     // Including departure and arrival taxi times
