@@ -11,7 +11,8 @@
     <meta name="csrf-token" content="{!! csrf_token() !!}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;800">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/1310cf8385.js" crossorigin="anonymous"></script>
+    <link href="{{ public_asset('/disposable/fontawesome-free-5.15.4-web/css/all.min.css') }}" rel="stylesheet"/>
+    {{-- <script src="https://kit.fontawesome.com/1310cf8385.js" crossorigin="anonymous"></script> --}}
     <link href="{{ public_asset('/assets/global/css/vendor.css') }}" rel="stylesheet"/>
     <link href="{{ public_asset('/disposable/stylesheet/theme_v3.css?ver=1') }}" rel="stylesheet"/>
     @if(Theme::getSetting('gen_darkmode'))
