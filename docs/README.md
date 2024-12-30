@@ -2,10 +2,13 @@
 
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
-* Theme supports **only** php8.1+ and laravel10
-* Minimum required phpVMS v7 version is `phpVms 7.0.43-dev.g39cddd9d5c` / 24.NOV.2024
-* _php8.0 and laravel9 compatible latest version: v3.3.1_
-* _php7.4 and laravel8 compatible latest version: v3.0.19_
+> [!IMPORTANT]
+> * Minimum required phpVMS v7 version is `phpVms 7.0.43-dev.g39cddd9d5c` / 24.NOV.2024
+
+> [!TIP]
+> * Theme supports **only** php8.1+ and laravel10
+> * _php8.0 and laravel9 compatible latest version: v3.3.1_
+> * _php7.4 and laravel8 compatible latest version: v3.0.19_
 
 ## Compatibility with other addons
 
@@ -21,6 +24,17 @@ As of date, theme supports vmsACARS.
 
 Same folder structure is used with phpvms v7, so if you have a default installation for it then installing the theme will take only seconds.  
 Just extract the zip file at the root folder of your phpvms v7 installation and select the template from admin section.
+
+### Using your own FontAwesome Kit
+
+> [!CAUTION]
+> This theme uses **FontAwesome v5.x** by default and all blades are designed with them, for better performance and optimization you must define your own free kit from [FontAwesome](https://fontawesome.com) and then enter your kit url in your duplicated `app.blade.php`'s HEAD section like below
+> 
+> **Using theme provided kit code is NOT POSSIBLE on a live server because of the limits FontAwesome applying to page hits and loads.**
+
+```html
+<script src="https://kit.fontawesome.com/YOUR-KIT-CODE-HERE.js" crossorigin="anonymous"></script>
+```
 
 ### Non Standard Installation
 
@@ -79,15 +93,6 @@ Edit your duplicated `app.blade.php` and add below line to the `head` section
 ```html
 <link rel="shortcut icon" type="image/png" href="{{ public_asset('/disposable/your_airline_icon_file.png') }}"/>
 ```
-
-### Using your own FontAwesome Kit
-
-This theme uses **FontAwesome v5.x** by default and all blades are designed with them, for better performance and optimization you must define your own free kit from [FontAwesome](https://fontawesome.com) and then enter your kit url in your duplicated `app.blade.php`'s HEAD section like below
-
-```html
-<script src="https://kit.fontawesome.com/YOUR-KIT-CODE-HERE.js" crossorigin="anonymous"></script>
-```
-Using theme provided kit code is NOT POSSIBLE on a live server because of the limits FontAwesome applying to page hits and loads.
 
 ### Customizing VA Logo images and Menu items
 
