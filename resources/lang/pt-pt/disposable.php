@@ -1,4 +1,5 @@
 <?php
+
 return [
     // Comum
     'actions'     => 'Ações',
