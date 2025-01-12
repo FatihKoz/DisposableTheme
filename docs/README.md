@@ -3,7 +3,7 @@
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
 > [!IMPORTANT]
-> * Minimum required phpVMS v7 version is `phpVms 7.0.43-dev.g39cddd9d5c` / 24.NOV.2024
+> * Minimum required phpVMS v7 version is `phpVms 7.0.52-dev.g0421186c64` / 05.JAN.2025
 
 > [!TIP]
 > * Theme supports **only** php8.1+ and laravel10
@@ -109,7 +109,7 @@ There are some options defined in this file for quick settings or for pre-define
 
 ```json
     "name": "Disposable_v3",          // Theme Name
-    "extends": "default",             // Safety feature to extend default theme
+    "extends": "beta",                // Safety feature to extend default beta theme
 
     "gen_background_img": 1,          // Enable - Disable background image
     "gen_sidebar": 1,                 // SideBar , NavBar switch
@@ -225,6 +225,10 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 * SmartCars v3 users reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data. With latest improvements done to SC3 implementation incompatibilities are reduced but still it may behave different than expected. Please follow changes/updates of SC3 modules being develop by other devs.
 
 ## Release / Update Notes
+
+12.JAN.25
+
+* Compatibility with latest phpVMS changes
 
 24.NOV.24
 

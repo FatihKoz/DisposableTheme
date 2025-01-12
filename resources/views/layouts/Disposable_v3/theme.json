@@ -1,6 +1,6 @@
 {
     "name": "Disposable_v3",
-    "extends": "default",
+    "extends": "beta",
     "gen_background_img": 1,
     "gen_sidebar": 0,
     "gen_utc_clock": 1,
