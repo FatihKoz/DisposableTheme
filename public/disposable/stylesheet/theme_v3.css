@@ -131,6 +131,12 @@ a:active {
     color: goldenrod;
 }
 
+#Dispo_NavBar .dropdown-menu a:active {
+  text-decoration: none;
+  background-color: rgba(31, 13, 192, 0.9);
+  color: goldenrod;
+}
+
 #Dispo_NavBar .dropdown-item {
     font-size: 0.875rem;
 }
