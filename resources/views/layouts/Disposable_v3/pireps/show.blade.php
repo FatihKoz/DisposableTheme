@@ -7,6 +7,8 @@
   $DSpecial = isset($DSpecial) ? $DSpecial : check_module('DisposableSpecial');
   $AuthCheck = Auth::check();
   $pirep->loadMissing('acars');
+  $violations = $pirep->acars_logs->filter(function ($item) { return str_contains($item['log'], 'iolat'); });
+  // $logs = $pirep->acars_logs->filter(function ($item) { return !str_contains($item['log'], 'iolat'); });
 @endphp
 @section('content')
   <div class="row">
@@ -50,6 +52,13 @@
                 <li class="nav-item" role="presentation">
                   <button class="nav-link border-0 m-0 mx-1 p-0 px-1" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments" type="button" role="tab" aria-controls="comments" aria-selected="false">
                     Comments
+                  </button>
+                </li>
+              @endif
+              @if($AuthCheck && $violations->count() > 0)
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link border-0 m-0 mx-1 p-0 px-1" id="violations-tab" data-bs-toggle="tab" data-bs-target="#violations" type="button" role="tab" aria-controls="violations" aria-selected="false">
+                    Rule Violations
                   </button>
                 </li>
               @endif
@@ -104,6 +113,18 @@
                 </table>
               </div>
             @endif
+            @if($AuthCheck && $violations->count() > 0)
+            <div class="tab-pane fade overflow-auto" style="max-height: {{ $tab_height }};" id="violations" role="tabpanel" aria-labelledby="violations-tab">
+              <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
+                @foreach($violations->sortBy('created_at') as $log)
+                  <tr>
+                    <td class="col-md-3">{{ $log->created_at->format('d.M.Y H:i') }}</td>
+                    <td>{{ $log->log }}</td>
+                  </tr>
+                @endforeach
+              </table>
+            </div>
+          @endif
           </div>
         </div>
         <div class="card-footer p-1">
