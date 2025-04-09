@@ -120,7 +120,7 @@ var options = {
       },
       forceNiceScale: true,
       decimalsInFloat: 0,
-      seriesName: ['Altitude (MSL)', 'Altitude (AGL)']
+      seriesName: ['Altitude (MSL)', 'Altitude (AGL)', 'Terrain Elevation']
     },
     {
       title: {
@@ -130,14 +130,6 @@ var options = {
       decimalsInFloat: 0,
       opposite: true,
       seriesName: ['Speed (GS)', 'Speed (IAS)']
-    },
-    {
-      title: {
-        text: 'Terrain Elevation',
-      },
-      forceNiceScale: true,
-      decimalsInFloat: 0,
-      seriesName: 'Terrain Elevation'
     }
   ]
 }
