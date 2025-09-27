@@ -95,6 +95,7 @@
       </div>
       @if($DSpecial)
         @widget('DSpecial::Assignments')
+        @widget('DSpecial::Missions')
         @widget('DSpecial::TourProgress')
       @endif
       @if($DBasic)
