@@ -7,8 +7,7 @@
   $DSpecial = isset($DSpecial) ? $DSpecial : check_module('DisposableSpecial');
   $AuthCheck = Auth::check();
   $pirep->loadMissing('acars');
-  $violations = $pirep->acars_logs->filter(function ($item) { return str_contains($item['log'], 'iolat'); });
-  // $logs = $pirep->acars_logs->filter(function ($item) { return !str_contains($item['log'], 'iolat'); });
+  $violations = $pirep->acars_logs->filter(function ($item) { return str_contains($item['log'], 'iolat') || str_contains($item['log'], 'riggered'); });
 @endphp
 @section('content')
   <div class="row">
@@ -82,7 +81,7 @@
                 <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
                   @foreach($pirep->fields as $field)
                     <tr>
-                      <td class="col-md-3">{{ $field->name }}</td>
+                      <td class="col-md-2">{{ $field->name }}</td>
                       <td>{!! DT_PirepField($field, $units) !!}</td>
                     </tr>
                   @endforeach
@@ -94,8 +93,17 @@
                 <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
                   @foreach($pirep->acars_logs->sortBy('created_at') as $log)
                     <tr>
-                      <td class="col-md-3">{{ $log->created_at->format('d.M.Y H:i') }}</td>
+                      <td class="col-md-2">{{ $log->created_at->format('d.M.Y H:i') }}</td>
                       <td>{{ $log->log }}</td>
+                      <td>@if($log->altitude_agl <> 0){{ round($log->altitude_agl, 0).' ft agl' }}@endif</td>
+                      <td>@if($log->altitude_agl <> 0){{ round($log->altitude_msl, 0).' ft msl' }}@endif</td>
+                      <td>@if($log->gs > 1){{ $log->gs.' kt gs' }}@endif</td>
+                      <td>@if($log->altitude_agl <> 0){{ $log->ias.' kt ias' }}@endif</td>
+                      <td>
+                        <a href="https://www.openstreetmap.org/?mlat={{ $log->lat }}&mlon={{ $log->lon }}#map=15/{{ $log->lat }}/{{ $log->lon }}" target="_blank">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                      </td>
                     </tr>
                   @endforeach
                 </table>
@@ -106,7 +114,7 @@
                 <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
                   @foreach($pirep->comments as $comment)
                     <tr>
-                      <td class="col-3">{{ $comment->created_at->format('d.M.Y H:i') }}</td>
+                      <td class="col-md-2">{{ $comment->created_at->format('d.M.Y H:i') }}</td>
                       <td>{{ $comment->comment }}</td>
                     </tr>
                   @endforeach
@@ -114,17 +122,26 @@
               </div>
             @endif
             @if($AuthCheck && $violations->count() > 0)
-            <div class="tab-pane fade overflow-auto" style="max-height: {{ $tab_height }};" id="violations" role="tabpanel" aria-labelledby="violations-tab">
-              <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
-                @foreach($violations->sortBy('created_at') as $log)
-                  <tr>
-                    <td class="col-md-3">{{ $log->created_at->format('d.M.Y H:i') }}</td>
-                    <td>{{ $log->log }}</td>
-                  </tr>
-                @endforeach
-              </table>
-            </div>
-          @endif
+              <div class="tab-pane fade overflow-auto" style="max-height: {{ $tab_height }};" id="violations" role="tabpanel" aria-labelledby="violations-tab">
+                <table class="table table-sm table-borderless table-striped text-nowrap align-middle mb-0">
+                  @foreach($violations->sortBy('created_at') as $log)
+                    <tr>
+                      <td class="col-md-2">{{ $log->created_at->format('d.M.Y H:i') }}</td>
+                      <td>{{ $log->log }}</td>
+                      <td>@if($log->altitude_agl <> 0){{ round($log->altitude_agl, 0).' ft agl' }}@endif</td>
+                      <td>@if($log->altitude_agl <> 0){{ round($log->altitude_msl, 0).' ft msl' }}@endif</td>
+                      <td>@if($log->gs > 1){{ $log->gs.' kt gs' }}@endif</td>
+                      <td>@if($log->altitude_agl <> 0){{ $log->ias.' kt ias' }}@endif</td>
+                      <td>
+                        <a href="https://www.openstreetmap.org/?mlat={{ $log->lat }}&mlon={{ $log->lon }}#map=15/{{ $log->lat }}/{{ $log->lon }}" target="_blank">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  @endforeach
+                </table>
+              </div>
+            @endif
           </div>
         </div>
         <div class="card-footer p-1">
