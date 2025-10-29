@@ -66,6 +66,9 @@
     </div>
     {{-- Main Dashboard : RIGHT --}}
     <div class="col-lg-4">
+      @if($DBasic)
+        @widget('DBasic::NextRank')
+      @endif
       @if(Theme::getSetting('dash_embed_wx') && $current_airport)
         <div class="card p-0 mb-2 bg-transparent">
           <div class="card-header ps-2 p-1 m-0">
