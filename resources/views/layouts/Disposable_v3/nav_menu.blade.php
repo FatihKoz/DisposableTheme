@@ -59,7 +59,7 @@
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.stats') }}">
-            <i class="fas fa-cogs {{ $icon_style }}"></i>
+            <i class="fas fa-chart-pie {{ $icon_style }}"></i>
             @lang('disposable.menu_stats')
           </a>
         </li>
