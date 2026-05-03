@@ -78,4 +78,5 @@ return [
     'menu_pireps'   => 'Reports',
     'menu_market'   => 'Pilot Shop',
     'menu_mymarket' => 'Bought Items',
+    'menu_missions' => 'Missions',
 ];
