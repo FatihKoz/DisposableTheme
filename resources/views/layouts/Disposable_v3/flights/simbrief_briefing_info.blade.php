@@ -257,7 +257,7 @@
       <div class="card-header p-1">
         <h5 class="m-1">
           ATC Flight Plan
-          <i class="fas fa-plane float-end"></i>
+          <i class="bi bi-plane float-end"></i>
         </h5>
       </div>
       <div class="card-body p-1" style="font-family: Verdana, sans-serif; font-size: 0.75rem;">
@@ -325,7 +325,7 @@
       <div class="card-header p-1">
         <h5 class="m-1">
           {{ trans_choice('common.download',2) }}
-          <i class="fas fa-download float-end"></i>
+          <i class="bi bi-download float-end"></i>
         </h5>
       </div>
       <div class="card-body p-1 input-group input-group-sm">
@@ -345,7 +345,7 @@
         <div class="card-header p-1">
           <h5 class="m-1">
             Flight Crew
-            <i class="fas fa-users float-end"></i>
+            <i class="bi bi-people float-end"></i>
           </h5>
         </div>
         <div class="card-body p-0 ">

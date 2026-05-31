@@ -16,7 +16,7 @@
               <th class="col-md-4">
                 {{ $field->name }}
                 @if(filled($field->description))
-                  <i class="fas fa-info-circle mx-2 text-primary" title="{{ $field->description }}"></i>
+                  <i class="bi bi-info-circle mx-2 text-primary" title="{{ $field->description }}"></i>
                 @endif
               </th>
               <td>{{ $field->value ?? '--'}}</td>

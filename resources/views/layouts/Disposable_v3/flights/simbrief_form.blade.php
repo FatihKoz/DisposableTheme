@@ -27,7 +27,7 @@
           <div class="card-header p-1">
             <h5 class="m-1">
               @lang('common.aircraft') > {{ $aircraft->ident }}
-              <i class="fas fa-plane float-end"></i>
+              <i class="bi bi-plane float-end"></i>
             </h5>
           </div>
           <div class="card-body p-1">
@@ -49,7 +49,7 @@
               @if($aircraft->fuel_onboard->local() > 0)
                 <div class="col-md-4 col-lg-2">
                   <div class="input-group input-group-sm">
-                    <span class="input-group-text"><i class="fas fa-gas-pump" title="Fuel On Board"></i></span>
+                    <span class="input-group-text"><i class="bi bi-fuel-pump" title="Fuel On Board"></i></span>
                     <input type="text" class="form-control" value="{{ DT_ConvertWeight($aircraft->fuel_onboard, $units['fuel']) }}" disabled>
                   </div>
                 </div>
@@ -124,11 +124,11 @@
                 <input name="orig" type="hidden" value="{{ DT_AirportCode($flight->dpt_airport) ?? $flight->dpt_airport_id }}">
                 <div class="input-group input-group-sm">
                   @if(!Theme::getSetting('simbrief_taxitimes'))
-                    <span class="input-group-text"><i class="fas fa-plane-departure" title="Departure"></i></span>
+                    <span class="input-group-text"><i class="bi bi-plane-takeoff" title="Departure"></i></span>
                   @endif
                   <input id="dorig" type="text" class="form-control" value="{{ $flight->dpt_airport_id }}" disabled>
                   @if($DBasic && Theme::getSetting('simbrief_runways'))
-                    <span class="input-group-text"><i class="fas fa-road" title="Departure Runway"></i></span>
+                    <span class="input-group-text"><i class="bi bi-road" title="Departure Runway"></i></span>
                     <div class="input-group-append">
                       <select name="origrwy" class="form-control form-control-sm">
                         <option value="">AUTO</option>
@@ -139,7 +139,7 @@
                     </div>
                   @endif
                   @if($DBasic && Theme::getSetting('simbrief_taxitimes'))
-                    <span class="input-group-text"><i class="fas fa-clock" title="Departure Taxi Time"></i></span>
+                    <span class="input-group-text"><i class="bi bi-clock" title="Departure Taxi Time"></i></span>
                     <select id="taxiout" name="taxiout" class="form-control form-control-sm">
                       @for ($i = 1; $i < 30; $i++)
                         <option value="{{ $i }}" @if($i == DB_AvgTaxiTime($flight->dpt_airport_id, 'out', 10)) selected @endif>{{ $i }} min</option>
@@ -152,11 +152,11 @@
                 <input name="dest" type="hidden" value="{{ DT_AirportCode($flight->arr_airport) ?? $flight->arr_airport_id }}">
                 <div class="input-group input-group-sm">
                   @if(!Theme::getSetting('simbrief_taxitimes'))
-                    <span class="input-group-text"><i class="fas fa-plane-arrival" title="Arrival"></i></span>
+                    <span class="input-group-text"><i class="bi bi-plane-landing" title="Arrival"></i></span>
                   @endif
                   <input id="ddest" type="text" class="form-control" value="{{ $flight->arr_airport_id }}" disabled>
                   @if($DBasic && Theme::getSetting('simbrief_runways'))
-                    <span class="input-group-text"><i class="fas fa-road" title="Arrival Runway"></i></span>
+                    <span class="input-group-text"><i class="bi bi-road" title="Arrival Runway"></i></span>
                     <div class="input-group-append">
                       <select name="destrwy" class="form-control form-control-sm">
                         <option value="">AUTO</option>
@@ -167,7 +167,7 @@
                     </div>
                   @endif
                   @if($DBasic && Theme::getSetting('simbrief_taxitimes'))
-                    <span class="input-group-text"><i class="fas fa-clock" title="Arrival Taxi Time"></i></span>
+                    <span class="input-group-text"><i class="bi bi-clock" title="Arrival Taxi Time"></i></span>
                     <select id="taxiin" name="taxiin" class="form-control form-control-sm">
                       @for ($i = 1; $i < 30; $i++)
                         <option value="{{ $i }}" @if($i == DB_AvgTaxiTime($flight->arr_airport_id, 'in', 5)) selected @endif>{{ $i }} min</option>
@@ -192,7 +192,7 @@
             <div class="row mb-1">
               <div class="col">
                 <div class="input-group input-group-sm">
-                  <span class="input-group-text"><i class="fas fa-route" title="Route"></i></span>
+                  <span class="input-group-text"><i class="bi bi-route" title="Route"></i></span>
                   <input name="route" type="text" class="form-control" value="{{ $flight->route }}">
                   @if(Theme::getSetting('simbrief_rfinder'))
                     @if($Check_SSL)
@@ -207,14 +207,14 @@
             <div class="row row-cols-lg-4 mb-1">
               <div class="col-md-4 col-lg">
                 <div class="input-group input-group-sm">
-                  <span class="input-group-text"><i class="fas fa-calendar-day" title="Date Of Flight"></i></span>
+                  <span class="input-group-text"><i class="bi bi-calendar-day" title="Date Of Flight"></i></span>
                   <input id="dof" type="text" class="form-control" disabled>
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg">
                 @if($flight->dpt_time)
                   <div class="input-group input-group-sm">
-                    <span class="input-group-text"><i class="fas fa-plane-departure" title="Scheduled Departure Time"></i></span>
+                    <span class="input-group-text"><i class="bi bi-plane-takeoff" title="Scheduled Departure Time"></i></span>
                     <input type="text" class="form-control" value="{{ DT_FormatScheduleTime($flight->dpt_time) }}" disabled>
                   </div>
                 @endif
@@ -222,14 +222,14 @@
               <div class="col-6 col-md-4 col-lg">
                 @if($flight->arr_time)
                   <div class="input-group input-group-sm">
-                    <span class="input-group-text"><i class="fas fa-plane-arrival" title="Scheduled Arrival Time"></i></span>
+                    <span class="input-group-text"><i class="bi bi-plane-landing" title="Scheduled Arrival Time"></i></span>
                     <input type="text" class="form-control" value="{{ DT_FormatScheduleTime($flight->arr_time) }}" disabled>
                   </div>
                 @endif
               </div>
               <div class="col-6 col-md-4 col-lg">
                 <div class="input-group input-group-sm">
-                  <span class="input-group-text"><i class="fas fa-clock" title="Estimated Departure Time"></i></span>
+                  <span class="input-group-text"><i class="bi bi-clock" title="Estimated Departure Time"></i></span>
                   <input id="deph" name="deph" type="number" class="form-control text-center" min="0" max="23" maxlength="2" onchange="CheckDOF()">
                   <span class="input-group-text px-1">:</span>
                   <input id="depm" name="depm" type="number" class="form-control text-center" min="0" max="59" maxlength="2">
@@ -243,7 +243,7 @@
           <div class="card-header p-1">
             <h5 class="m-1">
               Estimated Load > {{ $aircraft->registration.' | '.optional($aircraft->airline)->name.' | '.optional($aircraft->subfleet)->name }}
-              <i class="fas fa-balance-scale float-end"></i>
+              <i class="bi bi-balance-scale float-end"></i>
             </h5>
           </div>
           <div class="card-body p-1">
@@ -275,13 +275,13 @@
                 @if($tpaxload)
                   <div class="col-md">
                     <div class="input-group input-group-sm">
-                      <span class="input-group-text"><i class="fas fa-users" title="Passenger Weight"></i></span>
+                      <span class="input-group-text"><i class="bi bi-users" title="Passenger Weight"></i></span>
                       <input id="tdPaxLoad" type="text" class="form-control" value="{{ number_format($tpaxload).' '.$units['weight'] }}" disabled>
                     </div>
                   </div>
                   <div class="col-md">
                     <div class="input-group input-group-sm">
-                      <span class="input-group-text"><i class="fas fa-suitcase" title="Baggage Weight"></i></span>
+                      <span class="input-group-text"><i class="bi bi-suitcase" title="Baggage Weight"></i></span>
                       <input id="tdBagLoad" type="text" class="form-control" value="{{ number_format($tbagload).' '.$units['weight'] }}" disabled>
                     </div>
                   </div>
@@ -289,7 +289,7 @@
                 @if($tpaxload && $tcargoload)
                   <div class="col-md">
                     <div class="input-group input-group-sm">
-                      <span class="input-group-text"><i class="fas fa-dolly-flatbed" title="Cargo Weight"></i></span>
+                      <span class="input-group-text"><i class="bi bi-dolly-flatbed" title="Cargo Weight"></i></span>
                       <input id="tdCargoLoad" type="text" class="form-control" value="{{ number_format($tcargoload).' '.$units['weight'] }}" disabled>
                     </div>
                   </div>

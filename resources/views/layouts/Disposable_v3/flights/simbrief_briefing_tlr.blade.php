@@ -288,7 +288,7 @@
       <div class="card-header p-1">
         <h5 class="m-1">
           Performance Analysis Report
-          <i class="fas fa-plane float-end"></i>
+          <i class="bi bi-plane float-end"></i>
         </h5>
       </div>
       <div class="card-body p-1 overflow-auto" style="max-height: 45rem; font-family: Verdana, sans-serif; font-size: 0.75rem;">

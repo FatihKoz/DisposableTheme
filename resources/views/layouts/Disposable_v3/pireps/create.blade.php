@@ -14,7 +14,7 @@
           <div class="card-header p-1">
             <h5 class="m-1">
               @lang('pireps.newflightreport')
-              <i class="fas fa-file-upload float-end"></i>
+              <i class="bi bi-upload float-end"></i>
             </h5>
           </div>
           <form class="form" method="post" action="{{ route('frontend.pireps.store') }}">

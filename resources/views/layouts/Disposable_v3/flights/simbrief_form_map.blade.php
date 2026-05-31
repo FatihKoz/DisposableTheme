@@ -14,7 +14,7 @@
             Map
           </h5>
           <span class="close">
-            <i class="fas fa-times-circle" data-dismiss="modal" aria-label="Close" aria-hidden="true"></i>
+            <i class="bi bi-x-circle" data-dismiss="modal" aria-label="Close" aria-hidden="true"></i>
           </span>
         </div>
         <div class="modal-body border-0 p-0">

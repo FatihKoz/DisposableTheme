@@ -9,7 +9,7 @@
         <div class="card-header p-1">
           <h5 class="m-1">
             {{ __('Reset Password') }}
-            <i class="fas fa-unlock-alt float-end"></i>
+            <i class="bi bi-lock-open float-end"></i>
           </h5>
         </div>
         <form class="form form-group" method="post" action="{{ url('/password/reset') }}">

@@ -56,11 +56,11 @@
                       <tr>
                         <td colspan="2" >
                           <span id="email_show" style="display: none">
-                            <i class="fas fa-eye-slash mx-1" onclick="emailHide()"></i>
+                            <i class="bi bi-eye-slash mx-1" onclick="emailHide()"></i>
                             {{ $user->email }}
                           </span>
                           <span id="email_hide">
-                            <i class="fas fa-eye mx-1" onclick="emailShow()"></i>
+                            <i class="bi bi-eye mx-1" onclick="emailShow()"></i>
                             E-mail
                           </span>
                         </td>
@@ -68,11 +68,11 @@
                       <tr>
                         <td colspan="2" title="@lang('profile.dontshare')">
                           <span id="apiKey_show" style="display: none">
-                            <i class="fas fa-eye-slash mx-1" onclick="apiKeyHide()"></i>
+                            <i class="bi bi-eye-slash mx-1" onclick="apiKeyHide()"></i>
                             {{ $user->api_key }}
                           </span>
                           <span id="apiKey_hide">
-                            <i class="fas fa-eye mx-1" onclick="apiKeyShow()"></i>
+                            <i class="bi bi-eye mx-1" onclick="apiKeyShow()"></i>
                             @lang('profile.apikey')
                           </span>
                         </td>
@@ -96,15 +96,15 @@
           </span>
           <span class="float-end">
             @if(filled($user->discord_id))
-              <i class="fab fa-discord mx-1" @ability('admin', 'admin-access') title="{{ $user->discord_id }}" @endability></i>
+              <i class="bi bi-discord mx-1" @ability('admin', 'admin-access') title="{{ $user->discord_id }}" @endability></i>
             @endif
             @if($user->opt_in)
-              <i class="fas fa-envelope mx-1"></i>
+              <i class="bi bi-envelope mx-1"></i>
             @endif
             @if(filled($user->timezone))
-              <i class="fas fa-user-clock mx-1" title="@lang('common.timezone'): {{ $user->timezone }}"></i>
+              <i class="bi bi-clock mx-1" title="@lang('common.timezone'): {{ $user->timezone }}"></i>
             @endif
-            <i class="fas fa-calendar-plus mx-1" title="Member since {{ $user->created_at->format('l d.M.Y') }}"></i>
+            <i class="bi bi-calendar-plus mx-1" title="Member since {{ $user->created_at->format('l d.M.Y') }}"></i>
           </span>
         </div>
         {{-- Action Buttons --}}
@@ -112,14 +112,14 @@
           <div class="card-footer p-1">
             @if(isset($acars) && $acars === true)
                 <a href="{{ route('frontend.profile.acars') }}" class="btn btn-sm btn-success m-0 mx-1 p-0 px-2" onclick="alert('Copy or Save to \'My Documents/phpVMS\'')">
-                  <i class="fas fa-file-download text-black" title="Download vmsAcars Config"></i>
+                  <i class="bi bi-download text-black" title="Download vmsAcars Config"></i>
                 </a>
             @endif
             <a href="{{ route('frontend.profile.regen_apikey') }}" class="btn btn-sm btn-warning m-0 mx-1 p-0 px-2" onclick="return confirm('Are you sure? This will reset your API key!')">
-              <i class="fas fa-key text-black" title="@lang('profile.newapikey')"></i>
+              <i class="bi bi-key text-black" title="@lang('profile.newapikey')"></i>
             </a>
             <a href="{{ route('frontend.profile.edit', [$user->id]) }}" class="btn btn-sm btn-primary m-0 mx-1 p-0 px-2">
-              <i class="fas fa-edit text-black" title="@lang('common.edit')"></i>
+              <i class="bi bi-pencil-square text-black" title="@lang('common.edit')"></i>
             </a>
             @if($DBasic && $user->flights > 0 && $user->id === Auth::id())
               <span class="float-end mb-0">

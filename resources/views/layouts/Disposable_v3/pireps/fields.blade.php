@@ -24,7 +24,7 @@ flight reports that have been filed. You've been warned!
     <div class="col">
       <div class="form-container mb-2">
         <h6 class="m-1">
-          <i class="fas fa-info-circle me-1"></i>
+          <i class="bi bi-info-circle me-1"></i>
           @lang('pireps.flightinformations')
         </h6>
         <div class="form-group">
@@ -164,7 +164,7 @@ flight reports that have been filed. You've been warned!
       {{-- Route --}}
       <div class="form-container mb-2">
         <h6 class="m-1">
-          <i class="fas fa-route me-1"></i>
+          <i class="bi bi-route me-1"></i>
           @lang('flights.route')
         </h6>
         <div class="form-group">
@@ -199,7 +199,7 @@ flight reports that have been filed. You've been warned!
       <div class="col-3">
         <div class="form-container">
           <h6 class="m-1">
-            <i class="fas fa-th-list me-1"></i>
+            <i class="bi bi-list me-1"></i>
             {{ trans_choice('common.field', 2) }}
           </h6>
           <div class="form-group">

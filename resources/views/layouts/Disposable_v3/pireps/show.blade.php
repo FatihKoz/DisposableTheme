@@ -19,7 +19,7 @@
         <div class="card-header p-1">
           {{-- Inner Navigation --}}
           <h5 class="m-1">
-            <i class="fas fa-cogs float-end"></i>
+            <i class="bi bi-gear float-end"></i>
             <ul class="nav nav-tabs m-0 p-0 border-0" id="PirepTab" role="tablist">
               <li class="nav-item" role="presentation">
                 <button class="nav-link active border-0 m-0 mx-1 p-0 px-1" id="map-tab" data-bs-toggle="tab" data-bs-target="#map" type="button" role="tab" aria-controls="map" aria-selected="true">
@@ -101,7 +101,7 @@
                       <td>@if($log->altitude_agl <> 0){{ $log->ias.' kt ias' }}@endif</td>
                       <td>
                         <a href="https://www.openstreetmap.org/?mlat={{ $log->lat }}&mlon={{ $log->lon }}#map=15/{{ $log->lat }}/{{ $log->lon }}" target="_blank">
-                          <i class="fas fa-map-marker-alt"></i>
+                          <i class="bi bi-geo-alt-fill"></i>
                         </a>
                       </td>
                     </tr>
@@ -134,7 +134,7 @@
                       <td>@if($log->altitude_agl <> 0){{ $log->ias.' kt ias' }}@endif</td>
                       <td>
                         <a href="https://www.openstreetmap.org/?mlat={{ $log->lat }}&mlon={{ $log->lon }}#map=15/{{ $log->lat }}/{{ $log->lon }}" target="_blank">
-                          <i class="fas fa-map-marker-alt"></i>
+                          <i class="bi bi-geo-alt-fill"></i>
                         </a>
                       </td>
                     </tr>

@@ -2,7 +2,7 @@
   <div class="card mb-2">
     <div class="card-header p-1">
       <h5 class="m-1">
-        <i class="fas fa-file-invoice float-end"></i>
+        <i class="bi bi-file-earmark-dollar float-end"></i>
         <ul class="nav nav-tabs m-0 p-0 border-0" id="FinanceTab" role="tablist">
           @if(count($pirep->fares) > 0)
             <li class="nav-item" role="presentation">

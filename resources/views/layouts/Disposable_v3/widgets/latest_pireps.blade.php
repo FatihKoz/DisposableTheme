@@ -6,7 +6,7 @@
     <div class="card-header p-1">
       <h5 class="m-1">
         @lang('dashboard.recentreports')
-        <i class="fas fa-file-upload float-end"></i>
+        <i class="bi bi-cloud-upload float-end"></i>
       </h5>
     </div>
     <div class="card-body p-0 table-responsive">
