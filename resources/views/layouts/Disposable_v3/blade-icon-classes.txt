@@ -1,0 +1,238 @@
+resources/views/layouts/Disposable_v3/airports/show.blade.php|16|fas|fa-info|<i class="fas fa-info float-end"></i>
+resources/views/layouts/Disposable_v3/airports/show.blade.php|121|fas|fa-map|<i class="fas fa-map float-end"></i>
+resources/views/layouts/Disposable_v3/airports/show.blade.php|150|fas|fa-cloud-sun-rain|<i class="fas fa-cloud-sun-rain float-end"></i>
+resources/views/layouts/Disposable_v3/airports/show.blade.php|168|fas|fa-download|<i class="fas fa-download float-end"></i>
+resources/views/layouts/Disposable_v3/airports/show.blade.php|183|fas|fa-info-circle|<i class="fas fa-info-circle float-end"></i>
+resources/views/layouts/Disposable_v3/airports/show.blade.php|203|fas|fa-plane-arrival|<i class="fas fa-plane-arrival float-end"></i>
+resources/views/layouts/Disposable_v3/airports/show.blade.php|221|fas|fa-plane-departure|<i class="fas fa-plane-departure float-end"></i>
+resources/views/layouts/Disposable_v3/app.blade.php|69|fab|fa-discord|&nbsp;|&nbsp;<a href="https://discord.gg/{{ Theme::getSetting('gen_discord_invite') }}" target="_blank"><i class="fab fa-discord mx-1"></i>Join Our Discord Server</a>
+resources/views/layouts/Disposable_v3/auth/login.blade.php|23|fas|fa-user|<span class="input-group-text" id="email"><i class="fas fa-user"></i></span>
+resources/views/layouts/Disposable_v3/auth/login.blade.php|29|fas|fa-key|<span class="input-group-text" id="password"><i class="fas fa-key"></i></span>
+resources/views/layouts/Disposable_v3/auth/login.blade.php|40|fab|fa-discord|<i class="fab fa-discord mx-1"></i>
+resources/views/layouts/Disposable_v3/auth/login.blade.php|47|fas|fa-sign-in-alt|<i class="fas fa-sign-in-alt mx-1"></i>
+resources/views/layouts/Disposable_v3/auth/passwords/email.blade.php|12|fas|fa-unlock-alt|<i class="fas fa-unlock-alt float-end"></i>
+resources/views/layouts/Disposable_v3/auth/passwords/reset.blade.php|12|fas|fa-unlock-alt|<i class="fas fa-unlock-alt float-end"></i>
+resources/views/layouts/Disposable_v3/auth/pending.blade.php|11|fas|fa-user-clock|<i class="fas fa-user-clock float-end"></i>
+resources/views/layouts/Disposable_v3/auth/register.blade.php|15|fas|fa-user-plus|<i class="fas fa-user-plus float-end"></i>
+resources/views/layouts/Disposable_v3/auth/register.blade.php|84|fas|fa-info-circle|<i class="fas fa-info-circle text-primary mx-2" title="{{ $field->description }}"></i>
+resources/views/layouts/Disposable_v3/auth/registered.blade.php|12|fas|fa-check|<i class="fas fa-check float-end"></i>
+resources/views/layouts/Disposable_v3/auth/rejected.blade.php|11|fas|fa-user-slash|<i class="fas fa-user-slash float-end"></i>
+resources/views/layouts/Disposable_v3/auth/suspended.blade.php|11|fas|fa-user-lock|<i class="fas fa-user-lock float-end"></i>
+resources/views/layouts/Disposable_v3/components/info.blade.php|2|fas|fa-info-circle|<i class="fa fa-info-circle me-1"></i>
+resources/views/layouts/Disposable_v3/credits.blade.php|34|fas|fa-check-circle|<span class="text-success"><i class="fas fa-check-circle m-1" title="Active"></i></span>
+resources/views/layouts/Disposable_v3/credits.blade.php|36|fas|fa-times-circle|<span class="text-danger"><i class="fas fa-times-circle m-1" title="Not Active"></i></span>
+resources/views/layouts/Disposable_v3/dashboard/icons.blade.php|7|fas|fa-paper-plane|<i class="fas fa-paper-plane fa-2x pt-1 float-end text-primary"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons.blade.php|17|fas|fa-clock|<i class="fas fa-clock fa-2x pt-1 float-end text-danger"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons.blade.php|28|fas|fa-plane-arrival|<i class="fas fa-plane-arrival fa-2x pt-1 float-end text-success"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons.blade.php|38|fas|fa-pen-alt|<i class="fas fa-pen-alt fa-2x pt-1 float-end text-secondary"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons.blade.php|48|fas|fa-stopwatch|<i class="fas fa-stopwatch fa-2x pt-1 float-end text-warning"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons.blade.php|58|fas|fa-gas-pump|<i class="fas fa-gas-pump fa-2x pt-1 float-end text-info"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons.blade.php|69|fas|fa-map-marker|<i class="fas fa-map-marker fa-2x pt-1 float-end text-success"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons.blade.php|79|fas|fa-coins|<i class="fas fa-coins fa-2x pt-1 float-end text-primary"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons_big.blade.php|7|fas|fa-paper-plane|<i class="fas fa-paper-plane fa-3x float-end text-primary"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons_big.blade.php|17|fas|fa-clock|<i class="fas fa-clock fa-3x float-end text-danger"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons_big.blade.php|28|fas|fa-plane-arrival|<i class="fas fa-plane-arrival fa-3x float-end text-success"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons_big.blade.php|38|fas|fa-pen-alt|<i class="fas fa-pen-alt fa-3x float-end text-secondary"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons_big.blade.php|48|fas|fa-stopwatch|<i class="fas fa-stopwatch fa-3x float-end text-warning"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons_big.blade.php|58|fas|fa-gas-pump|<i class="fas fa-gas-pump fa-3x float-end text-info"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons_big.blade.php|69|fas|fa-map-marker|<i class="fas fa-map-marker fa-3x float-end text-success"></i>
+resources/views/layouts/Disposable_v3/dashboard/icons_big.blade.php|79|fas|fa-coins|<i class="fas fa-coins fa-3x float-end text-primary"></i>
+resources/views/layouts/Disposable_v3/dashboard/pirep_card.blade.php|5|fas|fa-file-upload|<i class="fas fa-file-upload float-end"></i>
+resources/views/layouts/Disposable_v3/downloads/card.blade.php|10|fas|fa-file-download|<i class="fas fa-file-download float-end"></i>
+resources/views/layouts/Disposable_v3/errors/401.blade.php|11|fas|fa-bomb|<i class="fas fa-bomb float-end"></i>
+resources/views/layouts/Disposable_v3/errors/404.blade.php|11|fas|fa-bomb|<i class="fas fa-bomb float-end"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|23|fas|fa-angle-double-down|<i class="fas fa-angle-double-down mx-1"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|26|fas|fa-info-circle|<i class="fas fa-info-circle mx-1"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|36|fas|fa-plane-departure|<i class="fas fa-plane-departure m-1"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|42|fas|fa-route|<i class="fas fa-route m-1"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|49|fas|fa-plane-arrival|<i class="fas fa-plane-arrival m-1"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|55|fas|fa-clock|<i class="fas fa-clock m-1"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|60|fas|fa-stopwatch|<i class="fas fa-stopwatch me-1" title="Block Time"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|66|fas|fa-clock|<i class="fas fa-clock m-1"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|76|fas|fa-calendar-plus|<i class="fas fa-calendar-plus mx-1" title="Start Date"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|80|fas|fa-calendar-minus|<i class="fas fa-calendar-minus mx-1" title="End Date"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|92|fas|fa-map-marker-alt|<i class="fas fa-map-marker-alt m-1" title="Preferred Alternate Aerodrome"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|99|fas|fa-route|<i class="fas fa-route m-1" title="Preferred Route"></i>
+resources/views/layouts/Disposable_v3/flights/bids_card.blade.php|109|fas|fa-link|<i class="fas fa-link me-1" title="Subfleets"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|23|fas|fa-angle-double-down|<i class="fas fa-angle-double-down mx-1"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|26|fas|fa-info-circle|<i class="fas fa-info-circle mx-1"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|36|fas|fa-plane-departure|<i class="fas fa-plane-departure m-1"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|42|fas|fa-route|<i class="fas fa-route m-1"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|49|fas|fa-plane-arrival|<i class="fas fa-plane-arrival m-1"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|56|fas|fa-clock|<i class="fas fa-clock m-1" title="{{ $flight->dpt_airport->timezone }}"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|59|fas|fa-clock|<i class="fas fa-clock m-1" title="UTC"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|65|fas|fa-stopwatch|<i class="fas fa-stopwatch me-1" title="Block Time"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|72|fas|fa-clock|<i class="fas fa-clock m-1" title="{{ $flight->arr_airport->timezone }}"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|75|fas|fa-clock|<i class="fas fa-clock m-1" title="UTC"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|86|fas|fa-calendar-plus|<i class="fas fa-calendar-plus mx-1" title="Start Date"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|90|fas|fa-calendar-minus|<i class="fas fa-calendar-minus mx-1" title="End Date"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|102|fas|fa-map-marker-alt|<i class="fas fa-map-marker-alt m-1" title="Preferred Alternate Aerodrome"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|109|fas|fa-route|<i class="fas fa-route m-1" title="Preferred Route"></i>
+resources/views/layouts/Disposable_v3/flights/card.blade.php|119|fas|fa-link|<i class="fas fa-link me-1" title="Subfleets"></i>
+resources/views/layouts/Disposable_v3/flights/index.blade.php|21|fas|fa-paper-plane|<i class="fas fa-paper-plane float-end"></i>
+resources/views/layouts/Disposable_v3/flights/search.blade.php|5|fas|fa-search|<i class="fas fa-search float-end"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|31|fas|fa-plane-departure|<i class="fas fa-plane-departure m-1"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|37|fas|fa-route|<i class="fas fa-route m-1"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|44|fas|fa-plane-arrival|<i class="fas fa-plane-arrival m-1"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|51|fas|fa-clock|<i class="fas fa-clock float-start m-1" title="{{ $flight->dpt_airport->timezone }}"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|54|fas|fa-clock|<i class="fas fa-clock float-start m-1"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|66|fas|fa-clock|<i class="fas fa-clock float-end m-1" title="{{ $flight->arr_airport->timezone }}"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|68|fas|fa-clock|<i class="fas fa-clock float-end m-1"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|81|fas|fa-calendar-plus|<i class="fas fa-calendar-plus mx-1" title="Start Date"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|85|fas|fa-calendar-minus|<i class="fas fa-calendar-minus mx-1" title="End Date"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|94|fas|fa-map-marker-alt|<i class="fas fa-map-marker-alt m-1" title="Preferred Alternate Aerodrome"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|101|fas|fa-link|<i class="fas fa-link me-1" title="Subfleets"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|124|fas|fa-stopwatch|<i class="fas fa-stopwatch m-1"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|138|fas|fa-map-marked|<i class="fas fa-map-marked float-end"></i>
+resources/views/layouts/Disposable_v3/flights/show.blade.php|149|fas|fa-route|<i class="fas fa-route m-1"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_aircraft.blade.php|14|fas|fa-check-double|<i class="fas fa-check-double float-end"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_briefing_info.blade.php|260|fas|fa-plane|<i class="fas fa-plane float-end"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_briefing_info.blade.php|328|fas|fa-download|<i class="fas fa-download float-end"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_briefing_info.blade.php|348|fas|fa-users|<i class="fas fa-users float-end"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_briefing_tlr.blade.php|291|fas|fa-plane|<i class="fas fa-plane float-end"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|30|fas|fa-plane|<i class="fas fa-plane float-end"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|52|fas|fa-gas-pump|<span class="input-group-text"><i class="fas fa-gas-pump" title="Fuel On Board"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|118|fas|fa-paper-plane|<i class="fas fa-paper-plane float-end"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|127|fas|fa-plane-departure|<span class="input-group-text"><i class="fas fa-plane-departure" title="Departure"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|131|fas|fa-road|<span class="input-group-text"><i class="fas fa-road" title="Departure Runway"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|142|fas|fa-clock|<span class="input-group-text"><i class="fas fa-clock" title="Departure Taxi Time"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|155|fas|fa-plane-arrival|<span class="input-group-text"><i class="fas fa-plane-arrival" title="Arrival"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|159|fas|fa-road|<span class="input-group-text"><i class="fas fa-road" title="Arrival Runway"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|170|fas|fa-clock|<span class="input-group-text"><i class="fas fa-clock" title="Arrival Taxi Time"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|195|fas|fa-route|<span class="input-group-text"><i class="fas fa-route" title="Route"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|210|fas|fa-calendar-day|<span class="input-group-text"><i class="fas fa-calendar-day" title="Date Of Flight"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|217|fas|fa-plane-departure|<span class="input-group-text"><i class="fas fa-plane-departure" title="Scheduled Departure Time"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|225|fas|fa-plane-arrival|<span class="input-group-text"><i class="fas fa-plane-arrival" title="Scheduled Arrival Time"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|232|fas|fa-clock|<span class="input-group-text"><i class="fas fa-clock" title="Estimated Departure Time"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|246|fas|fa-balance-scale|<i class="fas fa-balance-scale float-end"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|278|fas|fa-users|<span class="input-group-text"><i class="fas fa-users" title="Passenger Weight"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|284|fas|fa-suitcase|<span class="input-group-text"><i class="fas fa-suitcase" title="Baggage Weight"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|292|fas|fa-dolly-flatbed|<span class="input-group-text"><i class="fas fa-dolly-flatbed" title="Cargo Weight"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|298|fas|fa-suitcase|<span class="input-group-text" title="Baggage + Cargo Weight"><i class="fas fa-suitcase me-1"></i><i class="fas fa-dolly-flatbed"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|298|fas|fa-dolly-flatbed|<span class="input-group-text" title="Baggage + Cargo Weight"><i class="fas fa-suitcase me-1"></i><i class="fas fa-dolly-flatbed"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|338|fas|fa-gas-pump|<i class="fas fa-gas-pump float-end"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|343|fas|fa-info-circle|<span class="input-group-text col-md-4">Minimum Block Fuel <i class="fas fa-info-circle mx-2 text-info" title="Holds already on board fuel from previous flight or defines the minimum block fuel"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|348|fas|fa-info-circle|<span class="input-group-text col-md-4">Minimum Arrival Fuel <i class="fas fa-info-circle mx-2 text-info" title="Forces minimum fuel over destination (FOD)"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|354|fas|fa-info-circle|<span class="input-group-text col-md-4">MEL Fuel <i class="fas fa-info-circle mx-2 text-info" title="When weight is selected it should be metric tonnes or 1000's of pounds"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|362|fas|fa-info-circle|<span class="input-group-text col-md-4">ATC Fuel <i class="fas fa-info-circle mx-2 text-info" title="When weight is selected it should be metric tonnes or 1000's of pounds"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|370|fas|fa-info-circle|<span class="input-group-text col-md-4">WXX Fuel <i class="fas fa-info-circle mx-2 text-info" title="When weight is selected it should be metric tonnes or 1000's of pounds"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|378|fas|fa-info-circle|<span class="input-group-text col-md-4">OPN Fuel <i class="fas fa-info-circle mx-2 text-info" title="When weight is selected it should be metric tonnes or 1000's of pounds"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form.blade.php|388|fas|fa-info-circle|<span class="input-group-text col-md-4">Fuel Tankering <i class="fas fa-info-circle mx-2 text-info" title="Metric tonnes or 1000's of pounds"></i></span>
+resources/views/layouts/Disposable_v3/flights/simbrief_form_briefing_options.blade.php|5|fas|fa-file-pdf|<i class="fas fa-file-pdf float-end"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_form_map.blade.php|17|fas|fa-times-circle|<i class="fas fa-times-circle" data-dismiss="modal" aria-label="Close" aria-hidden="true"></i>
+resources/views/layouts/Disposable_v3/flights/simbrief_form_planning_options.blade.php|5|fas|fa-tasks|<i class="fas fa-tasks float-end"></i>
+resources/views/layouts/Disposable_v3/flights/table.blade.php|68|fas|fa-map-marker|<i class="fas fa-map-marker"></i>
+resources/views/layouts/Disposable_v3/flights/table.blade.php|74|fas|fa-file-pdf|<i class="fas fa-file-pdf"  title="View SimBrief OFP"></i>
+resources/views/layouts/Disposable_v3/flights/table.blade.php|81|fas|fa-file-pdf|<i class="fas fa-file-pdf" title="Generate SimBrief OFP"></i>
+resources/views/layouts/Disposable_v3/flights/table.blade.php|87|fas|fa-file-download|<i class="fas fa-file-download" title="Load in Acars"></i>
+resources/views/layouts/Disposable_v3/flights/table.blade.php|91|fas|fa-file-download|<i class="fas fa-file-download" title="Load in Acars"></i>
+resources/views/layouts/Disposable_v3/flights/table.blade.php|96|fas|fa-file-upload|<i class="fas fa-file-upload" title="@lang('disposable.new_pirep')"></i>
+resources/views/layouts/Disposable_v3/home.blade.php|75|fas|fa-users|<i class="fas fa-users float-end"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|15|fas|fa-clock|<i class="fas fa-clock {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|23|fas|fa-laptop-house|<i class="fas fa-laptop-house {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|31|fas|fa-home|<i class="fas fa-home {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|37|fas|fa-users|<i class="fas fa-users {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|44|fas|fa-hotel|<i class="fas fa-hotel {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|50|fas|fa-tags|<i class="fas fa-tags {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|56|fas|fa-trophy|<i class="fas fa-trophy {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|62|fas|fa-cogs|<i class="fas fa-cogs {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|70|fas|fa-shopping-bag|<i class="fas fa-shopping-bag {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|81|fas|fa-paper-plane|<i class="fas fa-paper-plane {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|87|fas|fa-paper-plane|<i class="fas fa-paper-plane {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|94|fas|fa-directions|<i class="fas fa-directions {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|102|fas|fa-plane|<i class="fas fa-plane {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|108|fas|fa-house-user|<i class="fas fa-house-user {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|114|fas|fa-file-upload|<i class="fas fa-file-upload {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|122|fas|fa-tools|<i class="fas fa-tools {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|128|fas|fa-paper-plane|<i class="fas fa-paper-plane {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|135|fas|fa-map|<i class="fas fa-map {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|142|fas|fa-cloud-sun-rain|<i class="fas fa-cloud-sun-rain {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|153|fas|fa-paperclip|<i class="fas fa-paperclip {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|159|fas|fa-download|<i class="fas fa-download {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|166|fas|fa-book-open|<i class="fas fa-book-open {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|174|fas|fa-sticky-note|<i class="fas fa-sticky-note {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|180|fas|fa-book|<i class="fas fa-book {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|241|fas|fa-user-alt|<i class="fas fa-user-alt {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|247|far|fa-id-badge|<i class="far fa-id-badge {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|254|fas|fa-hotel|<i class="fas fa-hotel {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|260|fas|fa-house-user|<i class="fas fa-house-user {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|268|fas|fa-shopping-basket|<i class="fas fa-shopping-basket {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|274|fas|fa-hourglass-half|<i class="fas fa-hourglass-half {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|280|fas|fa-paper-plane|<i class="fas fa-paper-plane {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|287|fas|fa-file-download|<i class="fas fa-file-download {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|293|fas|fa-file-upload|<i class="fas fa-file-upload {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|300|fas|fa-file-upload|<i class="fas fa-file-upload {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|311|fas|fa-circle-notch|<i class="fas fa-circle-notch {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|319|fas|fa-sign-out-alt|<i class="fas fa-sign-out-alt {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|337|fas|fa-users|<i class="fas fa-users {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|345|fas|fa-file-upload|<i class="fas fa-file-upload {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|353|fas|fa-map|<i class="fas fa-map {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|369|far|fa-id-card|<i class="far fa-id-card {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_menu.blade.php|376|fas|fa-sign-in-alt|<i class="fas fa-sign-in-alt {{ $icon_style }}"></i>
+resources/views/layouts/Disposable_v3/nav_side.blade.php|8|fas|fa-clock|<i class="fas fa-clock me-1"></i>
+resources/views/layouts/Disposable_v3/nav_side.blade.php|13|fas|fa-compass|<i class="fas fa-compass" title="Toggle Main Menu"></i>
+resources/views/layouts/Disposable_v3/nav_top.blade.php|7|fas|fa-compass|<i class="fas fa-compass" title="Main Menu"></i>
+resources/views/layouts/Disposable_v3/pireps/create.blade.php|17|fas|fa-file-upload|<i class="fas fa-file-upload float-end"></i>
+resources/views/layouts/Disposable_v3/pireps/edit.blade.php|16|fas|fa-file-upload|<i class="fas fa-file-upload float-end"></i>
+resources/views/layouts/Disposable_v3/pireps/fares.blade.php|7|fas|fa-ellipsis-h|<i class="fas fa-ellipsis-h me-1"></i>
+resources/views/layouts/Disposable_v3/pireps/fields.blade.php|27|fas|fa-info-circle|<i class="fas fa-info-circle me-1"></i>
+resources/views/layouts/Disposable_v3/pireps/fields.blade.php|134|fab|fa-avianex|<i class="fab fa-avianex me-1"></i>
+resources/views/layouts/Disposable_v3/pireps/fields.blade.php|167|fas|fa-route|<i class="fas fa-route me-1"></i>
+resources/views/layouts/Disposable_v3/pireps/fields.blade.php|183|far|fa-comments|<i class="far fa-comments me-1"></i>
+resources/views/layouts/Disposable_v3/pireps/fields.blade.php|202|fas|fa-th-list|<i class="fas fa-th-list me-1"></i>
+resources/views/layouts/Disposable_v3/pireps/index.blade.php|21|fas|fa-file-upload|<i class="fas fa-file-upload float-end"></i>
+resources/views/layouts/Disposable_v3/pireps/show.blade.php|22|fas|fa-cogs|<i class="fas fa-cogs float-end"></i>
+resources/views/layouts/Disposable_v3/pireps/show.blade.php|104|fas|fa-map-marker-alt|<i class="fas fa-map-marker-alt"></i>
+resources/views/layouts/Disposable_v3/pireps/show.blade.php|137|fas|fa-map-marker-alt|<i class="fas fa-map-marker-alt"></i>
+resources/views/layouts/Disposable_v3/pireps/show.blade.php|149|fas|fa-route|<i class="fas fa-route m-1" title="Planned Route"></i>
+resources/views/layouts/Disposable_v3/pireps/show_card.blade.php|5|fas|fa-paper-plane|<a href="{{ route('frontend.flights.show', [$pirep->flight_id]) }}"><i class="fas fa-paper-plane mx-1" title="Flight Details"></i></a>
+resources/views/layouts/Disposable_v3/pireps/show_card.blade.php|15|fas|fa-file-upload|<i class="fas fa-file-upload float-end"></i>
+resources/views/layouts/Disposable_v3/pireps/show_card.blade.php|21|fas|fa-plane-departure|<i class="fas fa-plane-departure m-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_card.blade.php|28|fas|fa-route|<i class="fas fa-route m-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_card.blade.php|36|fas|fa-plane-arrival|<i class="fas fa-plane-arrival m-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_card.blade.php|42|fas|fa-clock|<i class="fas fa-clock float-start m-1" title="Off Block"></i>
+resources/views/layouts/Disposable_v3/pireps/show_card.blade.php|48|fas|fa-stopwatch|<i class="fas fa-stopwatch m-1" title="Block Time"></i>
+resources/views/layouts/Disposable_v3/pireps/show_card.blade.php|54|fas|fa-clock|<i class="fas fa-clock float-end m-1" title="On Block"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|5|fas|fa-info|<i class="fas fa-info float-end"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|12|fas|fa-user|<i class="fas fa-user mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|19|fas|fa-tag|<i class="fas fa-tag mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|24|fas|fa-plane|<i class="fas fa-plane mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|36|fas|fa-home|<i class="fas fa-home mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|45|fas|fa-laptop|<i class="fas fa-laptop mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|50|fas|fa-pen-alt|<i class="fas fa-pen-alt mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|58|fas|fa-plane-arrival|<i class="fas fa-plane-arrival mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|65|fas|fa-plane-departure|<i class="fas fa-plane-departure mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|69|fas|fa-gas-pump|<i class="fas fa-gas-pump mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|77|fas|fa-plane-arrival|<i class="fas fa-plane-arrival mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|84|fas|fa-file|<i class="fas fa-file mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|88|fas|fa-stopwatch|<i class="fas fa-stopwatch mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|93|fas|fa-file-upload|<i class="fas fa-file-upload mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_details.blade.php|100|fas|fa-file-alt|<i class="fas fa-file-alt mx-1"></i>
+resources/views/layouts/Disposable_v3/pireps/show_finance.blade.php|5|fas|fa-file-invoice|<i class="fas fa-file-invoice float-end"></i>
+resources/views/layouts/Disposable_v3/profile/edit.blade.php|11|fas|fa-user-alt|<i class="fas fa-user-alt float-end"></i>
+resources/views/layouts/Disposable_v3/profile/fields.blade.php|31|fas|fa-info-circle|<i class="fas fa-info-circle text-primary mt-1 mx-2" title="{{ __('profile.avatarresize', ['width' => config('phpvms.avatar.width'), 'height' => config('phpvms.avatar.height')]) }}"></i>
+resources/views/layouts/Disposable_v3/profile/fields.blade.php|90|fas|fa-info-circle|<i class="fas fa-info-circle text-primary mx-2" title="{{ $field->description }}"></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|59|fas|fa-eye-slash|<i class="fas fa-eye-slash mx-1" onclick="emailHide()"></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|63|fas|fa-eye|<i class="fas fa-eye mx-1" onclick="emailShow()"></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|71|fas|fa-eye-slash|<i class="fas fa-eye-slash mx-1" onclick="apiKeyHide()"></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|75|fas|fa-eye|<i class="fas fa-eye mx-1" onclick="apiKeyShow()"></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|99|fab|fa-discord|<i class="fab fa-discord mx-1" @ability('admin', 'admin-access') title="{{ $user->discord_id }}" @endability></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|102|fas|fa-envelope|<i class="fas fa-envelope mx-1"></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|105|fas|fa-user-clock|<i class="fas fa-user-clock mx-1" title="@lang('common.timezone'): {{ $user->timezone }}"></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|107|fas|fa-calendar-plus|<i class="fas fa-calendar-plus mx-1" title="Member since {{ $user->created_at->format('l d.M.Y') }}"></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|115|fas|fa-file-download|<i class="fas fa-file-download text-black" title="Download vmsAcars Config"></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|119|fas|fa-key|<i class="fas fa-key text-black" title="@lang('profile.newapikey')"></i>
+resources/views/layouts/Disposable_v3/profile/index.blade.php|122|fas|fa-edit|<i class="fas fa-edit text-black" title="@lang('common.edit')"></i>
+resources/views/layouts/Disposable_v3/profile/user_fields.blade.php|19|fas|fa-info-circle|<i class="fas fa-info-circle mx-2 text-primary" title="{{ $field->description }}"></i>
+resources/views/layouts/Disposable_v3/theme_helpers.blade.php|389|fas|fa-exclamation-triangle|$error = ' <i class="fas fa-exclamation-triangle mx-2" style="color:firebrick;" title="Positive Landing Rate !"></i>';
+resources/views/layouts/Disposable_v3/theme_helpers.blade.php|411|fas|fa-exclamation-triangle|$error = ' <i class="fas fa-exclamation-triangle mx-2" style="color: firebrick;" title="Negative Fuel !"></i>';
+resources/views/layouts/Disposable_v3/users/index.blade.php|15|fas|fa-users|<i class="fas fa-users float-end"></i>
+resources/views/layouts/Disposable_v3/users/table.blade.php|103|fas|fa-trophy|<i class="fas fa-trophy fa-lg" style="color: darkgreen;" title="{{ $user->awards_count }}"></i>
+resources/views/layouts/Disposable_v3/widgets/latest_awards.blade.php|6|fas|fa-trophy|<h5 class="m-1">Latest Awards<i class="fas fa-trophy float-end"></i></h5>
+resources/views/layouts/Disposable_v3/widgets/latest_news.blade.php|10|fas|fa-scroll|<i class="fas fa-scroll float-end" title="Show More" data-toggle="collapse" data-target="#news" aria-expanded="false" aria-controls="news"></i>
+resources/views/layouts/Disposable_v3/widgets/latest_news.blade.php|12|fas|fa-book-reader|<i class="fas fa-book-reader float-end"></i>
+resources/views/layouts/Disposable_v3/widgets/latest_pilots.blade.php|5|fas|fa-users|<i class="fas fa-users float-end"></i>
+resources/views/layouts/Disposable_v3/widgets/latest_pireps.blade.php|9|fas|fa-file-upload|<i class="fas fa-file-upload float-end"></i>
+resources/views/layouts/Disposable_v3/widgets/live_map.blade.php|18|fas|fa-globe|<i class="fas fa-globe float-end m-1 ps-1"></i>
+resources/views/layouts/Disposable_v3/widgets/weather.blade.php|6|fas|fa-cloud-sun|<i class="fas fa-cloud-sun float-end"></i>
+resources/views/layouts/Disposable_v3/widgets/weather.blade.php|136|fas|fa-cloud-sun|<i class="fas fa-cloud-sun float-end"></i>
