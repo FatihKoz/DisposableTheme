@@ -4,7 +4,7 @@
 @if($aircraft)
   <div class="form-container">
     <h6 class="m-1">
-      <i class="fas fa-ellipsis-h me-1"></i>
+      <i class="bi bi-three-dots me-1"></i>
       {{ trans_choice('pireps.fare', 2) }}
     </h6>
     <div class="form-group">

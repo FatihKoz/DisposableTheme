@@ -28,7 +28,7 @@
   <div class="input-group input-group-sm mb-3">
     <span class="input-group-text col-md-3">
       {{ __('profile.avatar') }}
-      <i class="fas fa-info-circle text-primary mt-1 mx-2" title="{{ __('profile.avatarresize', ['width' => config('phpvms.avatar.width'), 'height' => config('phpvms.avatar.height')]) }}"></i>
+      <i class="bi bi-info-circle text-primary mt-1 mx-2" title="{{ __('profile.avatarresize', ['width' => config('phpvms.avatar.width'), 'height' => config('phpvms.avatar.height')]) }}"></i>
     </span>
     <input class="form-control" type="file" name="avatar" id="avatar" />
     @if(filled($user->avatar))
@@ -87,7 +87,7 @@
           <span class="mx-2 text-danger fw-bold">*</span>
         @endif
         @if(filled($field->description))
-          <i class="fas fa-info-circle text-primary mx-2" title="{{ $field->description }}"></i>
+          <i class="bi bi-info-circle text-primary mx-2" title="{{ $field->description }}"></i>
         @endif
       </span>
       @if(in_array(strtoupper($field->name), ['IVAO', 'IVAO ID', 'IVAO CID', 'VATSIM', 'VATSIM ID', 'VATSIM CID']))

@@ -72,7 +72,7 @@
         <div class="card-header p-1">
           <h5 class="m-1">
             @lang('common.newestpilots')
-            <i class="fas fa-users float-end"></i>
+            <i class="bi bi-people float-end"></i>
           </h5>
         </div>
       </div>

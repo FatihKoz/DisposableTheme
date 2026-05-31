@@ -13,7 +13,7 @@
         <div class="card-header p-1">
           <h5 class="m-1">
             {{ $airport->name }}
-            <i class="fas fa-info float-end"></i>
+            <i class="bi bi-info float-end"></i>
           </h5>
         </div>
         <div class="card-body p-0 table-responsive">
@@ -118,7 +118,7 @@
             <div class="card-header p-1">
               <h5 class="m-1">
                 {{ $airport->full_name }}
-                <i class="fas fa-map float-end"></i>
+                <i class="bi bi-map float-end"></i>
               </h5>
             </div>
             <div class="card-body p-0">
@@ -147,7 +147,7 @@
               <div class="card-header p-1">
                 <h5 class="m-1">
                   {{ $airport->full_name }}
-                  <i class="fas fa-cloud-sun-rain float-end"></i>
+                  <i class="bi bi-cloud-sun float-end"></i>
                 </h5>
               </div>
               <div class="card-body p-0">
@@ -165,7 +165,7 @@
               <div class="card-header p-1">
                 <h5 class="m-1">
                   {{ trans_choice('common.download', 2) }}
-                  <i class="fas fa-download float-end"></i>
+                  <i class="bi bi-download float-end"></i>
                 </h5>
               </div>
               <div class="card-body p-0">
@@ -180,7 +180,7 @@
               <div class="card-header p-1">
                 <h5 class="m-1">
                   @lang('disposable.notes')
-                  <i class="fas fa-info-circle float-end"></i>
+                  <i class="bi bi-info-circle float-end"></i>
                 </h5>
               </div>
               <div class="card-body p-1">
@@ -200,7 +200,7 @@
           <div class="card-header p-1">
             <h5 class="m-1">
               @lang('flights.inbound')
-              <i class="fas fa-plane-arrival float-end"></i>
+              <i class="bi bi-airplane float-end"></i>
             </h5>
           </div>
           <div class="card-body p-0 overflow-auto">
@@ -218,7 +218,7 @@
           <div class="card-header p-1">
             <h5 class="m-1">
               @lang('flights.outbound')
-              <i class="fas fa-plane-departure float-end"></i>
+              <i class="bi bi-airplane float-end"></i>
             </h5>
           </div>
           <div class="card-body p-0 overflow-auto">

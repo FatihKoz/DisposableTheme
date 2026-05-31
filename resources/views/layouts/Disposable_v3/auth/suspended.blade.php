@@ -8,7 +8,7 @@
       <div class="card p-1">
         <h5 class="m-1 text-danger">
           @lang('auth.suspendedmessage')
-          <i class="fas fa-user-lock float-end"></i>
+          <i class="bi bi-person-lock float-end"></i>
         </h5>
       </div>
     </div>

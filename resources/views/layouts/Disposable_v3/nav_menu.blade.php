@@ -12,7 +12,7 @@
   @if (Theme::getSetting('gen_utc_clock') && !Theme::getSetting('gen_sidebar'))
     <li class="nav-item" style="pointer-events: none">
       <a class="nav-link" href="#">
-        <i class="fas fa-clock {{ $icon_style }}"></i>
+        <i class="bi bi-clock {{ $icon_style }}"></i>
         <span id="utc_clock" class="me-1"></span>
       </a>
     </li>
@@ -20,7 +20,7 @@
 
   <li class="nav-item">
     <a class="nav-link" href="{{ route('frontend.dashboard.index') }}">
-      <i class="fas fa-laptop-house {{ $icon_style }}"></i>
+      <i class="bi bi-house {{ $icon_style }}"></i>
       @lang('common.dashboard')
     </a>
   </li>
@@ -28,38 +28,38 @@
   {{-- Main Dropdown --}}
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fas fa-home {{ $icon_style }}"></i>
+      <i class="bi bi-house {{ $icon_style }}"></i>
       {{ config('app.name') }}
     </a>
     <ul class="dropdown-menu {{ $border }}" aria-labelledby="offcanvasNavbarDropdown">
       <li>
         <a class="dropdown-item" href="{{ route('frontend.pilots.index') }}">
-          <i class="fas fa-users {{ $icon_style }}"></i>
+          <i class="bi bi-people {{ $icon_style }}"></i>
           @lang('disposable.menu_roster')
         </a>
       </li>
       @if($DBasic)
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.airlines') }}">
-            <i class="fas fa-hotel {{ $icon_style }}"></i>
+            <i class="bi bi-building {{ $icon_style }}"></i>
             @lang('disposable.menu_airlines')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.ranks') }}">
-            <i class="fas fa-tags {{ $icon_style }}"></i>
+            <i class="bi bi-tags {{ $icon_style }}"></i>
             @lang('disposable.menu_ranks')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.awards') }}">
-            <i class="fas fa-trophy {{ $icon_style }}"></i>
+            <i class="bi bi-trophy {{ $icon_style }}"></i>
             @lang('disposable.menu_awards')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.stats') }}">
-            <i class="fas fa-cogs {{ $icon_style }}"></i>
+            <i class="bi bi-gear {{ $icon_style }}"></i>
             @lang('disposable.menu_stats')
           </a>
         </li>
@@ -67,7 +67,7 @@
       @if($DSpecial)
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.market') }}">
-            <i class="fas fa-shopping-bag {{ $icon_style }}"></i>
+            <i class="bi bi-handbag {{ $icon_style }}"></i>
             @lang('disposable.menu_market')
           </a>
         </li>
@@ -78,20 +78,20 @@
   {{-- Flight Operations Dropdown --}}
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fas fa-paper-plane {{ $icon_style }}"></i>
+      <i class="bi bi-send {{ $icon_style }}"></i>
       @lang('disposable.menu_fltops')
     </a>
     <ul class="dropdown-menu {{ $border }}" aria-labelledby="offcanvasNavbarDropdown">
       <li>
         <a class="dropdown-item" href="{{ route('frontend.flights.index') }}">
-          <i class="fas fa-paper-plane {{ $icon_style }}"></i>
+          <i class="bi bi-send {{ $icon_style }}"></i>
           @lang('disposable.menu_flights')
         </a>
       </li>
       @if($DSpecial)
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.tours') }}">
-            <i class="fas fa-directions {{ $icon_style }}"></i>
+            <i class="bi bi-compass {{ $icon_style }}"></i>
             @lang('disposable.menu_tours')
           </a>
         </li>
@@ -99,19 +99,19 @@
       @if($DBasic)
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.fleet') }}">
-            <i class="fas fa-plane {{ $icon_style }}"></i>
+            <i class="bi bi-airplane {{ $icon_style }}"></i>
             @lang('disposable.menu_fleet')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.hubs') }}">
-            <i class="fas fa-house-user {{ $icon_style }}"></i>
+            <i class="bi bi-house-door {{ $icon_style }}"></i>
             @lang('disposable.menu_hubs')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.pireps') }}">
-            <i class="fas fa-file-upload {{ $icon_style }}"></i>
+            <i class="bi bi-upload {{ $icon_style }}"></i>
             @lang('disposable.menu_reports')
           </a>
         </li>
@@ -119,27 +119,27 @@
       @if($DSpecial)
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.maintenance') }}">
-            <i class="fas fa-tools {{ $icon_style }}"></i>
+            <i class="bi bi-tools {{ $icon_style }}"></i>
             F. Maintenance
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.missions') }}">
-            <i class="fas fa-paper-plane {{ $icon_style }}"></i>
+            <i class="bi bi-send {{ $icon_style }}"></i>
             Missions
           </a>
         </li>
       @endif
       <li>
         <a class="dropdown-item" href="{{ route('frontend.livemap.index') }}">
-          <i class="fas fa-map {{ $icon_style }}"></i>
+          <i class="bi bi-map {{ $icon_style }}"></i>
           @lang('disposable.menu_mapflt')
         </a>
       </li>
       @if($DBasic)
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.livewx') }}">
-            <i class="fas fa-cloud-sun-rain {{ $icon_style }}"></i>
+            <i class="bi bi-cloud-sun {{ $icon_style }}"></i>
             @lang('disposable.menu_mapwx')
           </a>
         </li>
@@ -150,20 +150,20 @@
   {{-- Resources Dropdown --}}
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fas fa-paperclip {{ $icon_style }}"></i>
+      <i class="bi bi-paperclip {{ $icon_style }}"></i>
       @lang('disposable.menu_docs')
     </a>
     <ul class="dropdown-menu {{ $border }}" aria-labelledby="offcanvasNavbarDropdown">
       <li>
         <a class="dropdown-item" href="{{ route('frontend.downloads.index') }}">
-          <i class="fas fa-download {{ $icon_style }}"></i>
+          <i class="bi bi-download {{ $icon_style }}"></i>
           {{ trans_choice('common.download', 2) }}
         </a>
       </li>
       @if($DBasic)
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.news') }}">
-            <i class="fas fa-book-open {{ $icon_style }}"></i>
+            <i class="bi bi-book {{ $icon_style }}"></i>
             @lang('disposable.menu_news')
           </a>
         </li>
@@ -171,13 +171,13 @@
       @if($DSpecial)
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.notams') }}">
-            <i class="fas fa-sticky-note {{ $icon_style }}"></i>
+            <i class="bi bi-stickies {{ $icon_style }}"></i>
             @lang('disposable.menu_notams')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.ops_manual') }}">
-            <i class="fas fa-book {{ $icon_style }}"></i>
+            <i class="bi bi-book {{ $icon_style }}"></i>
             @lang('disposable.menu_opsman')
           </a>
         </li>
@@ -185,7 +185,7 @@
       @foreach($page_links->sortBy('name', SORT_NATURAL) as $page)
         <li>
           <a class="dropdown-item" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank' : '_self' }}">
-            <i class="{{ $page['icon'] ?? 'fas fa-file-alt' }} {{ $icon_style }}"></i>
+            <i class="{{ $page['icon'] ?? 'bi bi-file-earmark' }} {{ $icon_style }}"></i>
             {{ $page['name'] }}
           </a>
         </li>
@@ -197,7 +197,7 @@
   @foreach($moduleSvc->getFrontendLinks($logged_in=true) as &$link)
     <li class="nav-item">
       <a class="nav-link" href="{{ url($link['url']) }}">
-        <i class="{{ $link['icon'] ?? 'fas fa-boxes' }} {{ $icon_style }}"></i>
+        <i class="{{ $link['icon'] ?? 'bi bi-box-seam' }} {{ $icon_style }}"></i>
         {{ ($link['title']) }}
       </a>
     </li>
@@ -207,7 +207,7 @@
   @foreach($moduleSvc->getFrontendLinks($logged_in=false) as &$link)
     <li class="nav-item">
       <a class="nav-link" href="{{ url($link['url']) }}">
-        <i class="{{ $link['icon'] ?? 'fas fa-boxes' }} {{ $icon_style }}"></i>
+        <i class="{{ $link['icon'] ?? 'bi bi-box-seam' }} {{ $icon_style }}"></i>
         {{ ($link['title']) }}
       </a>
     </li>
@@ -238,26 +238,26 @@
 
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fas fa-user-alt {{ $icon_style }}"></i>
+      <i class="bi bi-person {{ $icon_style }}"></i>
       {{ Auth::user()->name_private }}
     </a>
     <ul class="dropdown-menu {{ $border }}" aria-labelledby="offcanvasNavbarDropdown">
       <li>
         <a class="dropdown-item" href="{{ route('frontend.profile.index') }}">
-          <i class="far fa-id-badge {{ $icon_style }}"></i>
+          <i class="bi bi-person-badge {{ $icon_style }}"></i>
           @lang('disposable.menu_profile')
         </a>
       </li>
       @if($DBasic && $user)
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.myairline', [$user->airline_id]) }}">
-            <i class="fas fa-hotel {{ $icon_style }}"></i>
+            <i class="bi bi-building {{ $icon_style }}"></i>
             @lang('disposable.menu_company')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.hub', [$user->home_airport_id ?? '']) }}">
-            <i class="fas fa-house-user {{ $icon_style }}"></i>
+            <i class="bi bi-house-door {{ $icon_style }}"></i>
             @lang('disposable.menu_base')
           </a>
         </li>
@@ -265,39 +265,39 @@
       @if($DSpecial)
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.market.show', [$user->id]) }}">
-            <i class="fas fa-shopping-basket {{ $icon_style }}"></i>
+            <i class="bi bi-basket {{ $icon_style }}"></i>
             @lang('disposable.menu_mymarket')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.assignments') }}">
-            <i class="fas fa-hourglass-half {{ $icon_style }}"></i>
+            <i class="bi bi-hourglass-split {{ $icon_style }}"></i>
             @lang('disposable.menu_assign')
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="{{ route('DSpecial.freeflight') }}">
-            <i class="fas fa-paper-plane {{ $icon_style }}"></i>
+            <i class="bi bi-send {{ $icon_style }}"></i>
             @lang('disposable.menu_myflight')
           </a>
         </li>
       @endif
       <li>
         <a class="dropdown-item" href="{{ route('frontend.flights.bids') }}">
-          <i class="fas fa-file-download {{ $icon_style }}"></i>
+          <i class="bi bi-download {{ $icon_style }}"></i>
           @lang('disposable.menu_bids')
         </a>
       </li>
       <li>
         <a class="dropdown-item" href="{{ route('frontend.pireps.index') }}">
-          <i class="fas fa-file-upload {{ $icon_style }}"></i>
+          <i class="bi bi-upload {{ $icon_style }}"></i>
           @lang('disposable.menu_pireps')
         </a>
       </li>
       @if($DBasic && Theme::getSetting('gen_stable_approach'))
         <li>
           <a class="dropdown-item" href="{{ route('DBasic.stable') }}">
-            <i class="fas fa-file-upload {{ $icon_style }}"></i>
+            <i class="bi bi-upload {{ $icon_style }}"></i>
             FDM Reports
           </a>
         </li>
@@ -308,7 +308,7 @@
   @ability('admin', 'admin-access')
     <li class="nav-item">
       <a class="nav-link" href="{{ url('/admin') }}">
-        <i class="fas fa-circle-notch {{ $icon_style }}"></i>
+        <i class="bi bi-arrow-repeat {{ $icon_style }}"></i>
         @lang('common.administration')
       </a>
     </li>
@@ -316,7 +316,7 @@
 
   <li class="nav-item">
     <a class="nav-link" href="{{ url('/logout') }}">
-      <i class="fas fa-sign-out-alt {{ $icon_style }}"></i>
+      <i class="bi bi-box-arrow-right {{ $icon_style }}"></i>
       @lang('common.logout')
     </a>
   </li>
@@ -334,7 +334,7 @@
 {{-- Menu Items For Guests --}}
   <li class="nav-item">
     <a class="nav-link" href="{{ route('frontend.pilots.index') }}">
-      <i class="fas fa-users {{ $icon_style }}"></i>
+      <i class="bi bi-people {{ $icon_style }}"></i>
       @lang('disposable.menu_roster')
     </a>
   </li>
@@ -342,7 +342,7 @@
   @if($DBasic)
     <li class="nav-item">
       <a class="nav-link" href="{{ route('DBasic.reports') }}">
-        <i class="fas fa-file-upload {{ $icon_style }}"></i>
+        <i class="bi bi-upload {{ $icon_style }}"></i>
         @lang('disposable.menu_reports')
       </a>
     </li>
@@ -350,7 +350,7 @@
 
   <li class="nav-item">
     <a class="nav-link" href="{{ route('frontend.livemap.index') }}">
-      <i class="fas fa-map {{ $icon_style }}"></i>
+      <i class="bi bi-map {{ $icon_style }}"></i>
       @lang('disposable.menu_mapflt')
     </a>
   </li>
@@ -358,7 +358,7 @@
   @foreach($page_links->sortBy('name', SORT_NATURAL) as $page)
     <li class="nav-item">
       <a class="nav-link" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank' : '_self' }}">
-        <i class="{{ $page['icon'] ?? 'fas fa-file-alt' }} {{ $icon_style }}"></i>
+        <i class="{{ $page['icon'] ?? 'bi bi-file-earmark' }} {{ $icon_style }}"></i>
         {{ $page['name'] }}
       </a>
     </li>
@@ -366,14 +366,14 @@
 
   <li class="nav-item">
     <a class="nav-link" href="{{ url('/register') }}">
-      <i class="far fa-id-card {{ $icon_style }}"></i>
+      <i class="bi bi-person-badge {{ $icon_style }}"></i>
       @lang('common.register')
     </a>
   </li>
 
   <li class="nav-item">
     <a class="nav-link" href="{{ url('/login') }}">
-      <i class="fas fa-sign-in-alt {{ $icon_style }}"></i>
+      <i class="bi bi-box-arrow-in-right {{ $icon_style }}"></i>
       @lang('common.login')
     </a>
   </li>

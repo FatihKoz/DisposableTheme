@@ -4,7 +4,7 @@
       <img class="img-mh30" src="{{ public_asset('/disposable/theme_logo.png') }}"/>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Main Menu">
-      <i class="fas fa-compass" title="Main Menu"></i>
+      <i class="bi bi-compass" title="Main Menu"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar-nav ms-auto">

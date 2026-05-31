@@ -8,7 +8,7 @@
       <div class="card p-1">
         <h5 class="m-1">
           @lang('auth.pendingmessage')
-          <i class="fas fa-user-clock float-end"></i>
+          <i class="bi bi-person-badge float-end"></i>
         </h5>
       </div>
     </div>

@@ -8,7 +8,7 @@
       <div class="card p-1">
         <h5 class="m-1 text-danger">
           @lang('auth.deniedmessage')
-          <i class="fas fa-user-slash float-end"></i>
+          <i class="bi bi-person-x float-end"></i>
         </h5>
       </div>
     </div>

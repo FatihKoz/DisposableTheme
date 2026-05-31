@@ -7,7 +7,7 @@
         @else
           {{ $group }}
         @endisset
-        <i class="fas fa-file-download float-end"></i>
+        <i class="bi bi-download float-end"></i>
       </h5>
     </div>
     <div class="card-body p-0 table-responsive">

@@ -20,10 +20,10 @@
           <th class="text-end col-2">
             <h5 class="m-0 p-0">
               <a data-bs-toggle="collapse" href="#Details{{ $flight->id }}" role="button" aria-expanded="false" aria-controls="Details{{ $flight->id }}">
-                <i class="fas fa-angle-double-down mx-1"></i>
+                <i class="bi bi-chevron-double-down mx-1"></i>
               </a>
               <a href="{{ route('frontend.flights.show', [$flight->id]) }}">
-                <i class="fas fa-info-circle mx-1"></i>
+                <i class="bi bi-info-circle mx-1"></i>
               </a>
             </h5>
           </th>
@@ -33,46 +33,46 @@
     <div class="card-body p-0">
       <div class="row">
         <div class="col-lg text-start">
-          <i class="fas fa-plane-departure m-1"></i>
+          <i class="bi bi-airplane m-1"></i>
           <a href="{{route('frontend.airports.show', [$flight->dpt_airport_id])}}">
             {{ optional($flight->dpt_airport)->full_name ?? $flight->dpt_airport_id }}
           </a>
         </div>
         <div class="col-lg text-center">
-          <i class="fas fa-route m-1"></i>
+          <i class="bi bi-signpost m-1"></i>
           {{ DT_ConvertDistance($flight->distance) }}
         </div>
         <div class="col-lg text-end">
           <a href="{{route('frontend.airports.show', [$flight->arr_airport_id])}}">
             {{ optional($flight->arr_airport)->full_name ?? $flight->arr_airport_id }}
           </a>
-          <i class="fas fa-plane-arrival m-1"></i>
+          <i class="bi bi-airplane m-1"></i>
         </div>
       </div>
       <div class="row">
         <div class="col text-start">
           @if(filled($flight->dpt_time))
             @if(Theme::getSetting('flights_localtime') && filled($flight->dpt_airport))
-              <i class="fas fa-clock m-1" title="{{ $flight->dpt_airport->timezone }}"></i>
+              <i class="bi bi-clock m-1" title="{{ $flight->dpt_airport->timezone }}"></i>
               {{ Carbon::parse(DT_FormatScheduleTime($flight->dpt_time), 'UTC')->setTimezone($flight->dpt_airport->timezone)->format('H:i') }}
             @else
-              <i class="fas fa-clock m-1" title="UTC"></i>
+              <i class="bi bi-clock m-1" title="UTC"></i>
               {{ DT_FormatScheduleTime($flight->dpt_time) }}
             @endif
           @endif
         </div>
         <div class="col text-center">
-          <i class="fas fa-stopwatch me-1" title="Block Time"></i>
+          <i class="bi bi-stopwatch me-1" title="Block Time"></i>
           {{ DT_ConvertMinutes($flight->flight_time, '%2dh %2dm') }}
         </div>
         <div class="col text-end">
           @if(filled($flight->arr_time))
             @if(Theme::getSetting('flights_localtime') && filled($flight->arr_airport))
               {{ Carbon::parse(DT_FormatScheduleTime($flight->arr_time), 'UTC')->setTimezone($flight->arr_airport->timezone)->format('H:i') }}
-              <i class="fas fa-clock m-1" title="{{ $flight->arr_airport->timezone }}"></i>
+              <i class="bi bi-clock m-1" title="{{ $flight->arr_airport->timezone }}"></i>
             @else
               {{ DT_FormatScheduleTime($flight->arr_time) }}
-              <i class="fas fa-clock m-1" title="UTC"></i>
+              <i class="bi bi-clock m-1" title="UTC"></i>
             @endif
           @endif
         </div>
@@ -83,11 +83,11 @@
         <div class="row mb-1">
           <div class="col-md text-start">
             @if($flight->start_date)
-              <i class="fas fa-calendar-plus mx-1" title="Start Date"></i>
+              <i class="bi bi-calendar-plus mx-1" title="Start Date"></i>
               {{ $flight->start_date->format('l, d.M.Y') }}
             @endif
             @if($flight->end_date)
-              <i class="fas fa-calendar-minus mx-1" title="End Date"></i>
+              <i class="bi bi-calendar-minus mx-1" title="End Date"></i>
               {{ $flight->end_date->format('l, d.M.Y') }}
             @endif
           </div>
@@ -99,14 +99,14 @@
               <a href="{{ route('frontend.airports.show', [$flight->alt_airport_id]) }}">
                 {{ optional($flight->alt_airport)->full_name ?? $flight->alt_airport_id }}
               </a>
-              <i class="fas fa-map-marker-alt m-1" title="Preferred Alternate Aerodrome"></i>
+              <i class="bi bi-pin-map m-1" title="Preferred Alternate Aerodrome"></i>
             @endif
           </div>
         </div>
         @if($flight->route)
           <div class="row mb-1">
             <div class="col">
-              <i class="fas fa-route m-1" title="Preferred Route"></i>
+              <i class="bi bi-signpost m-1" title="Preferred Route"></i>
               {{ $flight->route }}
               <a href="{{ 'http://skyvector.com/?chart=304&fpl='.$flight->dpt_airport_id.' '.$flight->route.' '.$flight->arr_airport_id }}" target="_blank">
                 <span class="badge bg-info text-black mx-1">SkyVector</span>
@@ -116,7 +116,7 @@
         @endif
         @if($flight->subfleets->count() > 0)
           <div class="card-footer p-1">
-            <i class="fas fa-link me-1" title="Subfleets"></i>
+            <i class="bi bi-link-45deg me-1" title="Subfleets"></i>
             @foreach($flight->subfleets as $sf)
               @if(!$loop->first) &bull; @endif
               @if($DBasic)

@@ -386,7 +386,7 @@
         // Landing Rate
         if ($slug === 'landing-rate') {
           if ($value > 0) {
-            $error = ' <i class="fas fa-exclamation-triangle mx-2" style="color:firebrick;" title="Positive Landing Rate !"></i>';
+            $error = ' <i class="bi bi-exclamation-triangle mx-2" style="color:firebrick;" title="Positive Landing Rate !"></i>';
           }
           $value = number_format($value).' ft/min'.$error;
         }
@@ -408,7 +408,7 @@
             $value = $value / 2.20462262185;
           }
           if ($value < 0) {
-            $error = ' <i class="fas fa-exclamation-triangle mx-2" style="color: firebrick;" title="Negative Fuel !"></i>';
+            $error = ' <i class="bi bi-exclamation-triangle mx-2" style="color: firebrick;" title="Negative Fuel !"></i>';
           }
           if ($value <= 10) {
             $value = number_format($value, 2).' '.$units['fuel'].$error;

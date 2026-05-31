@@ -66,7 +66,7 @@
             <div class="col text-start">
               &copy; @if(setting('general.start_date')->format('Y') != date('Y')) {{ setting('general.start_date')->format('Y') }} - @endif {{ date('Y').' '.config('app.name') }}
               @if(Theme::getSetting('gen_discord_invite') != '')
-                &nbsp;|&nbsp;<a href="https://discord.gg/{{ Theme::getSetting('gen_discord_invite') }}" target="_blank"><i class="fab fa-discord mx-1"></i>Join Our Discord Server</a>
+                &nbsp;|&nbsp;<a href="https://discord.gg/{{ Theme::getSetting('gen_discord_invite') }}" target="_blank"><i class="bi bi-discord mx-1"></i>Join Our Discord Server</a>
               @endif
             </div>
             <div class="col text-center">

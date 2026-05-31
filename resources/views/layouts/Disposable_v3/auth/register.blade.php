@@ -12,7 +12,7 @@
           <div class="card-header p-1">
             <h5 class="m-1">
               @lang('common.register')
-              <i class="fas fa-user-plus float-end"></i>
+              <i class="bi bi-person-plus float-end"></i>
             </h5>
           </div>
           {{-- Form Fields --}}
@@ -81,7 +81,7 @@
                   <span class="input-group-text col-lg-3">
                     {{ $field->name }}
                     @if(filled($field->description))
-                      <i class="fas fa-info-circle text-primary mx-2" title="{{ $field->description }}"></i>
+                      <i class="bi bi-info-circle text-primary mx-2" title="{{ $field->description }}"></i>
                     @endif
                   </span>
                   @if(in_array(strtoupper($field->name), ['IVAO', 'IVAO ID', 'IVAO CID', 'VATSIM', 'VATSIM ID', 'VATSIM CID']))

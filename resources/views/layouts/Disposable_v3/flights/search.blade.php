@@ -2,7 +2,7 @@
   <div class="card-header p-1">
     <h5 class="m-1">
       @lang('flights.search')
-      <i class="fas fa-search float-end"></i>
+      <i class="bi bi-search float-end"></i>
     </h5>
   </div>
   <form method="get" action="{{ route('frontend.flights.search') }}">

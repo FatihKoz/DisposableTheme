@@ -15,7 +15,7 @@ and update() call is made
       @lang('common.livemap') 
       <button class="btn btn-sm btn-warning p-0 m-0 ms-2 px-1 float-end" onclick="toggleLiveMap();">
         @lang('disposable.show_hide')
-        <i class="fas fa-globe float-end m-1 ps-1"></i>
+        <i class="bi bi-globe float-end m-1 ps-1"></i>
       </button>
     </h5>
   </div>

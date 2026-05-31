@@ -31,9 +31,9 @@
           </div>
           <div class="card-footer text-start p-1">
             @if($module->active)
-              <span class="text-success"><i class="fas fa-check-circle m-1" title="Active"></i></span>
+              <span class="text-success"><i class="bi bi-check-circle m-1" title="Active"></i></span>
             @else
-              <span class="text-danger"><i class="fas fa-times-circle m-1" title="Not Active"></i></span>
+              <span class="text-danger"><i class="bi bi-x-circle m-1" title="Not Active"></i></span>
             @endif
             <span class="float-end">
               @if($module->attribution)

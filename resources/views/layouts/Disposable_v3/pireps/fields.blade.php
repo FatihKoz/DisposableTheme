@@ -24,7 +24,7 @@ flight reports that have been filed. You've been warned!
     <div class="col">
       <div class="form-container mb-2">
         <h6 class="m-1">
-          <i class="fas fa-info-circle me-1"></i>
+          <i class="bi bi-info-circle me-1"></i>
           @lang('pireps.flightinformations')
         </h6>
         <div class="form-group">
@@ -131,7 +131,7 @@ flight reports that have been filed. You've been warned!
       </div>
       <div class="form-container mb-2">
         <h6 class="m-1">
-          <i class="fab fa-avianex me-1"></i>
+          <i class="bi bi-airplane me-1"></i>
           @lang('pireps.aircraftinformations')
         </h6>
         <div class="form-group">
@@ -164,7 +164,7 @@ flight reports that have been filed. You've been warned!
       {{-- Route --}}
       <div class="form-container mb-2">
         <h6 class="m-1">
-          <i class="fas fa-route me-1"></i>
+          <i class="bi bi-signpost me-1"></i>
           @lang('flights.route')
         </h6>
         <div class="form-group">
@@ -180,7 +180,7 @@ flight reports that have been filed. You've been warned!
       {{-- Notes / Remarks --}}
       <div class="form-container mb-2">
         <h6 class="m-1">
-          <i class="far fa-comments me-1"></i>
+          <i class="bi bi-chat-dots me-1"></i>
           {{ trans_choice('common.remark', 2).' / '.trans_choice('common.note', 2) }}
         </h6>
         <div class="form-group">
@@ -199,7 +199,7 @@ flight reports that have been filed. You've been warned!
       <div class="col-3">
         <div class="form-container">
           <h6 class="m-1">
-            <i class="fas fa-th-list me-1"></i>
+            <i class="bi bi-list-ul me-1"></i>
             {{ trans_choice('common.field', 2) }}
           </h6>
           <div class="form-group">

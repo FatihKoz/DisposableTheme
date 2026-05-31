@@ -3,7 +3,7 @@
     <div class="card-header p-1">
       <h5 class="m-1">
         @lang('dashboard.weatherat', ['ICAO' => strtoupper($config['icao'])])
-        <i class="fas fa-cloud-sun float-end"></i>
+        <i class="bi bi-cloud-sun float-end"></i>
       </h5>
     </div>
     <div class="card-body p-0 table-responsive">
@@ -133,7 +133,7 @@
   <div class="card-header p-1">
     <h5 class="m-1">
       METAR & TAF | {{ strtoupper($config['icao']) }}
-      <i class="fas fa-cloud-sun float-end"></i>
+      <i class="bi bi-cloud-sun float-end"></i>
     </h5>
   </div>
   {{--}}

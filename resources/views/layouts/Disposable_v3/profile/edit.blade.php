@@ -8,7 +8,7 @@
         <div class="card-header p-1">
           <h5 class="m-1">
             @lang('profile.edityourprofile')
-            <i class="fas fa-user-alt float-end"></i>
+            <i class="bi bi-person float-end"></i>
           </h5>
         </div>
         <form class="form" method="post" action="{{ route('frontend.profile.update', $user->id) }}" enctype="multipart/form-data">

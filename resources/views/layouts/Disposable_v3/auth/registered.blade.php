@@ -9,7 +9,7 @@
         <div class="card-body p-1">
           <h5 class="m-1">
             @lang('auth.registrationconfirmation')
-            <i class="fas fa-check float-end"></i>
+            <i class="bi bi-check float-end"></i>
           </h5>
         </div>
         <div class="card-footer p-1 fw-bold">

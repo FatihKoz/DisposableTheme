@@ -100,7 +100,7 @@
         </td>
         <td>
           @if($user->awards_count > 0)
-            <i class="fas fa-trophy fa-lg" style="color: darkgreen;" title="{{ $user->awards_count }}"></i>
+            <i class="bi bi-trophy fa-lg" style="color: darkgreen;" title="{{ $user->awards_count }}"></i>
           @endif
         </td>
         @if(Theme::getSetting('roster_ivao'))

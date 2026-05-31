@@ -20,13 +20,13 @@
               {!! implode('', $errors->all('<div class="alert alert-danger mb-1 p-1 px-2 fw-bold">:message</div>')) !!}
             @endif
             <div class="input-group input-group-sm mb-2">
-              <span class="input-group-text" id="email"><i class="fas fa-user"></i></span>
+              <span class="input-group-text" id="email"><i class="bi bi-person"></i></span>
               <input
                 class="form-control" type="text" name="email" aria-label="email" aria-describedby="email"
                 placeholder="{{ __('common.email').' '.__('common.or').' '.__('common.pilot_id') }}" required>
             </div>
             <div class="input-group input-group-sm mb-2">
-              <span class="input-group-text" id="password"><i class="fas fa-key"></i></span>
+              <span class="input-group-text" id="password"><i class="bi bi-key"></i></span>
               <input
                 class="form-control" type="password" name="password" aria-label="password" aria-describedby="password"
                 placeholder="{{ __('auth.password') }}" required>
@@ -37,14 +37,14 @@
               @if(config('services.discord.enabled'))
                 <div class="col d-grid">
                   <a href="{{ route('oauth.redirect', ['provider' => 'discord']) }}" class="btn btn-primary btn-sm">
-                    <i class="fab fa-discord mx-1"></i>
+                    <i class="bi bi-discord mx-1"></i>
                     @lang('auth.loginwith', ['provider' => 'Discord'])
                   </a>
                 </div>
               @endif
               <div class="col d-grid">
                 <button class="btn btn-primary btn-sm">
-                  <i class="fas fa-sign-in-alt mx-1"></i>
+                  <i class="bi bi-box-arrow-in-right mx-1"></i>
                   @lang('common.login')
                 </button>
               </div>

@@ -3,7 +3,7 @@
     {{-- Homepage Design --}}
     <div class="card mb-2">
       <div class="card-header p-1">
-        <h5 class="m-1">Latest Awards<i class="fas fa-trophy float-end"></i></h5>
+        <h5 class="m-1">Latest Awards<i class="bi bi-trophy float-end"></i></h5>
       </div>
     </div>
     @foreach($awards as $a)

@@ -8,7 +8,7 @@
         <div class="card-header p-1">
           <h5 class="m-1">
             @lang('errors.404.title')
-            <i class="fas fa-bomb float-end"></i>
+            <i class="bi bi-exclamation-triangle float-end"></i>
           </h5>
         </div>
         <div class="card-body p-1">
