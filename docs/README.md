@@ -230,6 +230,8 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 * Added support for Carto and OpenAIP API usage for Maps (API Keys are stored in settings via DBasic or DSpecial, or as a last choice in theme.json)
 * Some improvements to SimBrief form and planning settings
 * Some improvements to Pirep details page (like details of violations with position and map link etc.)
+* Added support for SimBrief Airframes feature of phpvms
+* Added support for new features of Disposable addons (like NextRank and Missions) menu placements
 
 12.JAN.25
 
