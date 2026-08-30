@@ -116,6 +116,20 @@
           </a>
         </li>
       @endif
+      @if($DSpecial)
+        <li>
+          <a class="dropdown-item" href="{{ route('DSpecial.maintenance') }}">
+            <i class="fas fa-tools {{ $icon_style }}"></i>
+            F. Maintenance
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="{{ route('DSpecial.missions') }}">
+            <i class="fas fa-paper-plane {{ $icon_style }}"></i>
+            Missions
+          </a>
+        </li>
+      @endif
       <li>
         <a class="dropdown-item" href="{{ route('frontend.livemap.index') }}">
           <i class="fas fa-map {{ $icon_style }}"></i>

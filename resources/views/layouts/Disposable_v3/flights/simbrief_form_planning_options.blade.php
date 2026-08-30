@@ -19,7 +19,7 @@
             <option value="{{ optional($flight->airline)->icao.$user->callsign }}">{{ optional($flight->airline)->icao.$user->callsign }}</option>
           @endif
           <option value="{{ optional($flight->airline)->icao.$flight->flight_number }}">{{ optional($flight->airline)->icao.$flight->flight_number }}</option>
-          @if(filled($user->callsign))
+          @if(filled($user->callsign) && $user->airline_id != $flight->airline_id)
             <option value="{{ $user->atc }}">{{ $user->atc }}</option>
           @endif
           <option value="{{ $user->ident }}">{{ $user->ident }}</option>
@@ -108,6 +108,7 @@
     <div class="input-group input-group-sm">
       <span class="input-group-text col-md-5">Alternate Airports</span>
       <select name="altn_count" class="form-select">
+        <option value="1">0</option>
         <option value="1">1</option>
         <option value="2" selected>2</option>
         <option value="3">3</option>

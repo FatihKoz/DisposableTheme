@@ -4,6 +4,7 @@
 @php
   $units = isset($units) ? $units : DT_GetUnits();
   $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
+  $DSpecial = isset($DSpecial) ? $DSpecial : check_module('DisposableSpecial');
   $Addon_Specs = ($DBasic && Theme::getSetting('simbrief_specs')) ? DB_GetSpecs($aircraft, true) : null;
   $Check_SSL = str_contains(url()->current(), 'https://');
   // Get RVR and Remark Text from Theme Settings with some failsafe defaults,
@@ -13,6 +14,19 @@
   $sb_callsign = filled(optional($flight->airline)->callsign) ? ' CS/'.strtoupper($flight->airline->callsign) : null;
   $sb_ivaova = filled(Theme::getSetting('gen_ivao_icao')) ? ' IVAOVA/'.strtoupper(Theme::getSetting('gen_ivao_icao')) : null;
   $sb_rmk = filled(Theme::getSetting('simbrief_rmk')) ? ' RMK/TCAS '.strtoupper(Theme::getSetting('simbrief_rmk')) : ' RMK/TCAS '.strtoupper(config('app.name'));
+  if($DSpecial) {
+    $sb_rmk = $sb_rmk.' '.DS_GetTourFPLRemark($flight->route_code);
+  }
+  // Provide Carto and OpenAIP API Support
+  $carto_apikey = filled(Theme::getSetting('api_carto')) ? Theme::getSetting('api_carto') : null;
+  $openaip_apikey = filled(Theme::getSetting('api_openaip')) ? Theme::getSetting('api_openaip') : null;
+  if($DBasic) {
+    $carto_apikey = DB_Setting('dbasic.carto_api_key', null);
+    $openaip_apikey = DB_Setting('dbasic.openaip_api_key', null);
+  } elseif ($DSpecial) {
+    $carto_apikey = DS_Setting('dbasic.carto_api_key', null);
+    $openaip_apikey = DS_Setting('dbasic.openaip_api_key', null);
+  }
 @endphp
 @section('content')
   <form id="sbapiform">

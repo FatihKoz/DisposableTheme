@@ -3,12 +3,8 @@
 phpVMS v7 theme/skin (Bootstrap v5.x + FontAwesome v5.x)  
 
 > [!IMPORTANT]
-> * Minimum required phpVMS v7 version is `phpVms 7.0.52-dev.g0421186c64` / 05.JAN.2025
-
-> [!TIP]
-> * Theme supports **only** php8.1+ and laravel10
-> * _php8.0 and laravel9 compatible latest version: v3.3.1_
-> * _php7.4 and laravel8 compatible latest version: v3.0.19_
+> * Minimum required phpVMS v7 version is `phpVms 7.0.10`
+> * Minimum required PHP version is `8.1.x`
 
 ## Compatibility with other addons
 
@@ -177,7 +173,10 @@ There are some options defined in this file for quick settings or for pre-define
     "simbrief_specs": 1,              // Use addon based specifications at SimBrief form (Disposable Basic)
 
     "user_disable_hub": 0,            // Disable changing hub from profile edit
-    "user_disable_airline": 0         // Disable changing airline from profile edit
+    "user_disable_airline": 0,        // Disable changing airline from profile edit
+
+    "api_carto": null,                // Carto API Key for maps (use only if you are not using DispoBasic or DispoSpecial)
+    "api_openaip": null               // OpenAIP API Key for map overlays (use only if you are not using DispoBasic or DispoSpecial)
 ```
 
 ## About IVAO VA System Support
@@ -225,6 +224,14 @@ If you need more space in footer area, kindly check theme stylesheet to add your
 * SmartCars v3 users reported problems with some of the features theme offers, root cause is SC3 being not fully phpVMS v7 compatible yet and not sending proper data. With latest improvements done to SC3 implementation incompatibilities are reduced but still it may behave different than expected. Please follow changes/updates of SC3 modules being develop by other devs.
 
 ## Release / Update Notes
+
+30.AUG.26
+
+* Added support for Carto and OpenAIP API usage for Maps (API Keys are stored in settings via DBasic or DSpecial, or as a last choice in theme.json)
+* Some improvements to SimBrief form and planning settings
+* Some improvements to Pirep details page (like details of violations with position and map link etc.)
+* Added support for SimBrief Airframes feature of phpvms
+* Added support for new features of Disposable addons (like NextRank and Missions) menu placements
 
 12.JAN.25
 

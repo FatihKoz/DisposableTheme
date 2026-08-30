@@ -17,9 +17,9 @@
 
         $icao_code = $airport->id;
 
-        if (iconv_strlen(trim($airport->id), 'UTF8') === 3 && $airport->country === 'US') {
+        if (mb_strlen(trim($airport->id), 'UTF8') === 3 && $airport->country === 'US') {
           $icao_code = 'K'.$airport->id;
-        } elseif (iconv_strlen(trim($airport->id), 'UTF8') === 3 && $airport->country === 'CA') {
+        } elseif (mb_strlen(trim($airport->id), 'UTF8') === 3 && $airport->country === 'CA') {
           $icao_code = 'C'.$airport->id;
         }
       }
