@@ -4,7 +4,30 @@
 @php
   $units = isset($units) ? $units : DT_GetUnits();
   $DBasic = isset($DBasic) ? $DBasic : check_module('DisposableBasic');
+  $DSpecial = isset($DSpecial) ? $DSpecial : check_module('DisposableSpecial');
   $now = Carbon::now();
+  // Provide Carto and OpenAIP API Support
+  $carto_apikey = filled(Theme::getSetting('api_carto')) ? Theme::getSetting('api_carto') : null;
+  $openaip_apikey = filled(Theme::getSetting('api_openaip')) ? Theme::getSetting('api_openaip') : null;
+  if($DBasic) {
+    $carto_apikey = DB_Setting('dbasic.carto_api_key', null);
+    $openaip_apikey = DB_Setting('dbasic.openaip_api_key', null);
+  } elseif ($DSpecial) {
+    $carto_apikey = DS_Setting('dbasic.carto_api_key', null);
+    $openaip_apikey = DS_Setting('dbasic.openaip_api_key', null);
+  }
+  // Build Map Data for Leaflet
+  $flightPath = [];
+  if(filled($simbrief->xml->navlog)) {
+    $navlog = $simbrief->xml->navlog;
+    foreach ($navlog->fix as $fix) {
+      $flightPath[] = [
+        (float) $fix->pos_lat,
+        (float) $fix->pos_long
+      ];
+    }
+  }
+  $flightPathJson = filled($flightPath) ? json_encode($flightPath, JSON_NUMERIC_CHECK) : null;
 @endphp
 @section('content')
   <div class="row row-cols-xl-2">
@@ -70,7 +93,10 @@
           @if($simbrief->flight_id && $user->id == $simbrief->user_id && $acars_plugin)
             <a class="btn btn-sm btn-success my-1" href="@if(isset($bid)) {{'vmsacars:bid/'.$bid->id}} @else {{'vmsacars:flight/'.$simbrief->flight_id}} @endif">Acars</a>
           @endif
-          <a class="btn btn-sm btn-primary my-1" data-bs-toggle="modal" data-bs-target="#ofp-view" href="#">View</a>
+          <a class="btn btn-sm btn-primary my-1" data-bs-toggle="modal" data-bs-target="#ofp-view" href="#">View OFP</a>
+          {{-- SimBrief MAP Modal --}}
+          @include('flights.simbrief_briefing_map', [$flight = $simbrief->xml])
+
           @if(filled($simbrief->xml->params->static_id) && $user->id == $simbrief->user_id && $simbrief->flight_id)
             <a class="btn btn-sm btn-warning my-1" data-bs-toggle="modal" data-bs-target="#ofp-edit" href="#" onclick="OpenEditPage()">Edit</a>
           @endif

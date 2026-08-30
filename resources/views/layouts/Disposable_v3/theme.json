@@ -58,5 +58,7 @@
     "simbrief_poscon": 0,
     "simbrief_specs": 1,
     "user_disable_hub": 0,
-    "user_disable_airline": 0
+    "user_disable_airline": 0,
+    "api_carto": null,
+    "api_openaip" : null
 }

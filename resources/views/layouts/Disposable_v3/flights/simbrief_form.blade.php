@@ -17,6 +17,16 @@
   if($DSpecial) {
     $sb_rmk = $sb_rmk.' '.DS_GetTourFPLRemark($flight->route_code);
   }
+  // Provide Carto and OpenAIP API Support
+  $carto_apikey = filled(Theme::getSetting('api_carto')) ? Theme::getSetting('api_carto') : null;
+  $openaip_apikey = filled(Theme::getSetting('api_openaip')) ? Theme::getSetting('api_openaip') : null;
+  if($DBasic) {
+    $carto_apikey = DB_Setting('dbasic.carto_api_key', null);
+    $openaip_apikey = DB_Setting('dbasic.openaip_api_key', null);
+  } elseif ($DSpecial) {
+    $carto_apikey = DS_Setting('dbasic.carto_api_key', null);
+    $openaip_apikey = DS_Setting('dbasic.openaip_api_key', null);
+  }
 @endphp
 @section('content')
   <form id="sbapiform">
